@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f4f0e5"/>
+<path d="M0 420C180 365 330 480 515 425S850 485 1200 390V630H0Z" fill="#174d5d"/>
+<path d="M0 480C230 420 385 540 620 470s375 25 580-15" fill="none" stroke="#d8e8e7" stroke-width="5" opacity=".7"/>
+<g transform="translate(80 95)" fill="none" stroke="#174d5d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M0 120V20h150v100M0 64h150M48 20v100M100 20v100"/><path d="M150 45h62l38 35v40H150"/><path d="M-28 145c44-20 75 20 119 0s75 20 119 0"/>
+</g>
+<text x="405" y="180" fill="#102d36" font-family="Georgia,serif" font-size="78">Puerto de Colonia</text>
+<text x="410" y="245" fill="#ba6045" font-family="Arial,sans-serif" font-size="22" letter-spacing="7">PORTAL DEL RÍO DE LA PLATA</text>
+<text x="80" y="570" fill="#f4f0e5" font-family="Arial,sans-serif" font-size="24" letter-spacing="4">COLONIA DEL SACRAMENTO · URUGUAY</text>
+</svg>

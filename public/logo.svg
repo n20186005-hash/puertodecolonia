@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" role="img" aria-labelledby="t d">
+<title id="t">Puerto de Colonia</title><desc id="d">Símbolo de terminal, horizonte y río.</desc>
+<g fill="none" stroke="#174d5d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 58h76M18 66h63" opacity=".55"/>
+  <path d="M22 52V24h42v28M22 36h42M36 24v28M50 24v28"/>
+  <path d="M64 30h18l9 10v12H64"/>
+  <path d="M6 72c15-5 27 5 42 0s27 5 42 0"/>
+</g>
+<g fill="#102d36">
+  <text x="110" y="39" font-family="Georgia,serif" font-size="28">Puerto de Colonia</text>
+  <text x="111" y="63" font-family="Arial,sans-serif" font-size="11" letter-spacing="3.1">RÍO DE LA PLATA · URUGUAY</text>
+</g>
+</svg>
