@@ -1,0 +1,46 @@
+{
+  "name": "Puerto de Colonia · Terminal Fluviomarítima Colonia (ANP)",
+  "short_name": "Puerto de Colonia",
+  "description": "Guía del Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP): ferries a Buenos Aires, mapa, cómo llegar y qué visitar en Colonia del Sacramento, Uruguay.",
+  "id": "https://puertodecolonia.com/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f0e5",
+  "theme_color": "#174d5d",
+  "lang": "es-UY",
+  "categories": ["travel", "tourism", "navigation"],
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

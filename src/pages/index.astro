@@ -1,14 +1,43 @@
 ---
 import '../styles/global.css';
 
-const title = 'Puerto de Colonia: terminal, ferries, mapa y guía práctica';
-const description = 'Guía independiente del Puerto de Colonia: terminal fluvio-marítima, ferries, cómo llegar, estacionamiento, costos, paseo por Colonia y consejos antes de embarcar.';
-const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
-const ogImage = Astro.site ? new URL('/og-cover.svg', Astro.site).toString() : undefined;
+/* ---- Entidad única (Puerto de Colonia · Terminal Fluviomarítima Colonia, ANP) ---- */
+const siteName = 'Puerto de Colonia';
+const officialName = 'Terminal Fluviomarítima Colonia (ANP)';
+const cityName = 'Colonia del Sacramento';
+const regionName = 'Departamento de Colonia';
+const countryName = 'Uruguay';
+const streetAddress = 'Av. Roosevelt y Rivera';
+const postalCode = '70000';
+const telephone = '+59845222140';
+const telephoneDisplay = '+598 4522 2140';
+const plusCode = 'G5G4+FF';
+const mapsUrl = 'https://maps.app.goo.gl/TeFfiSiPREgkBZDj6';
+const anpPortUrl = 'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia';
+const anpInfraUrl = 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura';
+const unescoUrl = 'https://whc.unesco.org/en/list/747';
+const gubUyUrl = 'https://www.gub.uy/';
+const intendenciaColoniaUrl = 'https://www.colonia.gub.uy/';
 
-const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1ses!2suy!4v1788749482937!5m2!1ses!2suy&hl=es&region=UY';
+/* ---- TDK / URLs derivadas del dominio único ---- */
+const base = Astro.site ?? new URL('https://puertodecolonia.com');
+const canonical = new URL(Astro.url.pathname, base).toString();
+const origin = base.origin;
+const heroPath = '/photos/puerto-terminal-exterior.jpg';
+const heroImage = origin + heroPath;
+const ferryImage = origin + '/photos/ferries-terminal.jpg';
+
+const title = 'Puerto de Colonia (Colonia del Sacramento) · Guía, ferries y mapa';
+const description = 'Guía del Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP): ferries a Buenos Aires, mapa, cómo llegar y qué visitar en Colonia del Sacramento, Uruguay.';
+const ogImageAlt = 'Terminal del Puerto de Colonia en Colonia del Sacramento, Uruguay';
+
+const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s';
 
 const faq = [
+  {
+    q: '¿Dónde está exactamente el Puerto de Colonia?',
+    a: 'El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) está en Av. Roosevelt y Rivera, 70000 Colonia del Sacramento, Departamento de Colonia, Uruguay. Código postal 70000 y Plus Code G5G4+FF; queda a minutos a pie del centro histórico.'
+  },
   {
     q: '¿Hay que pagar entrada para entrar al Puerto de Colonia?',
     a: 'No hay una entrada turística para circular por las áreas públicas de la terminal. El pasaje de ferry se compra aparte y su precio cambia según naviera, fecha, clase y si viajás con vehículo.'
@@ -20,6 +49,10 @@ const faq = [
   {
     q: '¿Se puede ir caminando desde el puerto al Barrio Histórico?',
     a: 'Sí. El puerto está muy cerca del área central de Colonia y el Barrio Histórico se puede integrar fácilmente en un paseo a pie. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación exigida por la naviera.'
+  },
+  {
+    q: '¿El Puerto de Colonia recibe cruceros?',
+    a: 'Google Maps clasifica el Puerto de Colonia como terminal de cruceros (cruise terminal). El grueso del tráfico corresponde a los ferries del Río de la Plata y las escalas de cruceros se coordinan con la Administración Nacional de Puertos según la temporada; consultá la información vigente con la ANP o tu naviera.'
   },
   {
     q: '¿Hay migraciones y aduana en la terminal?',
@@ -35,25 +68,25 @@ const faq = [
   }
 ];
 
+/* ---- Schema.org: TouristAttraction (entidad geográfica vinculada al mapa) ---- */
 const attractionLd = {
   '@context': 'https://schema.org',
   '@type': ['TouristAttraction', 'CivicStructure'],
-  name: 'Puerto de Colonia',
-  alternateName: 'Terminal Fluviomarítima de Pasajeros de Colonia (ANP)',
+  '@id': canonical + '#attraction',
+  name: siteName,
+  alternateName: [officialName, 'Terminal Puerto Colonia', cityName + ' ' + siteName],
   description,
-  ...(canonical ? { url: canonical } : {}),
-  telephone: '+59845222140',
-  identifier: 'G5G4+FF',
-  sameAs: [
-    'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia',
-    'https://maps.app.goo.gl/TeFfiSiPREgkBZDj6'
-  ],
+  url: canonical,
+  image: [heroImage, ferryImage],
+  isAccessibleForFree: true,
+  telephone,
+  identifier: plusCode,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Av. Roosevelt y Rivera',
-    postalCode: '70000',
-    addressLocality: 'Colonia del Sacramento',
-    addressRegion: 'Departamento de Colonia',
+    streetAddress,
+    postalCode,
+    addressLocality: cityName,
+    addressRegion: regionName,
     addressCountry: 'UY'
   },
   geo: {
@@ -61,9 +94,10 @@ const attractionLd = {
     latitude: -34.47378967300122,
     longitude: -57.84639002271789
   },
+  hasMap: mapsUrl,
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     opens: '06:30',
     closes: '21:30',
     description: 'Horario de referencia publicado por Colonia Express; la operativa portuaria depende de arribos y salidas.'
@@ -74,9 +108,10 @@ const attractionLd = {
     reviewCount: '20979',
     bestRating: '5'
   },
-  isAccessibleForFree: true
+  sameAs: [anpPortUrl, mapsUrl]
 };
 
+/* ---- Schema.org: FAQPage ---- */
 const faqLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -85,6 +120,40 @@ const faqLd = {
     name: item.q,
     acceptedAnswer: { '@type': 'Answer', text: item.a }
   }))
+};
+
+/* ---- Schema.org: Organización, sitio y página (E-E-A-T / grafo del sitio) ---- */
+const graphLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': canonical + '#organization',
+      name: siteName,
+      alternateName: officialName,
+      url: canonical,
+      logo: origin + '/apple-touch-icon.png',
+      sameAs: [anpPortUrl, mapsUrl]
+    },
+    {
+      '@type': 'WebSite',
+      '@id': canonical + '#website',
+      url: canonical,
+      name: siteName,
+      inLanguage: 'es-UY',
+      publisher: { '@type': 'Organization', '@id': canonical + '#organization' }
+    },
+    {
+      '@type': 'WebPage',
+      '@id': canonical + '#webpage',
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: 'es-UY',
+      isPartOf: { '@id': canonical + '#website' },
+      about: { '@id': canonical + '#attraction' }
+    }
+  ]
 };
 ---
 <!doctype html>
@@ -96,23 +165,30 @@ const faqLd = {
     <meta name="theme-color" content="#174d5d" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_UY" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {canonical && <meta property="og:url" content={canonical} />}
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={heroImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="905" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:image" content={heroImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <script type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(graphLd)}></script>
   </head>
   <body>
     <header class="absolute top-0 inset-x-0 z-10 text-white">
@@ -121,7 +197,10 @@ const faqLd = {
           <svg aria-hidden="true" viewBox="0 0 64 38" class="w-14 h-9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M7 27V7h29v20M7 16h29M17 7v20M27 7v20"/><path d="M36 12h12l8 8v7H36"/><path d="M3 33c9-4 15 4 24 0s15 4 24 0"/>
           </svg>
-          <span>Puerto de Colonia</span>
+          <span>
+            <span class="block">Puerto de Colonia</span>
+            <span class="block text-[.62rem] font-normal uppercase tracking-[.16em] text-white/70 mt-0.5">Terminal Fluviomarítima Colonia (ANP)</span>
+          </span>
         </a>
         <nav class="desktop-nav flex items-center gap-6" aria-label="Navegación principal">
           <a class="nav-link" href="#guia">Guía</a>
@@ -134,11 +213,14 @@ const faqLd = {
     </header>
 
     <main id="inicio">
-      <section class="hero-photo text-white" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Puerto_de_Colonia_-_panoramio.jpg/1280px-Puerto_de_Colonia_-_panoramio.jpg')">
+      <section class="hero-photo text-white" style="background-image:url('/photos/puerto-terminal-exterior.jpg')">
         <div class="relative z-[1] shell min-h-[35rem] md:min-h-[47rem] flex flex-col justify-end pb-14 pt-32">
           <div class="max-w-4xl">
-            <p class="kicker text-white/75 mb-5">Portal del Río de la Plata · Colonia del Sacramento</p>
-            <h1 class="serif text-[clamp(4rem,11vw,9.5rem)] leading-[.78] tracking-[-.065em]">Puerto<br/>de Colonia</h1>
+            <p class="kicker text-white/75 mb-5">Río de la Plata · Uruguay</p>
+            <h1 class="serif text-[clamp(4rem,11vw,9.5rem)] leading-[.78] tracking-[-.065em]">
+              Puerto<br/>de Colonia
+              <span class="mt-5 block font-sans text-sm md:text-base font-bold uppercase tracking-[.22em] text-white/80 leading-relaxed">Terminal Fluviomarítima Colonia (ANP) · Colonia del Sacramento, Uruguay</span>
+            </h1>
             <div class="mt-8 grid md:grid-cols-[1fr_auto] gap-8 items-end">
               <p class="text-lg md:text-xl leading-8 max-w-2xl text-white/85">Una terminal fluvio-marítima que funciona como umbral entre Buenos Aires y una de las ciudades históricas más singulares del Uruguay.</p>
               <a href="#llegar" class="pill border-white text-white hover:!bg-white hover:!text-[var(--deep)]">Planificar llegada <span aria-hidden="true">↓</span></a>
@@ -151,6 +233,13 @@ const faqLd = {
       </section>
 
       <section id="guia" class="shell py-20 md:py-28">
+        <nav aria-label="Ruta de navegación" class="mb-14 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-[.12em] uppercase text-[color:rgba(16,45,54,.55)]">
+          <a href="/" class="underline decoration-black/20 underline-offset-4 hover:opacity-70">Inicio</a><span aria-hidden="true">›</span>
+          <span>{countryName}</span><span aria-hidden="true">›</span>
+          <span>{regionName}</span><span aria-hidden="true">›</span>
+          <span>{cityName}</span><span aria-hidden="true">›</span>
+          <span class="font-bold text-[var(--ink)] normal-case">{siteName}</span>
+        </nav>
         <div class="grid lg:grid-cols-[.72fr_1.28fr] gap-14 lg:gap-24 items-start">
           <div class="lg:sticky lg:top-10">
             <p class="kicker text-[var(--terracotta)]">Antes de embarcar</p>
@@ -158,10 +247,13 @@ const faqLd = {
           </div>
           <div>
             <p class="serif text-2xl md:text-4xl leading-[1.2] tracking-[-.025em]">El puerto es infraestructura viva: pasajeros, vehículos, equipaje y controles internacionales conviven a pocos minutos a pie del casco histórico.</p>
-            <p class="mt-7 max-w-2xl leading-8 text-[color:rgba(16,45,54,.75)]">La Administración Nacional de Puertos describe a Colonia como el principal puerto del país por movimiento de pasajeros y vehículos. La terminal moderna concentra embarque, migraciones, aduana y servicios para las conexiones del Río de la Plata.</p>
+            <p class="mt-7 leading-8 max-w-2xl text-[color:rgba(16,45,54,.75)]"><strong>Puerto de Colonia</strong> — también conocido por su nombre oficial, <strong>Terminal Fluviomarítima Colonia (ANP)</strong> — es el puerto internacional de pasajeros y vehículos de <strong>Colonia del Sacramento</strong>, en el <strong>Departamento de Colonia</strong>, <strong>Uruguay</strong>. Opera sobre el <strong>Río de la Plata</strong>, a minutos a pie del <strong>Barrio Histórico</strong> (Patrimonio Mundial UNESCO) y del <strong>Faro de Colonia</strong>, y funciona como puerta de entrada natural para quien llega desde Buenos Aires.</p>
+            <p class="mt-5 max-w-2xl leading-8 text-[color:rgba(16,45,54,.75)]">La Administración Nacional de Puertos describe a Colonia como el principal puerto del país por movimiento de pasajeros y vehículos. La terminal moderna concentra embarque, migraciones, aduana y servicios para las conexiones del Río de la Plata.</p>
             <div class="info-grid mt-14">
-              <div class="info-card col-span-4"><p class="kicker opacity-55">Dirección</p><p class="mt-2 leading-6">Av. Roosevelt y Rivera<br/>70000 Colonia del Sacramento</p></div>
-              <div class="info-card col-span-4"><p class="kicker opacity-55">Teléfono</p><p class="mt-2"><a href="tel:+59845222140" class="underline decoration-black/20 underline-offset-4">+598 4522 2140</a></p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Nombre oficial</p><p class="mt-2 leading-6">Terminal Fluviomarítima Colonia (ANP)</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Tipo</p><p class="mt-2 leading-6">Terminal fluvio-marítima · Cruise terminal</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Dirección</p><p class="mt-2 leading-6">{streetAddress}<br/>{postalCode} {cityName}, {regionName}, Uruguay</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Teléfono</p><p class="mt-2"><a href="tel:+59845222140" class="underline decoration-black/20 underline-offset-4">{telephoneDisplay}</a></p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Referencia horaria</p><p class="mt-2">Operativa según arribos y salidas; Colonia Express publica 06:30–21:30.</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Acceso público</p><p class="mt-2">Sin entrada turística. El pasaje de ferry se paga aparte.</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Google</p><p class="mt-2">4,2 / 5 · 20.979 reseñas</p></div>
@@ -176,9 +268,9 @@ const faqLd = {
           <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-8 items-stretch">
             <figure>
               <div class="photo-frame aspect-[4/3]">
-                <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Ferry_Terminal_in_Colonia_%285459543681%29.jpg/1280px-Ferry_Terminal_in_Colonia_%285459543681%29.jpg" alt="Ferries atracados en la terminal de Colonia del Sacramento" />
+                <img loading="lazy" src="/photos/ferries-terminal.jpg" alt="Ferries atracados en el Puerto de Colonia, terminal fluvio-marítima de Colonia del Sacramento" />
               </div>
-              <figcaption class="photo-caption text-white/65">Ferries en Colonia · Foto: Liam Quinn, CC BY-SA 2.0, Wikimedia Commons.</figcaption>
+              <figcaption class="photo-caption text-white/65">Ferries en el Puerto de Colonia · Foto: Liam Quinn, CC BY-SA 2.0, Wikimedia Commons.</figcaption>
             </figure>
             <div class="flex flex-col justify-between border-t border-white/25 pt-5 lg:pl-8">
               <div>
@@ -213,7 +305,7 @@ const faqLd = {
           <div>
             <p class="kicker text-[var(--terracotta)]">Ruta sugerida</p>
             <h2 class="section-title mt-4">Del muelle a las piedras de Colonia.</h2>
-            <p class="mt-7 leading-7 max-w-md">Ideal para una escala de varias horas. Ajustá siempre el regreso a la hora de presentación que figure en tu pasaje.</p>
+            <p class="mt-7 leading-7 max-w-md">Ideal para una escala de varias horas. Partí del Puerto de Colonia hacia el centro histórico y ajustá siempre el regreso a la hora de presentación que figure en tu pasaje.</p>
           </div>
           <div>
             <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Terminal y frente portuario</h3><p class="mt-2 leading-7 opacity-75">Observá el volumen de hormigón y vidrio desde las zonas públicas y ubicá la salida hacia el centro.</p></div></div>
@@ -227,25 +319,25 @@ const faqLd = {
       <section class="shell py-20 md:py-28">
         <div class="grid lg:grid-cols-12 gap-6 items-end">
           <figure class="lg:col-span-7">
-            <div class="photo-frame aspect-[16/10]"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Barco%2C_colonia.jpg" alt="Ferry llegando al puerto de Colonia durante el atardecer" /></div>
-            <figcaption class="photo-caption">Ferry al atardecer en Colonia · Foto: Gonzalo Bidarth, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+            <div class="photo-frame aspect-[16/10]"><img loading="lazy" src="/photos/ferry-atardecer.jpg" alt="Ferry llegando al Puerto de Colonia durante el atardecer, Río de la Plata, Colonia del Sacramento" /></div>
+            <figcaption class="photo-caption">Ferry al atardecer en el Puerto de Colonia · Foto: Gonzalo Bidarth, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
           </figure>
           <div class="lg:col-span-5 lg:pl-8 pb-6">
             <p class="kicker text-[var(--terracotta)]">Fotografía</p>
             <h2 class="serif text-4xl md:text-6xl tracking-[-.04em] leading-[.98] mt-4">Esperá la luz que cae sobre el Plata.</h2>
-            <p class="mt-6 leading-7 opacity-75">Los mejores encuadres combinan ferry, horizonte y geometría portuaria. Desde áreas públicas, buscá diagonales de pasarelas y reflejos en vidrio. Evitá fotografiar puestos de migraciones, aduana o controles cuando la señalización lo restrinja.</p>
+            <p class="mt-6 leading-7 opacity-75">Los mejores encuadres combinan ferry, horizonte y geometría portuaria. Desde áreas públicas del Puerto de Colonia, buscá diagonales de pasarelas y reflejos en vidrio. Evitá fotografiar puestos de migraciones, aduana o controles cuando la señalización lo restrinja.</p>
           </div>
         </div>
       </section>
 
       <section id="llegar" class="bg-white/45 border-y border-[var(--line)] py-20 md:py-28">
         <div class="shell">
-          <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Logística real</p><h2 class="section-title mt-4">Cómo llegar y cómo moverse.</h2></div>
+          <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Logística real</p><h2 class="section-title mt-4">Cómo llegar al Puerto de Colonia y cómo moverse.</h2></div>
           <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-            <article class="info-card"><h3 class="font-semibold text-lg">Desde Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Los ferries de pasajeros y vehículos son el vínculo internacional directo. Comprá el pasaje con la naviera y revisá documentación, equipaje y hora de presentación.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Desde Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Los ferries de pasajeros y vehículos son el vínculo internacional directo entre Buenos Aires y el Puerto de Colonia. Comprá el pasaje con la naviera y revisá documentación, equipaje y hora de presentación.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Montevideo</h3><p class="mt-3 leading-7 opacity-75">Colonia está conectada por carretera y ómnibus interdepartamentales. La terminal terrestre está próxima al puerto, lo que facilita combinar bus y ferry.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">La distancia es caminable para la mayoría de visitantes. Taxi o remise son prácticos con equipaje pesado, personas con movilidad reducida o clima adverso.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">La distancia desde el centro histórico y la rambla es caminable para la mayoría de visitantes. Taxi o remise son prácticos con equipaje pesado, personas con movilidad reducida o clima adverso.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera, frente a la terminal. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera.</p></article>
           </div>
         </div>
       </section>
@@ -256,19 +348,19 @@ const faqLd = {
           <h2 class="section-title mt-4">Lo que se paga — y lo que no.</h2>
         </div>
         <div class="space-y-10">
-          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Terminal: sin entrada turística</h3><p class="mt-3 leading-7 opacity-75">No se compra una entrada para acceder a las zonas públicas. El costo relevante es el pasaje del ferry y, si corresponde, el traslado de vehículo. Evitamos publicar tarifas fijas porque cambian según fecha, naviera, categoría y promoción.</p></div>
+          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Terminal: sin entrada turística</h3><p class="mt-3 leading-7 opacity-75">No se compra una entrada para acceder a las zonas públicas del Puerto de Colonia. El costo relevante es el pasaje del ferry y, si corresponde, el traslado de vehículo. Evitamos publicar tarifas fijas porque cambian según fecha, naviera, categoría y promoción.</p></div>
           <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Estacionamiento / preembarque</h3><p class="mt-3 leading-7 opacity-75">ANP informa una playa pavimentada de preembarque con 213 plazas en el área del Muelle de Unión y mantiene proyectos de ampliación. Estas superficies forman parte de la operación del puerto; si vas a dejar el auto para recorrer la ciudad, confirmá en el lugar qué sectores admiten permanencia.</p></div>
-          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Mejor momento y duración</h3><p class="mt-3 leading-7 opacity-75">Para fotos, la última parte de la tarde suele ofrecer la luz más expresiva. La terminal puede conocerse en poco tiempo, pero combinada con el Barrio Histórico conviene reservar varias horas; una noche cambia por completo el ritmo del paseo.</p></div>
+          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Mejor momento y duración</h3><p class="mt-3 leading-7 opacity-75">Para fotos, la última parte de la tarde suele ofrecer la luz más expresiva sobre el Río de la Plata. La terminal puede conocerse en poco tiempo, pero combinada con el Barrio Histórico conviene reservar varias horas; una noche cambia por completo el ritmo del paseo.</p></div>
         </div>
       </section>
 
       <section class="bg-[var(--sky)] py-20 md:py-28">
         <div class="shell">
           <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-14 lg:gap-24">
-            <div><p class="kicker text-[var(--terracotta)]">Alrededor del puerto</p><h2 class="section-title mt-4">Comer, caminar, quedarse.</h2></div>
+            <div><p class="kicker text-[var(--terracotta)]">Alrededor del Puerto de Colonia</p><h2 class="section-title mt-4">Comer, caminar, quedarse.</h2></div>
             <div class="grid md:grid-cols-2 gap-10">
               <div><h3 class="kicker opacity-55">Para comer</h3><div class="mt-5 space-y-5"><p><strong>Parrillada El Portón</strong><br/><span class="opacity-70">Parrilla uruguaya, práctica para una comida clásica en el centro.</span></p><p><strong>Charco Bistró</strong><br/><span class="opacity-70">Mesa junto al paisaje histórico y al río, buena opción para una pausa más larga.</span></p><p><strong>DOS 22 Restaurante</strong><br/><span class="opacity-70">Pastas y cocina italiana en el tejido histórico de Colonia.</span></p></div></div>
-              <div><h3 class="kicker opacity-55">Para visitar</h3><div class="mt-5 space-y-5"><p><strong>Barrio Histórico</strong><br/><span class="opacity-70">El núcleo UNESCO y la extensión natural de cualquier escala en el puerto.</span></p><p><strong>Calle de los Suspiros</strong><br/><span class="opacity-70">Una de las calles más fotografiadas del casco antiguo.</span></p><p><strong>Faro de Colonia</strong><br/><span class="opacity-70">Hito vertical del conjunto histórico y excelente referencia para orientarse.</span></p></div></div>
+              <div><h3 class="kicker opacity-55">Para visitar</h3><div class="mt-5 space-y-5"><p><strong>Barrio Histórico</strong><br/><span class="opacity-70">El núcleo UNESCO de Colonia del Sacramento y la extensión natural de cualquier escala en el puerto.</span></p><p><strong>Calle de los Suspiros</strong><br/><span class="opacity-70">Una de las calles más fotografiadas del casco antiguo.</span></p><p><strong>Faro de Colonia</strong><br/><span class="opacity-70">Hito vertical del conjunto histórico y excelente referencia para orientarse desde el puerto.</span></p></div></div>
               <div class="md:col-span-2 border-t border-[color:rgba(16,45,54,.18)] pt-6"><h3 class="kicker opacity-55">Dónde dormir</h3><p class="mt-4 leading-7 max-w-2xl">Elegí el <strong>Barrio Histórico</strong> si querés atmósfera, arquitectura y caminar de noche; elegí <strong>Centro / Av. General Flores</strong> si priorizás comercios, transporte y una conexión sencilla con el puerto. Para una visita diurna desde Buenos Aires no es imprescindible alojarse, pero pasar la noche permite disfrutar la ciudad fuera de las horas de mayor flujo.</p></div>
             </div>
           </div>
@@ -278,13 +370,13 @@ const faqLd = {
       <section class="shell py-20 md:py-28">
         <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-14 lg:gap-24 items-center">
           <figure>
-            <div class="photo-frame aspect-[5/4]"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Interior_de_la_terminal_portuaria_de_Colonia.jpg/1280px-Interior_de_la_terminal_portuaria_de_Colonia.jpg" alt="Interior de la terminal de pasajeros de Colonia" /></div>
+            <div class="photo-frame aspect-[5/4]"><img loading="lazy" src="/photos/terminal-interior.jpg" alt="Interior de la Terminal Fluviomarítima Colonia (ANP), Puerto de Colonia, Colonia del Sacramento" /></div>
             <figcaption class="photo-caption">Interior de la terminal · Foto: Mapep, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
           </figure>
           <div>
             <p class="kicker text-[var(--terracotta)]">Consejo de embarque</p>
             <h2 class="section-title mt-4">Volvé antes de que el paseo se convierta en carrera.</h2>
-            <p class="mt-7 leading-8 opacity-75">En una ruta internacional, la hora de salida no es la hora límite para aparecer en la terminal. Migraciones, aduana, equipaje y embarque tienen sus propios tiempos. La referencia correcta es la hora de presentación de tu ticket o la indicación vigente de tu naviera.</p>
+            <p class="mt-7 leading-8 opacity-75">En una ruta internacional como la del Puerto de Colonia, la hora de salida no es la hora límite para aparecer en la terminal. Migraciones, aduana, equipaje y embarque tienen sus propios tiempos. La referencia correcta es la hora de presentación de tu ticket o la indicación vigente de tu naviera.</p>
             <div class="mt-8 flex flex-wrap gap-3"><span class="pill">Documento listo</span><span class="pill">Pasaje a mano</span><span class="pill">Equipaje controlado</span><span class="pill">Margen de tiempo</span></div>
           </div>
         </div>
@@ -295,12 +387,16 @@ const faqLd = {
           <div class="grid lg:grid-cols-[.65fr_1.35fr] gap-12 lg:gap-20 items-start">
             <div>
               <p class="kicker text-white/55">Ubicación</p>
-              <h2 class="serif text-5xl md:text-7xl tracking-[-.04em] leading-[.93] mt-4">Entre la ciudad y el Río de la Plata.</h2>
-              <p class="mt-6 text-white/70 leading-7">Terminal Puerto Colonia<br/>Av. Roosevelt y Rivera<br/>70000 Colonia del Sacramento, Uruguay</p>
-              <a href="https://maps.app.goo.gl/TeFfiSiPREgkBZDj6" class="pill mt-7 border-white/60" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
+              <h2 class="serif text-5xl md:text-7xl tracking-[-.04em] leading-[.93] mt-4">Ubicación del Puerto de Colonia, entre la ciudad y el Río de la Plata.</h2>
+              <p class="mt-6 text-white/70 leading-7">Terminal Puerto Colonia<br/>{streetAddress}<br/>{postalCode} {cityName}, {regionName}, {countryName}<br/>Tel. <a href="tel:+59845222140" class="underline underline-offset-4">+598 4522 2140</a> · Plus Code {plusCode}</p>
+              <div class="mt-7 flex flex-wrap items-center gap-3">
+                <a href={mapsUrl} class="pill border-white/60" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
+                <a href={anpPortUrl} class="pill border-white/60 text-[.72rem]" rel="noopener noreferrer">ANP · Ficha oficial ↗</a>
+              </div>
+              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre 20.979 reseñas (terminal de cruceros y ferries).</p>
             </div>
             <div class="border border-white/20 p-2 bg-white/5">
-              <iframe src={mapEmbed} width="100%" height="520" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa del Puerto de Colonia"></iframe>
+              <iframe src={mapEmbed} width="100%" height="520" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la ubicación del Puerto de Colonia en Colonia del Sacramento"></iframe>
             </div>
           </div>
         </div>
@@ -310,9 +406,12 @@ const faqLd = {
         <div class="shell grid lg:grid-cols-[.75fr_1.25fr] gap-10 lg:gap-24">
           <div><p class="kicker text-white/50">Fuentes verificadas</p><h2 class="serif text-4xl md:text-5xl tracking-[-.035em] leading-[.98] mt-4">Datos con anclaje oficial.</h2></div>
           <div class="grid sm:grid-cols-3 gap-5 text-sm leading-6">
-            <a class="source-card" href="https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia" rel="noopener noreferrer">ANP · Puerto de Colonia <span aria-hidden="true">↗</span></a>
-            <a class="source-card" href="https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura" rel="noopener noreferrer">ANP · Infraestructura <span aria-hidden="true">↗</span></a>
-            <a class="source-card" href="https://whc.unesco.org/en/list/747" rel="noopener noreferrer">UNESCO · Barrio Histórico <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={anpPortUrl} rel="noopener noreferrer">ANP · Puerto de Colonia <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={anpInfraUrl} rel="noopener noreferrer">ANP · Infraestructura <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={unescoUrl} rel="noopener noreferrer">UNESCO · Barrio Histórico <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={gubUyUrl} rel="noopener noreferrer">Uruguay · Portal oficial del Estado <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={intendenciaColoniaUrl} rel="noopener noreferrer">Intendencia de Colonia <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={mapsUrl} rel="noopener noreferrer">Google Maps · Puerto de Colonia <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
@@ -330,7 +429,8 @@ const faqLd = {
         <div>
           <img src="/logo.svg" alt="Puerto de Colonia" class="w-64 brightness-0 invert opacity-80" />
           <p class="mt-6 max-w-2xl text-sm leading-6">Sitio informativo independiente y no oficial. No representa a la Administración Nacional de Puertos, a las navieras ni a organismos públicos. Horarios, servicios y condiciones de viaje pueden cambiar: confirmalos con el operador correspondiente.</p>
-          <p class="mt-4 text-xs leading-5 text-white/45">Créditos fotográficos: Andrés Franchi Ugart… (CC BY-SA 3.0), Liam Quinn (CC BY-SA 2.0), Mapep (CC BY-SA 4.0) y Gonzalo Bidarth (CC BY-SA 4.0), vía Wikimedia Commons.</p>
+          <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80"><strong class="text-white">Puerto de Colonia</strong> — Terminal Fluviomarítima Colonia (ANP). {streetAddress}, {postalCode} {cityName}, {regionName}, Uruguay. Tel. <a href="tel:+59845222140" class="underline underline-offset-4">+598 4522 2140</a> · Plus Code {plusCode}.</p>
+          <p class="mt-4 max-w-2xl text-xs leading-5 text-white/45">Todas las fotografías mostradas en este sitio pertenecen a sus autores originales: la propiedad y los derechos de autor de cada imagen corresponden a sus fotógrafos. Créditos: Andrés Franchi Ugart… (CC BY-SA 3.0), Liam Quinn (CC BY-SA 2.0), Mapep (CC BY-SA 4.0) y Gonzalo Bidarth (CC BY-SA 4.0), vía Wikimedia Commons.</p>
         </div>
         <div class="text-sm md:text-right"><a class="underline underline-offset-4" href="#mapa">Mapa</a><span class="mx-2">·</span><button id="cookie-settings" class="underline underline-offset-4 cursor-pointer">Cookies</button></div>
       </div>
@@ -372,6 +472,13 @@ const faqLd = {
         document.getElementById('cookie-close')?.addEventListener('click', () => banner?.setAttribute('data-visible', 'false'));
         document.getElementById('cookie-settings')?.addEventListener('click', () => banner?.setAttribute('data-visible', 'true'));
       })();
+    </script>
+    <script is:inline>
+      if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
     </script>
   </body>
 </html>

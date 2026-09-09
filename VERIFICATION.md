@@ -1,23 +1,29 @@
 # Verificación de entrega
 
-## Comprobaciones estáticas realizadas
+## Comprobaciones realizadas en este entorno
 
-- Proyecto de una sola página: `src/pages/index.astro`.
-- No existe `pnpm-workspace.yaml`.
-- `package.json` fija versiones exactas y `packageManager`.
-- Node objetivo fijado en `.node-version` y `engines`.
-- `site` se configura únicamente en `astro.config.mjs` y puede permanecer vacío.
-- `@astrojs/sitemap` sólo se activa cuando `site` tiene valor.
-- Canonical, Open Graph y URL de JSON-LD se omiten cuando no existe `Astro.site`.
-- El iframe de Google Maps utiliza español y región Uruguay.
-- Logo y favicon comparten símbolo, paleta y lenguaje visual; se incluyen SVG, 16×16, 32×32 y 180×180.
-- GA4 se carga sólo después del consentimiento.
-- No se encontraron cadenas de dominio de ejemplo, host local ni esquemas de extensión de navegador en el código fuente.
+- `pnpm install --offline` (store en caché, 310 paquetes; `nodeLinker: hoisted` por symlinks no trazables en Windows).
+- `pnpm build` → OK, 1 página estática + `sitemap-index.xml` en `dist`.
+- `pnpm exec astro check` → **0 errores, 0 warnings, 0 hints**.
+- `read_lints` sobre `src/pages/index.astro` → 0 errores.
 
-## Verificación que no pudo completarse en este entorno
+## Verificación de la salida (`dist/index.html`)
 
-La ejecución solicitada de `CI=1 corepack pnpm install --frozen-lockfile` no pudo superar la descarga de pnpm porque el entorno de ejecución no tiene resolución DNS/salida a `registry.npmjs.org` (`EAI_AGAIN`). Por el mismo bloqueo de red no fue posible descargar al ZIP las fotografías reales desde Wikimedia Commons.
+- 3 bloques JSON-LD parseables:
+  - `TouristAttraction` + `CivicStructure` con `@id https://puertodecolonia.com/#attraction`, `image` absoluta, `isAccessibleForFree`, NAP, `geo`, `hasMap`, `openingHoursSpecification`, `aggregateRating` (4.2 / 20.979) y `sameAs`.
+  - `FAQPage` (8 preguntas).
+  - Grafo `Organization` / `WebSite` / `WebPage` (3 nodos).
+- TDK con nombre completo + ciudad; `description` oficial; canonical = `https://puertodecolonia.com/`.
+- `og:image` = `https://puertodecolonia.com/photos/puerto-terminal-exterior.jpg` + `og:image:alt`/width/height.
+- H1 con línea oficial **Terminal Fluviomarítima Colonia (ANP) · Colonia del Sacramento, Uruguay**; migas de pan *Inicio › Uruguay › Departamento de Colonia › Colonia del Sacramento › Puerto de Colonia*.
+- Fotografías locales (`/photos/*.jpg`) con `alt` semántico; **cero hotlinks a Wikimedia** en el HTML generado.
+- Mapa con el embed oficial `pb=…!4v1788749482937…`; enlaces a ANP, `gub.uy`, `colonia.gub.uy`, UNESCO y Google Maps.
+- PWA: `manifest.webmanifest` (name oficial, `theme_color #174d5d`, 5 iconos), `sw.js` registrado, `icons/icon-192.png`, `icons/icon-512.png`, `icons/icon.svg`.
+- GA4 `G-HXM22WWPKP` con consentimiento; sin cadenas de dominio de ejemplo ni hosts locales.
+- Pie con NAP completo (nombre oficial + dirección + teléfono + Plus Code) y declaración de propiedad de las fotografías.
 
-Como consecuencia, en esta copia no se generó `pnpm-lock.yaml` ni se pudo ejecutar honestamente `pnpm check` / `pnpm build`. Las fotografías reales permanecen referenciadas por URL y sus fuentes/licencias se documentan en `PHOTO_SOURCES.md`.
+## Notas del entorno
 
-No se declara como “aprobado” ningún paso que no se haya ejecutado.
+- `pnpm-workspace.yaml` fija `nodeLinker: hoisted` y la allowlist de scripts de `esbuild`/`workerd` (requerido por pnpm 12 en esta máquina).
+- La resolución de dependencias se hizo offline desde el store de pnpm; no se modificó la red ni se descargaron dependencias nuevas.
+- `dist/` no se sube al repositorio (ver `.gitignore`).

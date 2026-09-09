@@ -43,3 +43,21 @@
 【住宿建议】Para pasar una noche, elegir el Barrio Histórico si se prioriza ambiente, caminabilidad y arquitectura; optar por Centro / Av. General Flores si se busca acceso simple a comercios, transporte y al puerto.
 
 【住宿补充说明】Una excursión de día desde Buenos Aires es posible, pero dormir en Colonia permite disfrutar la ciudad cuando baja el flujo de visitantes y reduce el riesgo de apurar el regreso al último tramo de la jornada.
+
+---
+
+## Actualización de datos de entidad (Google Maps, 2026-09-09) — ya implementada
+
+Ficha oficial de la entidad vinculada al mapa (usada para NAP, JSON-LD y TDK):
+
+- Nombre en Google Maps: **Puerto de Colonia**
+- Nombre oficial / secundario: **Terminal Fluviomarítima Colonia (ANP)**
+- Categoría Google: **Cruise terminal**
+- Calificación: **4,2 / 5 (20.979 reseñas)**
+- Dirección: 70000 Colonia del Sacramento, Colonia Department, Uruguay (street code: Av. Roosevelt y Rivera)
+- Teléfono: **+59845222140** (+598 4522 2140)
+- Plus Code: **G5G4+FF**
+- Maps share: **https://maps.app.goo.gl/TeFfiSiPREgkBZDj6**
+- Embed oficial (pb): `!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s`
+
+Nota NAP: el título visible del sitio y de Google Maps es *Puerto de Colonia*; el nombre oficial *Terminal Fluviomarítima Colonia (ANP)* aparece como alternateName en Schema, en el H1 (línea secundaria), en header y en el pie para mantener coherencia con la ficha del mapa.
