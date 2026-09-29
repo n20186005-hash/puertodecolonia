@@ -46,14 +46,14 @@
 
 ---
 
-## Actualización de datos de entidad (Google Maps, 2026-09-09) — ya implementada
+## Actualización de datos de entidad (Google Maps, 2026-09-29) — ya implementada
 
 Ficha oficial de la entidad vinculada al mapa (usada para NAP, JSON-LD y TDK):
 
 - Nombre en Google Maps: **Puerto de Colonia**
 - Nombre oficial / secundario: **Terminal Fluviomarítima Colonia (ANP)**
 - Categoría Google: **Cruise terminal**
-- Calificación: **4,2 / 5 (20.979 reseñas)**
+- Calificación: **4,2 / 5 (21.019 reseñas)**
 - Dirección: 70000 Colonia del Sacramento, Colonia Department, Uruguay (street code: Av. Roosevelt y Rivera)
 - Teléfono: **+59845222140** (+598 4522 2140)
 - Plus Code: **G5G4+FF**
@@ -61,3 +61,24 @@ Ficha oficial de la entidad vinculada al mapa (usada para NAP, JSON-LD y TDK):
 - Embed oficial (pb): `!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s`
 
 Nota NAP: el título visible del sitio y de Google Maps es *Puerto de Colonia*; el nombre oficial *Terminal Fluviomarítima Colonia (ANP)* aparece como alternateName en Schema, en el H1 (línea secundaria), en header y en el pie para mantener coherencia con la ficha del mapa.
+
+---
+
+## Optimización SEO según Search Console (datos 2026-06-29 a 2026-09-26) — implementada
+
+**Diagnóstico:** 5 clics, 394 impresiones, CTR 1,27 %, ranking medio 8,0. Audiencia casi totalmente móvil (305/394 impresiones) y concentrada en Uruguay (310) con Argentina en segundo lugar (39 impresiones, 0 clics). El dominio aparece fragmentado en cuatro variantes (`https://apex`, `http://www`, `https://www`).
+
+**Consultas que concentran impresiones:** `puerto de colonia`, `puerto colonia`, `puerto de colonia del sacramento`, `puerto colonia del sacramento`, `colonia puerto`, `puerto colonia uruguay`, `porto colonia del sacramento`, `terminal colonia del sacramento`, `horario de atención`, `terminal de ferry`, `colonia del sacramento ferry terminal`, `terminal colonia`, `colonia express`.
+
+**Acciones aplicadas:**
+
+1. **TDK orientado a CTR**: el título pasó de una formulación descriptiva a una de intención — *Puerto de Colonia · Terminal de ferry y horarios | Colonia del Sacramento* — y la `description` incorpora **horario de atención**, **servicios**, **ferries a Buenos Aires**, **mapa** y **consejos de embarque`.
+2. **Nuevas secciones de respuesta a la consulta**:
+   - `#horarios`: horario de atención de la terminal de ferry, referencia pública de Colonia Express (06:30–21:30), diferencia entre hora de salida y hora de presentación, frecuencia de salidas a Buenos Aires y duración del cruce del Río de la Plata, con tarjetas de **Colonia Express** y **Buquebus**.
+   - `#servicios`: boleterías y check-in, migraciones y aduana, sala de espera, sanitarios, gastronomía, preembarque de vehículos, conexión terrestre, accesibilidad y escalas de cruceros.
+3. **FAQ ampliada de 8 a 17 preguntas** cubriendo `horario de atención`, `terminal de ferry`, navieras, duración del cruce, servicios de la terminal, anticipación de embarque, ida y vuelta en el día, relación con el Barrio Histórico, embarque de vehículos y documentación para cruzar entre Uruguay y Argentina.
+4. **Schema**: `TouristAttraction` se amplía con `TransitStation` (terminal de ferry) y `publicAccess`; `sameAs` suma las navieras. `aggregateRating` actualizado a **4,2 / 21.019**.
+5. **Canonicalización**: guía en `README.md` (Always Use HTTPS + Redirect Rule `www` → apex); `public/_headers` incorpora HSTS y cabeceras de seguridad, con caché para fotos/iconos; `public/_redirects` mantiene sólo reglas de ruta.
+6. **Móvil (85 % del tráfico)**: la navegación superior, antes oculta en pantallas pequeñas, pasa a ser una franja deslizable en horizontal; se añade `preload` de la imagen del hero para mejorar el LCP en conexiones móviles.
+
+**Pendiente sugerido:** versión en portugués (`porto de colonia del sacramento` ya genera impresiones) y valorar contenido específico para el público argentino (39 impresiones sin clics).

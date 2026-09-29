@@ -1,0 +1,6 @@
+# Redirecciones a nivel de ruta (Cloudflare Static Assets).
+# Las reglas de dominio (http -> https y www -> apex) no se pueden expresar aquí:
+# se configuran en el panel de Cloudflare (Always Use HTTPS + Redirect Rules).
+
+/index.html  /   301
+/index       /   301

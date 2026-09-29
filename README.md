@@ -39,12 +39,24 @@ pnpm deploy
 
 No usa base de datos, login ni CMS.
 
+### Canonicalización del dominio (http/https y www/apex)
+
+Search Console registra cuatro variantes (`http://www…`, `https://www…`, `http://apex`, `https://apex`). Los Static Assets de Workers **no** admiten reglas de redirección a nivel de dominio, así que se resuelven en el panel de Cloudflare:
+
+1. **SSL/TLS › Edge certificates → Always Use HTTPS**: ON (301 de `http://` a `https://`).
+2. **Rules › Redirect Rules → nueva regla**:
+   - Expresión: `hostname eq "www.puertodecolonia.com"`.
+   - Acción: *Dynamic redirect* 301 a `concat("https://puertodecolonia.com", http.request.uri.query)` → `https://puertodecolonia.com<ruta>`.
+
+`public/_headers` envía HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` y caché para fotos/iconos. `public/_redirects` sólo lleva reglas de ruta (`/index.html` → `/`), porque las de dominio no aplican en este formato.
+
 ## SEO — vinculación de entidad
 
-- TDK y Open Graph con el nombre completo + ciudad: *Puerto de Colonia (Colonia del Sacramento) · Guía, ferries y mapa*; `og:image` absoluto = `/photos/puerto-terminal-exterior.jpg` (1280×905) + alt.
+- TDK orientado a intención de búsqueda (*horarios*, *terminal de ferry*, *servicios*, *cómo llegar*): title = *Puerto de Colonia · Terminal de ferry y horarios | Colonia del Sacramento*; `description` con **horario de atención + servicios + ferries a Buenos Aires + mapa** (objetivo: subir el CTR, actualmente ~1,3 % con ranking medio ~8). `og:image` absoluto = `/photos/puerto-terminal-exterior.jpg` (1280×905) + alt.
+- Secciones que responden las consultas reales de Search Console: `#horarios` (horario de atención, hora de presentación, navieras Colonia Express y Buquebus) y `#servicios` (boleterías, migraciones, aduana, espera, accesibilidad, preembarque, cruceros).
 - JSON-LD en `index.astro`:
-  - `TouristAttraction` con `@id …/#attraction`, `alternateName` (Terminal Fluviomarítima Colonia (ANP), Terminal Puerto Colonia), `image`, `isAccessibleForFree`, NAP completo, `geo`, `hasMap`, `openingHoursSpecification`, `aggregateRating` (4.2 / 20.979) y `sameAs` (ANP + Google Maps).
-  - `FAQPage` (8 preguntas, visibles en la página).
+  - `TouristAttraction` + `TransitStation` (`terminal de ferry`) con `@id …/#attraction`, `alternateName` (Terminal Fluviomarítima Colonia (ANP), Terminal Puerto Colonia), `image`, `isAccessibleForFree`, NAP completo, `geo`, `hasMap`, `openingHoursSpecification`, `publicAccess`, `aggregateRating` (4.2 / 21.019) y `sameAs` (ANP, Google Maps, navieras).
+  - `FAQPage` (17 preguntas, todas visibles en la página).
   - Grafo `Organization` / `WebSite` / `WebPage`.
 - H1 = *Puerto de Colonia* + línea oficial **Terminal Fluviomarítima Colonia (ANP) · Colonia del Sacramento, Uruguay**; migas de pan visibles *Inicio › Uruguay › Departamento de Colonia › Colonia del Sacramento › Puerto de Colonia*.
 - Fotografías con `alt` semántico (nombre completo + ciudad); créditos y declaración de propiedad de los fotógrafos en el pie.
@@ -55,7 +67,7 @@ No usa base de datos, login ni CMS.
 ## Datos de la entidad (Google Maps)
 
 - Nombre: Puerto de Colonia · Terminal Fluviomarítima Colonia (ANP) — *Cruise terminal*.
-- Calificación 4.2 / 5 (20.979 reseñas).
+- Calificación 4.2 / 5 (21.019 reseñas, actualizado el 29 de septiembre de 2026).
 - Dirección: Av. Roosevelt y Rivera, 70000 Colonia del Sacramento, Departamento de Colonia, Uruguay · Plus Code G5G4+FF.
 - Teléfono: +598 4522 2140 · Mapa: https://maps.app.goo.gl/TeFfiSiPREgkBZDj6
 

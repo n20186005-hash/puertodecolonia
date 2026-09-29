@@ -18,6 +18,13 @@ const anpInfraUrl = 'https://www.anp.com.uy/index.php/es/inicio/puertos/comercia
 const unescoUrl = 'https://whc.unesco.org/en/list/747';
 const gubUyUrl = 'https://www.gub.uy/';
 const intendenciaColoniaUrl = 'https://www.colonia.gub.uy/';
+const coloniaExpressUrl = 'https://www.coloniaexpress.com/';
+const buquebusUrl = 'https://www.buquebus.com/';
+
+/* ---- Valoración pública de la entidad (Google Maps, 2026-09-29) ---- */
+const ratingValue = '4.2';
+const reviewCount = '21019';
+const reviewCountDisplay = '21.019';
 
 /* ---- TDK / URLs derivadas del dominio único ---- */
 const base = Astro.site ?? new URL('https://puertodecolonia.com');
@@ -27,8 +34,8 @@ const heroPath = '/photos/puerto-terminal-exterior.jpg';
 const heroImage = origin + heroPath;
 const ferryImage = origin + '/photos/ferries-terminal.jpg';
 
-const title = 'Puerto de Colonia (Colonia del Sacramento) · Guía, ferries y mapa';
-const description = 'Guía del Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP): ferries a Buenos Aires, mapa, cómo llegar y qué visitar en Colonia del Sacramento, Uruguay.';
+const title = 'Puerto de Colonia · Terminal de ferry y horarios | Colonia del Sacramento';
+const description = 'Horario de atención, servicios y ferries a Buenos Aires en el Puerto de Colonia (Terminal Fluviomarítima ANP). Mapa, cómo llegar y consejos de embarque.';
 const ogImageAlt = 'Terminal del Puerto de Colonia en Colonia del Sacramento, Uruguay';
 
 const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s';
@@ -65,13 +72,49 @@ const faq = [
   {
     q: '¿Cuánto tiempo conviene reservar para conocer Colonia desde el puerto?',
     a: 'Para mirar la terminal y el frente portuario alcanza una visita corta; para sumar el Barrio Histórico, faro, rambla y una comida, reservá varias horas. Una noche permite ver Colonia con un ritmo mucho más tranquilo.'
+  },
+  {
+    q: '¿Cuál es el horario de atención de la terminal de ferry de Colonia del Sacramento?',
+    a: 'El movimiento de la terminal de ferry de Colonia del Sacramento se organiza según los arribos y salidas programados. Como referencia pública, Colonia Express informa atención diaria de 06:30 a 21:30 en su terminal de Colonia. Si viajás, la hora que importa es la de presentación indicada en tu pasaje, no la del último ferry.'
+  },
+  {
+    q: '¿Qué navieras operan desde el Puerto de Colonia?',
+    a: 'Las conexiones fluviales entre el Puerto de Colonia y Buenos Aires son operadas por navieras privadas, entre ellas Colonia Express y Buquebus. Cada una vende su propio pasaje y fija sus condiciones, por lo que conviene comprar y confirmar el check-in directamente con la empresa del ticket; los sitios de ambas navieras son la referencia vigente para los horarios.'
+  },
+  {
+    q: '¿Cuánto demora el ferry entre Colonia del Sacramento y Buenos Aires?',
+    a: 'La travesía del Río de la Plata varía según el buque y el tipo de servicio que contrates: los servicios rápidos cubren el cruce en poco más de una hora, mientras que navegaciones con otro tipo de buque o escalas intermedias llevan bastante más tiempo. Consultá la duración exacta en el pasaje y tenela en cuenta para planificar el regreso.'
+  },
+  {
+    q: '¿Qué servicios hay dentro de la terminal de ferry?',
+    a: 'El edificio concentra boleterías de las navieras, controles de migración y aduana, salas de espera, sanitarios y espacios de gastronomía, con áreas exteriores de preembarque para vehículos. La disponibilidad de cada servicio depende del horario y de la temporada; las zonas operativas están restringidas y señalizadas.'
+  },
+  {
+    q: '¿Con cuánta anticipación hay que estar en la terminal antes de embarcar?',
+    a: 'La anticipación la define cada naviera y se imprime en el pasaje. Migraciones, aduana, despacho de equipaje, embarque de vehículos y control de documentos tienen tiempos propios, por lo que la hora de presentación suele ser bastante anterior a la salida. Llegá con margen y con el documento y el ticket a mano.'
+  },
+  {
+    q: '¿Puedo cruzar y volver de Buenos Aires en el mismo día?',
+    a: 'Sí, existe conexión de ida y vuelta en el día, y es una de las combinaciones más habituales entre Argentina y Uruguay. Revisá la frecuencia de salidas de cada naviera en tu fecha, porque varía según temporada y día de la semana, y comprá ambos tramos antes de embarcar.'
+  },
+  {
+    q: '¿El Puerto de Colonia está dentro del Barrio Histórico?',
+    a: 'No. La Terminal Fluviomarítima Colonia (ANP) está fuera del perímetro del Barrio Histórico de Colonia del Sacramento, aunque el centro histórico —declarado Patrimonio Mundial por la UNESCO— queda a pocos minutos a pie del puerto.'
+  },
+  {
+    q: '¿Puedo embarcar mi auto o moto en el ferry?',
+    a: 'Los ferries del Puerto de Colonia admiten vehículos en determinados servicios y con cupo limitado. El traslado se paga aparte del pasaje de pasajero, requiere documentación del vehículo y utiliza el circuito de preembarque del puerto, por lo que hay que reservarlo y confirmarlo con la naviera.'
+  },
+  {
+    q: '¿Qué documentación necesito para cruzar entre Uruguay y Argentina?',
+    a: 'Para pasajeros de Argentina y Uruguay alcanza con documento de identidad vigente; en los demás casos se requiere pasaporte y pueden exigirse autorizaciones para menores o visados según nacionalidad. Las reglas las aplican Migración y Aduana en la propia terminal, así que verificá los requisitos vigentes con tu naviera antes de viajar.'
   }
 ];
 
 /* ---- Schema.org: TouristAttraction (entidad geográfica vinculada al mapa) ---- */
 const attractionLd = {
   '@context': 'https://schema.org',
-  '@type': ['TouristAttraction', 'CivicStructure'],
+  '@type': ['TouristAttraction', 'TransitStation', 'CivicStructure'],
   '@id': canonical + '#attraction',
   name: siteName,
   alternateName: [officialName, 'Terminal Puerto Colonia', cityName + ' ' + siteName],
@@ -102,13 +145,14 @@ const attractionLd = {
     closes: '21:30',
     description: 'Horario de referencia publicado por Colonia Express; la operativa portuaria depende de arribos y salidas.'
   }],
+  publicAccess: true,
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.2',
-    reviewCount: '20979',
+    ratingValue,
+    reviewCount,
     bestRating: '5'
   },
-  sameAs: [anpPortUrl, mapsUrl]
+  sameAs: [anpPortUrl, mapsUrl, coloniaExpressUrl, buquebusUrl]
 };
 
 /* ---- Schema.org: FAQPage ---- */
@@ -166,6 +210,9 @@ const graphLd = {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
+    <link rel="preload" as="image" href={heroPath} fetchpriority="high" />
+    <link rel="alternate" hreflang="es-UY" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_UY" />
     <meta property="og:site_name" content={siteName} />
@@ -191,7 +238,7 @@ const graphLd = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(graphLd)}></script>
   </head>
   <body>
-    <header class="absolute top-0 inset-x-0 z-10 text-white">
+    <header class="site-header absolute top-0 inset-x-0 z-10 text-white">
       <div class="shell flex items-center justify-between gap-8 py-5 border-b border-white/25">
         <a href="#inicio" class="font-semibold tracking-tight no-underline flex items-center gap-3" aria-label="Puerto de Colonia, inicio">
           <svg aria-hidden="true" viewBox="0 0 64 38" class="w-14 h-9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -204,6 +251,8 @@ const graphLd = {
         </a>
         <nav class="desktop-nav flex items-center gap-6" aria-label="Navegación principal">
           <a class="nav-link" href="#guia">Guía</a>
+          <a class="nav-link" href="#horarios">Horarios</a>
+          <a class="nav-link" href="#servicios">Servicios</a>
           <a class="nav-link" href="#ruta">Recorrido</a>
           <a class="nav-link" href="#llegar">Cómo llegar</a>
           <a class="nav-link" href="#mapa">Mapa</a>
@@ -256,7 +305,7 @@ const graphLd = {
               <div class="info-card col-span-4"><p class="kicker opacity-55">Teléfono</p><p class="mt-2"><a href="tel:+59845222140" class="underline decoration-black/20 underline-offset-4">{telephoneDisplay}</a></p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Referencia horaria</p><p class="mt-2">Operativa según arribos y salidas; Colonia Express publica 06:30–21:30.</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Acceso público</p><p class="mt-2">Sin entrada turística. El pasaje de ferry se paga aparte.</p></div>
-              <div class="info-card col-span-4"><p class="kicker opacity-55">Google</p><p class="mt-2">4,2 / 5 · 20.979 reseñas</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Google</p><p class="mt-2">4,2 / 5 · {reviewCountDisplay} reseñas</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Plus Code</p><p class="mt-2">G5G4+FF · Colonia del Sacramento</p></div>
             </div>
           </div>
@@ -333,12 +382,62 @@ const graphLd = {
       <section id="llegar" class="bg-white/45 border-y border-[var(--line)] py-20 md:py-28">
         <div class="shell">
           <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Logística real</p><h2 class="section-title mt-4">Cómo llegar al Puerto de Colonia y cómo moverse.</h2></div>
+          <p class="mt-6 leading-7 max-w-2xl">Completá la información con los <a class="underline decoration-black/30 underline-offset-4" href="#horarios">horarios de la terminal de ferry</a> y con los <a class="underline decoration-black/30 underline-offset-4" href="#servicios">servicios del edificio</a> antes de definir el viaje.</p>
           <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Los ferries de pasajeros y vehículos son el vínculo internacional directo entre Buenos Aires y el Puerto de Colonia. Comprá el pasaje con la naviera y revisá documentación, equipaje y hora de presentación.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Montevideo</h3><p class="mt-3 leading-7 opacity-75">Colonia está conectada por carretera y ómnibus interdepartamentales. La terminal terrestre está próxima al puerto, lo que facilita combinar bus y ferry.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">La distancia desde el centro histórico y la rambla es caminable para la mayoría de visitantes. Taxi o remise son prácticos con equipaje pesado, personas con movilidad reducida o clima adverso.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera, frente a la terminal. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera.</p></article>
           </div>
+        </div>
+      </section>
+
+      <section id="horarios" class="shell py-20 md:py-28">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-14 lg:gap-24">
+          <div>
+            <p class="kicker text-[var(--terracotta)]">Horario de atención</p>
+            <h2 class="section-title mt-4">Horarios y salidas de la terminal de ferry.</h2>
+            <p class="mt-7 leading-7 max-w-md">El Puerto de Colonia no abre como una atracción: su horario de atención lo marcan los ferries. La terminal se activa alrededor de cada arribo y salida, y el check-in se hace en las boleterías de cada naviera.</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
+            <article class="info-card"><h3 class="font-semibold text-lg">Horario de referencia</h3><p class="mt-3 leading-7 opacity-75">Como referencia pública, <strong>Colonia Express</strong> informa atención diaria de <strong>06:30 a 21:30</strong> en su terminal de Colonia. El resto del complejo se ordena según el cronograma de arribos y salidas.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Hora de presentación</h3><p class="mt-3 leading-7 opacity-75">No confundas salida con presentación: cada naviera exige estar antes en la terminal para boletería, migraciones, aduana y embarque. Esa anticipación figura impresa en el pasaje.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Salidas a Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Las conexiones fluviales entre el Puerto de Colonia del Sacramento y Buenos Aires operan durante toda la semana, con refuerzos habituales en fines de semana y temporada alta.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Duración del cruce</h3><p class="mt-3 leading-7 opacity-75">Depende del buque y del tipo de servicio: los ferries rápidos cruzan el Río de la Plata en poco más de una hora, mientras que otros servicios o escalas intermedias llevan bastante más tiempo.</p></article>
+          </div>
+        </div>
+        <div class="mt-16 border-t border-[var(--line)] pt-10">
+          <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-24">
+            <div><p class="kicker opacity-55">Navieras que operan el ferry</p><h3 class="serif text-3xl md:text-4xl tracking-[-.03em] leading-[1.05] mt-4">Consultá el horario en la fuente que lo define.</h3></div>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <a class="info-card no-underline hover:opacity-75" href={coloniaExpressUrl} rel="noopener noreferrer">
+                <h4 class="font-semibold text-lg">Colonia Express <span aria-hidden="true">↗</span></h4>
+                <p class="mt-3 leading-7 opacity-75">Ferries rápidos Buenos Aires ↔ Colonia del Sacramento. Publica su propio horario de atención en la terminal de Colonia y vende el check-in directamente al pasajero.</p>
+              </a>
+              <a class="info-card no-underline hover:opacity-75" href={buquebusUrl} rel="noopener noreferrer">
+                <h4 class="font-semibold text-lg">Buquebus <span aria-hidden="true">↗</span></h4>
+                <p class="mt-3 leading-7 opacity-75">Servicios de pasajeros y embarque de vehículos sobre el Río de la Plata, con su propio cronograma, clases y condiciones de equipaje.</p>
+              </a>
+            </div>
+          </div>
+          <p class="mt-8 max-w-3xl leading-7 text-sm text-[color:rgba(16,45,54,.65)]">Horarios, frecuencias, buques y puertas de embarque cambian según naviera, temporada y condiciones del río: confirmalos siempre con el pasaje y con anticipación a la hora de presentación.</p>
+        </div>
+      </section>
+
+      <section id="servicios" class="border-y border-[var(--line)] bg-[#ebe5d7] py-20 md:py-28">
+        <div class="shell">
+          <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Servicios</p><h2 class="section-title mt-4">Qué hay dentro de la terminal de Colonia.</h2></div>
+          <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+            <article class="info-card"><h3 class="font-semibold text-lg">Boleterías y check-in</h3><p class="mt-3 leading-7 opacity-75">Cada naviera atiende sus propios mostradores de venta, cambio y emisión de pasajes dentro del edificio principal de la terminal.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Migraciones y Aduana</h3><p class="mt-3 leading-7 opacity-75">Los cruces internacionales se controlan en la propia terminal. Documento o pasaporte según nacionalidad, equipaje sujeto a fiscalización y zonas restringidas señalizadas.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Espera y sanitarios</h3><p class="mt-3 leading-7 opacity-75">Sala de espera en niveles cubiertos, sanitarios y circulaciones protegidas hacia las pasarelas de embarque; los servicios se reducen fuera del horario de operación de cada naviera.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Gastronomía y café</h3><p class="mt-3 leading-7 opacity-75">Espacios para comer algo antes o después de la navegación. Si viajás muy temprano o muy tarde, llevá previsto algo porque la oferta depende del flujo de salidas.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Preembarque de vehículos</h3><p class="mt-3 leading-7 opacity-75">Áreas pavimentadas y carriles para autos, motos y ómnibus con pasaje de ferry, con circuito propio dentro del recinto portuario.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Conexión terrestre</h3><p class="mt-3 leading-7 opacity-75">Salida directa hacia el centro y hacia la rambla; taxis y remises trabajan con los arribos y la terminal de ómnibus interdepartamentales está próxima.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Accesibilidad</h3><p class="mt-3 leading-7 opacity-75">La terminal moderna se organiza con rampas y circulación en nivel. La asistencia para personas con movilidad reducida se solicita a la naviera al comprar el pasaje.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Cruceros y escalas</h3><p class="mt-3 leading-7 opacity-75">Las escalas de cruceros se coordinan con la Administración Nacional de Puertos según temporada y calado; el pasajero de crucero utiliza el mismo frente portuario.</p></article>
+          </div>
+          <p class="mt-12 max-w-3xl leading-7">Los muelles, las pasarelas de embarque y los puestos de control son áreas operativas: no permanecen abiertas al público de forma permanente y se circula sólo por los sectores habilitados. <a href="#mapa" class="underline decoration-black/30 underline-offset-4">Ver ubicación en el mapa</a>.</p>
         </div>
       </section>
 
@@ -393,7 +492,7 @@ const graphLd = {
                 <a href={mapsUrl} class="pill border-white/60" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
                 <a href={anpPortUrl} class="pill border-white/60 text-[.72rem]" rel="noopener noreferrer">ANP · Ficha oficial ↗</a>
               </div>
-              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre 20.979 reseñas (terminal de cruceros y ferries).</p>
+              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre {reviewCountDisplay} reseñas (terminal de cruceros y ferries · actualizado el 29 de septiembre de 2026).</p>
             </div>
             <div class="border border-white/20 p-2 bg-white/5">
               <iframe src={mapEmbed} width="100%" height="520" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la ubicación del Puerto de Colonia en Colonia del Sacramento"></iframe>
@@ -408,6 +507,8 @@ const graphLd = {
           <div class="grid sm:grid-cols-3 gap-5 text-sm leading-6">
             <a class="source-card" href={anpPortUrl} rel="noopener noreferrer">ANP · Puerto de Colonia <span aria-hidden="true">↗</span></a>
             <a class="source-card" href={anpInfraUrl} rel="noopener noreferrer">ANP · Infraestructura <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={coloniaExpressUrl} rel="noopener noreferrer">Colonia Express · Horarios <span aria-hidden="true">↗</span></a>
+            <a class="source-card" href={buquebusUrl} rel="noopener noreferrer">Buquebus · Horarios <span aria-hidden="true">↗</span></a>
             <a class="source-card" href={unescoUrl} rel="noopener noreferrer">UNESCO · Barrio Histórico <span aria-hidden="true">↗</span></a>
             <a class="source-card" href={gubUyUrl} rel="noopener noreferrer">Uruguay · Portal oficial del Estado <span aria-hidden="true">↗</span></a>
             <a class="source-card" href={intendenciaColoniaUrl} rel="noopener noreferrer">Intendencia de Colonia <span aria-hidden="true">↗</span></a>
