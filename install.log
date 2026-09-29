@@ -1,2 +1,247 @@
-✓ Lockfile passes supply-chain policies (verified 1h ago)
+✓ Lockfile passes supply-chain policies (verified 2h ago)
 Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 0.00 B/38.79 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 0.00 B/36.54 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 0.00 B/38.90 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 0.00 B/35.36 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 851.12 kB/38.79 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 2.36 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 2.90 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 3.70 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 2.44 MB/38.79 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 4.56 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 5.12 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 5.72 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 6.25 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 6.95 MB/35.36 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 6.10 MB/38.90 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 8.03 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 8.38 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 7.56 MB/38.90 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 9.62 MB/35.36 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 8.24 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 8.40 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 8.60 MB/38.79 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 11.46 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 9.85 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 9.65 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 10.11 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 10.88 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 12.18 MB/38.90 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 14.09 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 14.52 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 14.88 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 15.32 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 12.66 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 12.84 MB/38.79 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 16.08 MB/35.36 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 14.77 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 15.03 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 15.42 MB/38.90 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 17.66 MB/36.54 MB
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 1
+Will retry in 10s. 1 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 1
+Will retry in 10s. 1 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 1
+Will retry in 10s. 1 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 1
+Will retry in 10s. 1 retries left.
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 423.00 B/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 3.24 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 10.47 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 17.37 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 3.06 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 4.32 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 5.73 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 8.09 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 9.43 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 11.70 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 9.96 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 13.11 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 15.70 MB/38.90 MB
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-darwin-arm64/-/workerd-darwin-arm64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 2
+Will retry in 1m. 0 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-darwin-64/-/workerd-darwin-64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 2
+Will retry in 1m. 0 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-linux-64/-/workerd-linux-64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 2
+Will retry in 1m. 0 retries left.
+[WARN] GET https://registry.npmjs.org/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20260903.1.tgz error (Failed to fetch https://registry.npmjs.org/@cloudflare/workerd-linux-arm64/-/workerd-linux-arm64-1.20260903.1.tgz: error decoding response body: request or response body error: operation timed out) — 2
+Will retry in 1m. 0 retries left.
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 423.00 B/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 1.35 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 6.62 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 14.53 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 423.00 B/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 3.42 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 12.29 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 695.75 kB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 3.07 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 6.15 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 9.90 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 15.12 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 5.11 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 7.12 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 9.95 MB/38.79 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 13.62 MB/38.79 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 17.85 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 18.91 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-arm64@1.20260903.1: 19.67 MB/35.36 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 17.86 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 18.37 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 18.98 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 19.56 MB/36.54 MB
+Downloading @cloudflare/workerd-darwin-64@1.20260903.1: 20.39 MB/36.54 MB
+Downloading @cloudflare/workerd-linux-64@1.20260903.1: 19.59 MB/38.90 MB
+Downloading @cloudflare/workerd-linux-arm64@1.20260903.1: 18.18 MB/38.79 MB
+Packages: +484
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: H:\.pnpm-store\v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 484, reused 480, downloaded 0, added 1
+Progress: resolved 484, reused 480, downloaded 0, added 3
+Progress: resolved 484, reused 480, downloaded 0, added 7
+Progress: resolved 484, reused 480, downloaded 0, added 17
+Progress: resolved 484, reused 480, downloaded 0, added 32
+Progress: resolved 484, reused 480, downloaded 0, added 35
+Progress: resolved 484, reused 480, downloaded 0, added 41
+Progress: resolved 484, reused 480, downloaded 0, added 48
+Progress: resolved 484, reused 480, downloaded 0, added 51
+Progress: resolved 484, reused 480, downloaded 0, added 60
+Progress: resolved 484, reused 480, downloaded 0, added 66
+Progress: resolved 484, reused 480, downloaded 0, added 69
+Progress: resolved 484, reused 480, downloaded 0, added 71
+Progress: resolved 484, reused 480, downloaded 0, added 74
+Progress: resolved 484, reused 480, downloaded 0, added 76
+Progress: resolved 484, reused 480, downloaded 0, added 85
+Progress: resolved 484, reused 480, downloaded 0, added 86
+Progress: resolved 484, reused 480, downloaded 0, added 92
+Progress: resolved 484, reused 480, downloaded 0, added 95
+Progress: resolved 484, reused 480, downloaded 0, added 98
+Progress: resolved 484, reused 480, downloaded 0, added 99
+Progress: resolved 484, reused 480, downloaded 0, added 100
+Progress: resolved 484, reused 480, downloaded 0, added 101
+Progress: resolved 484, reused 480, downloaded 0, added 107
+Progress: resolved 484, reused 480, downloaded 0, added 112
+Progress: resolved 484, reused 480, downloaded 0, added 116
+Progress: resolved 484, reused 480, downloaded 0, added 120
+Progress: resolved 484, reused 480, downloaded 0, added 124
+Progress: resolved 484, reused 480, downloaded 0, added 131
+Progress: resolved 484, reused 480, downloaded 0, added 140
+Progress: resolved 484, reused 480, downloaded 0, added 142
+Progress: resolved 484, reused 480, downloaded 0, added 145
+Progress: resolved 484, reused 480, downloaded 0, added 147
+Progress: resolved 484, reused 480, downloaded 0, added 152
+Progress: resolved 484, reused 480, downloaded 0, added 155
+Progress: resolved 484, reused 480, downloaded 0, added 157
+Progress: resolved 484, reused 480, downloaded 0, added 162
+Progress: resolved 484, reused 480, downloaded 0, added 164
+Progress: resolved 484, reused 480, downloaded 0, added 170
+Progress: resolved 484, reused 480, downloaded 0, added 174
+Progress: resolved 484, reused 480, downloaded 0, added 179
+Progress: resolved 484, reused 480, downloaded 0, added 183
+Progress: resolved 484, reused 480, downloaded 0, added 185
+Progress: resolved 484, reused 480, downloaded 0, added 187
+Progress: resolved 484, reused 480, downloaded 0, added 190
+Progress: resolved 484, reused 480, downloaded 0, added 195
+Progress: resolved 484, reused 480, downloaded 0, added 198
+Progress: resolved 484, reused 480, downloaded 0, added 201
+Progress: resolved 484, reused 480, downloaded 0, added 205
+Progress: resolved 484, reused 480, downloaded 0, added 208
+Progress: resolved 484, reused 480, downloaded 0, added 210
+Progress: resolved 484, reused 480, downloaded 0, added 212
+Progress: resolved 484, reused 480, downloaded 0, added 214
+Progress: resolved 484, reused 480, downloaded 0, added 216
+Progress: resolved 484, reused 480, downloaded 0, added 219
+Progress: resolved 484, reused 480, downloaded 0, added 221
+Progress: resolved 484, reused 480, downloaded 0, added 225
+Progress: resolved 484, reused 480, downloaded 0, added 228
+Progress: resolved 484, reused 480, downloaded 0, added 231
+Progress: resolved 484, reused 480, downloaded 0, added 235
+Progress: resolved 484, reused 480, downloaded 0, added 238
+Progress: resolved 484, reused 480, downloaded 0, added 241
+Progress: resolved 484, reused 480, downloaded 0, added 242
+Progress: resolved 484, reused 480, downloaded 0, added 244
+Progress: resolved 484, reused 480, downloaded 0, added 249
+Progress: resolved 484, reused 480, downloaded 0, added 253
+Progress: resolved 484, reused 480, downloaded 0, added 256
+Progress: resolved 484, reused 480, downloaded 0, added 259
+Progress: resolved 484, reused 480, downloaded 0, added 263
+Progress: resolved 484, reused 480, downloaded 0, added 264
+Progress: resolved 484, reused 480, downloaded 0, added 268
+Progress: resolved 484, reused 480, downloaded 0, added 274
+Progress: resolved 484, reused 480, downloaded 0, added 276
+Progress: resolved 484, reused 480, downloaded 0, added 279
+Progress: resolved 484, reused 480, downloaded 0, added 281
+Progress: resolved 484, reused 480, downloaded 0, added 283
+Progress: resolved 484, reused 480, downloaded 0, added 289
+Progress: resolved 484, reused 480, downloaded 0, added 291
+Progress: resolved 484, reused 480, downloaded 0, added 293
+Progress: resolved 484, reused 480, downloaded 0, added 295
+Progress: resolved 484, reused 480, downloaded 0, added 298
+Progress: resolved 484, reused 480, downloaded 0, added 299
+Progress: resolved 484, reused 480, downloaded 0, added 300
+Progress: resolved 484, reused 480, downloaded 0, added 301
+Progress: resolved 484, reused 480, downloaded 0, added 303
+Progress: resolved 484, reused 480, downloaded 0, added 304
+Progress: resolved 484, reused 480, downloaded 0, added 305
+Progress: resolved 484, reused 480, downloaded 0, added 306
+Progress: resolved 484, reused 480, downloaded 0, added 308
+Progress: resolved 484, reused 480, downloaded 0, added 311
+Progress: resolved 484, reused 480, downloaded 0, added 314
+Progress: resolved 484, reused 480, downloaded 0, added 315
+Progress: resolved 484, reused 480, downloaded 0, added 320
+Progress: resolved 484, reused 480, downloaded 0, added 322
+Progress: resolved 484, reused 480, downloaded 0, added 323
+Progress: resolved 484, reused 480, downloaded 0, added 325
+Progress: resolved 484, reused 480, downloaded 0, added 327
+Progress: resolved 484, reused 480, downloaded 0, added 328
+Progress: resolved 484, reused 480, downloaded 0, added 330
+Progress: resolved 484, reused 480, downloaded 0, added 332
+Progress: resolved 484, reused 480, downloaded 0, added 334
+Progress: resolved 484, reused 480, downloaded 0, added 336
+Progress: resolved 484, reused 480, downloaded 0, added 338
+Progress: resolved 484, reused 480, downloaded 0, added 339
+Progress: resolved 484, reused 480, downloaded 0, added 342
+Progress: resolved 484, reused 480, downloaded 0, added 343
+Progress: resolved 484, reused 480, downloaded 0, added 344
+Progress: resolved 484, reused 480, downloaded 0, added 346
+Progress: resolved 484, reused 480, downloaded 0, added 348
+Progress: resolved 484, reused 480, downloaded 0, added 350
+Progress: resolved 484, reused 480, downloaded 0, added 353
+Progress: resolved 484, reused 480, downloaded 0, added 355
+Progress: resolved 484, reused 480, downloaded 0, added 357
+Progress: resolved 484, reused 480, downloaded 0, added 358
+Progress: resolved 484, reused 480, downloaded 0, added 360
+Progress: resolved 484, reused 480, downloaded 0, added 361
+Progress: resolved 484, reused 480, downloaded 0, added 362
+Progress: resolved 484, reused 480, downloaded 0, added 363
+Progress: resolved 484, reused 480, downloaded 0, added 365
+Progress: resolved 484, reused 480, downloaded 0, added 368
+Progress: resolved 484, reused 480, downloaded 0, added 370
+Progress: resolved 484, reused 480, downloaded 0, added 371
+Progress: resolved 484, reused 480, downloaded 0, added 373
+Progress: resolved 484, reused 480, downloaded 0, added 374
+Progress: resolved 484, reused 480, downloaded 0, added 376
+Progress: resolved 484, reused 480, downloaded 0, added 379
+Progress: resolved 484, reused 480, downloaded 0, added 409
+Progress: resolved 484, reused 480, downloaded 0, added 413
+Progress: resolved 484, reused 480, downloaded 0, added 414
+Progress: resolved 484, reused 480, downloaded 0, added 417
+Progress: resolved 484, reused 480, downloaded 0, added 430
+Progress: resolved 484, reused 480, downloaded 0, added 431
+Progress: resolved 484, reused 480, downloaded 0, added 435
+Progress: resolved 484, reused 480, downloaded 0, added 449
+Progress: resolved 484, reused 480, downloaded 0, added 455
+Progress: resolved 484, reused 480, downloaded 0, added 456
+Progress: resolved 484, reused 480, downloaded 0, added 461
+Progress: resolved 484, reused 480, downloaded 0, added 474
+Progress: resolved 484, reused 480, downloaded 0, added 476
+Progress: resolved 484, reused 480, downloaded 0, added 478
+Progress: resolved 484, reused 480, downloaded 0, added 480, done
+node_modules/workerd postinstall$ node install.js
+node_modules/workerd postinstall: Done
+The integrity of 155 files was checked in 2.0s.
+Done in 16m 10.9s using pnpm v12.3.4
