@@ -1,7 +1,7 @@
 /* Service Worker — Puerto de Colonia (static single page)
-   Estrategia: network-first para navegación con respaldo offline a "/";
+   Estrategia: network-first para navegación con respaldo a la misma página guardada;
    cache-first para el resto de activos estáticos del mismo origen. */
-const CACHE = 'puerto-de-colonia-v2026-09-09';
+const CACHE = 'puerto-de-colonia-v2026-10-26';
 const CORE = [
   '/',
   '/manifest.webmanifest',
@@ -41,16 +41,16 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Navegación: red primero, respaldo offline con la copia en caché de "/".
+  // Navegación: red primero, respaldo offline de la misma página.
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
         .then((response) => {
           const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put('/', copy));
+          if (response.ok) caches.open(CACHE).then((cache) => cache.put(request, copy));
           return response;
         })
-        .catch(() => caches.match('/'))
+        .catch(async () => (await caches.match(request)) || new Response('Sin conexión: esta página no está guardada.', {status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}}))
     );
     return;
   }

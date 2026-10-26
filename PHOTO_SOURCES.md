@@ -31,3 +31,5 @@
 - Licencia: CC BY-SA 4.0
 - Página: https://commons.wikimedia.org/wiki/File:Barco,_colonia.jpg
 - Imagen original: https://upload.wikimedia.org/wikipedia/commons/c/c3/Barco%2C_colonia.jpg
+
+Fuentes consultadas el 26 de octubre de 2026. Escenas históricas: exterior2009, ferries2010, interior2015 y barco2022. Versiones web redimensionadas/comprimidas y recortes de visualización; las adaptaciones conservan la licencia por archivo. Créditos públicos y enlaces de licencia: /creditos/.

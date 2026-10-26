@@ -1,6 +1,3 @@
-# Redirecciones a nivel de ruta (Cloudflare Static Assets).
-# Las reglas de dominio (http -> https y www -> apex) no se pueden expresar aquí:
-# se configuran en el panel de Cloudflare (Always Use HTTPS + Redirect Rules).
-
+# Legacy index aliases; canonical host and protocol are handled by src/worker.js.
 /index.html  /   301
 /index       /   301

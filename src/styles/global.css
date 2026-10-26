@@ -111,3 +111,8 @@ img { display: block; max-width: 100%; }
   color: white;
   transform: translateY(-2px);
 }
+
+/* Keep long source labels and flex/grid children within their own columns. */
+.source-card, .info-card, .route-step > *, .shell > * { min-width: 0; }
+.source-card { overflow-wrap: anywhere; }
+iframe { max-width: 100%; }

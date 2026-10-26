@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Consent from '../components/Consent.astro';
 
 /* ---- Entidad única (Puerto de Colonia · Terminal Fluviomarítima Colonia, ANP) ---- */
 const siteName = 'Puerto de Colonia';
@@ -18,13 +19,11 @@ const anpInfraUrl = 'https://www.anp.com.uy/index.php/es/inicio/puertos/comercia
 const unescoUrl = 'https://whc.unesco.org/en/list/747';
 const gubUyUrl = 'https://www.gub.uy/';
 const intendenciaColoniaUrl = 'https://www.colonia.gub.uy/';
-const coloniaExpressUrl = 'https://www.coloniaexpress.com/';
+const coloniaExpressUrl = 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminales';
 const buquebusUrl = 'https://www.buquebus.com/';
 
-/* ---- Valoración pública de la entidad (Google Maps, 2026-09-29) ---- */
-const ratingValue = '4.2';
-const reviewCount = '21019';
-const reviewCountDisplay = '21.019';
+/* ---- Valoración pública de la entidad (Google Maps, 2026-10-26) ---- */
+const reviewCountDisplay = '21.074';
 
 /* ---- TDK / URLs derivadas del dominio único ---- */
 const base = Astro.site ?? new URL('https://puertodecolonia.com');
@@ -34,20 +33,22 @@ const heroPath = '/photos/puerto-terminal-exterior.jpg';
 const heroImage = origin + heroPath;
 const ferryImage = origin + '/photos/ferries-terminal.jpg';
 
-const title = 'Puerto de Colonia · Terminal de ferry y horarios | Colonia del Sacramento';
-const description = 'Horario de atención, servicios y ferries a Buenos Aires en el Puerto de Colonia (Terminal Fluviomarítima ANP). Mapa, cómo llegar y consejos de embarque.';
+const title = 'Puerto de Colonia ANP: terminal de ferry, embarque y ubicación';
+const description = 'Guía independiente de la Terminal Fluviomarítima Colonia: ubicación ANP, horarios de atención por naviera, preparativos de embarque y diferencia con el puerto deportivo.';
 const ogImageAlt = 'Terminal del Puerto de Colonia en Colonia del Sacramento, Uruguay';
 
 const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s';
 
 const faq = [
+  {q:'¿Es la terminal de ómnibus o el puerto deportivo?',a:'Esta guía y su mapa corresponden a la Terminal Fluviomarítima de ANP para ferries. No uses esta ubicación como si fuera una estación de ómnibus o el Puerto Deportivo de Santa Rita 17. Comprobá la dirección de cada tramo en tu pasaje.'},
+  {q:'¿A qué teléfono debo consultar?',a:'ANP publica +598 4522 2140 para el Puerto de Colonia. Colonia Express publica +598 4522 9676/77/78 para su terminal de Colonia, consultado el 26 de octubre de 2026. Son contactos de entidades distintas: para reservas o condiciones, usá la naviera de tu pasaje.'},
   {
     q: '¿Dónde está exactamente el Puerto de Colonia?',
-    a: 'El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) está en Av. Roosevelt y Rivera, 70000 Colonia del Sacramento, Departamento de Colonia, Uruguay. Código postal 70000 y Plus Code G5G4+FF; queda a minutos a pie del centro histórico.'
+    a: 'El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) está en Av. Roosevelt y Rivera, 70000 Colonia del Sacramento, Departamento de Colonia, Uruguay. Código postal 70000 y Plus Code G5G4+FF; planificá el recorrido al Barrio Histórico según el acceso y tus condiciones de movilidad.'
   },
   {
     q: '¿Hay que pagar entrada para entrar al Puerto de Colonia?',
-    a: 'No hay una entrada turística para circular por las áreas públicas de la terminal. El pasaje de ferry se compra aparte y su precio cambia según naviera, fecha, clase y si viajás con vehículo.'
+    a: 'No hemos confirmado una política general vigente de acceso turístico o cargos por ingresar a espacios públicos; verificá los sectores habilitados con ANP. El pasaje de ferry se compra aparte y su precio cambia según naviera, fecha, clase y si viajás con vehículo.'
   },
   {
     q: '¿Cuál es el horario del puerto?',
@@ -55,11 +56,11 @@ const faq = [
   },
   {
     q: '¿Se puede ir caminando desde el puerto al Barrio Histórico?',
-    a: 'Sí. El puerto está muy cerca del área central de Colonia y el Barrio Histórico se puede integrar fácilmente en un paseo a pie. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación exigida por la naviera.'
+    a: 'Podés considerar el Barrio Histórico como una visita separada, verificando el recorrido, el equipaje y tus condiciones de movilidad. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación exigida por la naviera.'
   },
   {
     q: '¿El Puerto de Colonia recibe cruceros?',
-    a: 'Google Maps clasifica el Puerto de Colonia como terminal de cruceros (cruise terminal). El grueso del tráfico corresponde a los ferries del Río de la Plata y las escalas de cruceros se coordinan con la Administración Nacional de Puertos según la temporada; consultá la información vigente con la ANP o tu naviera.'
+    a: 'Google Maps clasifica el Puerto de Colonia como terminal de cruceros (cruise terminal). ANP describe principalmente conexiones de pasajeros y vehículos. Una categoría del mapa no confirma una escala de crucero; consultá tu itinerario y la ANP.'
   },
   {
     q: '¿Hay migraciones y aduana en la terminal?',
@@ -83,11 +84,11 @@ const faq = [
   },
   {
     q: '¿Cuánto demora el ferry entre Colonia del Sacramento y Buenos Aires?',
-    a: 'La travesía del Río de la Plata varía según el buque y el tipo de servicio que contrates: los servicios rápidos cubren el cruce en poco más de una hora, mientras que navegaciones con otro tipo de buque o escalas intermedias llevan bastante más tiempo. Consultá la duración exacta en el pasaje y tenela en cuenta para planificar el regreso.'
+    a: 'La travesía del Río de la Plata varía según el buque y el tipo de servicio que contrates: la duración publicada debe consultarse para el servicio y la fecha concretos, sin trasladar tiempos de un barco a otro. Consultá la duración exacta en el pasaje y tenela en cuenta para planificar el regreso.'
   },
   {
     q: '¿Qué servicios hay dentro de la terminal de ferry?',
-    a: 'El edificio concentra boleterías de las navieras, controles de migración y aduana, salas de espera, sanitarios y espacios de gastronomía, con áreas exteriores de preembarque para vehículos. La disponibilidad de cada servicio depende del horario y de la temporada; las zonas operativas están restringidas y señalizadas.'
+    a: 'ANP documenta espacios de preembarque y controles migratorios; la terminal está en obras según su informe del 7 de octubre de 2026. Confirmá con tu naviera los mostradores, servicios y asistencia disponibles en tu viaje. La disponibilidad de cada servicio depende del horario y de la temporada; las zonas operativas están restringidas y señalizadas.'
   },
   {
     q: '¿Con cuánta anticipación hay que estar en la terminal antes de embarcar?',
@@ -95,11 +96,11 @@ const faq = [
   },
   {
     q: '¿Puedo cruzar y volver de Buenos Aires en el mismo día?',
-    a: 'Sí, existe conexión de ida y vuelta en el día, y es una de las combinaciones más habituales entre Argentina y Uruguay. Revisá la frecuencia de salidas de cada naviera en tu fecha, porque varía según temporada y día de la semana, y comprá ambos tramos antes de embarcar.'
+    a: 'Un viaje de ida y vuelta en el día depende de la disponibilidad y compatibilidad de los dos servicios en tu fecha. Revisá la frecuencia de salidas de cada naviera en tu fecha, porque varía según temporada y día de la semana, y comprá ambos tramos antes de embarcar.'
   },
   {
     q: '¿El Puerto de Colonia está dentro del Barrio Histórico?',
-    a: 'No. La Terminal Fluviomarítima Colonia (ANP) está fuera del perímetro del Barrio Histórico de Colonia del Sacramento, aunque el centro histórico —declarado Patrimonio Mundial por la UNESCO— queda a pocos minutos a pie del puerto.'
+    a: 'No. La Terminal Fluviomarítima Colonia (ANP) está fuera del perímetro del Barrio Histórico de Colonia del Sacramento, aunque el centro histórico —declarado Patrimonio Mundial por la UNESCO— es una visita distinta cuya ruta y acceso conviene comprobar.'
   },
   {
     q: '¿Puedo embarcar mi auto o moto en el ferry?',
@@ -107,7 +108,7 @@ const faq = [
   },
   {
     q: '¿Qué documentación necesito para cruzar entre Uruguay y Argentina?',
-    a: 'Para pasajeros de Argentina y Uruguay alcanza con documento de identidad vigente; en los demás casos se requiere pasaporte y pueden exigirse autorizaciones para menores o visados según nacionalidad. Las reglas las aplican Migración y Aduana en la propia terminal, así que verificá los requisitos vigentes con tu naviera antes de viajar.'
+    a: 'La documentación depende de nacionalidad, residencia, edad y situación de viaje; pueden exigirse autorizaciones para menores u otros requisitos. Las reglas las aplican Migración y Aduana en la propia terminal, así que verificá los requisitos vigentes con tu naviera antes de viajar.'
   }
 ];
 
@@ -121,7 +122,6 @@ const attractionLd = {
   description,
   url: canonical,
   image: [heroImage, ferryImage],
-  isAccessibleForFree: true,
   telephone,
   identifier: plusCode,
   address: {
@@ -134,25 +134,11 @@ const attractionLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -34.47378967300122,
-    longitude: -57.84639002271789
+    latitude: -34.4737897,
+    longitude: -57.8438151
   },
   hasMap: mapsUrl,
-  openingHoursSpecification: [{
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '06:30',
-    closes: '21:30',
-    description: 'Horario de referencia publicado por Colonia Express; la operativa portuaria depende de arribos y salidas.'
-  }],
-  publicAccess: true,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue,
-    reviewCount,
-    bestRating: '5'
-  },
-  sameAs: [anpPortUrl, mapsUrl, coloniaExpressUrl, buquebusUrl]
+  sameAs: [anpPortUrl, mapsUrl]
 };
 
 /* ---- Schema.org: FAQPage ---- */
@@ -173,11 +159,10 @@ const graphLd = {
     {
       '@type': 'Organization',
       '@id': canonical + '#organization',
-      name: siteName,
-      alternateName: officialName,
+      name: 'Puerto de Colonia — guía independiente',
+      description: 'Guía independiente, no oficial y sin fines de lucro para educación turística.',
       url: canonical,
       logo: origin + '/apple-touch-icon.png',
-      sameAs: [anpPortUrl, mapsUrl]
     },
     {
       '@type': 'WebSite',
@@ -295,8 +280,8 @@ const graphLd = {
             <h2 class="section-title mt-4">No es una atracción convencional.</h2>
           </div>
           <div>
-            <p class="serif text-2xl md:text-4xl leading-[1.2] tracking-[-.025em]">El puerto es infraestructura viva: pasajeros, vehículos, equipaje y controles internacionales conviven a pocos minutos a pie del casco histórico.</p>
-            <p class="mt-7 leading-8 max-w-2xl text-[color:rgba(16,45,54,.75)]"><strong>Puerto de Colonia</strong> — también conocido por su nombre oficial, <strong>Terminal Fluviomarítima Colonia (ANP)</strong> — es el puerto internacional de pasajeros y vehículos de <strong>Colonia del Sacramento</strong>, en el <strong>Departamento de Colonia</strong>, <strong>Uruguay</strong>. Opera sobre el <strong>Río de la Plata</strong>, a minutos a pie del <strong>Barrio Histórico</strong> (Patrimonio Mundial UNESCO) y del <strong>Faro de Colonia</strong>, y funciona como puerta de entrada natural para quien llega desde Buenos Aires.</p>
+            <p class="serif text-2xl md:text-4xl leading-[1.2] tracking-[-.025em]">El puerto es infraestructura viva: pasajeros, vehículos, equipaje y controles internacionales conviven junto a una ciudad cuyo Barrio Histórico merece una visita independiente.</p>
+            <p class="mt-7 leading-8 max-w-2xl text-[color:rgba(16,45,54,.75)]"><strong>Puerto de Colonia</strong> — también conocido por su nombre oficial, <strong>Terminal Fluviomarítima Colonia (ANP)</strong> — es el puerto internacional de pasajeros y vehículos de <strong>Colonia del Sacramento</strong>, en el <strong>Departamento de Colonia</strong>, <strong>Uruguay</strong>. Opera sobre el <strong>Río de la Plata</strong>, en la misma ciudad que el <strong>Barrio Histórico</strong> (Patrimonio Mundial UNESCO) y del <strong>Faro de Colonia</strong>, y funciona como puerta de entrada natural para quien llega desde Buenos Aires.</p>
             <p class="mt-5 max-w-2xl leading-8 text-[color:rgba(16,45,54,.75)]">La Administración Nacional de Puertos describe a Colonia como el principal puerto del país por movimiento de pasajeros y vehículos. La terminal moderna concentra embarque, migraciones, aduana y servicios para las conexiones del Río de la Plata.</p>
             <div class="info-grid mt-14">
               <div class="info-card col-span-4"><p class="kicker opacity-55">Nombre oficial</p><p class="mt-2 leading-6">Terminal Fluviomarítima Colonia (ANP)</p></div>
@@ -304,7 +289,7 @@ const graphLd = {
               <div class="info-card col-span-4"><p class="kicker opacity-55">Dirección</p><p class="mt-2 leading-6">{streetAddress}<br/>{postalCode} {cityName}, {regionName}, Uruguay</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Teléfono</p><p class="mt-2"><a href="tel:+59845222140" class="underline decoration-black/20 underline-offset-4">{telephoneDisplay}</a></p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Referencia horaria</p><p class="mt-2">Operativa según arribos y salidas; Colonia Express publica 06:30–21:30.</p></div>
-              <div class="info-card col-span-4"><p class="kicker opacity-55">Acceso público</p><p class="mt-2">Sin entrada turística. El pasaje de ferry se paga aparte.</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Acceso público</p><p class="mt-2">El acceso y los posibles cargos no están confirmados de forma general. El pasaje de ferry se paga aparte.</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Google</p><p class="mt-2">4,2 / 5 · {reviewCountDisplay} reseñas</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Plus Code</p><p class="mt-2">G5G4+FF · Colonia del Sacramento</p></div>
             </div>
@@ -319,7 +304,7 @@ const graphLd = {
               <div class="photo-frame aspect-[4/3]">
                 <img loading="lazy" src="/photos/ferries-terminal.jpg" alt="Ferries atracados en el Puerto de Colonia, terminal fluvio-marítima de Colonia del Sacramento" />
               </div>
-              <figcaption class="photo-caption text-white/65">Ferries en el Puerto de Colonia · Foto: Liam Quinn, CC BY-SA 2.0, Wikimedia Commons.</figcaption>
+              <figcaption class="photo-caption text-white/65">Ferries en el Puerto de Colonia, 2010 · Foto: Liam Quinn, CC BY-SA 2.0, Wikimedia Commons.</figcaption>
             </figure>
             <div class="flex flex-col justify-between border-t border-white/25 pt-5 lg:pl-8">
               <div>
@@ -327,8 +312,8 @@ const graphLd = {
                 <h2 class="serif text-4xl md:text-6xl leading-[.98] tracking-[-.04em] mt-5">Tres muelles, una terminal y el río como horizonte.</h2>
               </div>
               <div class="mt-12 grid sm:grid-cols-2 gap-8 text-white/75 leading-7">
-                <p>La terminal inaugurada en 2009 tiene dos niveles y alrededor de 7.000 m² cubiertos, además de espacios exteriores de preembarque y servicios internacionales.</p>
-                <p>Las ampliaciones posteriores incorporaron pasarelas fijas, puentes móviles, más posiciones de migración y carriles para el flujo vehicular.</p>
+                <p>ANP documenta obras inauguradas en 2024 y nuevas actuaciones de ampliación en su informe del 7 de octubre de 2026. Las fotografías históricas no muestran necesariamente la distribución actual.</p>
+                <p>Las fuentes de ANP distinguen las obras inauguradas de los trabajos aún en ejecución. Las mejoras de 2026 no deben darse por terminadas a partir de una fotografía antigua.</p>
               </div>
             </div>
           </div>
@@ -339,12 +324,12 @@ const graphLd = {
         <div class="grid lg:grid-cols-2 gap-14 lg:gap-24">
           <div>
             <p class="kicker text-[var(--terracotta)]">Historia + arquitectura</p>
-            <h2 class="section-title mt-4">Un puerto del siglo XX que sigue cambiando.</h2>
+            <h2 class="section-title mt-4">Una terminal que sigue cambiando.</h2>
           </div>
           <div class="leading-8 text-[color:rgba(16,45,54,.78)]">
-            <p>Las obras del puerto moderno se remontan a la década de 1920. La actual Terminal Fluvio Marítima se inauguró en 2009 y fue concebida como un nuevo portal de llegada a Colonia.</p>
-            <p class="mt-5">Su lenguaje es deliberadamente contemporáneo: hormigón visto, paños de vidrio, metal y una organización ortogonal que prioriza circulación, control y vistas. Las intervenciones más recientes suman una capa tecnológica con pasarelas cerradas y puentes móviles de embarque.</p>
-            <div class="mt-10 border-l-2 border-[var(--terracotta)] pl-6 serif text-2xl leading-8 text-[var(--ink)]">La terminal no es parte del bien UNESCO: el reconocimiento patrimonial corresponde al Barrio Histórico de Colonia del Sacramento, ubicado a corta distancia del puerto.</div>
+            <p>ANP describe conexiones de pasajeros y vehículos con Buenos Aires. Su información de infraestructura distingue las obras inauguradas en 2024 de la remodelación y ampliación aún en curso según el informe del 7 de octubre de 2026.</p>
+            <p class="mt-5">Su lenguaje es deliberadamente contemporáneo: hormigón visto, paños de vidrio, metal y una organización ortogonal que prioriza circulación, control y vistas. Las actuaciones descritas por ANP pertenecen a distintas fechas; comprobá la señalización y los recorridos habilitados el día de tu viaje.</p>
+            <div class="mt-10 border-l-2 border-[var(--terracotta)] pl-6 serif text-2xl leading-8 text-[var(--ink)]">La terminal no es parte del bien UNESCO: el reconocimiento patrimonial corresponde al Barrio Histórico de Colonia del Sacramento, un destino distinto; revisá el recorrido antes de combinarlo con tu embarque.</div>
           </div>
         </div>
       </section>
@@ -369,7 +354,7 @@ const graphLd = {
         <div class="grid lg:grid-cols-12 gap-6 items-end">
           <figure class="lg:col-span-7">
             <div class="photo-frame aspect-[16/10]"><img loading="lazy" src="/photos/ferry-atardecer.jpg" alt="Ferry llegando al Puerto de Colonia durante el atardecer, Río de la Plata, Colonia del Sacramento" /></div>
-            <figcaption class="photo-caption">Ferry al atardecer en el Puerto de Colonia · Foto: Gonzalo Bidarth, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+            <figcaption class="photo-caption">Barco al atardecer en Colonia, 2022 · Foto: Gonzalo bidarth, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
           </figure>
           <div class="lg:col-span-5 lg:pl-8 pb-6">
             <p class="kicker text-[var(--terracotta)]">Fotografía</p>
@@ -386,7 +371,7 @@ const graphLd = {
           <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Los ferries de pasajeros y vehículos son el vínculo internacional directo entre Buenos Aires y el Puerto de Colonia. Comprá el pasaje con la naviera y revisá documentación, equipaje y hora de presentación.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Montevideo</h3><p class="mt-3 leading-7 opacity-75">Colonia está conectada por carretera y ómnibus interdepartamentales. La terminal terrestre está próxima al puerto, lo que facilita combinar bus y ferry.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">La distancia desde el centro histórico y la rambla es caminable para la mayoría de visitantes. Taxi o remise son prácticos con equipaje pesado, personas con movilidad reducida o clima adverso.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">Revisá en el mapa el recorrido desde tu punto de partida y considerá equipaje, movilidad, estado del camino y condiciones del día. Confirmá las opciones de traslado y dejá margen para regresar a la hora de presentación de tu pasaje.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera, frente a la terminal. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera.</p></article>
           </div>
         </div>
@@ -397,13 +382,13 @@ const graphLd = {
           <div>
             <p class="kicker text-[var(--terracotta)]">Horario de atención</p>
             <h2 class="section-title mt-4">Horarios y salidas de la terminal de ferry.</h2>
-            <p class="mt-7 leading-7 max-w-md">El Puerto de Colonia no abre como una atracción: su horario de atención lo marcan los ferries. La terminal se activa alrededor de cada arribo y salida, y el check-in se hace en las boleterías de cada naviera.</p>
+            <p class="mt-7 leading-7 max-w-md">La ficha principal de Google Maps no indicaba horarios al consultarla el 26 de octubre de 2026. Los horarios de atención de una naviera no equivalen al horario general de ANP ni a la hora límite para embarcar.</p>
           </div>
           <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
-            <article class="info-card"><h3 class="font-semibold text-lg">Horario de referencia</h3><p class="mt-3 leading-7 opacity-75">Como referencia pública, <strong>Colonia Express</strong> informa atención diaria de <strong>06:30 a 21:30</strong> en su terminal de Colonia. El resto del complejo se ordena según el cronograma de arribos y salidas.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Horario de referencia</h3><p class="mt-3 leading-7 opacity-75">Como referencia pública, <strong>Colonia Express</strong> informa atención diaria de <strong>06:30 a 21:30</strong> en su terminal de Colonia. Es información de esa empresa, consultada el 26 de octubre de 2026; confirmá tu servicio y acceso específicos.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Hora de presentación</h3><p class="mt-3 leading-7 opacity-75">No confundas salida con presentación: cada naviera exige estar antes en la terminal para boletería, migraciones, aduana y embarque. Esa anticipación figura impresa en el pasaje.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Salidas a Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Las conexiones fluviales entre el Puerto de Colonia del Sacramento y Buenos Aires operan durante toda la semana, con refuerzos habituales en fines de semana y temporada alta.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Duración del cruce</h3><p class="mt-3 leading-7 opacity-75">Depende del buque y del tipo de servicio: los ferries rápidos cruzan el Río de la Plata en poco más de una hora, mientras que otros servicios o escalas intermedias llevan bastante más tiempo.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Salidas a Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">ANP describe conexiones diarias de pasajeros con Buenos Aires. Consultá las salidas y disponibilidad de cada naviera en tu fecha; no asumás un refuerzo o frecuencia concreta.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Duración del cruce</h3><p class="mt-3 leading-7 opacity-75">Depende del buque y del tipo de servicio: confirmá la duración del servicio contratado y separala del tiempo de presentación, controles y embarque.</p></article>
           </div>
         </div>
         <div class="mt-16 border-t border-[var(--line)] pt-10">
@@ -412,7 +397,7 @@ const graphLd = {
             <div class="grid sm:grid-cols-2 gap-5">
               <a class="info-card no-underline hover:opacity-75" href={coloniaExpressUrl} rel="noopener noreferrer">
                 <h4 class="font-semibold text-lg">Colonia Express <span aria-hidden="true">↗</span></h4>
-                <p class="mt-3 leading-7 opacity-75">Ferries rápidos Buenos Aires ↔ Colonia del Sacramento. Publica su propio horario de atención en la terminal de Colonia y vende el check-in directamente al pasajero.</p>
+                <p class="mt-3 leading-7 opacity-75">Ferries rápidos Buenos Aires ↔ Colonia del Sacramento. Publica su propio horario de atención en Colonia y vende pasajes con condiciones de presentación específicas.</p>
               </a>
               <a class="info-card no-underline hover:opacity-75" href={buquebusUrl} rel="noopener noreferrer">
                 <h4 class="font-semibold text-lg">Buquebus <span aria-hidden="true">↗</span></h4>
@@ -424,18 +409,19 @@ const graphLd = {
         </div>
       </section>
 
+      <section class="shell py-12"><h2 class="serif text-3xl">Terminal de pasajeros, puerto deportivo y Barrio Histórico</h2><p class="mt-4 leading-8">Esta guía trata la Terminal Fluviomarítima de ANP en Av. Roosevelt y Rivera. El <a href="https://www.anp.com.uy/es/inicio/puertos/deportivos/puerto-deportivo-colonia">Puerto Deportivo, Santa Rita 17</a>, es otra instalación: sus amarres, duchas y horarios no describen la terminal de ferries. La declaración UNESCO corresponde al Barrio Histórico.</p><p class="mt-4 leading-8">El <a href="https://anp.com.uy/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques">informe de ANP del 7 de octubre de 2026</a> describe obras en curso y operación mantenida durante su ejecución. No equivale a una garantía de que todas las mejoras estén terminadas o disponibles el día de tu viaje.</p></section>
       <section id="servicios" class="border-y border-[var(--line)] bg-[#ebe5d7] py-20 md:py-28">
         <div class="shell">
           <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Servicios</p><h2 class="section-title mt-4">Qué hay dentro de la terminal de Colonia.</h2></div>
           <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             <article class="info-card"><h3 class="font-semibold text-lg">Boleterías y check-in</h3><p class="mt-3 leading-7 opacity-75">Cada naviera atiende sus propios mostradores de venta, cambio y emisión de pasajes dentro del edificio principal de la terminal.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Migraciones y Aduana</h3><p class="mt-3 leading-7 opacity-75">Los cruces internacionales se controlan en la propia terminal. Documento o pasaporte según nacionalidad, equipaje sujeto a fiscalización y zonas restringidas señalizadas.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Espera y sanitarios</h3><p class="mt-3 leading-7 opacity-75">Sala de espera en niveles cubiertos, sanitarios y circulaciones protegidas hacia las pasarelas de embarque; los servicios se reducen fuera del horario de operación de cada naviera.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Gastronomía y café</h3><p class="mt-3 leading-7 opacity-75">Espacios para comer algo antes o después de la navegación. Si viajás muy temprano o muy tarde, llevá previsto algo porque la oferta depende del flujo de salidas.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Espera y sanitarios</h3><p class="mt-3 leading-7 opacity-75">ANP describe salas de espera y mejoras de circulación. Confirmá la disponibilidad actual de sanitarios y los recorridos habilitados, especialmente durante las obras.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Gastronomía y café</h3><p class="mt-3 leading-7 opacity-75">Este sitio no ha verificado locales, menús ni horarios actuales. Confirmá una opción adecuada a tus necesidades y las reglas de alimentos y equipaje de tu naviera.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Preembarque de vehículos</h3><p class="mt-3 leading-7 opacity-75">Áreas pavimentadas y carriles para autos, motos y ómnibus con pasaje de ferry, con circuito propio dentro del recinto portuario.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Conexión terrestre</h3><p class="mt-3 leading-7 opacity-75">Salida directa hacia el centro y hacia la rambla; taxis y remises trabajan con los arribos y la terminal de ómnibus interdepartamentales está próxima.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Accesibilidad</h3><p class="mt-3 leading-7 opacity-75">La terminal moderna se organiza con rampas y circulación en nivel. La asistencia para personas con movilidad reducida se solicita a la naviera al comprar el pasaje.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Cruceros y escalas</h3><p class="mt-3 leading-7 opacity-75">Las escalas de cruceros se coordinan con la Administración Nacional de Puertos según temporada y calado; el pasajero de crucero utiliza el mismo frente portuario.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Conexión terrestre</h3><p class="mt-3 leading-7 opacity-75">Planificá el traslado a tu destino y verificá punto de recogida, disponibilidad y precio con el prestador. No se garantiza un servicio esperando cada arribo.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Accesibilidad</h3><p class="mt-3 leading-7 opacity-75">El informe de ANP del 7 de octubre de 2026 describe intervenciones de accesibilidad, entre ellas un ascensor de arribos. Confirmá el recorrido realmente habilitado y la asistencia con tu naviera antes de viajar; no se garantiza un circuito completo sin escalones.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Cruceros y escalas</h3><p class="mt-3 leading-7 opacity-75">La categoría de un mapa no confirma una escala ni un muelle de atraque. Para cruceros, seguí las indicaciones del itinerario y de la ANP.</p></article>
           </div>
           <p class="mt-12 max-w-3xl leading-7">Los muelles, las pasarelas de embarque y los puestos de control son áreas operativas: no permanecen abiertas al público de forma permanente y se circula sólo por los sectores habilitados. <a href="#mapa" class="underline decoration-black/30 underline-offset-4">Ver ubicación en el mapa</a>.</p>
         </div>
@@ -447,7 +433,7 @@ const graphLd = {
           <h2 class="section-title mt-4">Lo que se paga — y lo que no.</h2>
         </div>
         <div class="space-y-10">
-          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Terminal: sin entrada turística</h3><p class="mt-3 leading-7 opacity-75">No se compra una entrada para acceder a las zonas públicas del Puerto de Colonia. El costo relevante es el pasaje del ferry y, si corresponde, el traslado de vehículo. Evitamos publicar tarifas fijas porque cambian según fecha, naviera, categoría y promoción.</p></div>
+          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Terminal y pasaje: conceptos distintos</h3><p class="mt-3 leading-7 opacity-75">No hemos confirmado una política general de acceso turístico o cargos por ingresar a espacios públicos. Consultá ANP y respetá los sectores habilitados. El costo relevante es el pasaje del ferry y, si corresponde, el traslado de vehículo. Evitamos publicar tarifas fijas porque cambian según fecha, naviera, categoría y promoción.</p></div>
           <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Estacionamiento / preembarque</h3><p class="mt-3 leading-7 opacity-75">ANP informa una playa pavimentada de preembarque con 213 plazas en el área del Muelle de Unión y mantiene proyectos de ampliación. Estas superficies forman parte de la operación del puerto; si vas a dejar el auto para recorrer la ciudad, confirmá en el lugar qué sectores admiten permanencia.</p></div>
           <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Mejor momento y duración</h3><p class="mt-3 leading-7 opacity-75">Para fotos, la última parte de la tarde suele ofrecer la luz más expresiva sobre el Río de la Plata. La terminal puede conocerse en poco tiempo, pero combinada con el Barrio Histórico conviene reservar varias horas; una noche cambia por completo el ritmo del paseo.</p></div>
         </div>
@@ -458,9 +444,9 @@ const graphLd = {
           <div class="grid lg:grid-cols-[.75fr_1.25fr] gap-14 lg:gap-24">
             <div><p class="kicker text-[var(--terracotta)]">Alrededor del Puerto de Colonia</p><h2 class="section-title mt-4">Comer, caminar, quedarse.</h2></div>
             <div class="grid md:grid-cols-2 gap-10">
-              <div><h3 class="kicker opacity-55">Para comer</h3><div class="mt-5 space-y-5"><p><strong>Parrillada El Portón</strong><br/><span class="opacity-70">Parrilla uruguaya, práctica para una comida clásica en el centro.</span></p><p><strong>Charco Bistró</strong><br/><span class="opacity-70">Mesa junto al paisaje histórico y al río, buena opción para una pausa más larga.</span></p><p><strong>DOS 22 Restaurante</strong><br/><span class="opacity-70">Pastas y cocina italiana en el tejido histórico de Colonia.</span></p></div></div>
-              <div><h3 class="kicker opacity-55">Para visitar</h3><div class="mt-5 space-y-5"><p><strong>Barrio Histórico</strong><br/><span class="opacity-70">El núcleo UNESCO de Colonia del Sacramento y la extensión natural de cualquier escala en el puerto.</span></p><p><strong>Calle de los Suspiros</strong><br/><span class="opacity-70">Una de las calles más fotografiadas del casco antiguo.</span></p><p><strong>Faro de Colonia</strong><br/><span class="opacity-70">Hito vertical del conjunto histórico y excelente referencia para orientarse desde el puerto.</span></p></div></div>
-              <div class="md:col-span-2 border-t border-[color:rgba(16,45,54,.18)] pt-6"><h3 class="kicker opacity-55">Dónde dormir</h3><p class="mt-4 leading-7 max-w-2xl">Elegí el <strong>Barrio Histórico</strong> si querés atmósfera, arquitectura y caminar de noche; elegí <strong>Centro / Av. General Flores</strong> si priorizás comercios, transporte y una conexión sencilla con el puerto. Para una visita diurna desde Buenos Aires no es imprescindible alojarse, pero pasar la noche permite disfrutar la ciudad fuera de las horas de mayor flujo.</p></div>
+              <div><h3 class="kicker opacity-55">Para planificar una comida</h3><div class="mt-5 space-y-5"><p><strong>Elegí según tu recorrido</strong><br/><span class="opacity-70">Este sitio no ha verificado restaurantes, menús ni horarios actuales. Buscá una opción que deje margen para volver al embarque.</span></p><p><strong>Confirmá antes de ir</strong><br/><span class="opacity-70">Consultá dirección, horario, precio y necesidades alimentarias directamente con el local.</span></p><p><strong>Equipaje y tiempo</strong><br/><span class="opacity-70">Comprobá dónde podés permanecer con equipaje y no confundas la hora de salida con la presentación exigida por tu naviera.</span></p></div></div>
+              <div><h3 class="kicker opacity-55">Para visitar</h3><div class="mt-5 space-y-5"><p><strong>Barrio Histórico</strong><br/><span class="opacity-70">El núcleo UNESCO de Colonia del Sacramento y una posible visita separada, según el tiempo disponible y el acceso.</span></p><p><strong>Calle de los Suspiros</strong><br/><span class="opacity-70">Una calle del casco antiguo que podés considerar al planificar una visita.</span></p><p><strong>Faro de Colonia</strong><br/><span class="opacity-70">Hito vertical del conjunto histórico y un punto para ubicar al preparar el recorrido.</span></p></div></div>
+              <div class="md:col-span-2 border-t border-[color:rgba(16,45,54,.18)] pt-6"><h3 class="kicker opacity-55">Dónde dormir</h3><p class="mt-4 leading-7 max-w-2xl">El <strong>Barrio Histórico</strong> y <strong>Centro / Av. General Flores</strong> son áreas para comparar según tu recorrido; no son una lista de alojamientos verificados. Revisá dirección, acceso con equipaje, precio, disponibilidad y traslado real al puerto antes de reservar. Una estancia nocturna es una elección de planificación, no una garantía de acceso o de conexiones.</p></div>
             </div>
           </div>
         </div>
@@ -470,7 +456,7 @@ const graphLd = {
         <div class="grid lg:grid-cols-[.9fr_1.1fr] gap-14 lg:gap-24 items-center">
           <figure>
             <div class="photo-frame aspect-[5/4]"><img loading="lazy" src="/photos/terminal-interior.jpg" alt="Interior de la Terminal Fluviomarítima Colonia (ANP), Puerto de Colonia, Colonia del Sacramento" /></div>
-            <figcaption class="photo-caption">Interior de la terminal · Foto: Mapep, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+            <figcaption class="photo-caption">Interior de la terminal, 2015 · Foto: Mapep, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
           </figure>
           <div>
             <p class="kicker text-[var(--terracotta)]">Consejo de embarque</p>
@@ -492,7 +478,7 @@ const graphLd = {
                 <a href={mapsUrl} class="pill border-white/60" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
                 <a href={anpPortUrl} class="pill border-white/60 text-[.72rem]" rel="noopener noreferrer">ANP · Ficha oficial ↗</a>
               </div>
-              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre {reviewCountDisplay} reseñas (terminal de cruceros y ferries · actualizado el 29 de septiembre de 2026).</p>
+              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre {reviewCountDisplay} reseñas (ficha externa de la terminal · consultado el 26 de octubre de 2026).</p>
             </div>
             <div class="border border-white/20 p-2 bg-white/5">
               <iframe src={mapEmbed} width="100%" height="520" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la ubicación del Puerto de Colonia en Colonia del Sacramento"></iframe>
@@ -531,49 +517,14 @@ const graphLd = {
           <img src="/logo.svg" alt="Puerto de Colonia" class="w-64 brightness-0 invert opacity-80" />
           <p class="mt-6 max-w-2xl text-sm leading-6">Sitio informativo independiente y no oficial. No representa a la Administración Nacional de Puertos, a las navieras ni a organismos públicos. Horarios, servicios y condiciones de viaje pueden cambiar: confirmalos con el operador correspondiente.</p>
           <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80"><strong class="text-white">Puerto de Colonia</strong> — Terminal Fluviomarítima Colonia (ANP). {streetAddress}, {postalCode} {cityName}, {regionName}, Uruguay. Tel. <a href="tel:+59845222140" class="underline underline-offset-4">+598 4522 2140</a> · Plus Code {plusCode}.</p>
-          <p class="mt-4 max-w-2xl text-xs leading-5 text-white/45">Todas las fotografías mostradas en este sitio pertenecen a sus autores originales: la propiedad y los derechos de autor de cada imagen corresponden a sus fotógrafos. Créditos: Andrés Franchi Ugart… (CC BY-SA 3.0), Liam Quinn (CC BY-SA 2.0), Mapep (CC BY-SA 4.0) y Gonzalo Bidarth (CC BY-SA 4.0), vía Wikimedia Commons.</p>
+          <p class="mt-4 max-w-2xl text-xs leading-5 text-white/45">Todas las fotografías mostradas en este sitio pertenecen a sus autores originales: la propiedad y los derechos de autor de cada imagen corresponden a sus fotógrafos. Créditos: Andrés Franchi Ugart… (CC BY-SA 3.0), Liam Quinn (CC BY-SA 2.0), Mapep (CC BY-SA 4.0) y Gonzalo bidarth (CC BY-SA 4.0), vía Wikimedia Commons.</p>
         </div>
-        <div class="text-sm md:text-right"><a class="underline underline-offset-4" href="#mapa">Mapa</a><span class="mx-2">·</span><button id="cookie-settings" class="underline underline-offset-4 cursor-pointer">Cookies</button></div>
+        <div class="text-sm md:text-right"><a class="underline underline-offset-4" href="#mapa">Mapa</a><span class="mx-2">·</span><a href="/cookies/">Cookies y preferencias</a> · <a href="/privacidad/">Privacidad</a> · <a href="/terminos/">Términos</a></div>
       </div>
+      <div class="shell mt-6 text-sm leading-7"><p>Guía independiente, no oficial y sin fines de lucro para educación turística. No somos ANP ni una naviera y no vendemos pasajes. Información consultada el 26 de octubre de 2026. Google Maps: 4,2/5, 21.074 valoraciones externas en esa fecha; no son opiniones recogidas por este sitio.</p><p><a href="/creditos/">Créditos por fotografía y licencias</a>. Imágenes históricas de 2009, 2010, 2015 y 2022; versiones web redimensionadas y recortadas al mostrarse.</p></div>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Preferencias de cookies" aria-live="polite">
-      <div class="flex items-start gap-5 justify-between"><div><p class="font-semibold">Analítica opcional</p><p class="mt-1 text-sm leading-6 opacity-70">Usamos Google Analytics 4 (G-HXM22WWPKP) sólo si aceptás. El mapa de Google puede aplicar sus propias condiciones al cargarlo.</p></div><button id="cookie-close" class="text-xl leading-none cursor-pointer" aria-label="Cerrar">×</button></div>
-      <div class="mt-4 flex gap-2"><button id="cookie-reject" class="pill cursor-pointer">Rechazar analítica</button><button id="cookie-accept" class="pill cursor-pointer !bg-[var(--river)] !text-white">Aceptar analítica</button></div>
-    </div>
-
-    <script is:inline>
-      (() => {
-        const key = 'puerto-colonia-analytics-consent';
-        const banner = document.getElementById('cookie-banner');
-        let analyticsLoaded = false;
-        function loadAnalytics() {
-          if (analyticsLoaded) return;
-          analyticsLoaded = true;
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
-          const s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
-          document.head.appendChild(s);
-        }
-        function setChoice(value) {
-          localStorage.setItem(key, value);
-          banner?.setAttribute('data-visible', 'false');
-          if (value === 'accepted') loadAnalytics();
-        }
-        const choice = localStorage.getItem(key);
-        if (choice === 'accepted') loadAnalytics();
-        else if (!choice) banner?.setAttribute('data-visible', 'true');
-        document.getElementById('cookie-accept')?.addEventListener('click', () => setChoice('accepted'));
-        document.getElementById('cookie-reject')?.addEventListener('click', () => setChoice('rejected'));
-        document.getElementById('cookie-close')?.addEventListener('click', () => banner?.setAttribute('data-visible', 'false'));
-        document.getElementById('cookie-settings')?.addEventListener('click', () => banner?.setAttribute('data-visible', 'true'));
-      })();
-    </script>
+    <Consent />
     <script is:inline>
       if ('serviceWorker' in navigator && location.protocol.indexOf('http') === 0) {
         window.addEventListener('load', () => {
