@@ -1,0 +1,136 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/horarios-colonia-buenos-aires/';
+
+const faq = [
+  {
+    q: '¿Cuántas salidas diarias hay entre Colonia y Buenos Aires?',
+    a: 'Colonia Express publica cinco salidas por sentido dentro de cada período de validez, y Buquebus también opera varias frecuencias diarias sobre el Río de la Plata. La cantidad real depende del día y de la temporada, así que contá con varias opciones, pero verificá la grilla vigente en la web de tu naviera antes de comprar.'
+  },
+  {
+    q: '¿Hay salidas nocturnas?',
+    a: 'No encontramos publicada una salida nocturna oficial para el cruce. Las últimas frecuencias de las páginas consultadas salen por la tarde-noche: Colonia Express llega hasta las 20:15 desde Colonia y la terminal de Buquebus en Colonia atiende de 08:15 a 18:45. Si necesitás viajar de noche, confirmá directamente con la naviera.'
+  },
+  {
+    q: '¿Los horarios cambian según la temporada?',
+    a: 'Sí. Colonia Express publica la grilla «por período de validez»: los horarios de septiembre–octubre de 2026 no son los mismos que los de noviembre de 2026. Antes de viajar, abrí la web oficial y mirá el período que corresponde a tu fecha, porque la grilla se reemplaza cuando cambia el período.'
+  },
+  {
+    q: '¿Desde qué muelle sale cada empresa?',
+    a: 'En Colonia, Colonia Express opera desde el Puerto de Colonia, Muelle de Ultramar, y Buquebus desde la Terminal Fluvial Puerto de Colonia, entre los muelles Unión y Ultramar. En Buenos Aires, Colonia Express sale desde Puerto Madero Sur y Buquebus desde la Terminal Fluvial de Puerto Madero (Dársena Norte). Confirmá tu muelle en el pasaje.'
+  },
+  {
+    q: '¿Cuánto dura el cruce entre Colonia y Buenos Aires?',
+    a: 'Colonia Express publica una duración de 1 hora 15 minutos para su travesía entre Colonia y Buenos Aires. La duración puede variar según el buque y el servicio, así que no traslades ese tiempo a otra naviera: verificá la duración del servicio que contratás.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Horarios y rutas', url: LINKS.coloniaExpressHorarios },
+  { label: 'Buquebus · Embarque y horarios de terminal', url: LINKS.buquebusEmbarque },
+  { label: 'Colonia Express · Terminales', url: LINKS.coloniaExpress }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Horarios del ferry Colonia–Buenos Aires"
+  description="Salidas diarias de ferry entre Colonia y Buenos Aires: horarios por período de validez de Colonia Express y atención de las terminales."
+  h1="Horarios del ferry entre Colonia y Buenos Aires"
+  kicker="Ferries · Horarios"
+  lead="El ferry entre Colonia y Buenos Aires tiene varias salidas diarias, pero los horarios se publican por período de validez y cambian según la temporada. Lo que manda es confirmar la grilla vigente en la web oficial de tu naviera el día del viaje."
+  crumbs={[{ name: 'Horarios Colonia–Buenos Aires', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en la Terminal Fluvio-Marítima del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo leer los horarios del ferry Colonia–Buenos Aires</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Se publican por período</p><p class="mt-2 leading-6">Las navieras publican la grilla con un rango de validez (por ejemplo, del 01/09/2026 al 31/10/2026). Cuando el período cambia, los horarios se reemplazan.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Salidas por sentido</p><p class="mt-2 leading-6">Colonia Express lista cinco salidas por sentido en cada período. No son horarios fijos de todo el año.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Duración del cruce</p><p class="mt-2 leading-6">Colonia Express publica 1 h 15 min entre Colonia y Buenos Aires. Cada servicio puede variar: confirmá la duración del buque que contratás.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario de atención ≠ salida</p><p class="mt-2 leading-6">La atención de una terminal no es el último ferry. La hora que importa es la de presentación impresa en tu pasaje.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Los horarios del cruce <strong>Colonia–Buenos Aires</strong> no son un dato fijo: cada naviera publica su grilla con un <strong>período de validez</strong>. Por eso, antes de reservar, abrí la web oficial de tu empresa y mirá el período que cubre tu fecha de viaje. Si la grilla no incluye tu día, confirmá por el canal de atención de la naviera.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Horarios publicados por Colonia Express por período</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Esta es la grilla que Colonia Express publicó para dos períodos consecutivos de 2026. La travesía figura con una duración de 1 h 15 min. Es información de esa naviera y solo de esos períodos: no la uses como horario permanente.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Sentido</th>
+            <th class="p-3 border-b border-[var(--line)]">Del 01/09/2026 al 31/10/2026</th>
+            <th class="p-3 border-b border-[var(--line)]">Del 01/11/2026 al 30/11/2026</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Buenos Aires → Colonia</td>
+            <td class="p-3 border-b border-[var(--line)]">08:30 · 10:30 · 12:50 · 18:30 · 20:00</td>
+            <td class="p-3 border-b border-[var(--line)]">08:00 · 10:30 · 12:30 · 18:15 · 20:00</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Colonia → Buenos Aires</td>
+            <td class="p-3">08:30 · 10:30 · 16:30 · 18:00 · 20:15</td>
+            <td class="p-3">08:30 · 10:00 · 16:15 · 18:00 · 20:15</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Duración indicada por Colonia Express: 1 h 15 min. Grilla publicada por la naviera; consultada para períodos de 2026. Revisá el período vigente antes de comprar tu pasaje.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Horario de atención de las terminales</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Estos son los horarios de atención que publican las navieras para cada terminal. Sirven como referencia del edificio, no como lista de salidas.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Puerto de Colonia (Buquebus)</p><p class="mt-2 leading-6">Todos los días de 08:15 a 18:45.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Puerto de Buenos Aires (Buquebus)</p><p class="mt-2 leading-6">Todos los días de 05:30 a 20:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Terminal de Colonia (Colonia Express)</p><p class="mt-2 leading-6">Todos los días de 06:30 a 21:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Terminal de Buenos Aires (Colonia Express)</p><p class="mt-2 leading-6">Todos los días de 06:00 a 22:00.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Desde qué muelle sale cada empresa</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Colonia Express</h3>
+        <p class="mt-3 leading-7 opacity-75">En Colonia, desde el Puerto de Colonia, Muelle de Ultramar. En Buenos Aires, desde Puerto Madero Sur (Av. Elvira Rawson de Dellepiane 155).</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Buquebus</h3>
+        <p class="mt-3 leading-7 opacity-75">En Colonia, desde la Terminal Fluvial Puerto de Colonia, entre los muelles Unión y Ultramar. En Buenos Aires, desde la Terminal Fluvial de Puerto Madero (Dársena Norte).</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Advertencia obligatoria</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Confirmá el horario el día del viaje</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Los horarios del ferry <strong>cambian según el período de validez y la temporada</strong>. La grilla que ves acá puede estar reemplazada. Antes de viajar, entrá a la <strong>web oficial de tu naviera</strong> y confirmá la salida de tu fecha, además de la hora de presentación que figura en tu pasaje.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Comprar y leer tu pasaje</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

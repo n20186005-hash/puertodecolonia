@@ -1,0 +1,95 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/itinerarios/colonia-2-horas/';
+
+const faq = [
+  {
+    q: '¿Alcanza el tiempo para recorrer el Barrio Histórico en 2 horas?',
+    a: 'Sí, si te limitás al casco histórico. Dos horas alcanzan para caminar del puerto al Barrio Histórico y ver el Portón de Campo, la Plaza Mayor y la Calle de los Suspiros. Lo que no entra en ese margen son los museos ni la subida al Faro.'
+  },
+  {
+    q: '¿Puedo entrar a los museos o subir al Faro en dos horas?',
+    a: 'No es realista. Los Espacios Expositivos y el Faro consumen tiempo y tienen horarios que conviene confirmar antes de ir (incluso entre fuentes oficiales hay diferencias). Con dos horas, priorizá el paseo por el casco y resigná las visitas con entrada.'
+  },
+  {
+    q: '¿Cuánto se camina del puerto al Barrio Histórico?',
+    a: 'No hay una distancia oficial publicada. La referencia es de aprox. 600–900 m, unos 10 minutos a pie, y proviene de estimaciones de terceros, sin confirmación oficial. El tramo real depende de dónde estés y de si llevás equipaje.'
+  },
+  {
+    q: '¿Dónde dejo el equipaje mientras recorro la ciudad?',
+    a: 'Si viajás liviano, llevá lo mínimo y dejá el resto en tu alojamiento. Si no te alojás, consultá ese día en la terminal si hay guardaequipaje disponible: los servicios pueden variar y no conviene darlos por seguros.'
+  },
+  {
+    q: '¿Qué hago si voy justo de tiempo para volver al ferry?',
+    a: 'Resolvé el regreso en taxi o remise y sumá margen sobre la hora de presentación de tu pasaje. Migraciones, aduana y embarque consumen tiempo, y la presentación suele ser bastante anterior a la salida del buque.'
+  }
+];
+
+const sources = [
+  { label: 'UNESCO · Barrio Histórico de la Ciudad de Colonia del Sacramento', url: 'https://whc.unesco.org/en/list/747' },
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia', url: 'https://comisionunesco.org.uy/rutas-unesco/barrio-historico-de-colonia-del-sacramento/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Colonia en 2 horas desde el puerto"
+  description="Recorrido corto a pie desde el Puerto de Colonia: Barrio Histórico, Portón de Campo, Plaza Mayor y Calle de los Suspiros en unas 2 horas."
+  h1="Colonia en 2 horas: el recorrido corto desde el puerto"
+  kicker="Itinerarios · 2 horas"
+  lead="Si bajás del ferry con poco tiempo, en 2 horas recorrés a pie el Barrio Histórico de Colonia del Sacramento: del puerto al Portón de Campo, la Plaza Mayor del 25 de Mayo y la Calle de los Suspiros. Es el plan justo para el casco histórico, resignando museos y Faro."
+  crumbs={[{ name: 'Colonia en 2 horas', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Frente de la Terminal Fluviomarítima Colonia mirando hacia la ciudad, punto de partida del paseo de dos horas"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Lo que entra y lo que no en dos horas</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Qué sí entra</p><p class="mt-2 leading-6">El casco histórico a pie: Portón de Campo, Plaza Mayor del 25 de Mayo y Calle de los Suspiros, con sus calles de piedra y casas de estilo portugués.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Qué resignás</p><p class="mt-2 leading-6">Los museos (Espacios Expositivos) y la subida al Faro. Los dos requieren tiempo y horarios que hay que confirmar antes de ir.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Del puerto al casco</p><p class="mt-2 leading-6">Aprox. 600–900 m, unos 10 minutos a pie (estimación de terceros, sin confirmación oficial).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Regla de oro</p><p class="mt-2 leading-6">Calculá el regreso hacia atrás desde la hora de presentación de tu pasaje, no desde la salida del buque.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El <strong>Barrio Histórico de Colonia del Sacramento</strong> es Patrimonio Mundial de la UNESCO desde 1995, con su trazado libre que no sigue la cuadrícula de las Leyes de Indias. La terminal de ferries queda fuera del casco: el paseo arranca con ese desplazamiento urbano de unos minutos. Si preferís una versión con museos, Faro y almuerzo, mirá el <a class="underline decoration-black/20 underline-offset-4" href="/itinerarios/colonia-4-horas/">itinerario de 4 horas</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El recorrido, por franjas</h2>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)] max-w-3xl">
+      Los tiempos de cada bloque son estimaciones orientativas de esta guía para ordenar el paseo. Ajustalos a tu paso y, si vas justo, salteá paradas antes que perder el embarque.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Franja 1 · Del puerto al borde del casco</h3><p class="mt-2 leading-7 opacity-75">Salí por la salida pública de la terminal y caminá hacia el casco. Son aprox. 600–900 m, unos 10 minutos (estimación de terceros). Tomá Av. General Flores o Manuel Lobo como ejes de aproximación.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Franja 2 · Portón de Campo y Plaza 1811</h3><p class="mt-2 leading-7 opacity-75">El Portón de Campo, construido en 1745, mira de frente a la Plaza 1811 y es uno de los accesos principales al Barrio Histórico. Es la foto obligada de entrada: pará unos minutos y seguí.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Franja 3 · Plaza Mayor del 25 de Mayo</h3><p class="mt-2 leading-7 opacity-75">En el corazón del casco está la Plaza Mayor del 25 de Mayo, antigua plaza de armas y punto de encuentro colonial, pegada a la Iglesia Matriz. Es el centro natural para orientarte.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Franja 4 · Calle de los Suspiros</h3><p class="mt-2 leading-7 opacity-75">La Calle de los Suspiros (antes Ansina, renombrada en 1972) conserva su perfil portugués, con casas de barro y piedra original. El origen del nombre es un enigma: hay varias versiones y ninguna oficial.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Cierre · Regreso con margen</h3><p class="mt-2 leading-7 opacity-75">Volvé al puerto dejando aire sobre la hora de presentación de tu pasaje. Si el reloj aprieta, hacé el tramo de vuelta en taxi o remise en lugar de recortar el margen.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El consejo del margen de embarque</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La hora que manda no es la de salida del buque, sino la de <strong>presentación impresa en tu pasaje</strong>. Las navieras piden llegar con bastante anticipación por los controles de Migración y Aduana. Con valijas grandes, movilidad reducida o mucho calor, sumá un extra y resolvé el último tramo en taxi.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Si no vas a estar en el hotel, averiguá antes si hay dónde dejar el equipaje. Y si te sobra tiempo al volver, el <strong>atardecer en la rambla</strong> es una parada simple cerca del puerto.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí armando el día</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después del recorrido corto</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/itinerarios/colonia-4-horas/">Colonia en 4 horas</a>
+      <a class="pill" href="/terminal/consigna-equipaje/">Consigna de equipaje</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar al puerto</a>
+    </div>
+  </section>
+</GuideLayout>

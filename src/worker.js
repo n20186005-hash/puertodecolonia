@@ -1,5 +1,9 @@
 const host = 'puertodecolonia.com';
-const pages = new Set(['/', '/privacidad/', '/terminos/', '/cookies/', '/creditos/']);
+const pages = new Set([
+  '/', '/privacidad/', '/terminos/', '/cookies/', '/creditos/',
+  '/terminal/', '/ferries/', '/navieras/', '/transporte/',
+  '/rutas/', '/itinerarios/', '/cerca/', '/guias/'
+]);
 export default {
   /** @param {Request} request @param {{ASSETS:{fetch:(request:Request)=>Promise<Response>}}} env */
   async fetch(request, env) {

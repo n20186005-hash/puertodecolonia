@@ -1,0 +1,100 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/historia/puerto-de-colonia/';
+
+const faq = [
+  {
+    q: '¿Cuándo se fundó el puerto de Colonia?',
+    a: 'Las fuentes citadas ubican la piedra fundamental del puerto en 1925 y lo celebraron como centenario el 30 de octubre de 2025. No afirmamos una fecha de fundación distinta ni anterior: solo repetimos lo que dicen esas fuentes.'
+  },
+  {
+    q: '¿Cuántos pasajeros mueve el puerto de Colonia?',
+    a: 'En el marco del centenario, la Presidencia describió a Colonia como la principal terminal del Uruguay, con un promedio anual de 2.000.000 de pasajeros y el tránsito de 180.000 vehículos. Es un promedio de referencia, no una cifra de cada año.'
+  },
+  {
+    q: '¿Cuántos muelles tiene el puerto?',
+    a: 'Según ANP, el complejo cuenta con tres muelles de hormigón en forma de U: el Muelle de Ultramar, de 146 metros; el Muelle de Cabotaje, de 115 metros; y el Muelle de Unión, de 200 metros.'
+  },
+  {
+    q: '¿Cuándo se inauguró la terminal actual?',
+    a: 'La nueva Terminal Fluvio Marítima fue inaugurada el 15 de diciembre de 2009, según la página de infraestructura de ANP.'
+  },
+  {
+    q: '¿Este sitio es de ANP o un museo?',
+    a: 'No. Somos una guía turística independiente y no oficial: no representamos a ANP ni a ninguna naviera, y no somos un museo. Los datos históricos de esta página provienen de las fuentes oficiales citadas al pie.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia (principal puerto del país)', url: 'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia' },
+  { label: 'ANP · Infraestructura de la terminal y los muelles', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' },
+  { label: 'ANP · Inauguración de las obras de ampliación de la terminal (16/10/2024)', url: 'https://www.anp.com.uy/es/inicio/comunicacion/noticias/inauguracion-de-las-obras-de-ampliacion-de-la-terminal-de-pasajeros-de-colonia' },
+  { label: 'Presidencia · Gobierno inauguró la ampliación de la terminal de pasajeros (16/10/2024)', url: 'https://www.gub.uy/presidencia/comunicacion/noticias/gobierno-inauguro-ampliacion-terminal-pasajeros-del-puerto-colonia' },
+  { label: 'Presidencia · Nuevas instalaciones y centenario del puerto (30/10/2025)', url: 'https://www.gub.uy/presidencia/comunicacion/noticias/nuevas-instalaciones-terminal-pasajeros-del-puerto-colonia-quedaran' },
+  { label: 'ANP · Ampliación de la terminal y mejoras para el atraque de buques (07/10/2026)', url: 'https://www.anp.com.uy/index.php/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Historia del Puerto de Colonia"
+  description="Historia del Puerto de Colonia (ANP): muelles, los 100 años, la terminal actual de 2009 y su línea de tiempo, según fuentes oficiales."
+  h1="Historia del Puerto de Colonia (ANP)"
+  kicker="Historia · Puerto"
+  lead="El Puerto de Colonia es, según ANP, el principal puerto del país por movimiento de pasajeros y vehículos. Su piedra fundamental es de 1925 y su terminal actual se inauguró el 15 de diciembre de 2009. Acá va la historia con las fechas que sí tienen fuente."
+  crumbs={[{ name: 'Historia del Puerto de Colonia', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry en el Puerto de Colonia al atardecer, sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué es y por qué importa</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      ANP describe el <strong>Puerto de Colonia</strong> como «el principal puerto del país en cuanto al movimiento de pasajeros y vehículos». Sobre el Río de la Plata, conecta Colonia del Sacramento con Buenos Aires mediante una terminal moderna, una de las más grandes del país.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Posición</p><p class="mt-2 leading-6">Principal puerto del Uruguay por movimiento de pasajeros y vehículos (ANP).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Movimiento</p><p class="mt-2 leading-6">Promedio anual de 2.000.000 de pasajeros y 180.000 vehículos (Presidencia, 30/10/2025).</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los tres muelles</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">Según la página de infraestructura de ANP, el complejo tiene tres muelles de hormigón en forma de U.</p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Muelle de Ultramar</p><p class="mt-2 leading-6"><strong>146 metros</strong> de largo. A su lado corre una vía de ferrocarril.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Muelle de Cabotaje</p><p class="mt-2 leading-6"><strong>115 metros</strong> de largo.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Muelle de Unión</p><p class="mt-2 leading-6"><strong>200 metros</strong> de largo.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cien años de puerto</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La piedra fundamental del puerto es de 1925 y el 30 de octubre de 2025 se cumplieron cien años: en esa fecha, la Presidencia destacó el centenario y describió a Colonia como la principal terminal del Uruguay. La nueva Terminal Fluvio Marítima se inauguró el 15 de diciembre de 2009 y, desde entonces, el complejo fue sumando obras de ampliación.
+    </p>
+    <div class="mt-8">
+      <div class="route-step"><div class="route-number">1925</div><div><h3 class="text-xl font-semibold">Piedra fundamental</h3><p class="mt-2 leading-7 opacity-75">Las fuentes citadas ubican en 1925 el origen del puerto; sobre esa fecha se celebró el centenario.</p></div></div>
+      <div class="route-step"><div class="route-number">15/12/2009</div><div><h3 class="text-xl font-semibold">Inauguración de la nueva Terminal Fluvio Marítima</h3><p class="mt-2 leading-7 opacity-75">ANP indica que la nueva terminal fue inaugurada ese día, con área cubierta de 7.000 m² y espacio exterior de 20.000 m².</p></div></div>
+      <div class="route-step"><div class="route-number">16/10/2024</div><div><h3 class="text-xl font-semibold">Inauguración de las obras de ampliación</h3><p class="mt-2 leading-7 opacity-75">Se amplió el muelle de Ultramar y se sumó una tercera manga de embarque, entre otras obras.</p></div></div>
+      <div class="route-step"><div class="route-number">30/10/2025</div><div><h3 class="text-xl font-semibold">Centenario</h3><p class="mt-2 leading-7 opacity-75">La Presidencia celebró los 100 años y presentó a Colonia como la principal terminal del país, con su promedio anual de pasajeros y vehículos.</p></div></div>
+      <div class="route-step"><div class="route-number">07/10/2026</div><div><h3 class="text-xl font-semibold">Anuncio de una nueva etapa de ampliación</h3><p class="mt-2 leading-7 opacity-75">ANP anunció 1.000 m² adicionales en la sala de preembarque, nuevas pasarelas, mangas y escaleras mecánicas, además de obras en los muelles.</p></div></div>
+    </div>
+    <p class="mt-8 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">
+      Esta página no es de ANP ni de un museo: es parte de una guía turística independiente y no oficial. Los datos provienen de las fuentes oficiales citadas al pie; las obras y los servicios pueden cambiar, así que para el estado actual conviene confirmar con ANP.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí leyendo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Del pasado del puerto al viaje de hoy</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/obras-y-accesos/">Obras y accesos</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/guias/puerto-vs-puerto-deportivo/">Puerto vs puerto deportivo</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+    </div>
+  </section>
+</GuideLayout>

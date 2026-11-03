@@ -1,0 +1,88 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/itinerarios/';
+
+const faq = [
+  {
+    q: '¿Qué itinerario me conviene si voy y vuelvo el mismo día?',
+    a: 'Si cruzás desde Buenos Aires y volvés el mismo día, la guía pensada para eso es «Un día desde Buenos Aires». Lo que decide el viaje no es solo cuánto tiempo estás en Colonia, sino que la combinación de salida y regreso deje margen para el check-in de vuelta.'
+  },
+  {
+    q: '¿Los tiempos de estos itinerarios son oficiales?',
+    a: 'No. Son bloques orientativos de esta guía para ordenar el día. La referencia que manda es la hora de presentación impresa en tu pasaje, que suele ser bastante anterior a la salida del buque.'
+  },
+  {
+    q: '¿Puedo combinar dos itinerarios el mismo día?',
+    a: 'Sí, si tu franja de tiempo lo permite. Una combinación común es el paseo corto más un almuerzo. Manejate igual: calculá el regreso hacia atrás desde la presentación del pasaje, no desde la salida del buque.'
+  },
+  {
+    q: '¿Qué pasa con mi itinerario si el ferry se suspende por mal tiempo?',
+    a: 'El plan se achica o cambia según lo que decida la autoridad portuaria y lo que ofrezca tu naviera. Ante clima complicado, seguí las instrucciones de la empresa de tu pasaje y consultá las novedades antes de moverte al puerto.'
+  }
+];
+
+const sources = [
+  { label: 'UNESCO · Barrio Histórico de Colonia del Sacramento', url: LINKS.unesco },
+  { label: 'Museos de Colonia · Espacios Expositivos', url: LINKS.museos },
+  { label: 'Uruguay Natural · Colonia del Sacramento', url: LINKS.turismoColonia }
+];
+
+const guias = [
+  { title: 'Colonia en 2 horas', href: '/itinerarios/colonia-2-horas/', desc: 'Recorrido corto a pie por el casco histórico: Portón de Campo, Plaza Mayor y Calle de los Suspiros. Los museos y el Faro quedan afuera.' },
+  { title: 'Colonia en 4 horas', href: '/itinerarios/colonia-4-horas/', desc: 'Suma los Espacios Expositivos, el Faro y un almuerzo o café a la vuelta por el Barrio Histórico, con horarios a confirmar.' },
+  { title: 'Un día desde Buenos Aires', href: '/itinerarios/colonia-desde-buenos-aires-un-dia/', desc: 'Ida por la mañana, recorrido y almuerzo, y regreso por la tarde. Incluye documentación, aduana y margen de check-in.' },
+  { title: 'Una noche en Colonia', href: '/itinerarios/colonia-con-noche/', desc: 'Atardecer en la rambla, cena desde las 19:30/20:00, dónde dormir cerca del puerto y paseo de la mañana antes de embarcar.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Itinerarios en Colonia desde el puerto"
+  description="Elegí tu itinerario en Colonia según el tiempo que tengas: 2 horas, 4 horas, un día desde Buenos Aires o una noche, siempre atado a la hora de tu ferry."
+  h1="Itinerarios para visitar Colonia desde el puerto"
+  kicker="Itinerarios · Índice"
+  lead="Cuánto podés ver de Colonia depende de cuántas horas tengas entre la llegada del ferry y la presentación de tu pasaje. Acá elegís entre 2 horas, 4 horas, un día completo desde Buenos Aires o una noche, y cada guía cierra con el margen de embarque."
+  crumbs={[{ name: 'Itinerarios', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry en el Puerto de Colonia al atardecer, punto de partida de los itinerarios por la ciudad"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">¿Cuánto tiempo tenés? Empezá por acá</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">2 horas</p><p class="mt-2 leading-6">Solo el casco histórico a pie: Portón de Campo, Plaza Mayor del 25 de Mayo y Calle de los Suspiros. Sin museos ni Faro.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">4 horas</p><p class="mt-2 leading-6">El paseo corto más los Espacios Expositivos (los museos), el Faro y un almuerzo o café dentro de la franja de 11:00 a 16:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Un día desde Buenos Aires</p><p class="mt-2 leading-6">Cruce de ida a la mañana, recorrido, almuerzo y regreso por la tarde. La logística manda: documentación, aduana y check-in.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Con noche</p><p class="mt-2 leading-6">Atardecer en la rambla, cena desde las 19:30/20:00, alojamiento cerca del puerto y paseo por la mañana antes de embarcar.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Tu itinerario depende de una sola cosa: cuántas horas hay entre que bajás del ferry y la hora de presentación de tu pasaje. Si venís del cruce desde Buenos Aires, mirá primero los <a class="underline decoration-black/20 underline-offset-4" href="/ferries/horarios-colonia-buenos-aires/">horarios Colonia–Buenos Aires</a>; si el plan incluye comer, la franja de <a class="underline decoration-black/20 underline-offset-4" href="/cerca/restaurantes-almuerzo-puerto/">almuerzos cerca del puerto</a> define el mediodía. Y si armás un día completo, las <a class="underline decoration-black/20 underline-offset-4" href="/terminal/llegadas-tardias/">llegadas tardías</a> te ayudan a no quedar apretado.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele resolverse junto al itinerario</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios Colonia–Buenos Aires</a>
+      <a class="pill" href="/cerca/restaurantes-almuerzo-puerto/">Almuerzos cerca del puerto</a>
+      <a class="pill" href="/rutas/puerto-museos-historicos/">Museos desde el puerto</a>
+    </div>
+  </section>
+</GuideLayout>

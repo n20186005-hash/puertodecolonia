@@ -1,0 +1,89 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/navieras/';
+
+const faq = [
+  { q: '¿Qué navieras salen del Puerto de Colonia?', a: 'Dos: Colonia Express y Buquebus. Las dos cruzan entre Colonia y Buenos Aires, pero con terminales de salida distintas en Puerto Madero y con reglas propias. Esta guía es independiente: no vendemos pasajes ni representamos a ninguna naviera.' },
+  { q: '¿Puedo mezclar las reglas de las dos navieras?', a: 'No. Cada empresa fija sus propias condiciones de equipaje, check-in, vehículos y cambios, y no son intercambiables. Un dato válido para Colonia Express puede no valer para Buquebus: usá siempre las condiciones de la naviera de tu pasaje.' },
+  { q: '¿Cómo elijo entre Colonia Express y Buquebus?', a: 'No hay una respuesta universal. Mirá la terminal de salida en Buenos Aires, el punto de amarre en Colonia, el horario de tu fecha, la franquicia de equipaje y la política de cambios. La comparación lado a lado reúne esos ítems para que decidas según tu caso.' },
+  { q: '¿Los datos de las navieras cambian con el tiempo?', a: 'Sí. Las condiciones salen de las webs oficiales consultadas el 3 de noviembre de 2026 y pueden cambiar sin aviso. Antes de comprar, verificá siempre la información vigente en los canales de la naviera de tu billete.' }
+];
+
+const sources = [
+  { label: 'Colonia Express · Terminales y contactos', url: LINKS.coloniaExpress },
+  { label: 'Colonia Express · Horarios y rutas (por período)', url: LINKS.coloniaExpressHorarios },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus },
+  { label: 'Buquebus · Embarque y check-in', url: LINKS.buquebusEmbarque }
+];
+
+const guias = [
+  { title: 'Colonia Express', href: '/navieras/colonia-express/', desc: 'Terminales en Colonia, Buenos Aires y Montevideo, franquicia de 30 kg, mascotas y bicicletas, y cambios según la tarifa contratada.' },
+  { title: 'Buquebus', href: '/navieras/buquebus/', desc: 'Dónde atiende en el puerto, cómo funciona el check-in, la franquicia de equipaje, las reglas para vehículos y mascotas y las cancelaciones.' },
+  { title: 'Buquebus vs Colonia Express', href: '/comparativas/buquebus-vs-colonia-express/', desc: 'Comparación neutral de los dos operadores: terminales, check-in, equipaje, altura de bodega, mascotas y cambios. Sin precios.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Navieras del Puerto de Colonia"
+  description="Las dos navieras que operan en el Puerto de Colonia, Colonia Express y Buquebus: qué las diferencia y por qué no conviene mezclar sus reglas."
+  h1="Navieras que salen del Puerto de Colonia"
+  kicker="Navieras · Índice"
+  lead="Desde el Puerto de Colonia cruzan el Río de la Plata dos operadores: Colonia Express y Buquebus. Cada empresa fija sus propias reglas de equipaje, check-in y cambios, así que conviene compararlas antes de comprar y no mezclar las condiciones de una con las de la otra."
+  crumbs={[{ name: 'Navieras', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en la terminal del Puerto de Colonia, sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dos navieras, dos juegos de reglas</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express</p><p class="mt-2 leading-6">Opera el cruce Colonia–Buenos Aires y atiende al pasajero en Colonia, Buenos Aires y Montevideo. Sus horarios publicados son de atención de la terminal, no de salidas.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus</p><p class="mt-2 leading-6">Cruza entre Colonia y la Terminal Fluvial de Puerto Madero, en Buenos Aires, con servicio para pasajeros y vehículos. También publica horarios de atención, no de partidas.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Punto en común</p><p class="mt-2 leading-6">Las dos salen desde el Puerto de Colonia, pero desde muelles que pueden no coincidir. La salida real de tu buque figura en tu pasaje.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Importante</p><p class="mt-2 leading-6">Las reglas de una naviera no valen para la otra. Confirmá equipaje, check-in y cambios siempre con la empresa de tu billete.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En el Puerto de Colonia operan <strong>Colonia Express</strong> y <strong>Buquebus</strong>, y las dos conectan con Buenos Aires. La tentación es tratarlas como un mismo servicio con distinto nombre, pero no lo son: cada una tiene sus propias condiciones de equipaje, check-in, vehículos y devoluciones. Por eso esta sección separa los perfiles y reserva la comparación directa para <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/comparativas/buquebus-vs-colonia-express/">Buquebus vs Colonia Express</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo elegir sin mezclar reglas</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Mirá desde qué terminal sales en Buenos Aires</h3><p class="mt-2 leading-7 opacity-75">Colonia Express sale de Puerto Madero Sur y Buquebus de la Terminal Fluvial de Puerto Madero, en Dársena Norte. Según dónde te alojes, una u otra te queda más cerca.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Confirmá el horario de tu fecha</h3><p class="mt-2 leading-7 opacity-75">Los horarios se ajustan por temporada. Revisá la grilla vigente de la naviera que elegiste y no la mezcles con la de la otra: podés orientarte con <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/ferries/horarios-colonia-buenos-aires/">los horarios del ferry Colonia–Buenos Aires</a>.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Chequeá equipaje y check-in de esa naviera</h3><p class="mt-2 leading-7 opacity-75">La franquicia y el cierre de check-in son propios de cada empresa. Usá la referencia general de <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/ferries/check-in-embarque/">check-in y embarque</a> solo como orientación, y confirmá el dato con tu naviera.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Revisá la política de cambios de tu tarifa</h3><p class="mt-2 leading-7 opacity-75">Cambios y devoluciones dependen del tipo de billete y de la empresa. Antes de comprar, tené clara la condición aplicable a tu pasaje.</p></div></div>
+    </div>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Si todavía no compraste, reuní primero la información general en <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/ferries/pasajes/">pasajes de ferry</a> y <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/ferries/equipaje/">equipaje en el ferry</a>, y después entrá al perfil de la naviera que te corresponde.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Antes de comprar tu pasaje</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios del ferry</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje</a>
+    </div>
+  </section>
+</GuideLayout>

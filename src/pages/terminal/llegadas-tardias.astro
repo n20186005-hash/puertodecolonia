@@ -1,0 +1,81 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/llegadas-tardias/';
+
+const faq = [
+  {
+    q: '¿Hay una guía oficial para llegadas de noche al puerto de Colonia?',
+    a: 'No. No encontramos una guía oficial específica para arribos nocturnos a la terminal. El dato oficial disponible es la Jefatura de Policía de Colonia, Av. General Flores 364, tel. 20307100, según el Ministerio del Interior.'
+  },
+  {
+    q: '¿A quién llamo ante una emergencia en Colonia?',
+    a: 'La referencia oficial es la Jefatura de Policía de Colonia, en Av. General Flores 364, teléfono 20307100. Para emergencias puntuales, tené a mano ese dato y el de tu alojamiento antes de llegar.'
+  },
+  {
+    q: '¿Los remises de Colonia están regulados?',
+    a: 'Sí. La Intendencia de Colonia aprobó el Decreto Departamental 017/2024 (Ordenanza de Servicio de Remises), publicado el 17/12/2024. Solo pueden operar permisarios registrados en la Intendencia, y los vehículos deben mostrar el número de identificación del conductor y el número de permiso en un lugar visible.'
+  },
+  {
+    q: '¿Qué debe mostrar el taxímetro?',
+    a: 'El taxímetro debe llevar en un lugar destacado el aviso para que el usuario controle la bajada de bandera y el importe del viaje. Si no lo ves o la cifra no coincide, pedí la explicación antes de pagar.'
+  },
+  {
+    q: '¿Me das los teléfonos de taxis y remises de Colonia?',
+    a: 'No los publicamos porque no están confirmados por una fuente oficial. Pedilós en tu alojamiento o en la propia terminal, y usá siempre servicios habilitados que muestren su identificación y permiso.'
+  }
+];
+
+const sources = [
+  { label: 'Ministerio del Interior · Dependencias de la Jefatura de Colonia', url: 'https://www.gub.uy/ministerio-interior/tramites-y-servicios/servicios/dependencias-jefatura-colonia' },
+  { label: 'Intendencia de Colonia · Ordenanza de Servicio de Remises (Decreto 017/2024)', url: 'http://www.impo.com.uy/bases/resoluciones-junta-depart-colonia/1269-2024' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Llegadas tardías al Puerto de Colonia"
+  description="Llegadas tardías al Puerto de Colonia: no hay guía oficial para arribos nocturnos. Cómo organizar el traslado y usar remises habilitados."
+  h1="Llegadas tardías al Puerto de Colonia"
+  kicker="Terminal · Llegadas"
+  lead="No existe una guía oficial específica para las llegadas tardías al Puerto de Colonia, así que lo más útil es planificar. Definí tu traslado antes de llegar, confirmá con tu alojamiento cómo te reciben y usá solo servicios habilitados, como los remises regulados por la Intendencia."
+  crumbs={[{ name: 'Llegadas tardías', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry llegando a la terminal del Puerto de Colonia al atardecer"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué dicen las fuentes oficiales (y qué no)</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Guía oficial de arribos nocturnos</p><p class="mt-2 leading-6">No existe. No encontramos una guía oficial específica para llegadas de noche a la terminal.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Jefatura de Policía de Colonia</p><p class="mt-2 leading-6">Av. General Flores 364, Colonia. Tel. 20307100 (dato oficial del Ministerio del Interior).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Remises</p><p class="mt-2 leading-6">Servicio regulado por la Intendencia de Colonia (Decreto Departamental 017/2024). Solo pueden operar permisarios registrados.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Teléfonos de taxis y remises</p><p class="mt-2 leading-6">No están confirmados por fuente oficial. No los damos por ciertos: pedilós en el alojamiento o en la terminal.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      No hay motivo para alarmarse: Colonia es una ciudad chica y ordenada. Lo que cambia de noche es la disponibilidad de servicios y la luz en las calles. La estrategia sensata es <strong>no improvisar el último tramo</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo organizarte si llegás tarde</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Definí el traslado antes de llegar</h3><p class="mt-2 leading-7 opacity-75">Decidí con antelación cómo salís del puerto hacia tu alojamiento. Coordinarlo antes evita buscar opciones a última hora y con equipaje.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Confirmá con tu alojamiento</h3><p class="mt-2 leading-7 opacity-75">Avisá tu horario de llegada y preguntá cómo te reciben y hasta qué hora tienen atención. Muchos alojamientos están sobre Rivera y Av. Roosevelt, cerca del puerto.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Usá servicios habilitados</h3><p class="mt-2 leading-7 opacity-75">Los remises deben estar registrados por la Intendencia y mostrar la identificación del conductor y el número de permiso. En el taxímetro, controlá la bajada de bandera y el importe.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Tené a mano el dato de la Jefatura</h3><p class="mt-2 leading-7 opacity-75">La referencia oficial es la Jefatura de Policía de Colonia, Av. General Flores 364, tel. 20307100. Guardala junto al contacto de tu alojamiento.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la llegada</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con las llegadas tardías</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/transporte/taxi-remis-puerto/">Taxis y remises en el puerto</a>
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/terminal/servicios/">Servicios de la terminal</a>
+    </div>
+  </section>
+</GuideLayout>

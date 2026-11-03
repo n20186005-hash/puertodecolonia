@@ -1,0 +1,99 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/';
+
+const faq = [
+  {
+    q: '¿Estas guías sirven para cualquier naviera?',
+    a: 'Están escritas a partir de lo que publican Colonia Express y Buquebus, las dos empresas que operan el cruce Colonia–Buenos Aires. Como cada naviera fija sus propias reglas de check-in, equipaje, vehículo o mascotas, usá estas guías como marco general y confirmá el detalle con la empresa de tu pasaje.'
+  },
+  {
+    q: '¿Con cuánta antelación tengo que estar en la terminal?',
+    a: 'No hay un único número válido para todos: la antelación depende de la naviera, del servicio y de si viajás con vehículo. La referencia que manda es la hora de presentación impresa en tu pasaje. Si no la tenés a mano, consultá con tu empresa antes de salir.'
+  },
+  {
+    q: '¿Puedo cruzar con auto, mascota y bicicleta en el mismo viaje?',
+    a: 'Cada uno de esos casos tiene condiciones propias y no siempre se combinan igual en todas las salidas. Tratalos como temas separados: revisá «Viajar con vehículo», «Viajar con mascotas» y «Viajar con bicicleta», y después confirmá con tu naviera que tu servicio admite todo junto.'
+  },
+  {
+    q: '¿Qué hago si no encuentro el dato que busco?',
+    a: 'Buscá la guía temática en la lista de abajo y, si el dato no está confirmado, te indicamos dónde verificarlo: la web o el canal de atención de la naviera, la ANP o la autoridad migratoria y aduanera correspondiente. No completamos vacíos con datos que no podamos respaldar.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Horarios y rutas', url: LINKS.coloniaExpressHorarios },
+  { label: 'Buquebus · Información de embarque', url: LINKS.buquebusEmbarque },
+  { label: 'Migraciones Argentina · Requisitos de viaje', url: LINKS.argentinaMigraciones },
+  { label: 'Uruguay · Régimen de visas y admisión', url: LINKS.uruguayVisas }
+];
+
+const guias = [
+  { title: 'Horarios Colonia–Buenos Aires', href: '/ferries/horarios-colonia-buenos-aires/', desc: 'Cómo se publican las salidas por período de validez y por qué la grilla cambia según la temporada.' },
+  { title: 'Pasajes de ferry', href: '/ferries/pasajes/', desc: 'Qué se compra al reservar, qué canales usan las navieras y qué revisar antes de pagar un boleto.' },
+  { title: 'Precios', href: '/ferries/precios/', desc: 'Por qué la tarifa varía según fecha, servicio y antelación, y cómo compararla sin llevarse sorpresas.' },
+  { title: 'Check-in y embarque', href: '/ferries/check-in-embarque/', desc: 'El orden del día de viaje: presentación, migraciones, aduana y llegada al muelle que figura en tu pasaje.' },
+  { title: 'Documentación para viajar', href: '/ferries/documentacion/', desc: 'Los documentos que suelen pedirse en un cruce internacional y a quién consultar según tu nacionalidad.' },
+  { title: 'Equipaje en el ferry', href: '/ferries/equipaje/', desc: 'Qué llevás en mano, qué va despachado y cómo evitar cargos o demoras por exceso de bulto.' },
+  { title: 'Viajar con vehículo', href: '/ferries/viajar-con-vehiculo/', desc: 'Preembarque, documentación del auto y por qué este trámite necesita más margen que el pasajero a pie.' },
+  { title: 'Viajar con mascotas', href: '/ferries/viajar-con-mascotas/', desc: 'Qué condiciones suelen exigir las navieras y qué documentación sanitaria conviene tener lista.' },
+  { title: 'Viajar con niños', href: '/ferries/viajar-con-ninos/', desc: 'Qué tener en cuenta si cruzás en familia y qué datos confirmar antes de comprar los pasajes.' },
+  { title: 'Viajar con bicicleta', href: '/ferries/viajar-con-bicicleta/', desc: 'Cómo se trata una bici como equipaje especial y qué preguntar al reservar tu salida.' },
+  { title: 'Cambios y cancelaciones', href: '/ferries/cambios-cancelaciones/', desc: 'Qué dicen las condiciones de cada naviera sobre modificar o anular un pasaje ya comprado.' },
+  { title: 'Mal tiempo y suspensiones', href: '/ferries/clima-suspensiones/', desc: 'Por qué el Río de la Plata puede suspender un cruce y cómo reaccionar si afecta tu viaje.' },
+  { title: 'Aduana y equipaje', href: '/ferries/aduanas/', desc: 'Las franquicias y límites de los controles aduaneros que se aplican en un cruce internacional.' },
+  { title: 'Menores y autorizaciones', href: '/ferries/menores/', desc: 'Cuándo un menor necesita autorización para salir del país y qué se pide en cada tramo del cruce.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Ferries del Puerto de Colonia"
+  description="Guía del cruce Colonia–Buenos Aires: horarios, pasajes, precios, check-in, documentación, equipaje, vehículos, mascotas, niños, aduanas y menores."
+  h1="Ferries del Puerto de Colonia: el cruce a Buenos Aires"
+  kicker="Ferries · Índice"
+  lead="Acá está todo lo que necesitás para cruzar el Río de la Plata entre Colonia y Buenos Aires: horarios, pasajes, precios, check-in, documentación, equipaje y viajes con vehículo, mascotas, niños o bicicleta, además de aduanas, menores y suspensiones por mal tiempo. Elegí la guía según tu situación y confirmá siempre los datos del día en la web de tu naviera."
+  crumbs={[{ name: 'Ferries', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en la Terminal Fluviomarítima del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Empezá por tu situación</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cruce internacional</p><p class="mt-2 leading-6">Es un viaje entre dos países: pasás por migraciones y aduana. Eso explica por qué hay que llegar antes y llevar documentos en orden.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Quiénes operan</p><p class="mt-2 leading-6">Las navieras que cubren el cruce Colonia–Buenos Aires son Colonia Express y Buquebus. Cada una publica sus propias condiciones.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Si no viajás con auto</p><p class="mt-2 leading-6">Empezá por «Horarios», «Pasajes» y «Check-in»; después sumá «Equipaje» y «Documentación» para tener todo listo.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Si viajás con vehículo</p><p class="mt-2 leading-6">Sumá «Viajar con vehículo» y contá con más tiempo: el trámite del auto es aparte del de los pasajeros.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El cruce entre <strong>Colonia y Buenos Aires</strong> combina dos cosas al mismo tiempo: un viaje por el Río de la Plata y un <strong>trámite migratorio y aduanero</strong> en cada punta. Por eso las reglas no son las de un bus urbano. En esta sección separamos cada tema —horarios, pasajes, precios, check-in, documentación, equipaje y cada tipo de acompañante— para que confirmes en un solo lugar qué aplica a tu caso antes de comprar.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Cuando el cruce ya está claro, comparé navieras y terminal</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar a la terminal</a>
+    </div>
+  </section>
+</GuideLayout>

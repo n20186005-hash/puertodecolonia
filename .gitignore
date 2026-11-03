@@ -3,3 +3,6 @@ dist/
 .astro/
 .wrangler/
 .DS_Store
+install.log
+install.err
+_tmp_*

@@ -1,0 +1,90 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/rutas/';
+
+const faq = [
+  { q: '¿Se puede recorrer el Barrio Histórico a pie desde el puerto?', a: 'Sí. El Barrio Histórico, Patrimonio Mundial de la UNESCO desde 1995, queda a un paseo corto del puerto: se estiman unos 600–900 m, alrededor de 10 minutos a pie (estimación de terceros, sin confirmación oficial). Con valijas grandes o mucho calor, resolvé el tramo en taxi.' },
+  { q: '¿Qué hitos puedo visitar caminando desde el puerto?', a: 'Dentro del casco antiguo están el Portón de Campo (Puerta de la Ciudadela, de 1745), la Calle de los Suspiros, el Faro y los Espacios Expositivos de museos. Cada uno tiene su ruta y sus propios horarios o entradas, que conviene confirmar antes de ir.' },
+  { q: '¿La terminal de ferries está dentro del Barrio Histórico?', a: 'No. El Puerto de Colonia (ANP) está fuera del casco histórico. Lo que sí está dentro es el Puerto Deportivo, en Santa Rita 17, una instalación distinta. No las confundas al planificar el recorrido.' },
+  { q: '¿También hay rutas que salen de Colonia?', a: 'Sí. Además de los paseos a pie, esta sección reúne el viaje en ómnibus de Colonia a Montevideo con COT y el cruce Buenos Aires → Colonia en ferry, con la documentación y la aduana que hay que tener en cuenta.' }
+];
+
+const sources = [
+  { label: 'UNESCO · Barrio Histórico de Colonia del Sacramento', url: LINKS.unesco },
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia', url: LINKS.unescoUy },
+  { label: 'Museo de Colonia · Sistema de museos', url: LINKS.museos },
+  { label: 'Museo de Colonia · Prepará tu visita', url: LINKS.museosPrepara }
+];
+
+const guias = [
+  { title: 'Del puerto al Barrio Histórico', href: '/rutas/puerto-barrio-historico/', desc: 'El paseo a pie hasta el casco histórico, Patrimonio UNESCO: trayecto aproximado y calles de acceso.' },
+  { title: 'Del puerto al Portón de Campo', href: '/rutas/puerto-porton-campo/', desc: 'Cómo llegar a la Puerta de la Ciudadela, su construcción de 1745, el puente levadizo y el escudo hoy en museo.' },
+  { title: 'Del puerto a Calle de los Suspiros', href: '/rutas/puerto-calle-suspiros/', desc: 'La calle más fotografiada del casco antiguo: su nombre original, el decreto de 1972 y qué ver al recorrerla.' },
+  { title: 'Del puerto al Faro', href: '/rutas/puerto-faro-colonia/', desc: 'Cómo llegar al Faro de Colonia, la entrada, la edad mínima para subir y los datos que varían según la fuente.' },
+  { title: 'Museos desde el puerto', href: '/rutas/puerto-museos-historicos/', desc: 'Los Espacios Expositivos de Colonia: una entrada que los incluye a todos, dónde se compra y quiénes entran gratis.' },
+  { title: 'Colonia a Montevideo en ómnibus', href: '/rutas/colonia-montevideo-omnibus/', desc: 'Horarios de COT entre Colonia y Montevideo, duración aproximada, tarifa de referencia y cómo comprar.' },
+  { title: 'Buenos Aires a Colonia', href: '/rutas/buenos-aires-colonia/', desc: 'El cruce en ferry: terminales de salida, documentación, tarjeta migratoria y franquicias de aduana al desembarcar.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Rutas desde el Puerto de Colonia"
+  description="Rutas a pie del puerto al Barrio Histórico, el Faro, la Calle de los Suspiros y los museos, más los viajes a Montevideo y Buenos Aires."
+  h1="Rutas desde el Puerto de Colonia: a pie y en bus"
+  kicker="Rutas · Índice"
+  lead="Desde la terminal, el Puerto de Colonia se abre en dos direcciones: a pie hacia el Barrio Histórico y sus hitos —Portón de Campo, Calle de los Suspiros, Faro y museos— y, más lejos, en ferry o en bus hacia Buenos Aires y Montevideo. Acá están todas las rutas ordenadas."
+  crumbs={[{ name: 'Rutas', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Atardecer sobre el Río de la Plata en el Puerto de Colonia, punto de partida de las rutas"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El puerto como punto de partida</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Barrio Histórico</p><p class="mt-2 leading-6">Patrimonio Mundial de la UNESCO desde 1995. Queda fuera del puerto pero a un paseo corto: unos 600–900 m, unos 10 minutos a pie (estimación de terceros).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Hitos del casco antiguo</p><p class="mt-2 leading-6">Portón de Campo (1745), Calle de los Suspiros, Faro y los Espacios Expositivos de museos.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Rutas largas</p><p class="mt-2 leading-6">Colonia–Montevideo en ómnibus con COT y el cruce Buenos Aires–Colonia en ferry.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">No confundas</p><p class="mt-2 leading-6">La terminal de ferries (ANP) está fuera del casco; el Puerto Deportivo (Santa Rita 17) sí está dentro.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Casi todas las rutas de esta sección empiezan igual: saliendo de la terminal hacia la ciudad. El <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/puerto-barrio-historico/">Barrio Histórico</a> es el destino natural de quien baja del ferry con pocas horas, y desde ahí se encadenan el Portón de Campo, la Calle de los Suspiros, el Faro y los museos. Para viajes más largos quedan el bus a Montevideo y el cruce desde <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/buenos-aires-colonia/">Buenos Aires a Colonia</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo elegir tu ruta</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">¿Tenés pocas horas?</h3><p class="mt-2 leading-7 opacity-75">Empezá por el <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/puerto-barrio-historico/">Barrio Histórico</a> y sumá el Portón de Campo y la Calle de los Suspiros, que quedan dentro del mismo casco.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">¿Te interesan los museos?</h3><p class="mt-2 leading-7 opacity-75">Con una sola entrada recorrés los Espacios Expositivos. Planificá por cercanía dentro del casco: mirá <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/puerto-museos-historicos/">museos desde el puerto</a>.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">¿Buscás la postal del faro?</h3><p class="mt-2 leading-7 opacity-75">El Faro se sube por una escalera angosta y tiene horarios variables: revisá antes la ruta del <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/puerto-faro-colonia/">Faro de Colonia</a>.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">¿Seguís viaje?</h3><p class="mt-2 leading-7 opacity-75">Para Montevideo, tomá el bus de COT (ver <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/colonia-montevideo-omnibus/">Colonia a Montevideo</a>); para cruzar el Plata, la ruta es <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/buenos-aires-colonia/">Buenos Aires a Colonia</a>.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Itinerarios y tramos relacionados</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/itinerarios/colonia-4-horas/">Colonia en 4 horas</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+      <a class="pill" href="/guias/puerto-vs-puerto-deportivo/">Puerto vs. Puerto Deportivo</a>
+    </div>
+  </section>
+</GuideLayout>

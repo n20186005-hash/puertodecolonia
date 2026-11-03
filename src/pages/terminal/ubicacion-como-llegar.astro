@@ -1,0 +1,126 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/ubicacion-como-llegar/';
+
+const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s';
+
+const faq = [
+  {
+    q: '¿Cuál es la dirección exacta del Puerto de Colonia?',
+    a: 'ANP publica la dirección «Terminal Puerto Colonia - Avda. Roosevelt y Rivera - Colonia». Usá esa referencia para el navegador y comprobá el punto en Google Maps antes de salir, porque los accesos peatonales y vehiculares son distintos.'
+  },
+  {
+    q: '¿Puedo ir caminando desde el centro de Colonia al puerto?',
+    a: 'Sí. La terminal está en el borde urbano, a una distancia caminable de la zona céntrica y del Barrio Histórico. El tramo exacto depende de dónde te alojes y de si llevás equipaje; verificá el recorrido en el mapa y dejá margen sobre la hora de presentación de tu pasaje.'
+  },
+  {
+    q: '¿Dónde me deja el auto si voy a embarcar el vehículo?',
+    a: 'El puerto tiene un área de preembarque vehicular con circuito propio, separada del estacionamiento general. Si viajás con auto, seguí las indicaciones de tu naviera y el vallado del recinto; no dejes el vehículo en la playa de preembarque si no vas a embarcarlo.'
+  },
+  {
+    q: '¿Cómo llego al puerto desde la terminal de ómnibus?',
+    a: 'La terminal de ómnibus está muy cerca del puerto. Es un traslado corto y, en la mayoría de los casos, se resuelve caminando o con un taxi breve. Confirmá tu punto de llegada en el mapa porque el tránsito y las paradas pueden cambiar según la obra en curso.'
+  },
+  {
+    q: '¿El mapa de Google es la ubicación oficial de ANP?',
+    a: 'No. El punto de Google Maps es una referencia cartográfica de la terminal. La dirección oficial la publica ANP. Si tu navegador muestra una «calle» distinta, priorizá la dirección de ANP y el ingreso señalizado del complejo.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia (dirección y teléfono)', url: 'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia' },
+  { label: 'ANP · Infraestructura y accesos de la terminal', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' },
+  { label: 'ANP · Ampliación de la terminal y obras en muelles (07/10/2026)', url: 'https://www.anp.com.uy/index.php/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques' },
+  { label: 'Intendencia de Colonia · Transporte y terminal de ómnibus', url: 'https://colonia.gub.uy/turismo/uploads/servicios/transporte.pdf' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cómo llegar al Puerto de Colonia"
+  description="Dirección oficial, mapa, acceso a pie, en auto y desde la terminal de ómnibus para llegar a la Terminal Fluviomarítima Colonia (ANP)."
+  h1="Cómo llegar al Puerto de Colonia (ANP)"
+  kicker="Terminal · Acceso"
+  lead="El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) está en Avda. Roosevelt y Rivera, Colonia del Sacramento. Llegás caminando desde el centro, en auto por los accesos urbanos o desde la terminal de ómnibus, que está muy cerca. Para el ferry, lo que manda es la hora de presentación impresa en tu pasaje."
+  crumbs={[{ name: 'Cómo llegar al Puerto de Colonia', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP) junto al Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los datos que necesitás antes de salir</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dirección oficial (ANP)</p><p class="mt-2 leading-6">Avda. Roosevelt y Rivera, Colonia del Sacramento, Departamento de Colonia, Uruguay.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Código postal</p><p class="mt-2 leading-6">70000 (código general de la ciudad; ANP no publica un código propio para la terminal).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Plus Code y mapa</p><p class="mt-2 leading-6">G5G4+FF · Colonia del Sacramento (punto de Google Maps, no dato de ANP).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Teléfono del puerto</p><p class="mt-2"><a class="underline decoration-black/20 underline-offset-4" href="tel:+59845222140">+598 4522 2140</a> (ANP)</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      ANP describe el <strong>Puerto de Colonia</strong> como el principal puerto del país por movimiento de pasajeros y vehículos.
+      Eso significa que el acceso está organizado como un complejo operativo: hay un ingreso peatonal, un circuito separado para vehículos que embarcan y áreas restringidas de migraciones y aduana. Antes de elegir tu ruta, definí si vas a pie, en taxi o con vehículo propio.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Mapa y ubicación</h2>
+    <div class="mt-6 border border-[var(--line)] p-2 bg-white/40">
+      <iframe src={mapEmbed} width="100%" height="460" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa del Puerto de Colonia en Colonia del Sacramento"></iframe>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Usá el punto del mapa como referencia de llegada. Si el navegador te ofrece una «calle» distinta a Avda. Roosevelt y Rivera, seguí la dirección que publica ANP y el ingreso señalizado del complejo.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo llegar según tu medio</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">A pie desde el centro</h3>
+        <p class="mt-3 leading-7 opacity-75">Desde la zona céntrica y la rambla, la terminal queda en el borde urbano. Es un recorrido corto, apto para quien viaja liviano. Con valijas grandes o movilidad reducida, conviene resolver el último tramo en taxi.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">En auto (sin embarcar el vehículo)</h3>
+        <p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Avda. Roosevelt y Rivera. Si no vas a subir el auto al ferry, necesitás un estacionamiento que admita permanencia; la playa operativa del puerto no es un estacionamiento público para dejar el coche durante el paseo.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Con vehículo que embarca</h3>
+        <p class="mt-3 leading-7 opacity-75">Se usa el circuito de preembarque, con vallado y orden propio. ANP describe áreas pavimentadas de preembarque vehicular en el Muelle de Unión. Presentate con la antelación que exige la naviera y con la documentación del vehículo a mano.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Desde la terminal de ómnibus</h3>
+        <p class="mt-3 leading-7 opacity-75">La terminal de ómnibus de Colonia está muy cerca del puerto, lo que permite combinar bus y ferry. Verificá la distancia real en el mapa según tu servicio y calculá el margen antes del check-in.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">En taxi o remise</h3>
+        <p class="mt-3 leading-7 opacity-75">Pedí que te dejen en el ingreso de la terminal de pasajeros, no en el área de carga. En Colonia, los remises habilitados deben estar registrados en la Intendencia y mostrar identificación y permiso en un lugar visible.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Desde Buenos Aires</h3>
+        <p class="mt-3 leading-7 opacity-75">El cruce del Río de la Plata te deja dentro mismo del complejo. Al desembarcar, seguí la señalización hacia la salida pública para llegar a la ciudad.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Orden recomendado el día del viaje</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Confirmá el medio de llegada</h3><p class="mt-2 leading-7 opacity-75">A pie, taxi, auto que embarca o auto que se queda. Cada caso usa un ingreso distinto.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Abrí el mapa con el punto del puerto</h3><p class="mt-2 leading-7 opacity-75">Cargá el destino antes de salir para evitar vueltas por el tránsito urbano.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Sumá margen sobre la presentación</h3><p class="mt-2 leading-7 opacity-75">Migraciones, aduana, equipaje y embarque consumen tiempo. La hora de presentación figura en tu pasaje y suele ser bastante anterior a la salida.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Resolvé el regreso antes de recorrer</h3><p class="mt-2 leading-7 opacity-75">Si vas a pasear por la ciudad, definí dónde dejás el equipaje y cuánto tardás en volver a la terminal.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la logística</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después de la ubicación</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/estacionamiento/">Estacionamiento y preembarque</a>
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/terminal/servicios/">Servicios de la terminal</a>
+    </div>
+  </section>
+</GuideLayout>

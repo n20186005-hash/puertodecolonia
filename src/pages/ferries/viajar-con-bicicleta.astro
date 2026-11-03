@@ -1,0 +1,95 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/viajar-con-bicicleta/';
+
+const faq = [
+  {
+    q: '¿Puedo llevar mi bicicleta en el ferry?',
+    a: 'Sí. Las dos navieras permiten viajar con bicicleta y lo hacen sin cargo: Colonia Express la admite gratis y Buquebus también, ubicándola en la bodega. Aun así, conviene avisar al comprar tu pasaje y confirmar la forma de traslado con la empresa.'
+  },
+  {
+    q: '¿Tengo que desarmar la bicicleta o sacarle la rueda?',
+    a: 'Puede que sí. Colonia Express avisa que te pueden pedir que le saques la rueda delantera, y que si la bicicleta es plegable ese paso no sería necesario. En Buquebus, la bicicleta va ubicada en la bodega. Confirmá con tu naviera según el tipo de bici que llevás.'
+  },
+  {
+    q: '¿Hay un límite de bicicletas por pasajero?',
+    a: 'En los términos y condiciones de Colonia Express figura un máximo de una bicicleta gratis por pasajero. Buquebus publica que la bicicleta viaja gratis en la bodega, sin detallar un límite por pasajero en la página consultada. Confirmalo con la empresa al reservar.'
+  },
+  {
+    q: '¿Tengo que firmar algún papel en el check-in?',
+    a: 'En Colonia Express sí: quien lleva bicicleta debe firmar obligatoriamente un descargo al momento del check-in. Es un requisito de la naviera, así que tenés que hacerlo antes del embarque. Para Buquebus no encontramos publicado un requisito equivalente.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Viajar con bicicleta en el ferry a Colonia"
+  description="Cómo llevar tu bicicleta en el ferry Colonia–Buenos Aires: gratis en Colonia Express y Buquebus, rueda delantera y descargo obligatorio en el check-in."
+  h1="Viajar con bicicleta en el ferry Colonia–Buenos Aires"
+  kicker="Ferries · Con bicicleta"
+  lead="Viajar con bicicleta en el ferry entre Colonia y Buenos Aires es gratis en las dos navieras: la bici va en la bodega. Colonia Express puede pedirte que saques la rueda delantera (salvo si es plegable) y exige firmar un descargo en el check-in."
+  crumbs={[{ name: 'Viajar con bicicleta', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry llegando al Puerto de Colonia al atardecer sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las reglas de la bicicleta, por naviera</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Lo que publica cada empresa sobre el traslado de bicicletas. Las condiciones pueden cambiar: confirmá con la naviera de tu pasaje antes de viajar.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Costo</p><p class="mt-2 leading-6">La bicicleta se puede llevar gratis.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Preparación</p><p class="mt-2 leading-6">Pueden pedirte que le saques la rueda delantera; si es plegable, no haría falta.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Límite y descargo</p><p class="mt-2 leading-6">Sus términos indican máximo 1 bicicleta gratis y exigen firmar un descargo obligatorio en el check-in.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · Costo y ubicación</p><p class="mt-2 leading-6">La bicicleta viaja gratis y se ubica en la bodega.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué conviene preparar antes de viajar</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Avisá que llevás bicicleta</h3><p class="mt-2 leading-7 opacity-75">Contá que viajás con bici al comprar el pasaje: el espacio en bodega es limitado y la naviera organiza el embarque.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Revisá el tipo de bici</h3><p class="mt-2 leading-7 opacity-75">Si es plegable, la maniobra de la rueda podría no ser necesaria. Si no lo es, llevá lo necesario para sacar la rueda delantera.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Llevá candado y algo de protección</h3><p class="mt-2 leading-7 opacity-75">La bici viaja en bodega con el resto del equipaje: un candado y protector para el cuadro evitan roces y sustos.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Firmá el descargo en el check-in</h3><p class="mt-2 leading-7 opacity-75">En Colonia Express es obligatorio firmar el descargo al hacer el check-in. Hacelo antes de dirigirte al embarque.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Plegable o armada: la diferencia práctica</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Si tu bici es plegable</h3>
+        <p class="mt-3 leading-7 opacity-75">Colonia Express aclara que, al ser plegable, no haría falta sacar la rueda delantera. Igual, consultá cómo la querés presentar en el embarque.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Si tu bici es armada</h3>
+        <p class="mt-3 leading-7 opacity-75">Pueden pedirte que saques la rueda delantera para que entre mejor en la bodega. Llevá las herramientas adecuadas y llegá con tiempo.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes de la reserva</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Confirmalo con la naviera al comprar</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Las reglas de la bicicleta pueden variar según el buque y el servicio. Antes de comprar, confirmá con tu naviera el costo, la forma de traslado, el límite de bicicletas y si tenés que firmar un descargo en el check-in.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+    </div>
+  </section>
+</GuideLayout>

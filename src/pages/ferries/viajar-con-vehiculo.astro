@@ -1,0 +1,145 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/viajar-con-vehiculo/';
+
+const faq = [
+  {
+    q: '¿Hasta qué altura puede tener mi vehículo para embarcar?',
+    a: 'Depende de la naviera y del buque. Colonia Express permite 3,00 m en el Atlantic Express y 2,10 m en el SuperFerry Express; Buquebus publica una altura máxima de bodega de 1,96 m. Si tu vehículo supera la altura del buque asignado a tu salida, no entra en la bodega: confirmá el buque y la altura antes de comprar.'
+  },
+  {
+    q: '¿El auto necesita su propio pasaje?',
+    a: 'Sí. El vehículo viaja con un pasaje de bodega aparte del pasaje de pasajero. En el check-in se pide el pasaje de bodega junto con los documentos del vehículo. El traslado del vehículo se contrata aparte y su precio varía, así que confirmalo con tu naviera.'
+  },
+  {
+    q: '¿Qué documentos del vehículo tengo que llevar?',
+    a: 'Se piden los documentos del vehículo de Mercosur: la libreta o el título, la licencia de conducir, el seguro, además de las placas y los grabados. Si el vehículo es de carga, hay más requisitos. Revisá tu caso con la naviera antes de presentarte al embarque.'
+  },
+  {
+    q: '¿Dónde espero con el auto antes de embarcar?',
+    a: 'En la playa de preembarque vehicular, un circuito propio separado del estacionamiento general. En el Puerto de Colonia, ANP describe la explanada del Muelle de Unión como playa de estacionamiento de preembarque vehicular de 213 plazas. Seguí las indicaciones y el vallado de tu naviera.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus },
+  { label: 'ANP · Infraestructura de la terminal de Colonia', url: LINKS.anpInfra }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Viajar con vehículo en el ferry a Colonia"
+  description="Cómo embarcar el auto en el ferry Colonia–Buenos Aires: alturas máximas de bodega, pasaje aparte, documentos Mercosur y playa de preembarque."
+  h1="Viajar con vehículo en el ferry Colonia–Buenos Aires"
+  kicker="Ferries · Con vehículo"
+  lead="Viajar con vehículo en el ferry entre Colonia y Buenos Aires se contrata con un pasaje de bodega aparte del de pasajero, y la bodega tiene una altura máxima que cambia según la naviera y el buque. Revisá la altura de tu auto, la documentación Mercosur y la playa de preembarque antes de comprar."
+  crumbs={[{ name: 'Viajar con vehículo', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP) junto al Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El vehículo viaja con pasaje aparte</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Si vas a cruzar el Río de la Plata con auto, camioneta o moto, hay dos cosas distintas: tu <strong>pasaje de pasajero</strong> y el <strong>pasaje de bodega</strong> del vehículo. El vehículo se contrata aparte, tiene su propio precio y se pide en el check-in junto con los papeles del rodado. El precio del vehículo varía y no lo publicamos: confirmalo con tu naviera.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Pasaje de pasajero</p><p class="mt-2 leading-6">El que compra cada persona. No incluye el traslado del vehículo.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Pasaje de bodega</p><p class="mt-2 leading-6">El documento aparte que contrata el traslado del vehículo. Se exige en el check-in junto con la documentación del rodado.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Altura de bodega</p><p class="mt-2 leading-6">Cada buque tiene una altura máxima. Si tu vehículo la supera, no entra en ese servicio.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Precio del vehículo</p><p class="mt-2 leading-6">Es un valor aparte del pasaje de pasajero. Consultalo con la naviera al reservar.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Altura máxima de bodega por naviera y buque</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      La altura es el dato que más sorpresas genera: el mismo auto puede entrar en un buque y no en otro. Esta es la información que publican las navieras.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Naviera</th>
+            <th class="p-3 border-b border-[var(--line)]">Buque</th>
+            <th class="p-3 border-b border-[var(--line)]">Altura máxima</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Colonia Express</td>
+            <td class="p-3 border-b border-[var(--line)]">Atlantic Express</td>
+            <td class="p-3 border-b border-[var(--line)]">3,00 m</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Colonia Express</td>
+            <td class="p-3 border-b border-[var(--line)]">SuperFerry Express</td>
+            <td class="p-3 border-b border-[var(--line)]">2,10 m</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Buquebus</td>
+            <td class="p-3">Bodega de sus buques</td>
+            <td class="p-3">1,96 m</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Datos publicados por cada naviera. El buque asignado puede cambiar según tu salida: confirmá la altura del servicio que contratás antes de viajar.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Documentación Mercosur del vehículo y del conductor</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Papeles del vehículo</h3>
+        <p class="mt-3 leading-7 opacity-75">Se piden los documentos del vehículo de Mercosur: la libreta o el título, las placas y los grabados. Tenelos a mano en el check-in.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Conductor y seguro</h3>
+        <p class="mt-3 leading-7 opacity-75">Además va la licencia de conducir y el seguro. La naviera exige el seguro de responsabilidad civil de Mercosur para embarcar el vehículo.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Coherencia de datos</h3>
+        <p class="mt-3 leading-7 opacity-75">Los datos del pasajero y los del vehículo tienen que coincidir con lo declarado en la reserva. Un dato distinto puede complicar el embarque.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Cruce internacional</h3>
+        <p class="mt-3 leading-7 opacity-75">Es un viaje entre países: se pasa por migraciones y aduana. Llevá los papeles del vehículo y de las personas por separado y ordenados.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde esperás antes de embarcar</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Los vehículos que embarcan usan una <strong>playa de preembarque propia</strong>, con circuito y vallado separados del estacionamiento general. ANP describe la explanada del <strong>Muelle de Unión</strong> como playa de estacionamiento de preembarque vehicular de <strong>213 plazas</strong>. No es un estacionamiento público para dejar el auto durante el paseo: es el área operativa para embarcar.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Llegá con la anticipación de tu naviera</h3><p class="mt-2 leading-7 opacity-75">El vehículo tiene su propio tiempo de presentación. Sumá margen sobre la hora de salida de tu pasaje.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Entrá al circuito de preembarque</h3><p class="mt-2 leading-7 opacity-75">Seguí la señalización y el vallado hacia la playa de preembarque, no hacia el estacionamiento general.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Presentá los papeles del vehículo</h3><p class="mt-2 leading-7 opacity-75">Tené a mano el pasaje de bodega, la libreta o el título, la licencia, el seguro, placas y grabados.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Esperá la orden de embarque</h3><p class="mt-2 leading-7 opacity-75">Mantené el auto en la zona indicada y embarcá cuando el personal de la naviera lo disponga.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes de la reserva</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Chequeá lo que define tu embarque</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Antes de comprar, confirmá con tu naviera la altura máxima del buque de tu salida, el precio del pasaje de bodega, los documentos exigidos y el punto de preembarque. Las condiciones del vehículo y de la bodega pueden cambiar.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/terminal/estacionamiento/">Estacionamiento y preembarque</a>
+      <a class="pill" href="/ferries/precios/">Precios</a>
+    </div>
+  </section>
+</GuideLayout>

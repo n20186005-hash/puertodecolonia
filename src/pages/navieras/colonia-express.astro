@@ -1,0 +1,208 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/navieras/colonia-express/';
+
+const faq = [
+  {
+    q: '¿Dónde atiende Colonia Express en el Puerto de Colonia?',
+    a: 'En el Muelle de Ultramar, dentro del Puerto de Colonia. El teléfono publicado es +598 4522-9676/77/78 y la atención es todos los días de 6:30 a 21:30. Ojo: ese horario es de atención de la terminal, no de salidas de buques.'
+  },
+  {
+    q: '¿Cuál es la franquicia de equipaje de Colonia Express?',
+    a: 'Cada pasajero puede llevar equipaje hasta 30 kg libres de flete. La responsabilidad de la empresa por el equipaje tiene un límite publicado de U$S 50, así que lo de valor conviene llevarlo con vos.'
+  },
+  {
+    q: '¿Puedo viajar con mascota o con bicicleta sin costo extra?',
+    a: 'Sí. Las mascotas de porte menor viajan sin cargo extra en caniles de la bodega o en caniles que aportes vos, con libreta de vacunas al día y certificado sanitario de SENASA. La bicicleta también viaja gratis: puede pedirte que le saques la rueda delantera y hay que firmar un descargo en el check-in.'
+  },
+  {
+    q: '¿Qué altura máxima puede tener mi vehículo?',
+    a: 'Depende del buque: 3,00 metros en el Atlantic Express y 2,10 metros en el SuperFerry Express. Si viajás con vehículo, tené a mano los documentos Mercosur (libreta o título, licencia, seguro y patentes).'
+  },
+  {
+    q: '¿Puedo cambiar o devolver mi pasaje?',
+    a: 'Depende de la tarifa contratada. Las reglas publicadas hablan de 72 horas de anticipación con 40% de penalidad (Super Económica), 48 horas con 20% (Super Express) y Flex con cambios ilimitados. Los reembolsos varían por tarifa y, por mal tiempo, la empresa reprograma el viaje pero no hace devoluciones. Confirmá la condición exacta de tu billete con la naviera.'
+  },
+  {
+    q: '¿Este sitio vende pasajes de Colonia Express?',
+    a: 'No. Esta es una guía independiente y no oficial: no vendemos pasajes ni representamos a la naviera. Comprá siempre en los canales oficiales de Colonia Express y verificá las condiciones vigentes.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Terminales y contactos', url: 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminales' },
+  { label: 'Colonia Express · Horarios y rutas (por período)', url: 'https://www.coloniaexpress.com/es/ar/mas-informacion/horarios-y-rutas' },
+  { label: 'Colonia Express · Términos y condiciones', url: 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminos-y-condiciones' },
+  { label: 'Colonia Express · Preguntas frecuentes', url: 'https://www.coloniaexpress.com/es/uy/preguntas-frecuentes' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Colonia Express: terminales y equipaje"
+  description="Perfil de Colonia Express: terminales, horarios de atención, equipaje de 30 kg, mascotas y bicicletas gratis, y política de cambios por tarifa."
+  h1="Colonia Express: perfil, terminales y reglas de viaje"
+  kicker="Navieras · Colonia Express"
+  lead="Colonia Express conecta el Puerto de Colonia con Buenos Aires y atiende al pasajero en Colonia, Buenos Aires y Montevideo. Acá están sus terminales, la documentación exigida, la franquicia de equipaje y las reglas de cambios por tarifa, con datos de sus webs oficiales."
+  crumbs={[{ name: 'Colonia Express', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Buque de pasajeros amarrado en la terminal fluvial del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde atiende Colonia Express</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Colonia Express opera el cruce entre el Puerto de Colonia y Buenos Aires, con un punto de atención también en Montevideo.
+      Los horarios que publica son de <strong>atención de la terminal</strong>: no indican a qué hora sale cada buque. La salida real figura en tu pasaje y varía según la fecha y la temporada.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Colonia del Sacramento</p>
+        <p class="mt-2 leading-6">Puerto de Colonia, Muelle de Ultramar. Tel. <a class="underline decoration-black/20 underline-offset-4" href="tel:+59845229676">+598 4522-9676/77/78</a>.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Buenos Aires</p>
+        <p class="mt-2 leading-6">Puerto de Buenos Aires, Av. Elvira Rawson de Dellepiane 155, Puerto Madero Sur.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Montevideo</p>
+        <p class="mt-2 leading-6">Terminal de Tres Cruces, Av. Italia y Blvd. Artigas, local 25. Tel. <a class="underline decoration-black/20 underline-offset-4" href="tel:+59824038050">+598 2403-8050 int. 7502</a>.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Importante</p>
+        <p class="mt-2 leading-6">Los horarios son de atención al público, no de partidas. Este sitio no vende pasajes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Terminales, dirección y atención</h2>
+    <div class="mt-6 border border-[var(--line)] p-2 bg-white/40 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="kicker opacity-60">
+            <th class="py-3 pr-4 align-top">Sede</th>
+            <th class="py-3 pr-4 align-top">Dirección</th>
+            <th class="py-3 pr-4 align-top">Teléfono</th>
+            <th class="py-3 align-top">Atención</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Colonia del Sacramento</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Puerto de Colonia, Muelle de Ultramar</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">+598 4522-9676/77/78</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Todos los días 6:30–21:30</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Buenos Aires</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Av. Elvira Rawson de Dellepiane 155, Puerto Madero Sur</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">No publicado en la web de terminales</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Todos los días 6:00–22:00</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Montevideo</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Terminal de Tres Cruces, Av. Italia y Blvd. Artigas, local 25</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">+598 2403-8050 int. 7502</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Todos los días 3:00–21:30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Los horarios son de atención de la terminal y pueden cambiar. Para la salida de tu buque, mirá el horario vigente en la web oficial.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Horarios: fijate la fecha de vigencia</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Colonia Express publica los horarios por períodos con fecha de inicio y fin. Como ejemplo del calendario 2026, la grilla del 1/9 al 31/10 y la del 1/11 al 30/11 traían salidas distintas entre sí.
+      Por eso, antes de comprar, revisá siempre <strong>la grilla vigente para la fecha en que vas a viajar</strong>: los horarios y las frecuencias se ajustan por temporada.
+    </p>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      La anticipación general para presentarte en la terminal no está publicada como un valor único. Lo único que figura es una regla de embarque prioritario VIP: si llegás con menos de 50 minutos de anticipación, no podés acceder a ese embarque preferente. Si no viajás VIP, consultá el tiempo de presentación con la naviera. <em>A confirmar con la fuente oficial.</em>
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Documentación que te van a pedir</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Argentinos mayores de 18</h3>
+        <p class="mt-3 leading-7 opacity-75">D.N.I. o pasaporte. La naviera aclara que es requisito presentar el último DNI adquirido.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Uruguayos mayores de 18</h3>
+        <p class="mt-3 leading-7 opacity-75">Cédula de identidad o pasaporte vigente.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Menores</h3>
+        <p class="mt-3 leading-7 opacity-75">La web organiza las condiciones según se salga de Uruguay o de Argentina. Cada caso es único: la propia empresa recomienda confirmar la situación con la Dirección Nacional de Migraciones. <em>A confirmar con la fuente oficial.</em></p>
+      </div>
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Con vehículo</h3>
+        <p class="mt-3 leading-7 opacity-75">Documentación Mercosur del vehículo: libreta o título, licencia, seguro, patentes y grabados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Equipaje, mascotas y bicicletas</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Equipaje: hasta 30 kg</h3>
+        <p class="mt-3 leading-7 opacity-75">Todos los pasajeros pueden llevar equipaje hasta 30 kg libres de flete. La responsabilidad de la empresa tiene un límite publicado de U$S 50 por pasajero.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Mascotas: sin cargo extra</h3>
+        <p class="mt-3 leading-7 opacity-75">Las mascotas de porte menor viajan sin cargo extra, en los caniles de la bodega o en caniles aportados por su dueño. Se pide libreta de vacunas al día y certificado de sanidad de SENASA. En los buses de enlace no se permiten mascotas (excepto perros guía).</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Bicicletas: gratis</h3>
+        <p class="mt-3 leading-7 opacity-75">Podés llevar tu bicicleta sin costo, en general una por pasaje. Puede pedirte que le saques la rueda delantera para embarcarla (si es plegable, no haría falta) y hay que firmar un descargo obligatorio en el check-in.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Maletas de mano</h3>
+        <p class="mt-3 leading-7 opacity-75">La franquicia de 30 kg es la que publica la naviera para el equipaje facturado. Si llevás bultos especiales, consultá medidas y condiciones con la empresa antes de viajar.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Si viajás con vehículo</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La altura máxima permitida depende del buque: <strong>3,00 metros</strong> en el Atlantic Express y <strong>2,10 metros</strong> en el SuperFerry Express.
+      Si tu vehículo supera el límite del barco asignado a tu horario, no podrá embarcar: verificá esa medida antes de comprar.
+    </p>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      El precio del pasaje de vehículo y las condiciones de bodega se confirman con la naviera al momento de la compra.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cambios y devoluciones según la tarifa</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Colonia Express aplica reglas distintas según el tipo de tarifa comprada. Es la diferencia más importante a la hora de cambiar o devolver un pasaje.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Super Económica</h3><p class="mt-2 leading-7 opacity-75">Cambio hasta 72 horas antes de la salida, con 40% de penalidad.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Super Express</h3><p class="mt-2 leading-7 opacity-75">Cambio hasta 48 horas antes, con 20% de penalidad.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Super Flex</h3><p class="mt-2 leading-7 opacity-75">Cambios ilimitados según las condiciones de la tarifa.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Reembolsos y mal tiempo</h3><p class="mt-2 leading-7 opacity-75">Los reembolsos varían por tarifa: hay niveles con retención y otros sin devolución, y las compras canceladas dentro de las 24 horas de hechas suelen reintegrarse al 100%. Por problemas climáticos, la empresa permite reprogramar el viaje, pero no hace devoluciones. Confirmá la condición de tu billete con la naviera.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí comparando</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/navieras/buquebus/">Perfil de Buquebus</a>
+      <a class="pill" href="/comparativas/buquebus-vs-colonia-express/">Buquebus vs Colonia Express</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+    </div>
+  </section>
+</GuideLayout>

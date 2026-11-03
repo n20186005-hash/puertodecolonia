@@ -1,0 +1,92 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/terminal/';
+
+const faq = [
+  {
+    q: '¿Qué abarca esta sección sobre la terminal?',
+    a: 'Reúne lo que pasa dentro del complejo portuario y en sus accesos: cómo llegar, qué servicios encontrás en el edificio, dónde estacionar, cómo se resuelve la accesibilidad, la consigna de equipaje, las obras en curso y qué hacer si llegás tarde al embarque. No trata los horarios ni las tarifas del cruce, que están en la sección Ferries.'
+  },
+  {
+    q: '¿Tengo que llegar con mucha antelación a la terminal?',
+    a: 'La antelación exacta la fija cada naviera y aparece impresa en tu pasaje. No la inventamos ni la fijamos nosotros: antes de viajar, confirmá con la empresa de tu boleto cuánto antes exige la presentación, sobre todo si viajás con vehículo o en temporada alta.'
+  },
+  {
+    q: '¿Esta guía reemplaza la información de ANP o de las navieras?',
+    a: 'No. Somos una guía independiente y no oficial: no vendemos pasajes ni representamos a la Administración Nacional de Puertos (ANP) ni a ninguna naviera. Los datos oficiales de la terminal los publica ANP y las condiciones de embarque, tu empresa. Usá esta sección para orientarte y verificá siempre en esas fuentes.'
+  },
+  {
+    q: '¿Por dónde conviene empezar a leer?',
+    a: 'Si es tu primera vez, andá a «Ubicación y cómo llegar»; si ya sabés dónde está pero no qué hay adentro, entrá a «Servicios de la terminal». Y si salís con poco margen, revisá «Llegadas tardías». Cada guía enlaza a las relacionadas para que no vuelvas a arrancar de cero.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia (información general)', url: LINKS.anpPort },
+  { label: 'ANP · Infraestructura de la terminal', url: LINKS.anpInfra },
+  { label: 'ANP · Ampliación de la terminal y mejoras de atraque', url: LINKS.anpObras },
+  { label: 'ANP · Inauguración de las obras de ampliación (2024)', url: LINKS.anpObras2024 }
+];
+
+const guias = [
+  { title: 'Ubicación y cómo llegar', href: '/terminal/ubicacion-como-llegar/', desc: 'La dirección oficial de ANP, el mapa de referencia y los ingresos a pie, en auto y desde la terminal de ómnibus.' },
+  { title: 'Servicios de la terminal', href: '/terminal/servicios/', desc: 'Qué es razonable esperar del edificio de pasajeros y qué conviene llevar resuelto antes de entrar al complejo.' },
+  { title: 'Estacionamiento y preembarque', href: '/terminal/estacionamiento/', desc: 'La diferencia entre la playa operativa de vehículos que embarcan y el estacionamiento para quien no sube el auto.' },
+  { title: 'Accesibilidad', href: '/terminal/accesibilidad/', desc: 'Qué preguntar si viajás con movilidad reducida y cómo coordinar la asistencia con ANP y con tu naviera.' },
+  { title: 'Consigna de equipaje', href: '/terminal/consigna-equipaje/', desc: 'Qué hacer con las valijas si querés recorrer la ciudad antes o después del embarque.' },
+  { title: 'Obras y accesos', href: '/terminal/obras-y-accesos/', desc: 'Las obras de ampliación publicadas por ANP y por qué pueden cambiar temporalmente el recorrido de ingreso.' },
+  { title: 'Llegadas tardías', href: '/terminal/llegadas-tardias/', desc: 'Qué revisar si te quedás sin margen: hora de presentación, cierre de check-in y política de tu naviera.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Terminal de ferries del Puerto de Colonia"
+  description="Índice de la Terminal Fluviomarítima Colonia (ANP): ubicación, servicios, estacionamiento, accesibilidad, consigna, obras y llegadas tardías."
+  h1="Terminal de ferries del Puerto de Colonia: guía completa"
+  kicker="Terminal · Índice"
+  lead="Esta sección reúne todo lo que rodea a la Terminal Fluviomarítima Colonia (ANP): dónde está, qué servicios ofrece, cómo estacionar, cómo se resuelve la accesibilidad, dónde dejar el equipaje, las obras en curso y qué hacer si llegás tarde. Elegí la guía que necesitás abajo y, si algo no está confirmado, te decimos dónde verificarlo."
+  crumbs={[{ name: 'Terminal de ferries', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior del edificio de pasajeros de la Terminal Fluviomarítima Colonia (ANP)"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo usar esta sección</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Qué encontrás acá</p><p class="mt-2 leading-6">Todo lo que pasa dentro del complejo portuario y en sus accesos: llegada, servicios, estacionamiento, accesibilidad, equipaje, obras y demoras.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Qué NO encontrás acá</p><p class="mt-2 leading-6">Horarios, tarifas y condiciones del cruce a Buenos Aires. Eso vive en la sección <a class="underline decoration-black/20 underline-offset-4" href="/ferries/">Ferries</a>.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Empezá por</p><p class="mt-2 leading-6">«Ubicación y cómo llegar» si es tu primera vez; «Servicios de la terminal» si ya sabés cómo llegar y querés saber qué hay adentro.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde verificar</p><p class="mt-2 leading-6">Los datos oficiales del edificio y los accesos los publica ANP; las condiciones de embarque, tu naviera. Esta guía no es oficial.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La <strong>Terminal Fluviomarítima Colonia (ANP)</strong> es el complejo desde donde zarpan los ferries hacia Buenos Aires y otros destinos del Río de la Plata. Como es un recinto operativo, con migraciones, aduana y áreas restringidas, la experiencia cambia según <strong>cómo llegás</strong> (a pie, en taxi o con vehículo) y según <strong>con cuánto margen</strong> arribás. Esta sección está pensada para que resuelvas cada una de esas piezas por separado.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Cuando la terminal ya está resuelta, seguí por acá</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios del ferry</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/transporte/taxi-remis-puerto/">Taxis y remises del puerto</a>
+      <a class="pill" href="/guias/puerto-vs-puerto-deportivo/">Puerto vs puerto deportivo</a>
+    </div>
+  </section>
+</GuideLayout>

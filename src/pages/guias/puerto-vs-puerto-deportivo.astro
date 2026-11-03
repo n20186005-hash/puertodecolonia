@@ -1,0 +1,135 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/guias/puerto-vs-puerto-deportivo/';
+
+const faq = [
+  {
+    q: '¿Es lo mismo el Puerto de Colonia y el Puerto Deportivo?',
+    a: 'No. El Puerto de Colonia / Terminal Fluviomarítima Colonia (ANP) es la terminal de ferries de pasajeros y vehículos. El Puerto Deportivo de Colonia es otro recinto, también de ANP, para yates y embarcaciones menores. Son direcciones, teléfonos y usos distintos.'
+  },
+  {
+    q: '¿Cuál es el que sale en Google Maps?',
+    a: 'El punto de Google Maps que usamos en esta guía corresponde a la terminal de ferries (Avda. Roosevelt y Rivera). El Puerto Deportivo tiene otra dirección: Santa Rita 17, 70000 Colonia del Sacramento. Antes de salir, comprobá en el mapa que el punto coincide con el destino que buscás.'
+  },
+  {
+    q: '¿Dónde atraca el ferry?',
+    a: 'En la Terminal Fluviomarítima Colonia (ANP), en Avda. Roosevelt y Rivera. Es el recinto de pasajeros y vehículos: ahí se hace el check-in, migraciones y aduana, y desde ahí sale el ferry hacia Buenos Aires.'
+  },
+  {
+    q: '¿Dónde amarran los yates?',
+    a: 'En el Puerto Deportivo, en Santa Rita 17. Es un recinto para yates y embarcaciones menores, con 136 amarres y atención de lunes a viernes de 8:30 a 16:30.'
+  },
+  {
+    q: '¿El Barrio Histórico es lo mismo que el puerto?',
+    a: 'No. El Barrio Histórico es el sitio declarado Patrimonio Mundial por la UNESCO y es distinto de los dos recintos portuarios. El Puerto Deportivo está dentro del casco histórico; la terminal de ferries queda a pocos cientos de metros, fuera del casco.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia', url: LINKS.anpPort },
+  { label: 'ANP · Puerto Deportivo de Colonia', url: LINKS.anpDeportivo },
+  { label: 'UNESCO · Barrio Histórico de la ciudad de Colonia del Sacramento', url: LINKS.unesco }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Puerto de Colonia vs. Puerto Deportivo"
+  description="Puerto de Colonia (terminal de ferries) y Puerto Deportivo son recintos distintos de ANP: compará direcciones, usos y el Barrio Histórico UNESCO."
+  h1="Puerto de Colonia y Puerto Deportivo: no son lo mismo"
+  kicker="Guías · No confundir"
+  lead="El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) es la terminal de ferries en Avda. Roosevelt y Rivera; el Puerto Deportivo de Colonia es otro recinto de ANP, en Santa Rita 17, para yates y embarcaciones menores. Confundirlos te puede hacer perder el embarque o llegar al lugar equivocado."
+  crumbs={[{ name: 'Puerto vs. Puerto Deportivo', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en el Puerto de Colonia, terminal fluviomarítima de Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dos recintos de ANP, dos usos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Puerto de Colonia (terminal de ferries)</p><p class="mt-2 leading-6">Terminal Fluviomarítima Colonia, ANP. Ferry de pasajeros y vehículos hacia Buenos Aires. Avda. Roosevelt y Rivera. Tel. <a class="underline decoration-black/20 underline-offset-4" href="tel:+59845222140">+598 4522 2140</a> · comercial@anp.com.uy.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Puerto Deportivo de Colonia</p><p class="mt-2 leading-6">Recinto de ANP para yates y embarcaciones menores. Santa Rita 17, 70000 Colonia del Sacramento. 136 amarres. Tel. 4522 4225 / 8715 · puertodepcolonia@anp.com.uy. Oficina lunes a viernes 8:30–16:30.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Los dos dependen de la Administración Nacional de Puertos, pero no son el mismo lugar ni tienen el mismo público. Uno mueve pasajeros y vehículos que cruzan el Río de la Plata; el otro guarda yates y embarcaciones menores. Además de los dos, existe un tercer «objeto» que suele confundirse: el <strong>Barrio Histórico</strong>, que es el sitio UNESCO y no un puerto.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Tabla comparativa</h2>
+    <div class="mt-6 overflow-x-auto border border-[var(--line)] bg-white/40">
+      <table class="w-full text-left text-sm leading-6">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="px-4 py-3 font-semibold"></th>
+            <th class="px-4 py-3 font-semibold">Terminal de ferries</th>
+            <th class="px-4 py-3 font-semibold">Puerto Deportivo</th>
+            <th class="px-4 py-3 font-semibold">Barrio Histórico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)] align-top">
+            <th class="px-4 py-3 font-medium text-left">Qué es</th>
+            <td class="px-4 py-3 opacity-75">Terminal fluviomarítima de pasajeros y vehículos (ANP)</td>
+            <td class="px-4 py-3 opacity-75">Recinto para yates y embarcaciones menores (ANP)</td>
+            <td class="px-4 py-3 opacity-75">Sitio declarado Patrimonio Mundial por la UNESCO</td>
+          </tr>
+          <tr class="border-b border-[var(--line)] align-top">
+            <th class="px-4 py-3 font-medium text-left">Dirección</th>
+            <td class="px-4 py-3 opacity-75">Avda. Roosevelt y Rivera</td>
+            <td class="px-4 py-3 opacity-75">Santa Rita 17, 70000</td>
+            <td class="px-4 py-3 opacity-75">Casco histórico de la ciudad</td>
+          </tr>
+          <tr class="border-b border-[var(--line)] align-top">
+            <th class="px-4 py-3 font-medium text-left">Coordenadas</th>
+            <td class="px-4 py-3 opacity-75">—</td>
+            <td class="px-4 py-3 opacity-75">Lat 34º28´.5S / Long 57º50´.6W</td>
+            <td class="px-4 py-3 opacity-75">S34 28 16.284 W57 50 59.633</td>
+          </tr>
+          <tr class="border-b border-[var(--line)] align-top">
+            <th class="px-4 py-3 font-medium text-left">Ubicación</th>
+            <td class="px-4 py-3 opacity-75">Fuera del casco histórico, a pocos cientos de metros</td>
+            <td class="px-4 py-3 opacity-75">Dentro del casco histórico</td>
+            <td class="px-4 py-3 opacity-75">Es el casco histórico</td>
+          </tr>
+          <tr class="border-b border-[var(--line)] align-top">
+            <th class="px-4 py-3 font-medium text-left">Contacto</th>
+            <td class="px-4 py-3 opacity-75">4522 2140 · comercial@anp.com.uy</td>
+            <td class="px-4 py-3 opacity-75">4522 4225 / 8715 · puertodepcolonia@anp.com.uy</td>
+            <td class="px-4 py-3 opacity-75">—</td>
+          </tr>
+          <tr class="align-top">
+            <th class="px-4 py-3 font-medium text-left">Detalle</th>
+            <td class="px-4 py-3 opacity-75">Principal puerto del país por movimiento de pasajeros y vehículos</td>
+            <td class="px-4 py-3 opacity-75">136 amarres · oficina lunes a viernes 8:30–16:30</td>
+            <td class="px-4 py-3 opacity-75">Inscripto en 1995 (Criterion iv)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">Datos de ANP y UNESCO. Las coordenadas del Puerto Deportivo y el perímetro UNESCO son referencias geográficas, no direcciones postales.</p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo no equivocarte al llegar</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Definí qué vas a hacer</h3><p class="mt-2 leading-7 opacity-75">Si vas a cruzar a Buenos Aires o esperás a alguien que llega en ferry, el destino es la terminal de ferries. Si vas en yate o buscás un amarre, el destino es el Puerto Deportivo.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Chequeá la dirección en el mapa</h3><p class="mt-2 leading-7 opacity-75">Terminal de ferries: Avda. Roosevelt y Rivera. Puerto Deportivo: Santa Rita 17. Antes de salir, verificá que el punto del mapa coincida con el nombre del recinto que buscás.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Usá el teléfono correcto</h3><p class="mt-2 leading-7 opacity-75">Terminal de ferries: 4522 2140. Puerto Deportivo: 4522 4225 / 8715 (oficina lunes a viernes de 8:30 a 16:30).</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">No confundas el puerto con el Barrio Histórico</h3><p class="mt-2 leading-7 opacity-75">El sitio UNESCO es el Barrio Histórico. El Puerto Deportivo está dentro del casco; la terminal de ferries, a pocos cientos de metros, fuera.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la logística</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar al puerto</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/historia/puerto-de-colonia/">Historia del Puerto de Colonia</a>
+    </div>
+  </section>
+</GuideLayout>

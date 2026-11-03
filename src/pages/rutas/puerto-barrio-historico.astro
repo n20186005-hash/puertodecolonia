@@ -1,0 +1,91 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/rutas/puerto-barrio-historico/';
+
+const faq = [
+  {
+    q: '¿Se puede ir caminando del puerto al Barrio Histórico?',
+    a: 'Sí. El Puerto de Colonia está en el borde urbano y el Barrio Histórico queda a un paseo a pie. Según estimaciones de terceros, son unos 600–900 m, alrededor de 10 minutos, sin confirmación oficial. El tramo real depende de dónde estés y de si llevás equipaje.'
+  },
+  {
+    q: '¿El puerto está dentro del Barrio Histórico?',
+    a: 'No. La terminal de ferries (Puerto de Colonia, ANP) está fuera del casco histórico. Lo que sí está dentro del Barrio Histórico es el Puerto Deportivo, en Santa Rita 17, una instalación distinta. No las confundas al planificar el recorrido.'
+  },
+  {
+    q: '¿Qué calles sirven para entrar al Barrio Histórico?',
+    a: 'La Comisión UNESCO de Uruguay menciona como accesos Odriozola, Manuel Lobo, Rivadavia, 18 de Julio y Av. General Flores. Cualquiera de ellas te adentra en el casco antiguo: elegí según el punto por el que llegues.'
+  },
+  {
+    q: '¿Cuánto tiempo conviene dedicarle al paseo?',
+    a: 'Para caminarlo sin apuro, reservá varias horas si querés sumar Plaza Mayor, Calle de los Suspiros y el entorno del Faro. Si tenés ferry de regreso, calculá el paseo hacia atrás desde la hora de presentación de tu pasaje.'
+  },
+  {
+    q: '¿Por qué el Barrio Histórico es Patrimonio Mundial?',
+    a: 'Fue declarado por la UNESCO en 1995 con el criterio (iv). Su valor está en un trazado urbano libre, adaptado al terreno, que no sigue la cuadrícula rígida de las Leyes de Indias, y en la fusión de estilos portugués, español y poscolonial.'
+  }
+];
+
+const sources = [
+  { label: 'UNESCO · Barrio Histórico de Colonia del Sacramento', url: 'https://whc.unesco.org/en/list/747' },
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia', url: 'https://comisionunesco.org.uy/rutas-unesco/barrio-historico-de-colonia-del-sacramento/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Del puerto al Barrio Histórico a pie"
+  description="Cómo ir a pie del puerto al Barrio Histórico de Colonia del Sacramento, Patrimonio UNESCO, con el trayecto aproximado y las calles de acceso."
+  h1="Del puerto al Barrio Histórico de Colonia, a pie"
+  kicker="Rutas · Barrio Histórico"
+  lead="El Barrio Histórico de Colonia del Sacramento es Patrimonio Mundial de la UNESCO desde 1995 y queda a un paseo a pie del Puerto de Colonia, en el orden de 600–900 m. Te dejamos el recorrido y los accesos para que lo hagas sin apuro."
+  crumbs={[{ name: 'Del puerto al Barrio Histórico', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Vista del frente portuario de Colonia del Sacramento en dirección al Barrio Histórico"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El Barrio Histórico, en datos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Declaración UNESCO</p><p class="mt-2 leading-6">Patrimonio Mundial desde 1995 (9/12/1995). Nombre oficial: Barrio Histórico de la Ciudad de Colonia del Sacramento.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Criterio</p><p class="mt-2 leading-6">Criterio (iv): un trazado urbano libre, adaptado al terreno, que no sigue la cuadrícula rígida de las Leyes de Indias.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Superficie</p><p class="mt-2 leading-6">19 ha de bien declarado y 57 ha de zona de amortiguación.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Protección</p><p class="mt-2 leading-6">Por la Ley 14.040 de 1971, el conjunto está declarado Monumento Histórico Nacional.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El <strong>Barrio Histórico de Colonia del Sacramento</strong> es el núcleo patrimonial de la ciudad y el destino natural de quien baja del ferry con algunas horas libres. Fundado por los portugueses en 1680, conserva un paisaje urbano que combina lo portugués, lo español y lo poscolonial. El Puerto de Colonia y el Barrio Histórico son objetos distintos: la terminal de ferries queda fuera del casco, así que el paseo empieza justamente con ese desplazamiento.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El paseo a pie, paso a paso</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Salí de la terminal por la salida pública</h3><p class="mt-2 leading-7 opacity-75">Seguí la señalización hacia la ciudad. El puerto comercial está fuera del casco histórico: primero te toca el tramo urbano.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Tomá hacia Av. General Flores o Manuel Lobo</h3><p class="mt-2 leading-7 opacity-75">Son ejes que te acercan al borde del barrio antiguo. La distancia estimada es de unos 600–900 m, alrededor de 10 minutos (estimación de terceros, sin confirmación oficial).</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Entrá al casco por un acceso reconocido</h3><p class="mt-2 leading-7 opacity-75">La Comisión UNESCO de Uruguay lista Odriozola, Manuel Lobo, Rivadavia, 18 de Julio y Av. General Flores como calles de acceso al Barrio Histórico.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Recorré el centro histórico</h3><p class="mt-2 leading-7 opacity-75">Adentro te esperan la Plaza Mayor, la Calle de los Suspiros, el Portón de Campo y el entorno del Faro. Ajustá el regreso a la hora de presentación de tu pasaje.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Accesos y advertencias</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Las calles de entrada al Barrio Histórico son <strong>Odriozola, Manuel Lobo, Rivadavia, 18 de Julio y Av. General Flores</strong>. La distancia entre el puerto y el casco no tiene dato oficial: la referencia de <strong>aprox. 600–900 m, unos 10 minutos a pie</strong> es una estimación de terceros, sin confirmación oficial. Con valijas grandes, movilidad reducida o mucho calor, resolvé el último tramo en taxi.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Ojo con la confusión de nombres: el puerto comercial está fuera del casco histórico, mientras que el Puerto Deportivo (Santa Rita 17) sí queda dentro del Barrio Histórico. Si buscás una marina o un amarre de yates, no es la terminal de ferries.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí el paseo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después de llegar al casco</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-porton-campo/">Del puerto al Portón de Campo</a>
+      <a class="pill" href="/guias/puerto-vs-puerto-deportivo/">Puerto vs. Puerto Deportivo</a>
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+      <a class="pill" href="/rutas/buenos-aires-colonia/">Buenos Aires a Colonia</a>
+    </div>
+  </section>
+</GuideLayout>

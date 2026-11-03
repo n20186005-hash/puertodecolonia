@@ -1,0 +1,85 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/cerca/';
+
+const faq = [
+  {
+    q: '¿Este sitio evalúa, puntúa o recomienda comercios?',
+    a: 'No. Somos una guía independiente, no oficial y sin fines de lucro. No auditamos ni puntuamos locales, no hacemos ranking y ningún comercio paga por aparecer. Mencionamos lugares concretos por su utilidad práctica para el viaje.'
+  },
+  {
+    q: '¿Los horarios y precios de los locales están confirmados?',
+    a: 'No todos. Cuando un horario proviene de una fuente, lo indicamos; cuando no hay dato confirmado, el local aparece solo con nombre y dirección. Precios, servicios y disponibilidad hay que verificarlos con cada establecimiento.'
+  },
+  {
+    q: '¿Puedo desayunar, almorzar y dormir sin alejarme del puerto?',
+    a: 'La zona más cercana a la terminal concentra alojamiento sobre Rivera y Av. Roosevelt y locales de comida hacia Av. Gral. Flores. Igual, tené un plan B: no está garantizado que todos los locales atiendan a la hora que llegás.'
+  },
+  {
+    q: '¿Con quién confirmo si un lugar está abierto?',
+    a: 'Siempre con el propio local. Para ubicar opciones podés usar el directorio gastronómico de la Intendencia de Colonia y el registro de operadores de MINTUR, pero ninguno publica horarios actualizados: la confirmación es directa.'
+  }
+];
+
+const sources = [
+  { label: 'Intendencia de Colonia · Directorio gastronómico del departamento', url: LINKS.intendenciaGastronomia },
+  { label: 'MINTUR · Registro de operadores turísticos de Colonia', url: LINKS.minturOperadores },
+  { label: 'Uruguay Natural · Colonia del Sacramento', url: LINKS.turismoColonia }
+];
+
+const guias = [
+  { title: 'Cafés y desayunos', href: '/cerca/cafe-desayuno-puerto/', desc: 'Qué hay por zona y a qué hora abre cada una, con locales de horario confirmado y otros que todavía hay que verificar.' },
+  { title: 'Restaurantes para almorzar', href: '/cerca/restaurantes-almuerzo-puerto/', desc: 'La franja de almuerzo de 11:00 a 16:30, el intervalo de 16:30 a 19:30 y los locales que quedan por confirmar.' },
+  { title: 'Dónde dormir', href: '/cerca/hoteles-puerto-colonia/', desc: 'Alojamiento por zona según tu plan: junto al puerto y la terminal de ómnibus, en el centro y el casco, o sobre la rambla.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cerca del Puerto de Colonia"
+  description="Cafés, almuerzos y alojamiento cerca de la Terminal Fluviomarítima Colonia: qué hay por zona y por qué conviene confirmar horarios en cada lugar."
+  h1="Comer y dormir cerca del Puerto de Colonia"
+  kicker="Cerca del puerto · Índice"
+  lead="Todo lo que suele resolverse a pocas cuadras de la Terminal Fluviomarítima Colonia (ANP): dónde tomar un café temprano, dónde almorzar y dónde dormir según tu plan. No auditamos comercios: horarios y disponibilidad se confirman con cada lugar."
+  crumbs={[{ name: 'Cerca del puerto', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia, punto de referencia para comer y dormir cerca"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Antes de entrar: cómo leer esta sección</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Guía independiente</p><p class="mt-2 leading-6">No auditamos, no puntuamos y no cobramos por mencionar un comercio. Los nombres son un punto de partida para ubicarte, no una recomendación.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horarios a confirmar</p><p class="mt-2 leading-6">Los horarios cambian y algunos no tienen fuente confirmada. Antes de ir, verificá con cada lugar: en esta sección no damos por segura ninguna franja.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Cerca del puerto hay tres zonas útiles: el entorno de la terminal y la <a class="underline decoration-black/20 underline-offset-4" href="/transporte/terminal-omnibus/">terminal de ómnibus</a>, la Av. Gral. Flores hacia el centro, y el Barrio Histórico con la Rambla. La primera abre más temprano; las otras priorizan el ambiente. Si venís con poco tiempo, calculá el regreso con el <a class="underline decoration-black/20 underline-offset-4" href="/rutas/puerto-barrio-historico/">trayecto del puerto al Barrio Histórico</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que conviene resolver con el estómago y la valija</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/itinerarios/colonia-4-horas/">Colonia en 4 horas</a>
+      <a class="pill" href="/terminal/consigna-equipaje/">Consigna de equipaje</a>
+      <a class="pill" href="/transporte/taxi-remis-puerto/">Taxis y remises</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+    </div>
+  </section>
+</GuideLayout>

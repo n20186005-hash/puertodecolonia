@@ -1,0 +1,169 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/navieras/buquebus/';
+
+const faq = [
+  {
+    q: '¿Dónde atiende Buquebus en Colonia y en Buenos Aires?',
+    a: 'En Colonia opera desde la Terminal Fluvial del Puerto de Colonia (Muelles Unión y Ultramar), con atención todos los días de 8:15 a 18:45. En Buenos Aires sale desde la Terminal Fluvial de Puerto Madero, en Dársena Norte. Ojo: el horario es de atención de la terminal, no de salidas.'
+  },
+  {
+    q: '¿Cuándo abre y cierra el check-in de Buquebus?',
+    a: 'La página de embarque indica que el check-in abre 2 horas antes de la partida y cierra 25 minutos antes. La propia FAQ del sitio habla de 20 minutos, así que hay una inconsistencia oficial: tomá el margen más amplio y llegá con tiempo.'
+  },
+  {
+    q: '¿Cuánto equipaje puedo llevar en Buquebus?',
+    a: 'La sección de equipaje y la FAQ hablan de hasta 30 kg por pasajero, con equipaje de mano de 35×25×55 cm (maletas) o 30×20×35 cm (bolsos). Los contratos de adhesión mencionan 20 kg, así que la cifra depende del documento. Confirmá con la naviera según tu billete.'
+  },
+  {
+    q: '¿Puedo hacer el check-in por internet?',
+    a: 'El web check-in está disponible solo para pasajeros mayores de 18 años de nacionalidad argentina o uruguaya, y se abre desde las 24 horas previas hasta 3 horas antes de viajar. Las reservas con menores no pueden hacer este tipo de check-in.'
+  },
+  {
+    q: '¿Qué necesito para viajar con mascota?',
+    a: 'La mascota puede ir en cabina, en el auto, en canil de bodega o en Pet Pod. La caja tiene que medir como máximo 45×35×25 cm y, para ingresar a Uruguay, se exige el CVI de SENASA. En los tramos en bus hay que avisar con al menos 24 horas de anticipación.'
+  },
+  {
+    q: '¿Cómo funcionan las cancelaciones y los reembolsos?',
+    a: 'Hay que cancelar al menos 24 horas antes de la salida para conservar o reprogramar el viaje. El reembolso se pide dentro del plazo de validez del billete y tiene una retención del 30%; si cancelás con menos de 24 horas, se pierde el derecho a devolución, y los paquetes o promociones no son reembolsables.'
+  }
+];
+
+const sources = [
+  { label: 'Buquebus · Sitio oficial', url: 'https://www.buquebus.com/' },
+  { label: 'Buquebus · Embarque y check-in', url: 'https://www.buquebus.com/info/embarque' },
+  { label: 'Buquebus · Web Check-In', url: 'https://www.buquebus.com/info/check-in' },
+  { label: 'Buquebus · Equipaje', url: 'https://www.buquebus.com.uy/informacion-util/equipaje' },
+  { label: 'Buquebus · Mascotas', url: 'https://www.buquebus.com/info/mascotas' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Buquebus: embarque, equipaje y mascotas"
+  description="Perfil de Buquebus: check-in, equipaje, vehículos, mascotas y cancelaciones, según sus webs oficiales consultadas."
+  h1="Buquebus: terminal, check-in y condiciones de viaje"
+  kicker="Navieras · Buquebus"
+  lead="Buquebus conecta el Puerto de Colonia con la Terminal Fluvial de Puerto Madero, en Buenos Aires. Acá reunimos dónde atiende, cómo funciona el check-in, la franquicia de equipaje, las reglas para vehículos y mascotas y su política de cancelaciones, con datos de sus webs oficiales."
+  crumbs={[{ name: 'Buquebus', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry de Buquebus navegando el Río de la Plata al atardecer"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde atiende Buquebus</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Buquebus es el enlace marítimo desde Argentina para pasajeros y vehículos que cruzan a Uruguay. En Colonia opera desde la <strong>Terminal Fluvial del Puerto de Colonia</strong>, en los muelles Unión y Ultramar.
+      Los horarios que publica son de atención de la terminal: la salida real figura en tu pasaje.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Colonia del Sacramento</p>
+        <p class="mt-2 leading-6">Terminal Fluvial del Puerto de Colonia, Muelles Unión y Ultramar. Atención todos los días 8:15–18:45.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Buenos Aires</p>
+        <p class="mt-2 leading-6">Terminal Fluvial de Puerto Madero, Dársena Norte (Av. Antártida Argentina 821 y alrededores).</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Montevideo</p>
+        <p class="mt-2 leading-6">Puerto de Montevideo, atención de 9:00 a 19:30.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Puntos de venta en el puerto</p>
+        <p class="mt-2 leading-6">Puerto Franco de Colonia y terminales de los muelles Unión y Ultramar, con venta en el salón de embarque, de lunes a domingo 8:00–20:30.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Check-in: cuándo abrir y cerrar</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Apertura: 2 horas antes</h3><p class="mt-2 leading-7 opacity-75">La página de embarque indica que hay que presentarse 2 horas antes de la partida del buque.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Cierre: 25 minutos antes</h3><p class="mt-2 leading-7 opacity-75">El cierre de check-in está publicado a 25 minutos de la partida. La FAQ del propio sitio dice 20 minutos: es una inconsistencia oficial, así que llegá con margen sobre la versión más amplia.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Qué llevás al mostrador</h3><p class="mt-2 leading-7 opacity-75">Tu pasaje o número de documento, más un documento de identidad válido. Con vehículo, presentás también el pasaje de bodega y la documentación del auto.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Web check-in</h3><p class="mt-2 leading-7 opacity-75">Solo para pasajeros mayores de 18 años de nacionalidad argentina o uruguaya. Se habilita desde las 24 horas previas hasta 3 horas antes de viajar. Las reservas con menores no pueden usarlo.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Equipaje: la cifra depende del documento</h2>
+    <div class="mt-6 border border-[var(--line)] p-2 bg-white/40 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="kicker opacity-60">
+            <th class="py-3 pr-4 align-top">Documento</th>
+            <th class="py-3 pr-4 align-top">Equipaje facturado</th>
+            <th class="py-3 align-top">Equipaje de mano</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Página de equipaje y FAQ</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Hasta 30 kg por pasajero</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Maletas 35×25×55 cm / bolsos 30×20×35 cm; hasta dos piezas por billete</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Contratos de adhesión</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">20 kg</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Según tipo de bulto</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Las dos cifras conviven en el sitio oficial: 30 kg en la información de equipaje y 20 kg en los contratos. Confirmá con la naviera según tu tarifa para no llevarte una sorpresa en el mostrador.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La bicicleta viaja gratis, ubicada en la bodega. Si llevás artículos de valor o compras en la zona franca, consultá las franquicias aduaneras de cada país antes de viajar.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Vehículos en bodega y documentación</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Si embarcás el auto, la altura máxima permitida en la bodega es de <strong>1,96 metros</strong>. Además se pide seguro de responsabilidad civil Mercosur.
+      El precio del pasaje de vehículo es independiente del de pasajero y se gestiona con la naviera. <em>Valor no publicado por la fuente oficial.</em>
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En cuanto a los documentos de las personas: los argentinos presentan D.N.I. o pasaporte (no vale el documento digital de la app «Mi Argentina»), y los uruguayos, cédula de identidad o pasaporte. Conviene conservar la tarjeta migratoria que te entregan al embarcar, porque se pide al volver a entrar a Uruguay.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Mascotas y niños</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Mascotas</h3>
+        <p class="mt-3 leading-7 opacity-75">Pueden viajar en cabina, en el auto, en canil de bodega o en Pet Pod. La caja debe medir como máximo 45×35×25 cm. Para ingresar a Uruguay se exige el CVI de SENASA. En los tramos en bus hay que avisar con al menos 24 horas de anticipación y, si llevás caja, el abordaje se hace en la Terminal Tres Cruces.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <h3 class="font-semibold text-lg">Niños</h3>
+        <p class="mt-3 leading-7 opacity-75">Se pide partida de nacimiento. Si el menor viaja solo o con uno solo de los padres, hace falta una autorización (escribano público o juez). Los menores que viajan sin adulto acompañante deben subir y bajar en las paradas designadas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cancelaciones, devoluciones y mal tiempo</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Antes de las 24 horas</h3><p class="mt-2 leading-7 opacity-75">Tenés que cancelar al menos 24 horas antes de la salida para conservar o reprogramar el viaje.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Reembolso con retención</h3><p class="mt-2 leading-7 opacity-75">El reembolso se pide dentro del plazo de validez del billete y tiene una retención del 30%. Si cancelás con menos de 24 horas, perdés el derecho a devolución; los paquetes y promociones no son reembolsables.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Dónde se gestiona</h3><p class="mt-2 leading-7 opacity-75">La devolución se tramita donde compraste el pasaje. En Argentina, en la Terminal Dársena Norte (Av. Antártida Argentina 821); en Uruguay, en el local Río Negro (Río Negro 1400 esq. Colonia, Montevideo). El desistimiento de compras online o telefónicas tiene 10 días corridos y hasta 24 horas antes del servicio.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Mal tiempo</h3><p class="mt-2 leading-7 opacity-75">Ante condiciones climáticas extremas o cierre del puerto dispuesto por las autoridades portuarias, el tránsito puede restringirse o cancelarse. Buquebus avisa lo antes posible y ofrece opciones para reprogramar el viaje; el texto no menciona devoluciones en ese caso.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí comparando</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse después</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/navieras/colonia-express/">Perfil de Colonia Express</a>
+      <a class="pill" href="/comparativas/buquebus-vs-colonia-express/">Buquebus vs Colonia Express</a>
+      <a class="pill" href="/ferries/viajar-con-mascotas/">Viajar con mascotas</a>
+      <a class="pill" href="/ferries/cambios-cancelaciones/">Cambios y cancelaciones</a>
+    </div>
+  </section>
+</GuideLayout>

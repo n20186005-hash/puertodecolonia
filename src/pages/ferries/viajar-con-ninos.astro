@@ -1,0 +1,106 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/viajar-con-ninos/';
+
+const faq = [
+  {
+    q: '¿Qué documentos necesita un menor para cruzar el Río de la Plata?',
+    a: 'Buquebus pide la partida de nacimiento del menor y, si viaja solo o con uno solo de los padres, una autorización. Colonia Express separa los casos según se salga de Uruguay o de Argentina y recomienda confirmar con la Dirección Nacional de Migraciones. Cada caso es único: verificá el tuyo antes de comprar.'
+  },
+  {
+    q: '¿Dónde se tramita la autorización para que viaje un menor?',
+    a: 'Buquebus menciona que la autorización se hace ante escribano público o juez. En Argentina, Migraciones exige autorización para egresar del país a los menores de 18 años que no viajan con sus dos padres o tutores. Confirmá siempre el trámite vigente con la autoridad migratoria de tu país antes de la salida.'
+  },
+  {
+    q: '¿Cuándo no hace falta autorización en Uruguay?',
+    a: 'La exigencia uruguaya se rige por la Ley N° 18.250, artículo 29, literal C, y el Decreto 394/009, artículo 18. Quedan exceptuados los casos en que el menor viaja acompañado de sus padres o tutor, o cuando tiene un pasaporte uruguayo válido. Aun así, cada situación se evalúa por separado.'
+  },
+  {
+    q: '¿Un menor puede viajar solo en el ferry?',
+    a: 'Un menor no acompañado tiene reglas propias. Buquebus indica que los menores no acompañados deben embarcar y desembarcar en paradas designadas. Por ser un caso particular, conviene arreglarlo con anticipación con la naviera y presentar la documentación exigida.'
+  }
+];
+
+const sources = [
+  { label: 'Uruguay · Permiso para viajar con menores de edad', url: LINKS.uruguayMenores },
+  { label: 'Argentina · Migraciones y viaje de menores', url: LINKS.argentinaMenores },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Viajar con niños en el ferry a Colonia"
+  description="Autorizaciones y documentos para viajar con menores en el ferry Colonia–Buenos Aires. Cada caso es único: confirmá siempre con Migraciones."
+  h1="Viajar con niños en el ferry Colonia–Buenos Aires"
+  kicker="Ferries · Con niños"
+  lead="Viajar con niños en el ferry entre Colonia y Buenos Aires exige, además del documento del menor, una autorización en varios casos: cuando viaja solo, con uno solo de los padres o con terceros. Cada caso es único, así que confirmá siempre con la Dirección Nacional de Migraciones."
+  crumbs={[{ name: 'Viajar con niños', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en la Terminal Fluvio-Marítima del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La autorización depende de cómo viaja el menor</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      No hay una sola regla para todos los casos: lo que define si necesitás autorización es <strong>con quién viaja el menor</strong>. Estas son las situaciones habituales, según lo que publican las navieras y las autoridades migratorias.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Con ambos padres o tutor</p><p class="mt-2 leading-6">En Uruguay, el caso queda exceptuado de la autorización: viaja acompañado de sus padres o tutor.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Con uno solo de los padres</p><p class="mt-2 leading-6">Buquebus pide autorización. Según Migraciones, la autorización es necesaria cuando el menor viaja con uno solo de los padres o tutores.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Solo, sin adulto</p><p class="mt-2 leading-6">Requiere autorización y reglas propias. Buquebus indica que los menores no acompañados embarcan y desembarcan en paradas designadas.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Con terceros</p><p class="mt-2 leading-6">Migraciones incluye en la exigencia los viajes con terceros que no son los padres ni el tutor.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Lo que publica cada naviera</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Colonia Express</h3>
+        <p class="mt-3 leading-7 opacity-75">Explica los casos según se salga de Uruguay o de Argentina, porque el requisito depende del país de salida. Como cada situación es única, la propia naviera recomienda confirmar la información con la Dirección Nacional de Migraciones.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Buquebus</h3>
+        <p class="mt-3 leading-7 opacity-75">Pide la partida de nacimiento del menor y, si viaja solo o con uno solo de los padres, una autorización extendida ante escribano público o juez. Para menores no acompañados, indica que deben embarcar y desembarcar en paradas designadas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La norma uruguaya: Ley 18.250 y Decreto 394/009</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En Uruguay, la autorización para que viaje un menor se rige por la <strong>Ley N° 18.250, artículo 29, literal C</strong>, y el <strong>Decreto 394/009, artículo 18</strong>. La norma aplica a menores uruguayos o extranjeros con residencia legal o en trámite, y a quienes residen en Uruguay por más de un año.
+    </p>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      <strong>Excepciones:</strong> quedan exceptuados los casos en que el menor viaja acompañado de sus padres o tutor, o cuando posee un pasaporte uruguayo válido. Una vez emitida, la autorización solo puede revocarse por disposición judicial.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Antes de embarcar: ordená los papeles</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Definí cómo viaja el menor</h3><p class="mt-2 leading-7 opacity-75">Solo, con un solo padre, con ambos o con terceros. De eso depende si necesitás autorización.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Reuní los documentos base</h3><p class="mt-2 leading-7 opacity-75">Partida de nacimiento y documento vigente del menor, según pide la naviera.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Tramitá la autorización si corresponde</h3><p class="mt-2 leading-7 opacity-75">Ante escribano público o juez, según el caso. No lo dejes para último momento: puede demorar.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Confirmá con Migraciones</h3><p class="mt-2 leading-7 opacity-75">Antes de viajar, verificá tu caso puntual con la Dirección Nacional de Migraciones: cada situación es única.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con los trámites</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con los menores</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      La autorización del menor se suma a la documentación general del viaje y al control de migraciones. Revisá esas guías antes de comprar el pasaje.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/menores/">Menores y autorizaciones</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

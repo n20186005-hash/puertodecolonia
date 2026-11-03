@@ -1,0 +1,232 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/cerca/hoteles-puerto-colonia/';
+
+const faq = [
+  {
+    q: '¿Qué hotel está más cerca del puerto de Colonia?',
+    a: 'Los alojamientos sobre la calle Rivera y la Av. Roosevelt están a pocas cuadras de la Terminal Fluviomarítima Colonia (ANP). Entre ellos, Hotel Rivera se presenta en su web oficial como «a 1 cuadra del Puerto y Terminal de Ómnibus».'
+  },
+  {
+    q: '¿Están confirmados los precios y la disponibilidad de estos hoteles?',
+    a: 'No. Acá solo publicamos nombres y direcciones tomados del registro oficial de operadores turísticos de MINTUR. Precios, categorías efectivas y disponibilidad hay que verificarlos aparte, con cada establecimiento o una agencia: este sitio no vende alojamiento.'
+  },
+  {
+    q: '¿Conviene alojarse en el Barrio Histórico o junto al puerto?',
+    a: 'Depende de tu plan. Junto al puerto y la terminal de ómnibus ganás minutos el día del embarque; en el centro y el Barrio Histórico ganás ambiente y cercanía a las callecitas y los museos. Las dos zonas quedan a distancia caminable, así que no es una decisión dramática.'
+  },
+  {
+    q: '¿Se puede ir caminando desde el Sheraton al puerto?',
+    a: 'No conviene. El Sheraton Colonia Golf & Spa Resort está en Real de San Carlos, a unos 3 a 4 km del puerto: con valijas no es un trayecto para hacer a pie. Para ese caso, prevé un traslado.'
+  },
+  {
+    q: '¿El sitio vende o reserva alojamiento?',
+    a: 'No. Somos una guía independiente, no oficial y sin fines de lucro. No representamos a los hoteles ni a MINTUR, no cobramos por aparecer y no gestionamos reservas.'
+  }
+];
+
+const sources = [
+  { label: 'MINTUR · Registro oficial de operadores turísticos (Colonia)', url: 'https://www.mintur.gub.uy/consulta-operadores/2019/operadores.php?depto=COLONIA&id=4&loc=COLONIA' },
+  { label: 'Uruguay Natural · Colonia del Sacramento (Ministerio de Turismo)', url: 'https://uruguaynatural.com/es/places/colonia-encanto-historico-y-paisajes-del-plata/' },
+  { label: 'UNESCO · Barrio Histórico de Colonia del Sacramento', url: 'https://whc.unesco.org/en/list/747' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Hoteles cerca del Puerto de Colonia"
+  description="Hoteles cerca del Puerto de Colonia por zona: nombres y direcciones del registro oficial de MINTUR. Precios y disponibilidad, a verificar aparte."
+  h1="Hoteles cerca del Puerto de Colonia"
+  kicker="Cerca del puerto · Dónde dormir"
+  lead="Alrededor del Puerto de Colonia y su terminal de ómnibus hay alojamiento para todos los bolsillos, desde hoteles de dos estrellas hasta resorts de cinco. Acá van los nombres y direcciones del registro oficial de MINTUR, ordenados por zona."
+  crumbs={[{ name: 'Hoteles cerca del Puerto de Colonia', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP), a pocas cuadras de varios hoteles"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo usar esta lista</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Los nombres, direcciones y categorías que siguen provienen del <strong>registro oficial de operadores turísticos de MINTUR</strong>. Son un punto de partida para ubicarte, no una recomendación: los <strong>precios y la disponibilidad</strong> hay que verificarlos aparte, y este sitio no vende ni reserva alojamiento.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Zona 1 · Junto al puerto y la terminal de ómnibus</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">Sobre la calle Rivera y la Av. Roosevelt. Es la zona más práctica si el embarque es temprano y viajás con valijas.</p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 font-semibold">Alojamiento</th>
+            <th class="py-3 pr-4 font-semibold">Dirección</th>
+            <th class="py-3 font-semibold">Nota</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Rivera</td>
+            <td class="py-3 pr-4">Rivera 131</td>
+            <td class="py-3">2★ · su web oficial dice «A 1 cuadra del Puerto y Terminal de Ómnibus».</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Leoncia</td>
+            <td class="py-3 pr-4">Rivera 214</td>
+            <td class="py-3">3★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Romi</td>
+            <td class="py-3 pr-4">Rivera 236 esq. General Flores</td>
+            <td class="py-3">2★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">El Mirador Hotel &amp; Spa</td>
+            <td class="py-3 pr-4">Franklin Delano Roosevelt 381</td>
+            <td class="py-3">4★ · desayuno buffet incluido; check-in 14:00 / check-out 11:00.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Radisson Colonia Hotel &amp; Casino</td>
+            <td class="py-3 pr-4">Washington Barbot 283</td>
+            <td class="py-3">5★ · a unas 3 calles del puerto (dato de terceros).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Zona 2 · Centro y Barrio Histórico</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">Sobre General Flores y el casco histórico. Más ambiente y cercanía a las callecitas y los museos.</p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 font-semibold">Alojamiento</th>
+            <th class="py-3 pr-4 font-semibold">Dirección</th>
+            <th class="py-3 font-semibold">Nota</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Royal</td>
+            <td class="py-3 pr-4">General Flores 340</td>
+            <td class="py-3">3★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Beltrán</td>
+            <td class="py-3 pr-4">Gral. Flores 311</td>
+            <td class="py-3">3★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Hotel Italiano</td>
+            <td class="py-3 pr-4">Intendente Suárez 105</td>
+            <td class="py-3">3★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Real Colonia Hotel &amp; Suites</td>
+            <td class="py-3 pr-4">González Moreno 001</td>
+            <td class="py-3">Registro oficial; verificá categoría y servicios.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Posada Plaza Mayor</td>
+            <td class="py-3 pr-4">Calle del Comercio 111</td>
+            <td class="py-3">Dentro del Barrio Histórico.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Charco Hotel</td>
+            <td class="py-3 pr-4">San Pedro 116</td>
+            <td class="py-3">Dentro del Barrio Histórico.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Zona 3 · Rambla y más lejos</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">Opción de vistas al río o de resort. Ojo con las distancias: el Sheraton está fuera del casco urbano.</p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 font-semibold">Alojamiento</th>
+            <th class="py-3 pr-4 font-semibold">Dirección</th>
+            <th class="py-3 font-semibold">Nota</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Dazzler Colonia</td>
+            <td class="py-3 pr-4">Rambla de las Américas 1530</td>
+            <td class="py-3">4★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Costa Colonia Riverside Boutique</td>
+            <td class="py-3 pr-4">Joaquín Torres García 1102</td>
+            <td class="py-3">4★.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Sheraton Colonia Golf &amp; Spa Resort</td>
+            <td class="py-3 pr-4">Real de San Carlos</td>
+            <td class="py-3">5★ · a unos 3–4 km del puerto; no es para caminar con valijas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Elegí la zona según tu hora de embarque</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La mejor zona depende de tu horario y de cuánto equipaje lleves. Esta tabla cruza las tres áreas con el viajero al que le conviene cada una.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 font-semibold">Zona</th>
+            <th class="py-3 pr-4 font-semibold">Conviene si…</th>
+            <th class="py-3 font-semibold">Qué verificar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Junto al puerto y la terminal de ómnibus</td>
+            <td class="py-3 pr-4">Tenés embarque temprano, llegás o salís de noche, o viajás con valijas.</td>
+            <td class="py-3">Distancia real a pie hasta el puerto y horario del check-out.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Centro y Barrio Histórico</td>
+            <td class="py-3 pr-4">Querés ambiente, callecitas y museos, y no te apura el embarque.</td>
+            <td class="py-3">Lo que se camina hasta el puerto y si el traslado con valijas es cómodo.</td>
+          </tr>
+          <tr class="border-b border-[var(--line)]">
+            <td class="py-3 pr-4">Rambla y más lejos</td>
+            <td class="py-3 pr-4">Buscás vistas al río o resort y contás con traslado propio.</td>
+            <td class="py-3">La distancia al puerto: el Sheraton, en Real de San Carlos, queda a 3–4 km.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-12">Qué verificar antes de reservar</h3>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Nombre y dirección en el mapa</h3><p class="mt-2 leading-7 opacity-75">Comprobá que el nombre y la dirección coincidan con el punto que abre tu app de mapas antes de reservar.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Distancia real al puerto</h3><p class="mt-2 leading-7 opacity-75">Medí el recorrido desde la Terminal Fluviomarítima Colonia (ANP) según tu medio de traslado, no solo en línea recta.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Horario y servicios vigentes</h3><p class="mt-2 leading-7 opacity-75">Confirmá con el establecimiento el check-in, el check-out y los servicios que necesitás: el registro oficial no publica esas condiciones.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Última verificación antes de pagar</h3><p class="mt-2 leading-7 opacity-75">Comprobá que el alojamiento siga operativo y aceptando reservas para tu fecha.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes de reservar</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que conviene resolver junto con el alojamiento</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar al puerto</a>
+      <a class="pill" href="/transporte/taxi-remis-puerto/">Taxis y remises</a>
+      <a class="pill" href="/cerca/cafe-desayuno-puerto/">Cafés y desayunos</a>
+      <a class="pill" href="/terminal/consigna-equipaje/">Consigna de equipaje</a>
+    </div>
+  </section>
+</GuideLayout>

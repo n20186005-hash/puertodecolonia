@@ -1,0 +1,121 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/rutas/puerto-museos-historicos/';
+
+const espacios = [
+  { nombre: 'Dr. Bautista Rebuffo', dato: 'Acá se compra la entrada general: Calle Del Comercio 77.' },
+  { nombre: 'Vivienda Portuguesa (Casa de Nacarello)', dato: 'Casa portuguesa del siglo XVIII.' },
+  { nombre: 'Portugués', dato: 'Calle Del Comercio 77; abierto en 1977; conserva el escudo de piedra del Portón de Campo.' },
+  { nombre: 'Archivo Histórico', dato: 'Sin detalle adicional publicado en la fuente consultada.' },
+  { nombre: 'Del Telégrafo', dato: 'Sin detalle adicional publicado en la fuente consultada.' },
+  { nombre: 'Indígena', dato: 'Sin detalle adicional publicado en la fuente consultada.' },
+  { nombre: 'Español', dato: 'Esquina San José y España, antigua Casa de Don Juan de Águila, edificio portugués de 1720.' },
+  { nombre: 'Del Azulejo', dato: 'Paseo de San Gabriel y Misiones de los Tapes; abierto en 1988; más de 5000 piezas.' },
+  { nombre: 'Paleontológico', dato: 'Sin detalle adicional publicado en la fuente consultada.' }
+];
+
+const faq = [
+  {
+    q: '¿Cuánto cuesta visitar los museos de Colonia?',
+    a: 'El sitio de Museo de Colonia publica una entrada de $150 que incluye todos los Espacios Expositivos. Es la fuente más actualizada: confirmá el valor vigente al momento de comprar.'
+  },
+  {
+    q: '¿Dónde se compra la entrada de los museos?',
+    a: 'La compra se hace en el Espacio Bautista Rebuffo, Calle Del Comercio 77. La misma fuente menciona la dirección Calle del Comercio 183, de lunes a viernes de 11:30 a 16:30.'
+  },
+  {
+    q: '¿Quiénes entran gratis a los museos de Colonia?',
+    a: 'El sitio de Museo de Colonia indica entrada libre para menores de 12 años, residentes del departamento de Colonia, el Día Internacional de los Museos y el Día del Patrimonio.'
+  },
+  {
+    q: '¿Qué son los Espacios Expositivos?',
+    a: 'Es la denominación actual del sistema de museos. Por el decreto 05/2021, vigente desde el 03/02/2022, los «Museos» pasaron a llamarse «Espacios» y quedaron agrupados en nueve espacios.'
+  },
+  {
+    q: '¿Por qué veo precios y horarios distintos según la fuente?',
+    a: 'Porque hay fuentes más antiguas. Portal de Colonia (con contenido de 2009) hablaba de un boleto de $50 y de jueves cerrado. Los valores y horarios cambian, así que conviene confirmar antes de ir: el dato actual es el de Museo de Colonia.'
+  }
+];
+
+const sources = [
+  { label: 'Museo de Colonia · Sistema de museos', url: LINKS.museos },
+  { label: 'Museo de Colonia · Prepará tu visita', url: LINKS.museosPrepara },
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia del Sacramento', url: LINKS.unescoUy }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Museos de Colonia desde el puerto"
+  description="Cómo recorrer los Espacios Expositivos de Colonia desde el puerto: entrada de $150, qué incluye, dónde se compra y quiénes entran gratis."
+  h1="Los museos de Colonia desde el puerto"
+  kicker="Rutas · Museos"
+  lead="Los museos de Colonia hoy son los Espacios Expositivos: nueve espacios con una entrada de $150 que los incluye a todos. Desde el puerto quedan a unos 600–900 m (unos 10 minutos a pie, estimación de terceros), dentro del Barrio Histórico."
+  crumbs={[{ name: 'Museos desde el puerto', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia (ANP), Puerto de Colonia, Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Entrada y datos prácticos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Entrada</p><p class="mt-2 leading-6">$150, incluye todos los Espacios Expositivos.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde se compra</p><p class="mt-2 leading-6">En el Espacio Bautista Rebuffo, Calle Del Comercio 77.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Otra dirección citada</p><p class="mt-2 leading-6">Calle del Comercio 183, de lunes a viernes de 11:30 a 16:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Entrada libre</p><p class="mt-2 leading-6">Menores de 12 años, residentes del departamento de Colonia, Día Internacional de los Museos y Día del Patrimonio.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El sistema se llama hoy <strong>«Espacios Expositivos»</strong>. Por el decreto 05/2021, vigente desde el 03/02/2022, los «Museos» pasaron a llamarse «Espacios». Con una sola entrada de $150 recorrés los nueve, así que conviene planificar el paseo por cercanía dentro del casco antiguo.
+    </p>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">
+      Hay fuentes más antiguas con otros precios y horarios (Portal de Colonia, con contenido de 2009, citaba $50 y jueves cerrado). El dato vigente es el de Museo de Colonia: conviene confirmarlo antes de ir.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los nueve Espacios Expositivos</h2>
+    <div class="mt-6 overflow-x-auto border border-[var(--line)] bg-white/40">
+      <table class="w-full text-left text-sm leading-6">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="px-4 py-3 font-semibold">Espacio</th>
+            <th class="px-4 py-3 font-semibold">Dato</th>
+          </tr>
+        </thead>
+        <tbody>
+          {espacios.map((e) => (
+            <tr class="border-b border-[var(--line)] last:border-0 align-top">
+              <td class="px-4 py-3 font-medium whitespace-nowrap">{e.nombre}</td>
+              <td class="px-4 py-3 opacity-75">{e.dato}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">Nombres según el sitio de Museo de Colonia. La información de cada espacio se limita a lo publicado en la fuente consultada.</p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo organizar el recorrido desde el puerto</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Salí de la terminal hacia la ciudad</h3><p class="mt-2 leading-7 opacity-75">Desde la Terminal Fluviomarítima (ANP), Avda. Roosevelt y Rivera, caminá hacia el Barrio Histórico. Son unos 600–900 m, unos 10 minutos a pie (estimación de terceros).</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Comprá la entrada en Bautista Rebuffo</h3><p class="mt-2 leading-7 opacity-75">La compra se hace en el Espacio Bautista Rebuffo, Calle Del Comercio 77. Con esa entrada accedés a todos los Espacios.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Agrupá los espacios por zona</h3><p class="mt-2 leading-7 opacity-75">Varios espacios están en el casco antiguo, cerca de las calles Del Comercio y de la Plaza. Armá el recorrido por cercanía para no caminar de más.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Reservá tiempo y confirmá horarios</h3><p class="mt-2 leading-7 opacity-75">Los horarios pueden cambiar. Si tenés ferry de regreso, calculá el cierre de los espacios y el tiempo de vuelta desde la hora de presentación de tu pasaje.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí recorriendo el casco antiguo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Otras rutas a pie desde el puerto</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/rutas/puerto-faro-colonia/">Del puerto al Faro</a>
+      <a class="pill" href="/rutas/puerto-calle-suspiros/">Del puerto a Calle de los Suspiros</a>
+      <a class="pill" href="/rutas/puerto-porton-campo/">Del puerto al Portón de Campo</a>
+    </div>
+  </section>
+</GuideLayout>

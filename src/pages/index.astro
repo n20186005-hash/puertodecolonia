@@ -22,8 +22,8 @@ const intendenciaColoniaUrl = 'https://www.colonia.gub.uy/';
 const coloniaExpressUrl = 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminales';
 const buquebusUrl = 'https://www.buquebus.com/';
 
-/* ---- Valoración pública de la entidad (Google Maps, 2026-10-26) ---- */
-const reviewCountDisplay = '21.074';
+/* ---- Valoración pública de la entidad (Google Maps, 2026-11-03) ---- */
+const reviewCountDisplay = '21.100';
 
 /* ---- TDK / URLs derivadas del dominio único ---- */
 const base = Astro.site ?? new URL('https://puertodecolonia.com');
@@ -33,15 +33,15 @@ const heroPath = '/photos/puerto-terminal-exterior.jpg';
 const heroImage = origin + heroPath;
 const ferryImage = origin + '/photos/ferries-terminal.jpg';
 
-const title = 'Puerto de Colonia ANP: terminal de ferry, embarque y ubicación';
-const description = 'Guía independiente de la Terminal Fluviomarítima Colonia: ubicación ANP, horarios de atención por naviera, preparativos de embarque y diferencia con el puerto deportivo.';
+const title = 'Puerto de Colonia (ANP): ferries, horarios y ubicación';
+const description = 'Guía independiente del Puerto de Colonia del Sacramento (Terminal Fluviomarítima Colonia, ANP): horarios de ferries, Buquebus, Colonia Express y embarque.';
 const ogImageAlt = 'Terminal del Puerto de Colonia en Colonia del Sacramento, Uruguay';
 
 const mapEmbed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5627.52530168108!2d-57.84639002271789!3d-34.47378967300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a312693f2c50e3%3A0xf5bb91c5579b5a0!2sPuerto%20de%20Colonia!5e1!3m2!1sen!2s!4v1788749482937!5m2!1sen!2s';
 
 const faq = [
   {q:'¿Es la terminal de ómnibus o el puerto deportivo?',a:'Esta guía y su mapa corresponden a la Terminal Fluviomarítima de ANP para ferries. No uses esta ubicación como si fuera una estación de ómnibus o el Puerto Deportivo de Santa Rita 17. Comprobá la dirección de cada tramo en tu pasaje.'},
-  {q:'¿A qué teléfono debo consultar?',a:'ANP publica +598 4522 2140 para el Puerto de Colonia. Colonia Express publica +598 4522 9676/77/78 para su terminal de Colonia, consultado el 26 de octubre de 2026. Son contactos de entidades distintas: para reservas o condiciones, usá la naviera de tu pasaje.'},
+  {q:'¿A qué teléfono debo consultar?',a:'ANP publica +598 4522 2140 para el Puerto de Colonia. Colonia Express publica +598 4522 9676/77/78 para su terminal de Colonia, consultado el 3 de noviembre de 2026. Son contactos de entidades distintas: para reservas o condiciones, usá la naviera de tu pasaje.'},
   {
     q: '¿Dónde está exactamente el Puerto de Colonia?',
     a: 'El Puerto de Colonia (Terminal Fluviomarítima Colonia, ANP) está en Av. Roosevelt y Rivera, 70000 Colonia del Sacramento, Departamento de Colonia, Uruguay. Código postal 70000 y Plus Code G5G4+FF; planificá el recorrido al Barrio Histórico según el acceso y tus condiciones de movilidad.'
@@ -109,6 +109,53 @@ const faq = [
   {
     q: '¿Qué documentación necesito para cruzar entre Uruguay y Argentina?',
     a: 'La documentación depende de nacionalidad, residencia, edad y situación de viaje; pueden exigirse autorizaciones para menores u otros requisitos. Las reglas las aplican Migración y Aduana en la propia terminal, así que verificá los requisitos vigentes con tu naviera antes de viajar.'
+  }
+];
+/* ---- Guías internas: enlazado contextual desde el inicio ---- */
+const guideGroups = [
+  {
+    title: 'Antes de viajar',
+    links: [
+      { label: 'Cómo llegar al Puerto de Colonia', href: '/terminal/ubicacion-como-llegar/' },
+      { label: 'Horarios de ferries Colonia–Buenos Aires', href: '/ferries/horarios-colonia-buenos-aires/' },
+      { label: 'Pasajes de ferry', href: '/ferries/pasajes/' },
+      { label: 'Precios de ferry', href: '/ferries/precios/' },
+      { label: 'Documentación para viajar', href: '/ferries/documentacion/' },
+      { label: 'Menores y autorizaciones', href: '/ferries/menores/' }
+    ]
+  },
+  {
+    title: 'En la terminal',
+    links: [
+      { label: 'Check-in y embarque', href: '/ferries/check-in-embarque/' },
+      { label: 'Servicios de la terminal', href: '/terminal/servicios/' },
+      { label: 'Estacionamiento y preembarque', href: '/terminal/estacionamiento/' },
+      { label: 'Accesibilidad', href: '/terminal/accesibilidad/' },
+      { label: 'Obras y accesos', href: '/terminal/obras-y-accesos/' },
+      { label: 'Llegadas tardías', href: '/terminal/llegadas-tardias/' }
+    ]
+  },
+  {
+    title: 'Navieras',
+    links: [
+      { label: 'Colonia Express', href: '/navieras/colonia-express/' },
+      { label: 'Buquebus', href: '/navieras/buquebus/' },
+      { label: 'Buquebus vs Colonia Express', href: '/comparativas/buquebus-vs-colonia-express/' },
+      { label: 'Equipaje en el ferry', href: '/ferries/equipaje/' },
+      { label: 'Viajar con vehículo', href: '/ferries/viajar-con-vehiculo/' },
+      { label: 'Cambios y cancelaciones', href: '/ferries/cambios-cancelaciones/' }
+    ]
+  },
+  {
+    title: 'Al llegar a Colonia',
+    links: [
+      { label: 'Del puerto al Barrio Histórico', href: '/rutas/puerto-barrio-historico/' },
+      { label: 'Del puerto al Faro', href: '/rutas/puerto-faro-colonia/' },
+      { label: 'Museos desde el puerto', href: '/rutas/puerto-museos-historicos/' },
+      { label: 'Colonia en 4 horas', href: '/itinerarios/colonia-4-horas/' },
+      { label: 'Un día desde Buenos Aires', href: '/itinerarios/colonia-desde-buenos-aires-un-dia/' },
+      { label: 'Cafés y restaurantes cerca', href: '/cerca/restaurantes-almuerzo-puerto/' }
+    ]
   }
 ];
 
@@ -240,6 +287,7 @@ const graphLd = {
           <a class="nav-link" href="#servicios">Servicios</a>
           <a class="nav-link" href="#ruta">Recorrido</a>
           <a class="nav-link" href="#llegar">Cómo llegar</a>
+          <a class="nav-link" href="#guias">Guías</a>
           <a class="nav-link" href="#mapa">Mapa</a>
           <a class="nav-link" href="#faq">FAQ</a>
         </nav>
@@ -258,6 +306,10 @@ const graphLd = {
             <div class="mt-8 grid md:grid-cols-[1fr_auto] gap-8 items-end">
               <p class="text-lg md:text-xl leading-8 max-w-2xl text-white/85">Una terminal fluvio-marítima que funciona como umbral entre Buenos Aires y una de las ciudades históricas más singulares del Uruguay.</p>
               <a href="#llegar" class="pill border-white text-white hover:!bg-white hover:!text-[var(--deep)]">Planificar llegada <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="mt-8 max-w-3xl border-l-2 border-white/45 pl-5 text-sm md:text-base leading-7 text-white/85">
+              <p><strong class="font-semibold text-white">Respuesta rápida:</strong> es la terminal internacional de ferries de ANP en Colonia del Sacramento (Uruguay), sobre el Río de la Plata, con conexiones de pasajeros y vehículos a Buenos Aires. Horario de referencia: 06:30–21:30 (Colonia Express); la hora que define tu viaje es la de presentación impresa en el pasaje.</p>
+              <p class="mt-2"><a class="underline decoration-white/40 underline-offset-4 hover:opacity-80" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a> · <a class="underline decoration-white/40 underline-offset-4 hover:opacity-80" href="/ferries/horarios-colonia-buenos-aires/">Horarios de ferries</a></p>
             </div>
           </div>
         </div>
@@ -285,7 +337,7 @@ const graphLd = {
             <p class="mt-5 max-w-2xl leading-8 text-[color:rgba(16,45,54,.75)]">La Administración Nacional de Puertos describe a Colonia como el principal puerto del país por movimiento de pasajeros y vehículos. La terminal moderna concentra embarque, migraciones, aduana y servicios para las conexiones del Río de la Plata.</p>
             <div class="info-grid mt-14">
               <div class="info-card col-span-4"><p class="kicker opacity-55">Nombre oficial</p><p class="mt-2 leading-6">Terminal Fluviomarítima Colonia (ANP)</p></div>
-              <div class="info-card col-span-4"><p class="kicker opacity-55">Tipo</p><p class="mt-2 leading-6">Terminal fluvio-marítima · Cruise terminal</p></div>
+              <div class="info-card col-span-4"><p class="kicker opacity-55">Tipo</p><p class="mt-2 leading-6">Terminal fluvio-marítima de pasajeros y vehículos (Google Maps la clasifica como «cruise terminal»)</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Dirección</p><p class="mt-2 leading-6">{streetAddress}<br/>{postalCode} {cityName}, {regionName}, Uruguay</p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Teléfono</p><p class="mt-2"><a href="tel:+59845222140" class="underline decoration-black/20 underline-offset-4">{telephoneDisplay}</a></p></div>
               <div class="info-card col-span-4"><p class="kicker opacity-55">Referencia horaria</p><p class="mt-2">Operativa según arribos y salidas; Colonia Express publica 06:30–21:30.</p></div>
@@ -367,12 +419,12 @@ const graphLd = {
       <section id="llegar" class="bg-white/45 border-y border-[var(--line)] py-20 md:py-28">
         <div class="shell">
           <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Logística real</p><h2 class="section-title mt-4">Cómo llegar al Puerto de Colonia y cómo moverse.</h2></div>
-          <p class="mt-6 leading-7 max-w-2xl">Completá la información con los <a class="underline decoration-black/30 underline-offset-4" href="#horarios">horarios de la terminal de ferry</a> y con los <a class="underline decoration-black/30 underline-offset-4" href="#servicios">servicios del edificio</a> antes de definir el viaje.</p>
+          <p class="mt-6 leading-7 max-w-2xl">Completá la información con los <a class="underline decoration-black/30 underline-offset-4" href="#horarios">horarios de la terminal de ferry</a> y con los <a class="underline decoration-black/30 underline-offset-4" href="#servicios">servicios del edificio</a> antes de definir el viaje. La dirección oficial, el mapa y los accesos peatonales y vehiculares están en <a class="underline decoration-black/30 underline-offset-4" href="/terminal/ubicacion-como-llegar/">cómo llegar al Puerto de Colonia</a>.</p>
           <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             <article class="info-card"><h3 class="font-semibold text-lg">Desde Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">Los ferries de pasajeros y vehículos son el vínculo internacional directo entre Buenos Aires y el Puerto de Colonia. Comprá el pasaje con la naviera y revisá documentación, equipaje y hora de presentación.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Desde Montevideo</h3><p class="mt-3 leading-7 opacity-75">Colonia está conectada por carretera y ómnibus interdepartamentales. La terminal terrestre está próxima al puerto, lo que facilita combinar bus y ferry.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Desde Montevideo</h3><p class="mt-3 leading-7 opacity-75">Colonia está conectada por carretera y ómnibus interdepartamentales. La terminal terrestre está próxima al puerto, lo que facilita combinar bus y ferry. Consultá los <a class="underline decoration-black/30 underline-offset-4" href="/rutas/colonia-montevideo-omnibus/">horarios de ómnibus Colonia–Montevideo</a>.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Desde el centro</h3><p class="mt-3 leading-7 opacity-75">Revisá en el mapa el recorrido desde tu punto de partida y considerá equipaje, movilidad, estado del camino y condiciones del día. Confirmá las opciones de traslado y dejá margen para regresar a la hora de presentación de tu pasaje.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera, frente a la terminal. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">En auto</h3><p class="mt-3 leading-7 opacity-75">Seguí los accesos urbanos hacia Av. Roosevelt y Rivera, frente a la terminal. Si embarcás el vehículo, respetá el circuito de preembarque y las instrucciones de la naviera. Las playas y el preembarque se explican en <a class="underline decoration-black/30 underline-offset-4" href="/terminal/estacionamiento/">estacionamiento y preembarque</a>.</p></article>
           </div>
         </div>
       </section>
@@ -382,11 +434,11 @@ const graphLd = {
           <div>
             <p class="kicker text-[var(--terracotta)]">Horario de atención</p>
             <h2 class="section-title mt-4">Horarios y salidas de la terminal de ferry.</h2>
-            <p class="mt-7 leading-7 max-w-md">La ficha principal de Google Maps no indicaba horarios al consultarla el 26 de octubre de 2026. Los horarios de atención de una naviera no equivalen al horario general de ANP ni a la hora límite para embarcar.</p>
+            <p class="mt-7 leading-7 max-w-md">La ficha principal de Google Maps no indicaba horarios al consultarla el 3 de noviembre de 2026. Los horarios de atención de una naviera no equivalen al horario general de ANP ni a la hora límite para embarcar.</p>
           </div>
           <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
-            <article class="info-card"><h3 class="font-semibold text-lg">Horario de referencia</h3><p class="mt-3 leading-7 opacity-75">Como referencia pública, <strong>Colonia Express</strong> informa atención diaria de <strong>06:30 a 21:30</strong> en su terminal de Colonia. Es información de esa empresa, consultada el 26 de octubre de 2026; confirmá tu servicio y acceso específicos.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Hora de presentación</h3><p class="mt-3 leading-7 opacity-75">No confundas salida con presentación: cada naviera exige estar antes en la terminal para boletería, migraciones, aduana y embarque. Esa anticipación figura impresa en el pasaje.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Horario de referencia</h3><p class="mt-3 leading-7 opacity-75">Como referencia pública, <strong>Colonia Express</strong> informa atención diaria de <strong>06:30 a 21:30</strong> en su terminal de Colonia. Es información de esa empresa, consultada el 3 de noviembre de 2026; confirmá tu servicio y acceso específicos. Las salidas por período están en <a class="underline decoration-black/30 underline-offset-4" href="/ferries/horarios-colonia-buenos-aires/">horarios Colonia–Buenos Aires</a>.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Hora de presentación</h3><p class="mt-3 leading-7 opacity-75">No confundas salida con presentación: cada naviera exige estar antes en la terminal para boletería, migraciones, aduana y embarque. Esa anticipación figura impresa en el pasaje. Los plazos de cada naviera se detallan en <a class="underline decoration-black/30 underline-offset-4" href="/ferries/check-in-embarque/">check-in y embarque</a>.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Salidas a Buenos Aires</h3><p class="mt-3 leading-7 opacity-75">ANP describe conexiones diarias de pasajeros con Buenos Aires. Consultá las salidas y disponibilidad de cada naviera en tu fecha; no asumás un refuerzo o frecuencia concreta.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Duración del cruce</h3><p class="mt-3 leading-7 opacity-75">Depende del buque y del tipo de servicio: confirmá la duración del servicio contratado y separala del tiempo de presentación, controles y embarque.</p></article>
           </div>
@@ -409,7 +461,7 @@ const graphLd = {
         </div>
       </section>
 
-      <section class="shell py-12"><h2 class="serif text-3xl">Terminal de pasajeros, puerto deportivo y Barrio Histórico</h2><p class="mt-4 leading-8">Esta guía trata la Terminal Fluviomarítima de ANP en Av. Roosevelt y Rivera. El <a href="https://www.anp.com.uy/es/inicio/puertos/deportivos/puerto-deportivo-colonia">Puerto Deportivo, Santa Rita 17</a>, es otra instalación: sus amarres, duchas y horarios no describen la terminal de ferries. La declaración UNESCO corresponde al Barrio Histórico.</p><p class="mt-4 leading-8">El <a href="https://anp.com.uy/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques">informe de ANP del 7 de octubre de 2026</a> describe obras en curso y operación mantenida durante su ejecución. No equivale a una garantía de que todas las mejoras estén terminadas o disponibles el día de tu viaje.</p></section>
+      <section class="shell py-12"><h2 class="serif text-3xl">Terminal de pasajeros, puerto deportivo y Barrio Histórico</h2><p class="mt-4 leading-8">Esta guía trata la Terminal Fluviomarítima de ANP en Av. Roosevelt y Rivera. El <a href="https://www.anp.com.uy/es/inicio/puertos/deportivos/puerto-deportivo-colonia">Puerto Deportivo, Santa Rita 17</a>, es otra instalación: sus amarres, duchas y horarios no describen la terminal de ferries. La declaración UNESCO corresponde al Barrio Histórico. Compará los tres espacios en <a href="/guias/puerto-vs-puerto-deportivo/">puerto de ferries vs. puerto deportivo</a>.</p><p class="mt-4 leading-8">El <a href="https://anp.com.uy/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques">informe de ANP del 7 de octubre de 2026</a> describe obras en curso y operación mantenida durante su ejecución. No equivale a una garantía de que todas las mejoras estén terminadas o disponibles el día de tu viaje.</p></section>
       <section id="servicios" class="border-y border-[var(--line)] bg-[#ebe5d7] py-20 md:py-28">
         <div class="shell">
           <div class="max-w-3xl"><p class="kicker text-[var(--terracotta)]">Servicios</p><h2 class="section-title mt-4">Qué hay dentro de la terminal de Colonia.</h2></div>
@@ -417,10 +469,10 @@ const graphLd = {
             <article class="info-card"><h3 class="font-semibold text-lg">Boleterías y check-in</h3><p class="mt-3 leading-7 opacity-75">Cada naviera atiende sus propios mostradores de venta, cambio y emisión de pasajes dentro del edificio principal de la terminal.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Migraciones y Aduana</h3><p class="mt-3 leading-7 opacity-75">Los cruces internacionales se controlan en la propia terminal. Documento o pasaporte según nacionalidad, equipaje sujeto a fiscalización y zonas restringidas señalizadas.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Espera y sanitarios</h3><p class="mt-3 leading-7 opacity-75">ANP describe salas de espera y mejoras de circulación. Confirmá la disponibilidad actual de sanitarios y los recorridos habilitados, especialmente durante las obras.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Gastronomía y café</h3><p class="mt-3 leading-7 opacity-75">Este sitio no ha verificado locales, menús ni horarios actuales. Confirmá una opción adecuada a tus necesidades y las reglas de alimentos y equipaje de tu naviera.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Gastronomía y café</h3><p class="mt-3 leading-7 opacity-75">Este sitio no ha verificado locales, menús ni horarios actuales. Confirmá una opción adecuada a tus necesidades y las reglas de alimentos y equipaje de tu naviera. Nuestro repaso de <a class="underline decoration-black/30 underline-offset-4" href="/cerca/cafe-desayuno-puerto/">cafés y desayunos</a> y <a class="underline decoration-black/30 underline-offset-4" href="/cerca/restaurantes-almuerzo-puerto/">almuerzos cerca del puerto</a> indica qué está confirmado y qué conviene verificar.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Preembarque de vehículos</h3><p class="mt-3 leading-7 opacity-75">Áreas pavimentadas y carriles para autos, motos y ómnibus con pasaje de ferry, con circuito propio dentro del recinto portuario.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Conexión terrestre</h3><p class="mt-3 leading-7 opacity-75">Planificá el traslado a tu destino y verificá punto de recogida, disponibilidad y precio con el prestador. No se garantiza un servicio esperando cada arribo.</p></article>
-            <article class="info-card"><h3 class="font-semibold text-lg">Accesibilidad</h3><p class="mt-3 leading-7 opacity-75">El informe de ANP del 7 de octubre de 2026 describe intervenciones de accesibilidad, entre ellas un ascensor de arribos. Confirmá el recorrido realmente habilitado y la asistencia con tu naviera antes de viajar; no se garantiza un circuito completo sin escalones.</p></article>
+            <article class="info-card"><h3 class="font-semibold text-lg">Accesibilidad</h3><p class="mt-3 leading-7 opacity-75">El informe de ANP del 7 de octubre de 2026 describe intervenciones de accesibilidad, entre ellas un ascensor de arribos. Confirmá el recorrido realmente habilitado y la asistencia con tu naviera antes de viajar; no se garantiza un circuito completo sin escalones. Ampliamos esto en <a class="underline decoration-black/30 underline-offset-4" href="/terminal/accesibilidad/">accesibilidad de la terminal</a>.</p></article>
             <article class="info-card"><h3 class="font-semibold text-lg">Cruceros y escalas</h3><p class="mt-3 leading-7 opacity-75">La categoría de un mapa no confirma una escala ni un muelle de atraque. Para cruceros, seguí las indicaciones del itinerario y de la ANP.</p></article>
           </div>
           <p class="mt-12 max-w-3xl leading-7">Los muelles, las pasarelas de embarque y los puestos de control son áreas operativas: no permanecen abiertas al público de forma permanente y se circula sólo por los sectores habilitados. <a href="#mapa" class="underline decoration-black/30 underline-offset-4">Ver ubicación en el mapa</a>.</p>
@@ -434,7 +486,7 @@ const graphLd = {
         </div>
         <div class="space-y-10">
           <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Terminal y pasaje: conceptos distintos</h3><p class="mt-3 leading-7 opacity-75">No hemos confirmado una política general de acceso turístico o cargos por ingresar a espacios públicos. Consultá ANP y respetá los sectores habilitados. El costo relevante es el pasaje del ferry y, si corresponde, el traslado de vehículo. Evitamos publicar tarifas fijas porque cambian según fecha, naviera, categoría y promoción.</p></div>
-          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Estacionamiento / preembarque</h3><p class="mt-3 leading-7 opacity-75">ANP informa una playa pavimentada de preembarque con 213 plazas en el área del Muelle de Unión y mantiene proyectos de ampliación. Estas superficies forman parte de la operación del puerto; si vas a dejar el auto para recorrer la ciudad, confirmá en el lugar qué sectores admiten permanencia.</p></div>
+          <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Estacionamiento / preembarque</h3><p class="mt-3 leading-7 opacity-75">ANP documenta una playa pavimentada de <strong>preembarque vehicular de 213 plazas</strong> en el área del Muelle de Unión y, en su informe del <strong>7 de octubre de 2026</strong>, informa un total de <strong>287 plazas</strong> en la playa de estacionamiento del puerto tras sumar 100 lugares. Son dos cifras distintas y no equivalen a estacionamiento turístico libre: estas superficies forman parte de la operación; si vas a dejar el auto para recorrer la ciudad, confirmá en el lugar qué sectores admiten permanencia.</p></div>
           <div class="border-t border-[var(--line)] pt-5"><h3 class="text-xl font-semibold">Mejor momento y duración</h3><p class="mt-3 leading-7 opacity-75">Para fotos, la última parte de la tarde suele ofrecer la luz más expresiva sobre el Río de la Plata. La terminal puede conocerse en poco tiempo, pero combinada con el Barrio Histórico conviene reservar varias horas; una noche cambia por completo el ritmo del paseo.</p></div>
         </div>
       </section>
@@ -467,6 +519,29 @@ const graphLd = {
         </div>
       </section>
 
+      <section id="guias" class="border-y border-[var(--line)] bg-[#ebe5d7] py-20 md:py-28">
+        <div class="shell">
+          <div class="max-w-3xl">
+            <p class="kicker text-[var(--terracotta)]">Guías de la terminal</p>
+            <h2 class="section-title mt-4">Todo lo que se consulta antes y después de embarcar.</h2>
+            <p class="mt-6 leading-7 max-w-2xl">Cada guía responde una pregunta concreta con datos de ANP, de las navieras y de organismos oficiales. Elegí por dónde empieza tu viaje: preparar el cruce, moverse en la terminal o recorrer Colonia al llegar.</p>
+          </div>
+          <div class="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
+            {guideGroups.map((group) => (
+              <div>
+                <p class="kicker opacity-55">{group.title}</p>
+                <ul class="mt-4 space-y-2 leading-6">
+                  {group.links.map((l) => (
+                    <li><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={l.href}>{l.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p class="mt-12 text-sm leading-6 text-[color:rgba(16,45,54,.6)]">Horarios, tarifas y servicios pueden cambiar: confirmalos siempre con la naviera de tu pasaje o con ANP antes de viajar.</p>
+        </div>
+      </section>
+
       <section id="mapa" class="bg-[var(--deep)] text-[var(--foam)] py-20 md:py-28">
         <div class="shell">
           <div class="grid lg:grid-cols-[.65fr_1.35fr] gap-12 lg:gap-20 items-start">
@@ -478,7 +553,7 @@ const graphLd = {
                 <a href={mapsUrl} class="pill border-white/60" rel="noopener noreferrer">Abrir en Google Maps ↗</a>
                 <a href={anpPortUrl} class="pill border-white/60 text-[.72rem]" rel="noopener noreferrer">ANP · Ficha oficial ↗</a>
               </div>
-              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre {reviewCountDisplay} reseñas (ficha externa de la terminal · consultado el 26 de octubre de 2026).</p>
+              <p class="mt-4 text-xs leading-5 text-white/50">Referencia de calificación en Google Maps: 4,2 / 5 sobre {reviewCountDisplay} reseñas (ficha externa de la terminal · consultado el 3 de noviembre de 2026).</p>
             </div>
             <div class="border border-white/20 p-2 bg-white/5">
               <iframe src={mapEmbed} width="100%" height="520" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la ubicación del Puerto de Colonia en Colonia del Sacramento"></iframe>
@@ -521,7 +596,7 @@ const graphLd = {
         </div>
         <div class="text-sm md:text-right"><a class="underline underline-offset-4" href="#mapa">Mapa</a><span class="mx-2">·</span><a href="/cookies/">Cookies y preferencias</a> · <a href="/privacidad/">Privacidad</a> · <a href="/terminos/">Términos</a></div>
       </div>
-      <div class="shell mt-6 text-sm leading-7"><p>Guía independiente, no oficial y sin fines de lucro para educación turística. No somos ANP ni una naviera y no vendemos pasajes. Información consultada el 26 de octubre de 2026. Google Maps: 4,2/5, 21.074 valoraciones externas en esa fecha; no son opiniones recogidas por este sitio.</p><p><a href="/creditos/">Créditos por fotografía y licencias</a>. Imágenes históricas de 2009, 2010, 2015 y 2022; versiones web redimensionadas y recortadas al mostrarse.</p></div>
+      <div class="shell mt-6 text-sm leading-7"><p>Guía independiente, no oficial y sin fines de lucro para educación turística. No somos ANP ni una naviera y no vendemos pasajes. Información consultada el 3 de noviembre de 2026. Google Maps: 4,2/5, 21.100 valoraciones externas en esa fecha; no son opiniones recogidas por este sitio.</p><p><a href="/creditos/">Créditos por fotografía y licencias</a>. Imágenes históricas de 2009, 2010, 2015 y 2022; versiones web redimensionadas y recortadas al mostrarse.</p></div>
     </footer>
 
     <Consent />

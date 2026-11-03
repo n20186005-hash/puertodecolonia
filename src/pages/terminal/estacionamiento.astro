@@ -1,0 +1,112 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/estacionamiento/';
+
+const faq = [
+  {
+    q: '¿Cuántas plazas de estacionamiento tiene el puerto de Colonia?',
+    a: 'Depende de qué área mires y de la fecha del documento. ANP describe una playa de preembarque vehicular de 213 plazas en el Muelle de Unión, y en el anuncio del 07/10/2026 informa que desde enero se sumaron 100 plazas y que el estacionamiento del predio llegó a 287 lugares. Son dos cifras de dos documentos distintos: no son el mismo dato.'
+  },
+  {
+    q: '¿Puedo dejar el auto en la playa de preembarque si no voy a embarcar el vehículo?',
+    a: 'No. La playa de preembarque vehicular del Muelle de Unión es un circuito operativo para vehículos que suben al ferry, con vallado y orden propio. Si no vas a embarcar el auto, no lo dejes ahí: necesitás un estacionamiento que admita permanencia mientras hacés el paseo.'
+  },
+  {
+    q: '¿El estacionamiento del puerto es público y gratuito?',
+    a: 'ANP no publica una tarifa ni un horario para el uso público del estacionamiento de la terminal. El anuncio del 07/10/2026 habla de plazas y mejoras, pero no de precios de uso general. Si necesitás dejar el auto, confirmá las condiciones del día con ANP.'
+  },
+  {
+    q: '¿Por qué hay una cifra de 213 y otra de 287 plazas?',
+    a: 'Porque miden cosas distintas. Las 213 plazas corresponden a la explanada pavimentada del Muelle de Unión destinada al preembarque vehicular. Las 287 son el total de lugares del estacionamiento del predio, tras sumar 100 plazas desde enero, según el anuncio de ANP del 07/10/2026. Comparar una con la otra es mezclar dos áreas.'
+  },
+  {
+    q: '¿Puedo esperar dentro del predio con el auto si llego muy temprano?',
+    a: 'Si vas a embarcar el vehículo, seguí las indicaciones de tu naviera y el vallado del recinto: el preembarque tiene su propio circuito y orden. Si no embarcás el auto, resolvé la espera en un estacionamiento que admita permanencia. Con obras en curso, confirmá el ingreso del día.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Infraestructura de la Terminal de Colonia', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' },
+  { label: 'ANP · Ampliación de la terminal y obras en muelles (07/10/2026)', url: 'https://www.anp.com.uy/index.php/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Estacionamiento y preembarque de Colonia"
+  description="Playas de estacionamiento y preembarque vehicular en la Terminal de Colonia: qué son las 213 plazas del Muelle de Unión y las 287 del predio."
+  h1="Estacionamiento y preembarque en el Puerto de Colonia"
+  kicker="Terminal · Estacionamiento"
+  lead="El estacionamiento del Puerto de Colonia tiene dos áreas que no hay que confundir: una playa de preembarque vehicular de 213 plazas en el Muelle de Unión, para el auto que sube al ferry, y el estacionamiento del predio, que desde enero sumó 100 plazas y llegó a 287 según el anuncio de ANP del 07/10/2026. Definí primero si tu vehículo embarca o no."
+  crumbs={[{ name: 'Estacionamiento', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP) con accesos vehiculares"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde estacionar en el puerto de Colonia</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Estacionamiento del predio</p><p class="mt-2 leading-6">El complejo de la Terminal Fluvio Marítima cuenta con un estacionamiento de 2.500 m² libres, según ANP. Es la zona de permanencia del predio, separada del circuito operativo de embarque.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Playa de preembarque vehicular</p><p class="mt-2 leading-6">La explanada del Muelle de Unión se pavimentó como playa de preembarque vehicular de 213 plazas. Es para vehículos que suben al ferry, no para dejar el auto durante el paseo.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Antes de elegir dónde dejás el auto, definí una sola cosa: <strong>¿vas a embarcar el vehículo o no?</strong> Si lo subís al ferry, te corresponde el circuito de preembarque del Muelle de Unión. Si el auto se queda en tierra, necesitás un lugar con permanencia autorizada y no la playa operativa del embarque.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">213 y 287: dos cifras que no se comparan</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En internet aparecen dos números de plazas y suelen presentarse como si uno contradijera al otro. No es así: salen de documentos distintos y miden áreas distintas. Esta es la diferencia, tal como la publica ANP.
+    </p>
+    <div class="mt-8 overflow-x-auto border border-[var(--line)] bg-white/40">
+      <table class="w-full border-collapse text-sm text-left">
+        <thead class="bg-[var(--sky)]">
+          <tr>
+            <th class="p-3 font-semibold align-top">Cifra</th>
+            <th class="p-3 font-semibold align-top">Qué mide</th>
+            <th class="p-3 font-semibold align-top">Documento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-[var(--line)]">
+            <td class="p-3 align-top font-semibold">213 plazas</td>
+            <td class="p-3 align-top leading-6">Playa de preembarque vehicular del Muelle de Unión, para el auto que embarca.</td>
+            <td class="p-3 align-top leading-6">Página de infraestructura de ANP (actualización 03/07/2026).</td>
+          </tr>
+          <tr class="border-t border-[var(--line)]">
+            <td class="p-3 align-top font-semibold">287 plazas</td>
+            <td class="p-3 align-top leading-6">Total de la playa de estacionamiento del predio, tras sumar 100 plazas desde enero.</td>
+            <td class="p-3 align-top leading-6">Anuncio de ANP del 07/10/2026.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Ninguna de las dos cifras incluye precios de uso público: ANP no publica una tarifa para dejar el auto en la terminal. Confirmá las condiciones del día con ANP.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo resolverlo el día del viaje</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Definí si el auto embarca</h3><p class="mt-2 leading-7 opacity-75">Con vehículo a bordo usás el preembarque del Muelle de Unión. Sin embarque, necesitás estacionamiento con permanencia.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Presentate con la antelación de la naviera</h3><p class="mt-2 leading-7 opacity-75">El circuito de preembarque tiene vallado y orden propio. Llevá la documentación del vehículo a mano y seguí las indicaciones de tu empresa.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">No dejes el auto en la playa operativa</h3><p class="mt-2 leading-7 opacity-75">La playa de preembarque no es un estacionamiento de larga permanencia. Si vas a pasear, resolvé el auto antes de entrar.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Confirmá por las obras en curso</h3><p class="mt-2 leading-7 opacity-75">La terminal está en ampliación: accesos y circulación pueden cambiar. Verificá el ingreso del día antes de salir.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la terminal</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con el estacionamiento</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/ferries/viajar-con-vehiculo/">Viajar con vehículo</a>
+      <a class="pill" href="/terminal/obras-y-accesos/">Obras y accesos</a>
+      <a class="pill" href="/terminal/servicios/">Servicios de la terminal</a>
+    </div>
+  </section>
+</GuideLayout>

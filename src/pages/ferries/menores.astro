@@ -1,0 +1,138 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/menores/';
+
+const faq = [
+  {
+    q: '¿Cuándo necesita autorización un menor para salir de Argentina?',
+    a: 'Necesitan autorización para egresar del país los menores que no hayan alcanzado los 18 años. Migraciones recuerda que el permiso es necesario cuando el menor viaja solo, con uno solo de los padres o tutores, o con terceros. Cuando viaja con ambos padres, con el progenitor que ejerce la responsabilidad parental o con su tutor, la autorización es implícita.'
+  },
+  {
+    q: '¿Cuánto tarda el trámite en Argentina?',
+    a: 'El trámite normal demora 10 días hábiles, el express 48 h y el servicio al instante hasta 2 h, que se puede tramitar en el puerto. La autorización de un solo viaje debe usarse dentro de los 90 días de emitida. El servicio de autorización amplia (RENAPER) cuesta $30.000 dentro del país.'
+  },
+  {
+    q: '¿Qué pasa en Uruguay con la autorización de menores?',
+    a: 'Aplica a menores uruguayos o extranjeros con residencia legal o en trámite, y a quienes residan en Uruguay más de un año. Quedan exceptuados cuando el menor viaja acompañado de sus padres o tutor, o cuando posee pasaporte uruguayo válido. Una vez emitida, solo puede revocarse por disposición judicial.'
+  },
+  {
+    q: '¿Necesito pasaporte para ir a Argentina desde Uruguay?',
+    a: 'No. El Ministerio de Relaciones Exteriores recuerda que para viajar al MERCOSUR y Estados asociados (entre ellos Argentina) basta la cédula de identidad. Para otros destinos sí se exige pasaporte válido.'
+  },
+  {
+    q: '¿Qué pide Buquebus para los menores?',
+    a: 'Buquebus pide partida de nacimiento y, si el menor viaja solo o con uno solo de los padres, una autorización ante escribano público o juez. Además, los menores de edad que viajan sin adulto deben subir y bajar en las paradas designadas.'
+  }
+];
+
+const sources = [
+  { label: 'Argentina · Migraciones, requisitos para viajar con menores', url: LINKS.argentinaMenores },
+  { label: 'Argentina · Autorización de viaje al exterior para menores de 18 años', url: LINKS.argentinaAutorizacionMenor },
+  { label: 'Uruguay · Permiso de viaje para menor de edad', url: LINKS.uruguayMenores }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Menores y autorizaciones para viajar"
+  description="Autorizaciones para que los menores crucen en ferry entre Uruguay y Argentina: cuándo hacen falta, tipos de permiso y trámite."
+  h1="Menores de edad y autorizaciones para cruzar"
+  kicker="Ferries · Menores"
+  lead="Si un menor cruza en ferry entre Colonia y Buenos Aires, puede necesitar una autorización para salir del país. Las reglas cambian según la edad, si viaja solo o acompañado y la nacionalidad: en Argentina hay autorización implícita, explícita y judicial, y en Uruguay rige la Ley N° 18.250. Confirmá cada caso con Migraciones."
+  crumbs={[{ name: 'Menores y autorizaciones', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferry de pasajeros en la terminal del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Argentina: tipos de autorización (DNM Disposición 2656/2011)</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Necesitan autorización para egresar del país los menores que no alcanzaron los 18 años. El tipo de permiso depende de con quién viajan.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Tipo de autorización</th>
+            <th class="p-3 border-b border-[var(--line)]">Cuándo aplica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Implícita</td>
+            <td class="p-3 border-b border-[var(--line)]">Cuando viaja con ambos padres, con el progenitor que ejerce la responsabilidad parental o con su tutor.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Explícita</td>
+            <td class="p-3 border-b border-[var(--line)]">Cuando viaja solo, con un solo progenitor o con terceros.</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Judicial</td>
+            <td class="p-3">Cuando la situación requiere la intervención del juez.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Migraciones lo resume así: el permiso es necesario cuando el menor viaja solo, con uno solo de los padres o tutores, o si viaja con terceros.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Tiempos y costos del trámite en Argentina</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Normal</p><p class="mt-2 leading-6">10 días hábiles.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Express</p><p class="mt-2 leading-6">48 h.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Al instante</p><p class="mt-2 leading-6">Hasta 2 h; se puede tramitar en el puerto.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Validez de la autorización de un solo viaje</p><p class="mt-2 leading-6">Debe usarse dentro de los 90 días de emitida.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Autorización amplia (RENAPER)</p><p class="mt-2 leading-6">Cuesta $30.000 dentro del país.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Antes de viajar</p><p class="mt-2 leading-6">Verificá plazos y costos vigentes con Migraciones: los valores pueden cambiar.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Uruguay: cuándo aplica y quién queda exceptuado</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">A quién le aplica</h3>
+        <p class="mt-3 leading-7 opacity-75">A menores uruguayos o extranjeros con residencia legal o en trámite, y a quienes residan en Uruguay más de un año (Ley N° 18.250 art. 29 lit. C y Decreto 394/009 art. 18).</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Excepciones</h3>
+        <p class="mt-3 leading-7 opacity-75">Quedan exceptuados cuando el menor viaja acompañado de sus padres o tutor, o cuando posee pasaporte uruguayo válido.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Revocación</h3>
+        <p class="mt-3 leading-7 opacity-75">Una vez emitida, la autorización solo puede revocarse por disposición judicial.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Viaje al MERCOSUR</h3>
+        <p class="mt-3 leading-7 opacity-75">El MRREE recuerda que para viajar al MERCOSUR y Estados asociados (incluye Argentina) basta la cédula de identidad.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Buquebus y los menores</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Buquebus pide <strong>partida de nacimiento</strong> y, si el menor viaja solo o con uno de los padres, una <strong>autorización ante escribano público o juez</strong>. Los menores de edad que viajan sin adulto deben subir y bajar en las paradas designadas.
+    </div>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Cada caso es único: la situación migratoria, la nacionalidad y la composición familiar cambian el requisito. Antes de comprar el pasaje, confirmá con Migraciones y con la naviera del pasaje, y revisá también la <a class="underline decoration-black/20 underline-offset-4" href="/ferries/documentacion/">documentación para viajar</a>.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con los trámites</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con los menores</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/viajar-con-ninos/">Viajar con niños</a>
+      <a class="pill" href="/ferries/aduanas/">Aduana y equipaje</a>
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+    </div>
+  </section>
+</GuideLayout>

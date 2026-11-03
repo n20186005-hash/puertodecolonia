@@ -1,0 +1,150 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/cambios-cancelaciones/';
+
+const faq = [
+  {
+    q: '¿Hasta cuándo puedo cambiar mi pasaje de Colonia Express?',
+    a: 'Depende del nivel de tarifa. La Súper Económica se puede cambiar hasta 72 h antes de la partida con una penalidad del 40%; la Súper Express hasta 48 h antes con 20%; y la Súper Flex no tiene límite de cambios. Mirá qué categoría dice tu pasaje y confirmá con la naviera.'
+  },
+  {
+    q: '¿Cuánto me devuelven si cancelo en Buquebus?',
+    a: 'Buquebus pide cancelar al menos 24 h antes para conservar o reprogramar, y el reembolso se solicita dentro de la validez del pasaje reteniendo un 30%. Si cancelás con menos de 24 h, se pierde el derecho al reembolso; los paquetes y promociones no tienen reembolso. El trámite se hace en el lugar de compra.'
+  },
+  {
+    q: '¿Puedo arrepentirme apenas compro?',
+    a: 'Colonia Express devuelve el 100% si cancelás dentro de las 24 h posteriores a la compra. Buquebus reconoce un derecho de revocación para compras online o telefónicas: 10 días corridos y hasta 24 h antes de usar el servicio (art. 34 ley 24240 – Disp. 954/2025).'
+  },
+  {
+    q: '¿Qué tarifas de Colonia Express no tienen reembolso?',
+    a: 'La Súper Económica, la Outlet y la Especial Colonia figuran sin reembolso. En cambio, la Express permite reembolso hasta 72 h antes con un 30% de descuento y la Clásica (Super Flex) hasta 24 h antes con un 30%. Confirmá la categoría exacta de tu pasaje.'
+  },
+  {
+    q: '¿Dónde tramito el reembolso de Buquebus?',
+    a: 'El reembolso se gestiona en el lugar de compra. Buquebus publica puntos de reembolso en Argentina (Terminal Dársena Norte, Av. Antártida Argentina 821) y en Uruguay (Local Río Negro, Río Negro 1400 esq. Colonia, Montevideo).'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC },
+  { label: 'Buquebus · Contratos de adhesión', url: LINKS.buquebusContratos },
+  { label: 'Buquebus · Preguntas frecuentes', url: LINKS.buquebusFaq }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cambios y cancelaciones de ferries"
+  description="Plazos y penalidades para cambiar o cancelar tu pasaje de ferry en Colonia Express y Buquebus, con las reglas de reembolso de cada tarifa."
+  h1="Cambios y cancelaciones de tu pasaje de ferry"
+  kicker="Ferries · Cambios y cancelaciones"
+  lead="En el ferry entre Colonia y Buenos Aires, los cambios y cancelaciones dependen de tu naviera y del nivel de tarifa: Colonia Express tiene plazos y penalidades por categoría, y Buquebus pide cancelar con antelación para conservar o reprogramar el pasaje. Acá tenés las reglas oficiales para decidir con tiempo."
+  crumbs={[{ name: 'Cambios y cancelaciones', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferry de pasajeros en la terminal del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las reglas, en síntesis</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · cambios</p><p class="mt-2 leading-6">Por nivel de tarifa: 72 h antes con 40% de penalidad, 48 h antes con 20%, o sin límite en la Súper Flex.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · cambios</p><p class="mt-2 leading-6">Cancelá al menos 24 h antes de la partida para conservar o reprogramar tu pasaje.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Reembolsos</p><p class="mt-2 leading-6">Buquebus retiene un 30% y pide cancelar con antelación; Colonia Express devuelve según la tarifa.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Derecho de revocación</p><p class="mt-2 leading-6">Solo para compras online o telefónicas en Buquebus: 10 días corridos y hasta 24 h antes de usar el servicio.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Comparativa por nivel de tarifa y naviera</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Resumen de lo que publica cada empresa. Las condiciones pueden cambiar: confirmá con la naviera de tu pasaje antes de decidir.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Naviera</th>
+            <th class="p-3 border-b border-[var(--line)]">Tarifa o caso</th>
+            <th class="p-3 border-b border-[var(--line)]">Cambios</th>
+            <th class="p-3 border-b border-[var(--line)]">Reembolso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold" rowspan="5">Colonia Express</td>
+            <td class="p-3 border-b border-[var(--line)]">Súper Económica</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 72 h antes, con 40% de penalidad.</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin reembolso.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Súper Express</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 48 h antes, con 20% de penalidad.</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 72 h antes, con 30% de descuento.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Súper Flex (Clásica)</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin límite de cambios.</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 24 h antes, con 30% de descuento.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Outlet / Especial Colonia</td>
+            <td class="p-3 border-b border-[var(--line)]">Según la categoría del pasaje.</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin reembolso.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Cualquier tarifa (compra reciente)</td>
+            <td class="p-3 border-b border-[var(--line)]">—</td>
+            <td class="p-3 border-b border-[var(--line)]">100% dentro de las 24 h posteriores a la compra.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold" rowspan="3">Buquebus</td>
+            <td class="p-3 border-b border-[var(--line)]">Todas las tarifas</td>
+            <td class="p-3 border-b border-[var(--line)]">Cancelá al menos 24 h antes para conservar o reprogramar.</td>
+            <td class="p-3 border-b border-[var(--line)]">Dentro de la validez del pasaje, con 30% de retención; menos de 24 h antes se pierde el derecho.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Paquetes y promociones</td>
+            <td class="p-3 border-b border-[var(--line)]">—</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin reembolso.</td>
+          </tr>
+          <tr>
+            <td class="p-3">Compras online o telefónicas</td>
+            <td class="p-3">Derecho de revocación: 10 días corridos y hasta 24 h antes de usar el servicio.</td>
+            <td class="p-3">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Pasos para cambiar o cancelar sin sorpresas</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Identificá tu nivel de tarifa</h3><p class="mt-2 leading-7 opacity-75">El nivel de tarifa define los plazos y las penalidades. Sin eso, no podés saber cuánto te sale el cambio.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Verificá qué plazo está corriendo</h3><p class="mt-2 leading-7 opacity-75">Contá desde la partida: 72 h, 48 h o 24 h antes, según la naviera y la tarifa. Pasado el plazo, cambian las condiciones.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Elegí cambiar o pedir reembolso</h3><p class="mt-2 leading-7 opacity-75">Algunas tarifas permiten reprogramar pero no devuelven dinero. Revisá las dos columnas de la tabla antes de decidir.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Hacé el trámite donde corresponde</h3><p class="mt-2 leading-7 opacity-75">Buquebus tramita el reembolso en el lugar de compra y publica puntos en Argentina y Uruguay. Guardá tu pasaje y el comprobante.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El derecho de revocación de Buquebus</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Para las compras hechas <strong>online o por teléfono</strong>, Buquebus reconoce un derecho de revocación de <strong>10 días corridos</strong> y hasta <strong>24 h antes de tomar el servicio</strong>, conforme al art. 34 de la ley 24240 (Disp. 954/2025). Es un plazo distinto del de la cancelación común: sirve para arrepentirte de la compra, no para reprogramar cerca de la salida.
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con tu pasaje</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con los cambios</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/precios/">Precios</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

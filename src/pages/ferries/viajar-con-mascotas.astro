@@ -1,0 +1,134 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/viajar-con-mascotas/';
+
+const faq = [
+  {
+    q: '¿Puedo viajar con mi perro o gato en el ferry?',
+    a: 'Sí, pero cada naviera tiene sus reglas. Colonia Express acepta mascotas domésticas de porte menor sin cargo extra: van en los caniles de la bodega o en un canil aportado por el dueño. Buquebus ofrece varias opciones: cabina, auto, canil en bodega o Pet Pod. Confirmá con la empresa de tu pasaje cuál se ajusta a tu caso.'
+  },
+  {
+    q: '¿Qué documentos sanitarios piden para la mascota?',
+    a: 'Colonia Express pide la libreta de vacunas al día y el certificado sanitario de SENASA. Buquebus, para ingresar a Uruguay con la mascota, exige el Certificado Veterinario Internacional (CVI) de SENASA, que se tramita en mascotas.senasa.gob.ar. Revisá el requisito vigente antes de viajar porque depende del destino.'
+  },
+  {
+    q: '¿Puedo llevar la mascota en el bus?',
+    a: 'Depende. En Colonia Express las mascotas están prohibidas en los buses, salvo los perros guía. En Buquebus, si vas a viajar en bus, hay que avisar con al menos 24 h, y quien viaja con la caja de la mascota debe subir en la Terminal Tres Cruces, del lado uruguayo. Confirmá el detalle con tu naviera.'
+  },
+  {
+    q: '¿Qué medidas tiene que tener la caja o canil?',
+    a: 'Buquebus publica una caja de hasta 45×35×25 cm para sus opciones de traslado. Para Colonia Express no encontramos publicada una medida equivalente: la mascota va en los caniles de la bodega o en un canil aportado por el dueño. Confirmá el tamaño admitido con la empresa antes del viaje.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC },
+  { label: 'Buquebus · Viajar con mascotas', url: LINKS.buquebusMascotas },
+  { label: 'SENASA · Mascotas (certificado veterinario)', url: LINKS.senasa }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Viajar con mascotas en el ferry a Colonia"
+  description="Requisitos para viajar con mascotas en el ferry Colonia–Buenos Aires: Colonia Express, Buquebus, caniles, medidas y certificado SENASA."
+  h1="Viajar con mascotas en el ferry Colonia–Buenos Aires"
+  kicker="Ferries · Con mascotas"
+  lead="Viajar con mascotas en el ferry entre Colonia y Buenos Aires se puede, pero cada naviera define dónde viaja el animal, qué canil se usa y qué certificado sanitario pide. Revisá tu caso antes de comprar, porque los requisitos cambian según la empresa y el servicio."
+  crumbs={[{ name: 'Viajar con mascotas', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la terminal de pasajeros del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Comparativa rápida entre navieras</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Resumen de lo que publica cada empresa para viajar con una mascota. Las condiciones pueden cambiar: confirmá con la naviera de tu pasaje antes de embarcar.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Aspecto</th>
+            <th class="p-3 border-b border-[var(--line)]">Colonia Express</th>
+            <th class="p-3 border-b border-[var(--line)]">Buquebus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Costo</td>
+            <td class="p-3 border-b border-[var(--line)]">Mascotas de porte menor, sin cargo extra.</td>
+            <td class="p-3 border-b border-[var(--line)]">Depende de la opción elegida (cabina, auto, bodega o Pet Pod).</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Dónde viaja</td>
+            <td class="p-3 border-b border-[var(--line)]">Caniles ubicados en la bodega o canil aportado por el dueño.</td>
+            <td class="p-3 border-b border-[var(--line)]">Cabina, auto, canil en bodega o Pet Pod.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Medidas de la caja</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin medida publicada en la página consultada; confirmá con la naviera.</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 45×35×25 cm.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Documentos</td>
+            <td class="p-3 border-b border-[var(--line)]">Libreta de vacunas al día y certificado sanitario de SENASA.</td>
+            <td class="p-3 border-b border-[var(--line)]">Para ingresar a Uruguay, CVI de SENASA.</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">En el bus</td>
+            <td class="p-3">Prohibidas, salvo perros guía.</td>
+            <td class="p-3">Avisar con al menos 24 h; con caja, subir en la Terminal Tres Cruces.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Colonia Express: caniles y libreta de vacunas</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Sin cargo extra</p><p class="mt-2 leading-6">Las mascotas domésticas de porte menor pueden viajar sin cargo adicional.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde va</p><p class="mt-2 leading-6">En los caniles de la bodega o en un canil aportado por el dueño.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Documentos</p><p class="mt-2 leading-6">Libreta de vacunas al día y certificado sanitario de SENASA.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">En el bus</p><p class="mt-2 leading-6">Prohibidas, salvo perros guía.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Buquebus: opciones y certificado SENASA</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Buquebus da varias alternativas según el tipo de viaje y de mascota: <strong>cabina</strong>, <strong>auto</strong>, <strong>canil en bodega</strong> o <strong>Pet Pod</strong>. Para las opciones con caja, el tamaño admitido es de hasta <strong>45×35×25 cm</strong>.
+    </p>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Para ingresar a Uruguay con la mascota, Buquebus exige el <strong>Certificado Veterinario Internacional (CVI) de SENASA</strong>. El trámite se consulta en mascotas.senasa.gob.ar. Si viajás en bus, hay que avisar con al menos 24 h antes, y quien lleva la caja de la mascota debe subir en la Terminal Tres Cruces.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Prepará el viaje con la mascota</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Avisá a la naviera</h3><p class="mt-2 leading-7 opacity-75">Contá que viajás con una mascota al reservar: hay opciones y cupos limitados según el servicio.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Actualizá los papeles sanitarios</h3><p class="mt-2 leading-7 opacity-75">Libreta de vacunas al día y, si te lo piden, el certificado sanitario o el CVI de SENASA.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Conseguí el canil adecuado</h3><p class="mt-2 leading-7 opacity-75">Usá la caja de la naviera o un canil propio, respetando la medida admitida para tu servicio.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Confirmá el punto de embarque</h3><p class="mt-2 leading-7 opacity-75">Si viajás en bus con caja, recordá que en el lado uruguayo se sube en la Terminal Tres Cruces.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con los trámites</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con las mascotas</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Los requisitos sanitarios van de la mano del control migratorio y de la franquicia de equipaje. Revisá esas guías antes de viajar con tu mascota.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+    </div>
+  </section>
+</GuideLayout>

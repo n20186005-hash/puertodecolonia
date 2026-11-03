@@ -1,0 +1,81 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/consigna-equipaje/';
+
+const faq = [
+  {
+    q: '¿Hay guardaequipaje o consigna en el puerto de Colonia?',
+    a: 'No encontramos dato oficial confirmado de un servicio de consigna o guardaequipaje en la Terminal de Colonia. Ni ANP ni los documentos de referencia que usamos lo listan. Antes de contar con ese servicio, confirmalo directamente con ANP o con tu naviera.'
+  },
+  {
+    q: '¿Dónde dejo las valijas si tengo unas horas antes del ferry?',
+    a: 'La opción más previsible es dejarlas en tu alojamiento, incluso después del check-out, si el hotel lo permite. Varios alojamientos están sobre la línea Rivera y Av. Roosevelt, muy cerca del puerto. La otra vía es preguntar en el puerto el mismo día, pero sin darlo por hecho.'
+  },
+  {
+    q: '¿Puedo dejar el equipaje en la terminal mientras recorro el barrio?',
+    a: 'No hay una consigna oficial confirmada dentro de la terminal, así que no lo des por seguro. Si vas a recorrer el Barrio Histórico con equipaje, lo práctico es dejarlo en el alojamiento y salir liviano, o resolver el traslado de manera que no quedes cargado todo el paseo.'
+  },
+  {
+    q: '¿Las cintas transportadoras de equipaje sirven para guardar mi valija?',
+    a: 'No. Las cintas transportadoras de equipaje mueven los bultos durante el proceso de embarque y desembarque. No son un guardaequipaje: no están pensadas para que dejes la valija unas horas mientras paseás por la ciudad.'
+  },
+  {
+    q: '¿Mi naviera puede guardar el equipaje antes del check-in?',
+    a: 'Depende de cada empresa y de cada terminal, y no tenemos un dato oficial que lo confirme para Colonia. Preguntá a tu naviera antes de viajar. Si la respuesta no es clara, planificá como si no hubiera consigna disponible.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Infraestructura de la Terminal de Colonia', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' },
+  { label: 'ANP · Puerto de Colonia (terminal de pasajeros)', url: 'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Consigna de equipaje en el Puerto"
+  description="¿Hay consigna o guardaequipaje en el Puerto de Colonia? No hay dato oficial confirmado; opciones para cuidar las valijas antes de tu ferry."
+  h1="Consigna de equipaje en el Puerto de Colonia"
+  kicker="Terminal · Equipaje"
+  lead="No hay dato oficial confirmado de un servicio de consigna o guardaequipaje en el Puerto de Colonia. Sí existen cintas transportadoras de equipaje y sectores de equipaje dentro del flujo de la terminal, pero eso no es un guardaequipaje. Si necesitás dejar las valijas, lo más previsible es resolverlo en tu alojamiento o confirmarlo con ANP o tu naviera."
+  crumbs={[{ name: 'Consigna de equipaje', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia (ANP) con el sector de equipaje"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Consigna en el puerto: qué se sabe y qué no</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Consigna o guardaequipaje</p><p class="mt-2 leading-6">No hay dato oficial confirmado de un servicio de consigna en la Terminal de Colonia. No figura en los documentos oficiales que usamos.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cintas y sectores de equipaje</p><p class="mt-2 leading-6">Sí existen cintas transportadoras de equipaje dentro del flujo de la terminal, según la documentación de ANP.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Andenes de ómnibus</p><p class="mt-2 leading-6">El complejo tiene 10 andenes para ómnibus, útiles si combinás bus y ferry con equipaje.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Estado del dato</p><p class="mt-2 leading-6">Pregunta abierta: confirmá con ANP o con la naviera antes de contar con cualquier guardaequipaje.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La diferencia es importante: las <strong>cintas transportadoras</strong> mueven equipaje durante el proceso de embarque y desembarque, pero no son un guardaequipaje donde dejás la valija unas horas mientras recorrés la ciudad. Si necesitás guardar el equipaje, no cuentes con una consigna en el puerto salvo que la confirmes.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Alternativas para no cargar las valijas</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Dejá el equipaje en tu alojamiento</h3><p class="mt-2 leading-7 opacity-75">La opción más segura y previsible. El Hotel Rivera (Rivera 131) se describe a 1 cuadra del puerto y de la terminal de ómnibus; hay varios alojamientos sobre la misma línea Rivera y Av. Roosevelt.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Consultá con tu naviera o con ANP</h3><p class="mt-2 leading-7 opacity-75">Si pensás en una consigna dentro del puerto, preguntá directamente. Es el único modo de tener un dato vigente y no una suposición.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Ordená tu recorrido según el equipaje</h3><p class="mt-2 leading-7 opacity-75">Si vas a caminar por el Barrio Histórico, dejá la valija en el alojamiento y salí liviano. El equipaje consume tiempo y energía en calles de adoquín.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Tené en cuenta la franquicia de equipaje</h3><p class="mt-2 leading-7 opacity-75">Antes de reorganizar bultos, revisá las condiciones de tu naviera sobre peso y cantidad, para no llevarte una sorpresa en el check-in.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con el equipaje</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con la consigna</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+      <a class="pill" href="/terminal/servicios/">Servicios de la terminal</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+    </div>
+  </section>
+</GuideLayout>

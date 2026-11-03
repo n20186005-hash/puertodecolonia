@@ -1,0 +1,116 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/equipaje/';
+
+const faq = [
+  {
+    q: '¿Cuánto equipaje puedo llevar en el ferry?',
+    a: 'Las dos navieras publican una franquicia de hasta 30 kg por pasajero libre de flete: Colonia Express la describe como equipaje hasta 30 kg como máximo sin cargo, y Buquebus como hasta 30 kg por pasajero. Esa franquicia es la referencia general; confirmá tu caso con la empresa del pasaje.'
+  },
+  {
+    q: '¿Hay cargo por exceso de equipaje?',
+    a: 'No encontramos publicada una tarifa de exceso de equipaje en las páginas consultadas. Lo que sí figura es la franquicia de 30 kg sin flete. Si llevás más peso o más bultos que los permitidos, preguntá antes por la web o el punto de venta de tu naviera, porque las condiciones pueden cambiar.'
+  },
+  {
+    q: '¿Qué tamaño tiene el equipaje de mano?',
+    a: 'Buquebus publica que el equipaje de mano tipo maleta no supere 35×25×55 cm, y los bolsos 30×20×35 cm. En Colonia Express no encontramos publicadas medidas equivalentes de equipaje de mano. Llevá el bulto de mano medido para evitar sorpresas en el embarque.'
+  },
+  {
+    q: '¿Por qué hay dos cifras de peso en Buquebus?',
+    a: 'Porque la propia naviera publica valores distintos: su página de equipaje y su FAQ indican 30 kg por pasajero, mientras que su página de contratos de adhesión menciona 20 kg. Es una inconsistencia oficial sin resolver. Tomá la cifra de tu pasaje o confirmá con atención al cliente antes de viajar.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC },
+  { label: 'Buquebus · Equipaje', url: LINKS.buquebusEquipaje },
+  { label: 'Buquebus · Contratos de adhesión', url: LINKS.buquebusContratos }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Equipaje en el ferry Colonia–Buenos Aires"
+  description="Cuánto equipaje podés llevar en el ferry: 30 kg por pasajero, medidas de equipaje de mano y la franquicia en Colonia Express y Buquebus."
+  h1="Equipaje en el ferry entre Colonia y Buenos Aires"
+  kicker="Ferries · Equipaje"
+  lead="En el ferry entre Colonia y Buenos Aires la franquicia de equipaje es de hasta 30 kg por pasajero libre de flete, y el equipaje de mano de Buquebus tiene medidas máximas. Revisá tu caso antes de viajar porque las cifras oficiales no siempre coinciden."
+  crumbs={[{ name: 'Equipaje en el ferry', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la terminal de pasajeros del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La franquicia, en síntesis</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Peso incluido</p><p class="mt-2 leading-6">Hasta 30 kg por pasajero, libre de flete, en las dos navieras.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Responsabilidad</p><p class="mt-2 leading-6">Colonia Express limita su responsabilidad por el equipaje a U$S 50.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Equipaje de mano (Buquebus)</p><p class="mt-2 leading-6">Maletas hasta 35×25×55 cm; bolsos hasta 30×20×35 cm.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cantidad de piezas</p><p class="mt-2 leading-6">Buquebus admite hasta dos piezas por pasajero.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Comparativa de equipaje entre navieras</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Resumen de lo que publica cada empresa. Las condiciones pueden cambiar: confirmá con la naviera de tu pasaje.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Naviera</th>
+            <th class="p-3 border-b border-[var(--line)]">Peso incluido</th>
+            <th class="p-3 border-b border-[var(--line)]">Equipaje de mano</th>
+            <th class="p-3 border-b border-[var(--line)]">Piezas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Colonia Express</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta 30 kg libre de flete. Responsabilidad limitada a U$S 50.</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin medidas publicadas en la página consultada.</td>
+            <td class="p-3 border-b border-[var(--line)]">No especifica cantidad.</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Buquebus</td>
+            <td class="p-3">30 kg por pasajero (su página de contratos menciona 20 kg).</td>
+            <td class="p-3">Maletas 35×25×55 cm; bolsos 30×20×35 cm.</td>
+            <td class="p-3">Máximo dos piezas por pasajero.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La inconsistencia de peso en Buquebus</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Buquebus publica dos cifras distintas en sus propias páginas: <strong>30 kg por pasajero</strong> en su sección de equipaje y en su FAQ, y <strong>20 kg</strong> en su página de contratos de adhesión. No es un error nuestro: es una diferencia dentro del sitio oficial. Hasta que la naviera lo unifique, tomá la cifra que figure en tu pasaje y, si tenés dudas, consultá con atención al cliente antes de viajar.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Equipaje y vehículo</h2>
+    <div class="mt-6">
+      <div class="info-card"><p class="kicker opacity-55">Si embarcás un vehículo</p><p class="mt-2 leading-7">La franquicia de equipaje es por pasajero, no por vehículo. Al viajar con auto o moto, además se contrata el pasaje de bodega y se aplican límites de altura de bodega que cambian según la naviera. Revisá la guía para viajar con vehículo.</p></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">No es lo mismo que la aduana</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Franquicia de compras: otro tema</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      El equipaje que embarcás en el ferry es una cosa; la franquicia de compras en free shop y aduana es otra. Los montos y las reglas de lo que podés ingresar están tratados en la guía de aduana y equipaje.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/aduanas/">Aduana y equipaje</a>
+      <a class="pill" href="/ferries/viajar-con-vehiculo/">Viajar con vehículo</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

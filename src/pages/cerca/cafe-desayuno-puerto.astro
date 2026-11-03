@@ -1,0 +1,138 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/cerca/cafe-desayuno-puerto/';
+
+const faq = [
+  {
+    q: '¿A qué hora abren los cafés cerca del puerto?',
+    a: 'No hay un horario único. La zona del puerto, la terminal de ómnibus y Av. Gral. Flores es la que abre más temprano; el Barrio Histórico y la Rambla arrancan más tarde. Los horarios de esta página provienen de fuentes de terceros y cambian: confirmá con el local antes de salir.'
+  },
+  {
+    q: '¿Hay opciones de desayuno muy temprano junto a la terminal?',
+    a: 'La franja más temprana se concentra en el entorno de la terminal y sobre Av. Gral. Flores. Si tu ferry sale temprano, conviene resolverte en esa zona y no cruzar al Barrio Histórico, donde la mayoría abre más tarde.'
+  },
+  {
+    q: '¿Por qué algunos locales aparecen solo con nombre y dirección?',
+    a: 'Porque no tienen horario verificado con una fuente. Este sitio no inventa horarios: cuando no hay dato confirmado, solo listamos el nombre y la dirección del directorio de la Intendencia y te pedimos que lo confirmes en el local.'
+  },
+  {
+    q: '¿Dónde conviene desayunar si me alojo en el Barrio Histórico?',
+    a: 'En el Barrio Histórico el atractivo es el ambiente y las callecitas, no la madrugada. Julisa Café y Serrano Café están dentro del casco, pero suelen descansar un día en la semana: fijate martes y miércoles antes de ir.'
+  },
+  {
+    q: '¿El sitio recomienda o cobra por recomendar un café?',
+    a: 'No. Somos una guía independiente, no oficial y sin fines de lucro. Nombramos comercios concretos por su utilidad para el viaje, sin publicidad ni ranking, y no auditamos a los locales: horarios y servicios pueden cambiar.'
+  }
+];
+
+const sources = [
+  { label: 'Intendencia de Colonia · Directorio gastronómico del departamento (oficial, sin horarios)', url: 'https://www.colonia.gub.uy/turismo/uploads/servicios/gastronomia.pdf' },
+  { label: 'Intendencia de Colonia · Sitio oficial del departamento', url: 'https://www.colonia.gub.uy/' },
+  { label: 'Uruguay Natural · Colonia del Sacramento (Ministerio de Turismo)', url: 'https://uruguaynatural.com/es/places/colonia-encanto-historico-y-paisajes-del-plata/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cafés y desayunos cerca del puerto"
+  description="Cafés y desayunos cerca de la Terminal Fluviomarítima Colonia: horarios confirmados por zona, locales por confirmar y qué esperar según la hora."
+  h1="Cafés y desayunos cerca del Puerto de Colonia"
+  kicker="Cerca del puerto · Cafés"
+  lead="Si llegás temprano a la Terminal Fluviomarítima Colonia (ANP) o te alojás cerca, el café y el desayuno se reparten en tres zonas con horarios distintos. Acá va el detalle de los locales con horario confirmado y su fuente, y de los que todavía hay que confirmar."
+  crumbs={[{ name: 'Cafés y desayunos cerca del puerto', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia, cerca de la zona de espera y cafetería"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Café y desayuno cerca del puerto: qué hay</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Alrededor del <strong>Puerto de Colonia</strong> la oferta de café y desayuno se reparte en tres zonas: el entorno del puerto y la terminal de ómnibus, la Av. Gral. Flores hacia el centro, y el Barrio Histórico con la Rambla. Primero van los locales con horario confirmado y su fuente; después, los que todavía hay que confirmar.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Más temprano</p><p class="mt-2 leading-6">Zona puerto, terminal de ómnibus y Av. Gral. Flores: la que mejor cubre las primeras horas del día.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Más de tarde</p><p class="mt-2 leading-6">Rambla: perfil más tardío, con mesas mirando al río.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Locales con horario confirmado</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">
+      Estos horarios provienen de fuentes de terceros (visitacolonia y el sitio del propio local) y pueden cambiar. Este sitio no audita a los comercios: confirmá antes de ir.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Centro · Av. Gral. Flores</p>
+        <h3 class="mt-2 font-semibold text-lg">Colonia Sandwich Coffee Shop</h3>
+        <p class="mt-2 leading-6">Gral. Flores 272. Todos los días de <strong>08:00 a 20:30</strong>.</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: visitacolonia (terceros).</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Barrio Histórico</p>
+        <h3 class="mt-2 font-semibold text-lg">Julisa Café</h3>
+        <p class="mt-2 leading-6">Misiones de los Tapes 51. Según su propio sitio: jueves a lunes de 08:00 a 12:00 y de 15:00 a 18:00; martes de 08:00 a 12:00; <strong>miércoles cerrado</strong>.</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: sitio del propio local.</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Rambla · perfil de tarde</p>
+        <h3 class="mt-2 font-semibold text-lg">La Beduina Deli &amp; Café</h3>
+        <p class="mt-2 leading-6">Rambla de las Américas 916. Verificación parcial: lunes y miércoles de <strong>15:00 a 20:00</strong>; martes cerrado. Perfil más de tarde que de desayuno.</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: fuentes de terceros (cobertura parcial).</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Barrio Histórico</p>
+        <h3 class="mt-2 font-semibold text-lg">Serrano Café</h3>
+        <p class="mt-2 leading-6">Del Colegio 46. Lunes de 9:00 a 20:00; miércoles a domingo de 9:00 a 20:00; <strong>martes cerrado</strong>.</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: fuentes de terceros.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo leer las zonas según tu hora</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Puerto, terminal de ómnibus y Av. Gral. Flores</h3><p class="mt-2 leading-7 opacity-75">Es la zona que resuelve las horas más tempranas. Si desembarcás, salís de un bus o tenés un ferry a primera hora, buscá acá y no cruces al casco histórico.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Barrio Histórico</h3><p class="mt-2 leading-7 opacity-75">Acá el atractivo es el ambiente y las callecitas, no la madrugada. Los cafés del casco abren sobre la mañana y suelen descansar un día en la semana: fijate martes y miércoles.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Rambla</h3><p class="mt-2 leading-7 opacity-75">Perfil más de tarde, con mesas mirando al río. Si tu plan es un café después de las 15:00, esta es la zona a considerar.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Locales sin horario confirmado</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Estos comercios figuran en el directorio gastronómico de la Intendencia de Colonia, pero <strong>no tienen horario verificado</strong>. Los listamos solo con nombre y dirección: hay que confirmar en el local.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Colonia Sandwich</h3><p class="mt-2 leading-6">Vasconsellos 165.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Deli de las Rosas</h3><p class="mt-2 leading-6">Dirección no verificada en las fuentes consultadas.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Bortolot Gelato y Café</h3><p class="mt-2 leading-6">Gral. Flores 89.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Albertine Pan y Café</h3><p class="mt-2 leading-6">Dirección no verificada en las fuentes consultadas.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Antes de salir con un ferry a la vista</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Un café cerca del <strong>Puerto de Colonia</strong> se resuelve rápido si confirmás cuatro cosas antes de sentarte. No son datos que este sitio pueda auditar: son las preguntas que conviene hacerle al local o revisar ese mismo día.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">1 · Abre hoy</p><p class="mt-2 leading-6">Varios locales del casco descansan un día fijo de la semana (mirá martes y miércoles). Confirmá que abre el día de tu visita, no solo la franja horaria.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">2 · Tiempo de servicio</p><p class="mt-2 leading-6">Si tenés la hora de presentación cerca, pedí algo rápido. Un desayuno sentado puede llevar más de lo que parece en hora pico.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">3 · Equipaje</p><p class="mt-2 leading-6">Preguntá si podés entrar con valijas y dónde dejarlas mientras comés. No todos los locales tienen espacio para bultos grandes.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">4 · Vuelta al puerto</p><p class="mt-2 leading-6">Calculá el regreso desde la hora de presentación de tu pasaje, no desde la salida del buque: migraciones, aduana y embarque tienen sus propios tiempos.</p></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con el día</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Después del café, lo que suele resolverse</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/cerca/restaurantes-almuerzo-puerto/">Almuerzos cerca del puerto</a>
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+    </div>
+  </section>
+</GuideLayout>

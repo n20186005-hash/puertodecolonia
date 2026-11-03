@@ -112,7 +112,7 @@ img { display: block; max-width: 100%; }
   transform: translateY(-2px);
 }
 
-/* Keep long source labels and flex/grid children within their own columns. */
+/* Mantiene las etiquetas de fuentes largas y los hijos de flex/grid dentro de sus columnas. */
 .source-card, .info-card, .route-step > *, .shell > * { min-width: 0; }
 .source-card { overflow-wrap: anywhere; }
 iframe { max-width: 100%; }

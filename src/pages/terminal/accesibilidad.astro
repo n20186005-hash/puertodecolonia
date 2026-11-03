@@ -1,0 +1,81 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/accesibilidad/';
+
+const faq = [
+  {
+    q: '¿La terminal de Colonia tiene ascensor y escaleras mecánicas?',
+    a: 'Sí, según los documentos oficiales de ANP. El anuncio del 07/10/2026 menciona dos escaleras mecánicas en los sectores de Migraciones y Aduanas, un ascensor de accesibilidad para personas con movilidad reducida en el área de arribos y una manga móvil de doble ancho. Verificá su operación el día del viaje: este sitio no supervisa el funcionamiento diario.'
+  },
+  {
+    q: '¿Puedo viajar con silla de ruedas o con un cochecito de bebé?',
+    a: 'La infraestructura prevista incluye un ascensor de accesibilidad en arribos y escaleras mecánicas, pero la disponibilidad real depende del estado de los equipos cada día. Si viajás con silla de ruedas, cochecito o movilidad reducida, avisá a tu naviera y confirmá con ANP antes de presentarte.'
+  },
+  {
+    q: '¿La manga de doble ancho sirve para sillas de ruedas?',
+    a: 'ANP informa una manga móvil de doble ancho entre las mejoras de accesibilidad y embarque. No publica especificaciones de capacidad ni de uso para sillas de ruedas. Consultá con tu naviera si necesitás una asistencia puntual en el embarque.'
+  },
+  {
+    q: '¿Las escaleras mecánicas funcionan siempre?',
+    a: 'Este sitio no verifica la operación diaria de escaleras, ascensores ni mangas. Se listan como equipamiento previsto en documentos oficiales, no como servicio garantizado. Si tu movilidad depende de que estén operativos, confirmalo con ANP o con la naviera.'
+  },
+  {
+    q: '¿Migraciones y Aduana están en el mismo sector?',
+    a: 'Sí, la documentación de ANP ubica sectores de Migración y Aduana dentro del flujo de pasajeros, y ahí están previstas las escaleras mecánicas. Con obras en curso, la circulación puede variar: seguí la señalización del día.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Infraestructura de la Terminal de Colonia', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' },
+  { label: 'ANP · Ampliación de la terminal y obras en muelles (07/10/2026)', url: 'https://www.anp.com.uy/index.php/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Accesibilidad en la Terminal de Colonia"
+  description="Accesibilidad en la Terminal Fluviomarítima Colonia (ANP): escaleras mecánicas, ascensor para movilidad reducida y manga de doble ancho; confirmá el día."
+  h1="Accesibilidad en la Terminal de Colonia (ANP)"
+  kicker="Terminal · Accesibilidad"
+  lead="La accesibilidad de la Terminal Fluviomarítima Colonia (ANP) está prevista con dos escaleras mecánicas en Migraciones y Aduana, un ascensor de accesibilidad en el área de arribos y una manga móvil de doble ancho. Si viajás con silla de ruedas, cochecito o movilidad reducida, confirmá la operación del día con ANP o con tu naviera antes de presentarte."
+  crumbs={[{ name: 'Accesibilidad', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia (ANP) con áreas de circulación para pasajeros"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué equipamiento de accesibilidad figura en los documentos oficiales</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Escaleras mecánicas</p><p class="mt-2 leading-6">Dos escaleras mecánicas en zona de Migración y Aduanas, para agilizar el flujo de pasajeros.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Ascensor</p><p class="mt-2 leading-6">Un ascensor de accesibilidad para personas con movilidad reducida en el área de arribos.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Manga de embarque</p><p class="mt-2 leading-6">Una manga móvil de doble ancho entre las mejoras de embarque.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Estado del dato</p><p class="mt-2 leading-6">Equipamiento previsto en documentos de ANP; este sitio no verifica su operación diaria.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La información proviene de documentos oficiales de ANP, no de una verificación en el lugar. Eso significa que sabés <strong>qué está previsto</strong>, pero no que esté funcionando el día de tu viaje. Si una escalera mecánica o un ascensor está fuera de servicio, puede cambiar por completo tu recorrido dentro de la terminal.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Si viajás con movilidad reducida, silla de ruedas o cochecito</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Avisá a tu naviera al comprar o antes de viajar</h3><p class="mt-2 leading-7 opacity-75">La naviera es la que coordina la asistencia en el embarque concreto. Contale tu caso para que pueda prepararlo.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Confirmá con ANP la operación del día</h3><p class="mt-2 leading-7 opacity-75">Preguntá por el estado del ascensor de accesibilidad y de las escaleras mecánicas antes de presentarte, sobre todo si dependés de ellos.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Sumá margen extra de tiempo</h3><p class="mt-2 leading-7 opacity-75">Migraciones, aduana y equipaje consumen tiempo. Si además la circulación cambió por obra, dale más aire a la hora de presentación de tu pasaje.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Usá el ascensor del área de arribos</h3><p class="mt-2 leading-7 opacity-75">Es el equipamiento de accesibilidad previsto para movilidad reducida. Si no está operativo, pedí asistencia al personal de la terminal o de la naviera.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la terminal</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con la accesibilidad</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/servicios/">Servicios de la terminal</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/terminal/obras-y-accesos/">Obras y accesos</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+    </div>
+  </section>
+</GuideLayout>

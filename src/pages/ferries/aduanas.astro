@@ -1,0 +1,176 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/aduanas/';
+
+const faq = [
+  {
+    q: '¿Cuánto puedo ingresar a Uruguay sin pagar?',
+    a: 'La franquicia es de hasta U$S 500 por vía aérea o marítima —tanto desde el MERCOSUR, Chile y Bolivia como desde fuera del MERCOSUR— y de U$S 300 por vía terrestre, una vez por mes. Los viajeros menores de 18 años gozan del 50%. Además, el free shop de llegada suma U$S 850 (Decreto 376/022).'
+  },
+  {
+    q: '¿Cuánto puedo ingresar a Argentina sin pagar?',
+    a: 'Por vía terrestre o fluvial, el equipaje es de 300 USD (sin franquicia de free shop de llegada, salvo el caso de Iguazú, 500 USD). Por vía aérea o marítima, son 500 USD de equipaje más 500 USD de free shop de llegada. Los menores de 16 años tienen el 50%.'
+  },
+  {
+    q: '¿Qué productos controlados requieren autorización?',
+    a: 'En Uruguay, los productos controlados requieren conformidad de MGAP, MDN o MSP. En Argentina, requieren intervención de SENASA las frutas, plantas, flores, semillas, raíces, tubérculos, tierra, animales vivos, carnes, lácteos, productos apícolas, semen, biológicos veterinarios y alimentos para animales.'
+  },
+  {
+    q: '¿Tengo que declarar si llevo dinero en efectivo?',
+    a: 'En Argentina hay que declarar si se transportan USD 10.000 o más. También hay que declarar cuando se excede la franquicia o cuando se lleva mercancía controlada por SENASA. En Uruguay hay que presentar la Declaración Jurada de Equipaje Acompañado.'
+  },
+  {
+    q: '¿Puedo combinar la franquicia con mi familia?',
+    a: 'En Argentina, la franquicia familiar se puede combinar (cónyuges, pareja conviviente e hijos menores de 16 no emancipados). En ambos países aplica una vez por mes y no es acumulable. Confirmá los montos vigentes con la autoridad aduanera antes de viajar.'
+  },
+  {
+    q: '¿Qué pasa si me paso del límite?',
+    a: 'En Uruguay, el exceso paga una tasa única del 50% del valor, en pesos uruguayos. En Argentina, hay que declarar el exceso de franquicia. Los montos y las condiciones pueden cambiar: verificá con la aduana correspondiente.'
+  }
+];
+
+const sources = [
+  { label: 'Uruguay · Aduana, franquicia de equipaje para viajeros', url: LINKS.uruguayAduana },
+  { label: 'Argentina · AFIP/ARCA, franquicia de viajeros', url: LINKS.argentinaAduanaFranquicia },
+  { label: 'Argentina · AFIP/ARCA, régimen de equipaje', url: LINKS.argentinaAduanaEquipaje }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Aduana y franquicias al cruzar en ferry"
+  description="Franquicias de aduana para viajar en ferry entre Colonia y Buenos Aires: montos de equipaje y free shop en Uruguay y Argentina, y qué hay que declarar."
+  h1="Aduana, equipaje y franquicias al cruzar"
+  kicker="Ferries · Aduana"
+  lead="Al cruzar en ferry entre Colonia y Buenos Aires pasás por aduana, y cada país tiene su franquicia de equipaje: Uruguay permite hasta U$S 500 por vía marítima más U$S 850 de free shop de llegada, y Argentina fija 300 USD por vía fluvial o 500 USD por vía marítima más 500 USD de free shop. Revisá los montos antes de comprar."
+  crumbs={[{ name: 'Aduana y equipaje', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la terminal de pasajeros del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los montos, en una tabla</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Comparativa de las franquicias que publican la aduana uruguaya (DNA) y la argentina (AFIP/ARCA). Los montos se expresan en dólares estadounidenses salvo donde se aclare.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">País</th>
+            <th class="p-3 border-b border-[var(--line)]">Vía de ingreso</th>
+            <th class="p-3 border-b border-[var(--line)]">Equipaje</th>
+            <th class="p-3 border-b border-[var(--line)]">Free shop de llegada</th>
+            <th class="p-3 border-b border-[var(--line)]">Menores</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold" rowspan="2">Uruguay</td>
+            <td class="p-3 border-b border-[var(--line)]">Aérea o marítima (desde MERCOSUR/Chile/Bolivia o fuera del MERCOSUR)</td>
+            <td class="p-3 border-b border-[var(--line)]">Hasta U$S 500</td>
+            <td class="p-3 border-b border-[var(--line)]">U$S 850 adicionales (Decreto 376/022)</td>
+            <td class="p-3 border-b border-[var(--line)]">Menores de 18 años: 50%</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)]">Terrestre</td>
+            <td class="p-3 border-b border-[var(--line)]">U$S 300</td>
+            <td class="p-3 border-b border-[var(--line)]">—</td>
+            <td class="p-3 border-b border-[var(--line)]">Menores de 18 años: 50%</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold" rowspan="2">Argentina</td>
+            <td class="p-3 border-b border-[var(--line)]">Terrestre o fluvial</td>
+            <td class="p-3 border-b border-[var(--line)]">300 USD</td>
+            <td class="p-3 border-b border-[var(--line)]">Sin franquicia, salvo Iguazú (500 USD)</td>
+            <td class="p-3 border-b border-[var(--line)]">Menores de 16 años: 50%</td>
+          </tr>
+          <tr>
+            <td class="p-3">Aérea o marítima</td>
+            <td class="p-3">500 USD</td>
+            <td class="p-3">500 USD</td>
+            <td class="p-3">Menores de 16 años: 50%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      La edad para el 50% no coincide entre países: Uruguay la fija en menores de 18 años y Argentina en menores de 16. Verificá tu franquicia puntual con la aduana de tu país.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Uruguay: qué tenés que saber</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Franquicia y frecuencia</h3>
+        <p class="mt-3 leading-7 opacity-75">Hasta U$S 500 por vía aérea o marítima y U$S 300 por vía terrestre. Aplica una vez por mes y los menores de 18 años gozan del 50%.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Free shop de llegada</h3>
+        <p class="mt-3 leading-7 opacity-75">U$S 850 adicionales al llegar, conforme al Decreto 376/022. Se suman a la franquicia de equipaje.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Bebidas y cigarrillos</h3>
+        <p class="mt-3 leading-7 opacity-75">Bebidas destiladas hasta 6 litros y 4 cartones de cigarrillos.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Declaración jurada</h3>
+        <p class="mt-3 leading-7 opacity-75">Hay que presentar la Declaración Jurada de Equipaje Acompañado. Los menores la declaran por medio de su representante legal.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Exceso</h3>
+        <p class="mt-3 leading-7 opacity-75">El exceso paga una tasa única del 50% del valor, en pesos uruguayos.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Productos controlados</h3>
+        <p class="mt-3 leading-7 opacity-75">Requieren conformidad de MGAP, MDN o MSP, según el tipo de mercancía.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Argentina: qué tenés que saber</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Equipaje y free shop</h3>
+        <p class="mt-3 leading-7 opacity-75">Por vía terrestre o fluvial, 300 USD de equipaje sin free shop de llegada (salvo Iguazú, 500 USD). Por vía aérea o marítima, 500 USD de equipaje más 500 USD de free shop.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Menores y familia</h3>
+        <p class="mt-3 leading-7 opacity-75">Los menores de 16 años tienen el 50%. La franquicia familiar se puede combinar; aplica una vez por mes y no es acumulable.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Cuándo hay que declarar</h3>
+        <p class="mt-3 leading-7 opacity-75">Al exceder la franquicia, al llevar mercancía controlada por SENASA o al transportar USD 10.000 o más.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Salida con mercadería de terceros países</h3>
+        <p class="mt-3 leading-7 opacity-75">Al egresar con mercadería de terceros países se registra con el formulario OM 121: es personal, no transferible y hay que presentarlo al regresar.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Prohibiciones y restricciones</h3>
+        <p class="mt-3 leading-7 opacity-75">Según la Resolución 3751/1994: mercadería que no constituye equipaje, armas sin autorización y todo lo prohibido por seguridad, defensa o sanidad.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Qué controla SENASA</h3>
+        <p class="mt-3 leading-7 opacity-75">Frutas, plantas, flores, semillas, raíces, tubérculos, tierra, animales vivos, carnes, lácteos, productos apícolas, semen, biológicos veterinarios y alimentos para animales.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Franquicia de compras no es lo mismo que equipaje</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      La franquicia de free shop y aduana de esta página es una cosa; el <strong>equipaje que embarcás en el ferry</strong> es otra. El peso y las medidas de lo que subís al barco están en la guía de equipaje, y son independientes de los montos de aduana.
+    </div>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/menores/">Menores y autorizaciones</a>
+    </div>
+  </section>
+</GuideLayout>

@@ -1,0 +1,88 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/guias/';
+
+const faq = [
+  {
+    q: '¿Cuál es la diferencia entre esta sección y las rutas?',
+    a: 'Las guías de acá son de contexto: explican qué es cada recinto portuario, cómo se comparan las navieras y cuál es la historia del puerto. Las rutas, en cambio, son recorridos paso a paso para caminar del puerto a un punto concreto de la ciudad.'
+  },
+  {
+    q: '¿Los datos históricos son de ANP?',
+    a: 'Provienen de fuentes oficiales como ANP, Presidencia y UNESCO, citadas al pie de cada guía. Este sitio es una guía independiente y no oficial: no representamos a ANP ni a ninguna naviera.'
+  },
+  {
+    q: '¿La comparación de navieras recomienda una empresa?',
+    a: 'No. La comparación usa datos de las webs oficiales de Buquebus y Colonia Express y es neutral: no vendemos pasajes ni declaramos una ganadora. Elegís según horario, terminal, equipaje y tipo de vehículo.'
+  },
+  {
+    q: '¿Cada cuánto se actualizan estas guías?',
+    a: 'La información se revisó el 3 de noviembre de 2026. Obras, servicios y condiciones cambian, así que para el estado actual conviene confirmar con ANP, con la naviera o con la fuente oficial citada.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia (principal puerto del país)', url: LINKS.anpPort },
+  { label: 'ANP · Infraestructura de la terminal y los muelles', url: LINKS.anpInfra },
+  { label: 'ANP · Puerto Deportivo de Colonia', url: LINKS.anpDeportivo },
+  { label: 'UNESCO · Barrio Histórico de Colonia del Sacramento', url: LINKS.unesco }
+];
+
+const guias = [
+  { title: 'Puerto de ferries vs. puerto deportivo', href: '/guias/puerto-vs-puerto-deportivo/', desc: 'Por qué la terminal de ferries (Avda. Roosevelt y Rivera) y el puerto deportivo (Santa Rita 17) no son el mismo lugar.' },
+  { title: 'Buquebus vs Colonia Express', href: '/comparativas/buquebus-vs-colonia-express/', desc: 'Comparación neutral de terminales, check-in, equipaje, bodega para vehículos y política de cambios, sin precios.' },
+  { title: 'Historia del Puerto de Colonia', href: '/historia/puerto-de-colonia/', desc: 'Los muelles, la piedra fundamental de 1925, la terminal inaugurada el 15 de diciembre de 2009 y las obras posteriores.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Guías, comparativas e historia"
+  description="Contenido de fondo sobre el Puerto de Colonia: terminal de ferries vs. puerto deportivo, Buquebus vs. Colonia Express y la historia del puerto."
+  h1="Guías para entender el Puerto de Colonia"
+  kicker="Guías e historia · Índice"
+  lead="Esta sección reúne el contenido de fondo: qué recinto es la terminal de ferries y en qué se diferencia del puerto deportivo, cómo comparar las dos navieras del cruce y qué se sabe de la historia del puerto, cuya terminal actual se inauguró el 15 de diciembre de 2009."
+  crumbs={[{ name: 'Guías', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP), también llamada Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué encontrás acá</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Puerto vs. puerto deportivo</p><p class="mt-2 leading-6">Dos recintos de ANP con usos distintos: la terminal de ferries en Avda. Roosevelt y Rivera y el puerto deportivo en Santa Rita 17, para yates y embarcaciones menores.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Navieras</p><p class="mt-2 leading-6">Cómo se comparan Buquebus y Colonia Express en terminal de salida, de amarre, equipaje y reglas de vehículos, con datos de sus webs oficiales.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Historia</p><p class="mt-2 leading-6">Los tres muelles, la piedra fundamental de 1925 y la nueva Terminal Fluvio Marítima, inaugurada el 15 de diciembre de 2009, más las obras posteriores.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Un tercer «objeto»</p><p class="mt-2 leading-6">El Barrio Histórico no es un puerto: es el sitio declarado Patrimonio Mundial por la UNESCO, dentro del cual queda el puerto deportivo.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Estas guías no repiten las rutas a pie: explican el contexto para que no confundas recintos ni navieras. Si vas a comparar operadores, arrancá por la <a class="underline decoration-black/20 underline-offset-4" href="/comparativas/buquebus-vs-colonia-express/">comparativa Buquebus vs. Colonia Express</a>; si querés el repaso histórico completo, está en la <a class="underline decoration-black/20 underline-offset-4" href="/historia/puerto-de-colonia/">historia del Puerto de Colonia</a>; y la diferencia de recintos se detalla en <a class="underline decoration-black/20 underline-offset-4" href="/guias/puerto-vs-puerto-deportivo/">puerto de ferries vs. puerto deportivo</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Del contexto al viaje de hoy</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/navieras/colonia-express/">Perfil de Colonia Express</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/terminal/obras-y-accesos/">Obras y accesos</a>
+    </div>
+  </section>
+</GuideLayout>

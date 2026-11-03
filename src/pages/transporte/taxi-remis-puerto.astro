@@ -1,0 +1,98 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/transporte/taxi-remis-puerto/';
+
+const faq = [
+  {
+    q: '¿Cómo sé si un remis de Colonia está habilitado?',
+    a: 'Según la normativa de la Intendencia, el vehículo debe exhibir en un lugar visible el número de identificación del conductor y el número de permiso (Art. 13°). Si esos datos no están a la vista, desconfiá y no subas.'
+  },
+  {
+    q: '¿Me tienen que dar factura?',
+    a: 'Sí. La ordenanza exige emitir una factura con el servicio, el kilometraje y la tarifa (Art. 11°). Pedila siempre: es tu comprobante y tu respaldo ante cualquier reclamo.'
+  },
+  {
+    q: '¿Qué leyenda debe mostrar el taxímetro?',
+    a: 'El taxímetro debe lucir a la vista la leyenda «SEÑOR USUARIO CONTROLE LA BAJADA DE BANDERA Y EL IMPORTE DE SU VIAJE». Es decir, revisá que la bandera baje al arrancar y que el importe sea el que corresponde.'
+  },
+  {
+    q: '¿Cuáles son las paradas oficiales y los teléfonos de los taxis?',
+    a: 'No encontramos fuente oficial de las paradas ni de los teléfonos. Los números que circulan en directorios de terceros no están confirmados oficialmente, así que no los tomamos como válidos: consultá en el momento o pedí un vehículo por medios que puedas verificar.'
+  },
+  {
+    q: '¿Cuándo se revisan los remises en Colonia?',
+    a: 'La ordenanza fija una revisión anual en marzo (Art. 24°). Es un control de la Intendencia sobre los vehículos habilitados, no algo que tengas que pedir vos, pero ayuda a entender cómo se fiscaliza el servicio.'
+  }
+];
+
+const sources = [
+  { label: 'Intendencia de Colonia · Ordenanza de Servicio de Remises (Resolución 1269/024)', url: 'http://www.impo.com.uy/bases/resoluciones-junta-depart-colonia/1269-2024' },
+  { label: 'Junta Departamental de Colonia · Servicio de taxímetros', url: 'https://www.juntacolonia.gub.uy/servicio-de-taximetros-2002/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Taxi y remis en Colonia del Sacramento"
+  description="Qué exige la Intendencia a taxis y remises en Colonia: registro, identificación, factura y por qué los teléfonos de terceros no están confirmados."
+  h1="Taxi y remis en Colonia: qué exige la Intendencia"
+  kicker="Transporte · Taxi y remis"
+  lead="En Colonia, los taxi y remis que trabajan en regla deben estar registrados en la Intendencia y mostrar su identificación a la vista. Acá te contamos qué exige la normativa, qué controlar al subir y por qué los teléfonos que circulan en directorios de terceros no están confirmados oficialmente."
+  crumbs={[{ name: 'Taxi y remis en el puerto', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Frente de la Terminal Fluviomarítima Colonia (ANP), punto de llegada de taxis y remises en Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué controla la normativa de remises</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La Intendencia de Colonia aprobó la <strong>Ordenanza de Servicio de Remises</strong> por Resolución N.° 1269/024, sobre el Decreto Departamental 017/2024, publicado el 17/12/2024. La norma ordena el servicio y te da herramientas concretas para viajar tranquilo: son las mismas obligaciones que podés mirar antes de subir.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Art. 13° · Identificación visible</p><p class="mt-2 leading-6">El vehículo debe exhibir en un lugar visible el número de identificación del conductor y el número de permiso.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Art. 11° · Factura</p><p class="mt-2 leading-6">Debe emitir factura con el servicio, el kilometraje y la tarifa del viaje.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Art. 24° · Revisión anual</p><p class="mt-2 leading-6">Los remises se revisan cada año en el mes de marzo.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Art. 2° · Registro</p><p class="mt-2 leading-6">Solo pueden prestar el servicio los permisionarios registrados en la Intendencia.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Taxímetros: la leyenda que debe estar a la vista</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En los taxis con taxímetro, el aparato debe lucir la leyenda <strong>«SEÑOR USUARIO CONTROLE LA BAJADA DE BANDERA Y EL IMPORTE DE SU VIAJE»</strong>. Es una advertencia simple y útil: fijate que la bandera baje al arrancar y que el importe que se muestra sea el correcto.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo tomar un taxi o remis y qué controlar</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Mirá la identificación antes de subir</h3><p class="mt-2 leading-7 opacity-75">Comprobá que el número del conductor y el número de permiso estén a la vista, en un lugar visible del vehículo (Art. 13°).</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Confirmá el destino y el taxímetro</h3><p class="mt-2 leading-7 opacity-75">Si el auto tiene taxímetro, verificá la leyenda y que la bandera baje al iniciar la marcha. Si es remis, acordá el viaje con claridad.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Pedí la factura al terminar</h3><p class="mt-2 leading-7 opacity-75">La factura con servicio, kilometraje y tarifa (Art. 11°) es tu respaldo. Guardala hasta llegar a destino.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Bajá en el ingreso de la terminal</h3><p class="mt-2 leading-7 opacity-75">Si vas al Puerto de Colonia, pedí que te dejen en el acceso de pasajeros, no en las áreas operativas de carga.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Paradas y teléfonos: lo que no está confirmado</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      No encontramos fuente oficial de las paradas de taxi o remis ni de sus teléfonos en Colonia. Por eso, los números que circulan en directorios de terceros no los publicamos como válidos: no están confirmados oficialmente y pueden estar desactualizados. Si necesitás un vehículo, pedí referencias en el momento o usá medios que puedas verificar antes de subir.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Lo que sí podés exigir, según la normativa, es lo que dice la ordenanza: permiso y número de conductor visibles, factura del servicio y, en taxis, la leyenda del taxímetro a la vista.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Moverse en Colonia</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto al traslado</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar al puerto</a>
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/terminal/llegadas-tardias/">Llegadas tardías</a>
+    </div>
+  </section>
+</GuideLayout>

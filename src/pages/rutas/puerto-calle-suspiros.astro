@@ -1,0 +1,94 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/rutas/puerto-calle-suspiros/';
+
+const faq = [
+  {
+    q: '¿Por qué se llama Calle de los Suspiros?',
+    a: 'No hay una versión oficial. El portal del Gobierno de Colonia la describe directamente como «un enigma» y plantea varias hipótesis sobre el origen del nombre, sin concluir cuál es la verdadera. Por eso no lo presentamos como un dato cerrado: hay explicaciones posibles, pero ninguna confirmada.'
+  },
+  {
+    q: '¿Cuál era el nombre original de la Calle de los Suspiros?',
+    a: 'El nombre original era «Ansina». El cambio se hizo por un decreto cuyo texto señala que «Ansina» mantenía todo el perfil colonial y propone volver a la denominación «de los Suspiros», conservada por la tradición popular.'
+  },
+  {
+    q: '¿Cuándo se le cambió el nombre a la calle?',
+    a: 'El decreto se aprobó el 24 de febrero de 1972 y se promulgó el 6 de marzo de 1972. Esa es la fecha del cambio de nombre que figura en la normativa.'
+  },
+  {
+    q: '¿Dónde está exactamente la Calle de los Suspiros?',
+    a: 'Es una calle del Barrio Histórico. El eje va desde 34°28\'21.1"S 57°51\'04.0"W hasta 34°28\'23.3"S 57°51\'04.3"W. Se recorre a pie, en pocos minutos, dentro del casco antiguo.'
+  },
+  {
+    q: '¿Qué se ve en la Calle de los Suspiros?',
+    a: 'Es una calle escoltada por casas de barro, con galerías de arte y un estilo típicamente portugués, con su estructura y sus piedras originales. Es un tramo corto y muy fotografiado del Barrio Histórico.'
+  }
+];
+
+const sources = [
+  { label: 'Uruguay Natural · Colonia del Sacramento (Barrio Histórico)', url: LINKS.turismoColonia },
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia del Sacramento', url: LINKS.unescoUy }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cómo ir del puerto a Calle de los Suspiros"
+  description="Ruta a pie del puerto a la Calle de los Suspiros: su historia, por qué se llama así (no hay versión oficial) y qué ver en la calle más fotografiada."
+  h1="Del puerto a la Calle de los Suspiros, a pie"
+  kicker="Rutas · Calle de los Suspiros"
+  lead="La Calle de los Suspiros está en el Barrio Histórico, a unos 600–900 m del puerto (unos 10 minutos a pie, estimación de terceros). Se llamó Ansina hasta el decreto de 1972 y hoy es una de las postales más fotografiadas de Colonia."
+  crumbs={[{ name: 'Del puerto a Calle de los Suspiros', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP) junto al Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La calle en datos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Nombre original</p><p class="mt-2 leading-6">Ansina. El nombre actual surge de un decreto que recuperaba la denominación popular «de los Suspiros».</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cambio de nombre</p><p class="mt-2 leading-6">Decreto aprobado el 24/02/1972 y promulgado el 06/03/1972.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde queda</p><p class="mt-2 leading-6">En el Barrio Histórico. Eje entre 34°28'21.1"S 57°51'04.0"W y 34°28'23.3"S 57°51'04.3"W.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Qué la caracteriza</p><p class="mt-2 leading-6">Casas de barro que desafían al tiempo, galerías de arte y un estilo típicamente portugués, con su estructura y piedras originales.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La Calle de los Suspiros es un tramo corto dentro del casco antiguo, pero concentra lo que muchos imaginan de Colonia: muros de piedra, casas bajas de barro, balcones y una escala muy humana. Se hace caminando y combina bien con las demás rutas a pie desde el <strong>puerto</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El nombre es un enigma</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Es tentador contar una historia linda sobre por qué se llama «de los Suspiros», pero no hay una versión oficial. El portal del Gobierno de Colonia la llama lisa y llanamente <strong>«un enigma»</strong>. Se manejan varias hipótesis sobre el origen del nombre, pero ninguna está confirmada como la verdadera.
+    </p>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 serif text-2xl leading-8 text-[var(--ink)]">Hay hipótesis, no una conclusión oficial: tratá cualquier explicación del nombre como una versión posible, no como un hecho.</div>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Lo que sí está documentado es el cambio de nombre: la calle se llamaba <strong>Ansina</strong> y pasó a llamarse «de los Suspiros» por el decreto de 1972. Ese es el dato firme sobre su nombre.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El recorrido a pie desde el puerto</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Salí de la terminal hacia la ciudad</h3><p class="mt-2 leading-7 opacity-75">Desde la Terminal Fluviomarítima (ANP), Avda. Roosevelt y Rivera, caminá hacia el centro. Son unos 600–900 m, unos 10 minutos a pie (estimación de terceros).</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Entrá al Barrio Histórico</h3><p class="mt-2 leading-7 opacity-75">Accesos habituales al casco antiguo: Portón de Campo y calles como Odriozola, Manuel Lobo, Rivadavia, 18 de Julio y Av. General Flores.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Bajá hacia la costa del casco antiguo</h3><p class="mt-2 leading-7 opacity-75">La calle corre cerca del borde del casco histórico, junto al río. Guiate por las calles de piedra y por el movimiento de gente con cámara.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Recorré despacio y mirá hacia arriba</h3><p class="mt-2 leading-7 opacity-75">Casas de barro, galerías de arte y detalles portugueses. Es corta: conviene caminarla sin apuro y sin bloquear el paso a los vecinos.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Continuá el paseo y volvé con margen</h3><p class="mt-2 leading-7 opacity-75">Podés seguir hacia el Faro o el Portón de Campo. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación de tu pasaje.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí recorriendo el casco antiguo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Otras rutas a pie desde el puerto</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/rutas/puerto-faro-colonia/">Del puerto al Faro</a>
+      <a class="pill" href="/rutas/puerto-porton-campo/">Del puerto al Portón de Campo</a>
+      <a class="pill" href="/rutas/puerto-museos-historicos/">Museos desde el puerto</a>
+    </div>
+  </section>
+</GuideLayout>

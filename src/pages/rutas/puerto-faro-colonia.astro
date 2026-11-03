@@ -1,0 +1,99 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/rutas/puerto-faro-colonia/';
+
+const faq = [
+  {
+    q: '¿Se puede subir al Faro de Colonia?',
+    a: 'Sí, el faro se visita por dentro. El acceso es subiendo por una escalera caracol angosta, así que no es un recorrido para cualquiera: no se permite el ingreso a menores de 12 años y conviene evaluar la escalera antes de entrar.'
+  },
+  {
+    q: '¿Cuánto cuesta entrar al Faro de Colonia?',
+    a: 'La Comisión UNESCO UY publica una entrada de 35 pesos. Es un valor que puede cambiar: confirmalo en la boletería el día de tu visita.'
+  },
+  {
+    q: '¿Hay edad mínima para subir al Faro de Colonia?',
+    a: 'La Comisión UNESCO UY indica que no se permite el ingreso a menores de 12 años. Respetá esa restricción y confirmá las condiciones particulares en el lugar.'
+  },
+  {
+    q: '¿Qué altura tiene el Faro de Colonia?',
+    a: 'Las fuentes no coinciden: Portal de Colonia publica 34 metros y visitacolonia publica 26 metros. No hay una única cifra que podamos dar como oficial, así que dejamos las dos versiones con su fuente.'
+  },
+  {
+    q: '¿Cuál es el horario del Faro de Colonia?',
+    a: 'También hay dos versiones. La Comisión UNESCO UY indica jueves a domingos de 10 a 13 y de 14 a 17. visitacolonia indica jueves a domingos de 10:00 a 12:00 y de 15:00 a 17:00, con horarios sujetos a la disponibilidad de funcionarios de la Armada Nacional. Confirmá el día de tu visita.'
+  }
+];
+
+const sources = [
+  { label: 'Comisión UNESCO Uruguay · Barrio Histórico de Colonia del Sacramento', url: LINKS.unescoUy },
+  { label: 'Uruguay Natural · Colonia del Sacramento (Faro)', url: LINKS.turismoColonia }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cómo ir del puerto al Faro de Colonia"
+  description="Ruta a pie del puerto al Faro de Colonia: cómo llegar, altura y horarios según cada fuente, entrada de 35 pesos y edad mínima para subir."
+  h1="Del puerto al Faro de Colonia, a pie"
+  kicker="Rutas · Faro"
+  lead="El Faro de Colonia está en el Barrio Histórico, a unos 600–900 m del puerto (unos 10 minutos a pie, estimación de terceros). Se sube por una escalera caracol angosta, cuesta 35 pesos y su altura varía según la fuente: 34 m o 26 m."
+  crumbs={[{ name: 'Del puerto al Faro', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry en el Puerto de Colonia al atardecer, sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El Faro de Colonia, en dos minutos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde está</p><p class="mt-2 leading-6">En el Barrio Histórico, sobre las ruinas del convento de San Francisco, sobre la calle De San Francisco.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Entrada</p><p class="mt-2 leading-6">35 pesos (Comisión UNESCO UY). Puede cambiar: confirmá en la boletería.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Edad mínima</p><p class="mt-2 leading-6">No se permite el ingreso a menores de 12 años (Comisión UNESCO UY).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cómo se sube</p><p class="mt-2 leading-6">Por una escalera caracol angosta. Una fuente no oficial estima unos 110 escalones: no es un ascenso cómodo para todos.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El faro es uno de los hitos verticales del casco antiguo. Está montado sobre los restos del convento de San Francisco, así que el recorrido mezcla patrimonio religioso y una torre de señalización marítima. Como el acceso es una escalera angosta, llevá calzado cómodo y evitá mochilas grandes.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Datos con más de una versión</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">Sobre el faro hay datos que las fuentes publican distinto. No elegimos una cifra: te mostramos las dos versiones con su origen para que sepas qué esperar.</p>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Altura: 34 m o 26 m</h3>
+        <p class="mt-3 leading-7 opacity-75">Portal de Colonia publica <strong>34 metros</strong>; visitacolonia publica <strong>26 metros</strong>. No hay una cifra única que podamos dar como oficial.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Horarios: dos versiones</h3>
+        <p class="mt-3 leading-7 opacity-75">Comisión UNESCO UY: jueves a domingos de <strong>10 a 13 y de 14 a 17</strong>. visitacolonia: jueves a domingos de <strong>10:00 a 12:00 y de 15:00 a 17:00</strong>, con horarios sujetos a la disponibilidad de funcionarios de la Armada Nacional.</p>
+      </article>
+    </div>
+    <p class="mt-6 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">Como el horario depende de la Armada Nacional y hay versiones distintas, confirmá antes de armar la visita.</p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El recorrido a pie desde el puerto</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Salí de la terminal hacia la ciudad</h3><p class="mt-2 leading-7 opacity-75">Desde la Terminal Fluviomarítima (ANP), Avda. Roosevelt y Rivera, caminá hacia el centro. La distancia es de unos 600–900 m, unos 10 minutos a pie (estimación de terceros).</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Entrá al Barrio Histórico</h3><p class="mt-2 leading-7 opacity-75">Podés entrar por el Portón de Campo o por las calles de acceso al casco antiguo (Odriozola, Manuel Lobo, Rivadavia, 18 de Julio, Av. General Flores).</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Ubicate dentro del casco antiguo</h3><p class="mt-2 leading-7 opacity-75">El faro integra el conjunto histórico. Usá la torre como referencia visual mientras te adentrás en las calles de piedra.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Encontrá la calle De San Francisco</h3><p class="mt-2 leading-7 opacity-75">El faro está sobre las ruinas del convento de San Francisco, sobre la calle De San Francisco. Ubicá el acceso y confirmá si ese día está abierto.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Subí y volvé con margen</h3><p class="mt-2 leading-7 opacity-75">La subida es por una escalera caracol angosta. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación de tu pasaje, no desde la salida.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí recorriendo el casco antiguo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Otras rutas a pie desde el puerto</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/rutas/puerto-calle-suspiros/">Del puerto a Calle de los Suspiros</a>
+      <a class="pill" href="/rutas/puerto-porton-campo/">Del puerto al Portón de Campo</a>
+      <a class="pill" href="/rutas/puerto-museos-historicos/">Museos desde el puerto</a>
+    </div>
+  </section>
+</GuideLayout>

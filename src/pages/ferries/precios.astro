@@ -1,0 +1,122 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/precios/';
+
+const faq = [
+  {
+    q: '¿Cuánto sale el pasaje de ferry a Colonia?',
+    a: 'Este sitio no publica precios de pasajes: no vendemos boletos ni representamos a las navieras, y las tarifas cambian con demasiada frecuencia. El precio real lo publica cada empresa en su web oficial al cotizar tu fecha. Entrá a la web de Colonia Express o de Buquebus, cargá fecha, sentido y cantidad de pasajeros, y ahí ves el número exacto.'
+  },
+  {
+    q: '¿Por qué varía tanto el precio del ferry?',
+    a: 'Porque la tarifa no es un valor único. Depende de la naviera, de la fecha y la temporada, y del nivel de tarifa o clase que elijas (las empresas publican categorías con reglas y precios distintos). También cambia si viajás con vehículo, porque el auto o la moto se contratan con un pasaje de bodega aparte, y suma la franquicia de equipaje que incluye cada tarifa.'
+  },
+  {
+    q: '¿Las tasas de ANP son lo que pago yo al comprar el pasaje?',
+    a: 'No. Las tasas que publica ANP son tarifas portuarias que la Administración Nacional de Puertos cobra a los operadores, no al pasajero. Por eso no son el precio de tu pasaje: vos comprás el boleto a la naviera, y la naviera, como operadora, paga esas tasas portuarias. No las mezcles con la tarifa que ves al reservar.'
+  },
+  {
+    q: '¿Dónde veo el precio real de mi viaje?',
+    a: 'En la web oficial de tu naviera, cotizando tu fecha exacta, y en sus puntos de venta en Colonia y Buenos Aires. Ahí figuran el valor del pasaje, los niveles de tarifa, si hay promociones y cuánto sale embarcar un vehículo. Nosotros no intermediamos esa compra: confirmá el precio siempre por el canal de la empresa que emite tu pasaje.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Tarifas de tráfico fluvial del Puerto de Colonia', url: LINKS.anpTarifas },
+  { label: 'Colonia Express · Horarios y rutas', url: LINKS.coloniaExpressHorarios },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Precios del ferry Colonia–Buenos Aires"
+  description="Por qué cambia el precio del ferry Colonia–Buenos Aires, de qué depende la tarifa y dónde ver el precio real. Guía independiente que no vende pasajes."
+  h1="Precios del ferry entre Colonia y Buenos Aires"
+  kicker="Ferries · Precios"
+  lead="El precio del ferry entre Colonia y Buenos Aires lo fija cada naviera y varía según la fecha, el tipo de tarifa y si viajás con vehículo. Esta es una guía independiente y sin fines de lucro: no vendemos pasajes y no publicamos tarifas, así que te explicamos de qué depende el precio y dónde verlo."
+  crumbs={[{ name: 'Precios', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry llegando al Puerto de Colonia al atardecer sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">De qué depende el precio de tu pasaje</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El precio del <strong>ferry Colonia–Buenos Aires</strong> no es un tarifario fijo que se pueda copiar: cada naviera arma el valor en el momento de la compra. Estos son los factores que más mueven la aguja, así que tenelos en cuenta cuando compares opciones.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Naviera</p><p class="mt-2 leading-6">Colonia Express y Buquebus compiten en el mismo cruce con precios y servicios distintos. Compará cada web por separado.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Fecha y temporada</p><p class="mt-2 leading-6">La temporada alta y las fechas con más demanda pueden encarecer el mismo tramo. El valor del día que consultás no es el de todo el año.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Nivel de tarifa o clase</p><p class="mt-2 leading-6">Cada empresa publica categorías con reglas distintas (por ejemplo, Súper Económica, Súper Express o Súper Flex). Más flexibilidad suele costar más.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Con o sin vehículo</p><p class="mt-2 leading-6">Si embarcás auto o moto, el vehículo se contrata con un pasaje de bodega aparte del pasaje de pasajero.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Franquicia de equipaje</p><p class="mt-2 leading-6">Las navieras publican franquicias de equipaje distintas, y Buquebus muestra dos cifras de peso en su propio sitio. Lo que incluye tu tarifa influye en lo que pagás.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cambios y reembolsos</p><p class="mt-2 leading-6">Las condiciones de cambio y devolución dependen del nivel de tarifa. Las más baratas suelen ser las más rígidas para reprogramar.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las tasas de ANP no son el precio de tu pasaje</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      <strong>Ojo con esto:</strong> ANP publica tarifas portuarias que le cobra a los <strong>operadores</strong> (las navieras), no al pasajero. No son la tarifa que ves al comprar tu boleto. Las incluimos acá solo para que entiendas de dónde sale parte del costo del sistema, nunca como el precio del pasaje.
+    </div>
+    <p class="mt-6 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Referencia de las tasas del tráfico fluvial del Puerto de Colonia publicadas por ANP. El usuario no paga estas cifras directamente en la boletería de la naviera.
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-sm leading-6 border border-[var(--line)]">
+        <thead>
+          <tr class="text-left bg-[var(--sky)]">
+            <th class="p-3 border-b border-[var(--line)]">Concepto (ANP, cobrado a operadores)</th>
+            <th class="p-3 border-b border-[var(--line)]">Tarifa publicada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Pasajero embarcado</td>
+            <td class="p-3 border-b border-[var(--line)]">2,11 USD</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-b border-[var(--line)] font-semibold">Uso de infraestructura de la Terminal</td>
+            <td class="p-3 border-b border-[var(--line)]">$66 por pasajero embarcado</td>
+          </tr>
+          <tr>
+            <td class="p-3 font-semibold">Vehículo embarcado y desembarcado</td>
+            <td class="p-3">11,27 USD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Tarifas publicadas por ANP para el tráfico fluvial del Puerto de Colonia (actualización 25/02/2026). Son tarifas portuarias a operadores, no precios de pasaje: no las uses para calcular lo que te sale viajar.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo ver el precio real, paso a paso</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Elegí la naviera y entrá a su web oficial</h3><p class="mt-2 leading-7 opacity-75">Colonia Express y Buquebus venden su propio pasaje. Abrí el sitio de cada una por separado para comparar.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Cargá fecha, sentido y pasajeros</h3><p class="mt-2 leading-7 opacity-75">El precio aparece recién cuando cotizás tu fecha exacta: el valor de un día no sirve para otro. Sumá los pasajeros que viajan.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Compará niveles de tarifa</h3><p class="mt-2 leading-7 opacity-75">Mirá qué incluye cada categoría y sus condiciones de cambio y devolución. La más barata no siempre es la que te conviene.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Agregá el vehículo si corresponde</h3><p class="mt-2 leading-7 opacity-75">Si embarcás auto o moto, agregá el pasaje de bodega y verificá que el vehículo entre en la altura máxima de la bodega.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Sin fines de lucro</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Por qué acá no vas a encontrar la tarifa</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Somos una guía turística independiente y no oficial: no vendemos pasajes, no cobramos comisión y no representamos a ANP ni a las navieras. Publicar un precio sería quedarnos viejos en días. Lo correcto es que consultes la tarifa vigente en el canal oficial de tu empresa y, si viajás con vehículo, revises también las condiciones de la bodega.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios del ferry</a>
+      <a class="pill" href="/ferries/viajar-con-vehiculo/">Viajar con vehículo</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

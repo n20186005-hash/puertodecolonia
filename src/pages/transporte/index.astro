@@ -1,0 +1,86 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/transporte/';
+
+const faq = [
+  { q: '¿Cómo me muevo en tierra al salir del puerto?', a: 'La terminal de ómnibus de la ciudad está muy cerca del puerto y el tramo corto se resuelve a pie en pocos minutos. Con equipaje pesado o movilidad reducida, un taxi o remis breve es lo más práctico. Para Montevideo, corresponde el ómnibus de larga distancia.' },
+  { q: '¿Los taxis y remises de Colonia están controlados?', a: 'Sí. La Intendencia de Colonia aprobó la Ordenanza de Servicio de Remises por Resolución 1269/024. Los vehículos habilitados deben exhibir el número del conductor y el número de permiso, y emitir factura con servicio, kilometraje y tarifa.' },
+  { q: '¿Hay buses de Colonia a Montevideo?', a: 'Sí. COT, Compañía Oriental de Transporte S.A., cubre la ruta Colonia–Montevideo con varias salidas diarias y vende online y en la terminal de ómnibus de Colonia. Los horarios y las tarifas pueden cambiar: confirmalos en la web oficial de COT.' },
+  { q: '¿Cuál me conviene: caminar, taxi u ómnibus?', a: 'Depende del destino y del equipaje. Para el Barrio Histórico, el puerto queda a un paseo corto; para la terminal de ómnibus, caminar o un taxi breve alcanza; para Montevideo, el bus de COT es lo indicado. Los teléfonos de taxis que circulan en directorios de terceros no están confirmados oficialmente.' }
+];
+
+const sources = [
+  { label: 'COT · Horarios y tarifas', url: LINKS.cot },
+  { label: 'COT · Agencias y puntos de venta', url: LINKS.cotAgencias },
+  { label: 'Intendencia de Colonia · Transporte y terminal de ómnibus (PDF)', url: LINKS.intendenciaTransporte },
+  { label: 'Intendencia de Colonia · Ordenanza de Servicio de Remises (Resolución 1269/024)', url: LINKS.remises }
+];
+
+const guias = [
+  { title: 'Terminal de ómnibus', href: '/transporte/terminal-omnibus/', desc: 'Dirección, teléfonos y horarios de venta de la terminal de ómnibus de Colonia, y cómo combinarla con el ferry.' },
+  { title: 'Taxis y remises', href: '/transporte/taxi-remis-puerto/', desc: 'Qué exige la Intendencia a taxis y remises en Colonia: registro, identificación visible, factura y control del taxímetro.' },
+  { title: 'Colonia a Montevideo en ómnibus', href: '/rutas/colonia-montevideo-omnibus/', desc: 'Horarios de COT entre Colonia y Montevideo, duración aproximada, tarifa de referencia y cómo comprar el pasaje.' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Transporte en el Puerto de Colonia"
+  description="Cómo moverte en tierra desde el Puerto de Colonia: la terminal de ómnibus, los taxis y remises de la Intendencia y la conexión con Montevideo."
+  h1="Transporte en tierra desde el Puerto de Colonia"
+  kicker="Transporte · Índice"
+  lead="Ya en tierra, el Puerto de Colonia se conecta con la ciudad por pocas vías y todas cortas: la terminal de ómnibus de Colonia, los taxis y remises habilitados por la Intendencia y, para ir más lejos, el ómnibus de COT hacia Montevideo. Acá reunimos las tres opciones."
+  crumbs={[{ name: 'Transporte', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP), punto de llegada del transporte terrestre en Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las tres formas de moverte desde el puerto</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Terminal de ómnibus</p><p class="mt-2 leading-6">La estación de buses de la ciudad queda cerca del puerto. La Intendencia publica «Av. Buenos Aires esquina Manuel Lobo» como dirección de referencia.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Taxis y remises</p><p class="mt-2 leading-6">Servicio regulado por la Intendencia (Resolución 1269/024): los vehículos en regla deben mostrar permiso y número de conductor, y dar factura.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Hacia Montevideo</p><p class="mt-2 leading-6">COT, Compañía Oriental de Transporte S.A., cubre la ruta Colonia–Montevideo desde la terminal de ómnibus.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">A tener en cuenta</p><p class="mt-2 leading-6">Teléfonos y paradas de taxi que circulan en directorios de terceros no están confirmados oficialmente: no los tomes como válidos.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El <strong>transporte terrestre</strong> del Puerto de Colonia es simple porque las distancias urbanas son cortas. La <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/transporte/terminal-omnibus/">terminal de ómnibus</a> está cerca del puerto y sirve tanto para el último tramo urbano como para los viajes largos; los <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/transporte/taxi-remis-puerto/">taxis y remises</a> resuelven el traslado con equipaje; y el <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/rutas/colonia-montevideo-omnibus/">ómnibus a Montevideo</a> cubre el trayecto de larga distancia.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo decidir según tu caso</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Si vas al Barrio Histórico</h3><p class="mt-2 leading-7 opacity-75">Es un paseo corto a pie. Guardá el equipaje o resolvé el tramo en taxi si llevás valijas grandes.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Si vas a la terminal de ómnibus</h3><p class="mt-2 leading-7 opacity-75">La estación queda cerca del puerto. Con poco peso se hace caminando; con equipaje, un taxi breve es lo más cómodo.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Si seguís a Montevideo</h3><p class="mt-2 leading-7 opacity-75">Desde la terminal de ómnibus sale el servicio de COT. Dejá margen entre el desembarque del ferry y la salida del bus, porque migraciones y aduana consumen tiempo propio.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Si te movés en auto o en bus urbano</h3><p class="mt-2 leading-7 opacity-75">Las condiciones de acceso y estacionamiento cambian según la obra y la temporada: revisá las indicaciones vigentes en <a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href="/terminal/ubicacion-como-llegar/">cómo llegar al puerto</a>.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Guías de esta sección</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-8">
+      {guias.map((g) => (
+        <article class="info-card">
+          <h3 class="font-semibold text-lg"><a class="underline decoration-black/25 underline-offset-4 hover:opacity-70" href={g.href}>{g.title}</a></h3>
+          <p class="mt-3 leading-7 opacity-75">{g.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto al transporte</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar al puerto</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/rutas/buenos-aires-colonia/">Buenos Aires a Colonia</a>
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+    </div>
+  </section>
+</GuideLayout>

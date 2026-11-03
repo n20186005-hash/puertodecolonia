@@ -1,0 +1,104 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/rutas/buenos-aires-colonia/';
+
+const faq = [
+  {
+    q: '¿Desde qué terminal de Buenos Aires sale cada naviera?',
+    a: 'Colonia Express sale desde Puerto Madero Sur, Av. Elvira Rawson de Dellepiane 155. Buquebus lo hace desde la Terminal Fluvial de Puerto Madero, en Dársena Norte. Confirmá en tu pasaje cuál te toca, porque son puntos distintos de la ciudad.'
+  },
+  {
+    q: '¿Qué documento necesito siendo argentino para cruzar a Colonia?',
+    a: 'Migraciones de Argentina indica que los ciudadanos argentinos que viajan a países del Mercosur, como Uruguay, deben presentar DNI o pasaporte. Los residentes extranjeros necesitan pasaporte o cédula vigente del país de origen y constancia de residencia.'
+  },
+  {
+    q: '¿Qué es la tarjeta migratoria y por qué debo conservarla?',
+    a: 'Buquebus pide conservar la tarjeta migratoria que se obtiene al embarcar en el puerto, porque se presenta al regresar. Guardala junto al pasaje y al documento durante todo el viaje.'
+  },
+  {
+    q: '¿Cuánto puedo traer sin pagar impuestos?',
+    a: 'En Argentina la franquicia de equipaje es de 500 USD por vía aérea o marítima y 300 USD por vía terrestre o fluvial. En Uruguay es de hasta U$S 500 por vía aérea o marítima. Los valores cambian: confirmalos con la autoridad aduanera vigente.'
+  },
+  {
+    q: '¿Dónde bajo al llegar a Colonia?',
+    a: 'El ferry te deja en la propia Terminal del Puerto de Colonia, sobre el Río de la Plata. Al desembarcar, pasás por los controles y salís desde la misma terminal hacia la ciudad; desde ahí el Barrio Histórico queda a un paseo corto.'
+  }
+];
+
+const sources = [
+  { label: 'Migraciones de Argentina · Salida del país', url: 'https://www.argentina.gob.ar/node/488501' },
+  { label: 'Colonia Express · Terminales', url: 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminales' },
+  { label: 'Buquebus · Terminales', url: 'https://www.buquebus.com/informacion-util/terminales' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cruzar de Buenos Aires a Colonia"
+  description="Guía del cruce Buenos Aires → Colonia: terminales de salida, documentación, tarjeta migratoria, aduana y qué hacer al desembarcar en el puerto."
+  h1="Cómo cruzar de Buenos Aires a Colonia en ferry"
+  kicker="Rutas · Buenos Aires → Colonia"
+  lead="Cruzar de Buenos Aires a Colonia en ferry es directo: salís desde Puerto Madero y desembarcás en la propia terminal del Puerto de Colonia. Lo que define el viaje es la documentación, la tarjeta migratoria y las franquicias de aduana."
+  crumbs={[{ name: 'Buenos Aires a Colonia', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en el Río de la Plata durante el cruce entre Buenos Aires y Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Desde qué terminal sale cada naviera</h2>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 kicker opacity-55">Naviera</th>
+            <th class="py-3 kicker opacity-55">Terminal en Buenos Aires</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-[var(--line)]"><td class="py-3 pr-4 font-semibold">Colonia Express</td><td class="py-3">Puerto Madero Sur · Av. Elvira Rawson de Dellepiane 155</td></tr>
+          <tr class="border-b border-[var(--line)]"><td class="py-3 pr-4 font-semibold">Buquebus</td><td class="py-3">Terminal Fluvial de Puerto Madero · Dársena Norte</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Las dos salidas porteñas están en Puerto Madero, pero no en el mismo punto. Colonia Express opera desde Puerto Madero Sur, sobre Av. Elvira Rawson de Dellepiane 155, y Buquebus desde la Terminal Fluvial de Puerto Madero, en Dársena Norte. Antes de pedir un traslado, verificá en tu pasaje cuál de las dos te corresponde.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Documentación y migraciones</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Argentinos</p><p class="mt-2 leading-6">DNI o pasaporte para viajar a Uruguay. Las navieras aclaran que no sirve el documento digital de la app «Mi Argentina»; presentá el último DNI emitido.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Residentes extranjeros</p><p class="mt-2 leading-6">Pasaporte o cédula vigente del país de origen y una constancia de residencia actual, según Migraciones de Argentina.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Tarjeta migratoria</p><p class="mt-2 leading-6">Buquebus pide conservar la tarjeta migratoria obtenida al embarcar: se presenta al regresar al país.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Al desembarcar</p><p class="mt-2 leading-6">El ferry llega a la Terminal del Puerto de Colonia y se sale desde la propia terminal, después de los controles.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Menores de 18 años que egresan del país necesitan autorización según el caso. Las reglas las aplican Migración y Aduana en la propia terminal, así que confirmá los requisitos vigentes con tu naviera antes de viajar.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Franquicias de aduana</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Argentina · equipaje</p><p class="mt-2 leading-6">500 USD por vía aérea o marítima y 300 USD por vía terrestre o fluvial. Los menores de 16 años tienen el 50 %.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Uruguay · equipaje</p><p class="mt-2 leading-6">Hasta U$S 500 por vía aérea o marítima. Los menores de 18 años gozan del 50 %.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Las franquicias son un tope de valor, no un permiso para traer cualquier cosa: hay productos con control sanitario y mercancías prohibidas o restringidas. Las cifras y las condiciones pueden cambiar, así que confirmá siempre con la autoridad aduanera el valor vigente para tu medio de transporte.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes y después del cruce</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que conviene revisar junto a este cruce</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/aduanas/">Aduana y equipaje</a>
+      <a class="pill" href="/itinerarios/colonia-desde-buenos-aires-un-dia/">Un día desde Buenos Aires</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+    </div>
+  </section>
+</GuideLayout>

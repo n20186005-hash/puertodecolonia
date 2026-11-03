@@ -1,0 +1,160 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/comparativas/buquebus-vs-colonia-express/';
+
+const faq = [
+  {
+    q: '¿Cuál de las dos navieras conviene más?',
+    a: 'Depende de tu caso: horario, terminal de salida en Buenos Aires, punto de amarre en Colonia, franquicia de equipaje y condiciones de tu tarifa. Este sitio es neutral: no recomienda una sobre otra ni vende pasajes. Compará la tabla y elegí según lo que necesites.'
+  },
+  {
+    q: '¿Cuál sale más barato?',
+    a: 'Este sitio no publica precios de pasajes. Las tarifas cambian según la fecha, la anticipación y el tipo de billete, y cada naviera maneja promociones propias. Consultá el precio del día en los canales oficiales de cada empresa.'
+  },
+  {
+    q: '¿Cuál acepta más equipaje?',
+    a: 'En sus webs, Colonia Express publica 30 kg libres de flete con responsabilidad limitada a U$S 50, y Buquebus también publica 30 kg en la sección de equipaje y en la FAQ, aunque sus contratos de adhesión mencionan 20 kg. Buquebus tiene una inconsistencia interna; confirmá la franquicia exacta con la naviera de tu billete.'
+  },
+  {
+    q: '¿Cuál permite vehículos más altos?',
+    a: 'Colonia Express admite 3,00 metros en el Atlantic Express y 2,10 metros en el SuperFerry Express. Buquebus limita la bodega a 1,96 metros. Si viajás con un vehículo alto, la diferencia es decisiva.'
+  },
+  {
+    q: '¿Los datos de esta comparación pueden cambiar?',
+    a: 'Sí. Los datos salen de las webs oficiales consultadas el 3 de noviembre de 2026 y pueden variar en cualquier momento. Verificá siempre la información vigente con cada naviera antes de comprar.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Terminales y contactos', url: 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminales' },
+  { label: 'Buquebus · Sitio oficial', url: 'https://www.buquebus.com/' },
+  { label: 'Colonia Express · Términos y condiciones', url: 'https://www.coloniaexpress.com/es/uy/mas-informacion/terminos-y-condiciones' },
+  { label: 'Buquebus · Contratos de adhesión', url: 'https://www.buquebus.com/info/contratos-de-adhesion' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Buquebus vs Colonia Express: comparativa"
+  description="Comparación neutral entre Buquebus y Colonia Express: terminales, check-in, equipaje, altura de bodega, mascotas y política de cambios. Sin precios."
+  h1="Buquebus vs Colonia Express: comparación neutral"
+  kicker="Comparativas"
+  lead="Buquebus y Colonia Express cruzan el Río de la Plata entre Colonia y Buenos Aires, pero difieren en la terminal de salida, el punto de amarre, el equipaje y las reglas de vehículos. Esta comparación usa solo datos de sus webs oficiales consultadas el 3 de noviembre de 2026."
+  crumbs={[{ name: 'Buquebus vs Colonia Express', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la terminal de pasajeros del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Comparación lado a lado</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La tabla enfrenta los dos operadores en los puntos que más se consultan. Ninguna columna es «mejor»: cada ítem responde a una necesidad distinta.
+    </p>
+    <div class="mt-6 border border-[var(--line)] p-2 bg-white/40 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="kicker opacity-60">
+            <th class="py-3 pr-4 align-top">Ítem</th>
+            <th class="py-3 pr-4 align-top">Buquebus</th>
+            <th class="py-3 align-top">Colonia Express</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Salida en Buenos Aires</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Terminal Fluvial de Puerto Madero, Dársena Norte</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Puerto Madero Sur, Av. Elvira Rawson de Dellepiane 155</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Amarre en Colonia</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Terminal Fluvial Puerto de Colonia, Muelles Unión / Ultramar</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Puerto de Colonia, Muelle de Ultramar</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Atención de la terminal en Colonia</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Todos los días 8:15–18:45</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Todos los días 6:30–21:30</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Cierre de check-in</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Abre 2 h antes; cierra 25 min antes (la FAQ dice 20 min)</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Sin cierre general publicado (VIP: mínimo 50 min de anticipación)</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Equipaje</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">30 kg (equipaje/FAQ); 20 kg en contratos</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">30 kg libres de flete; responsabilidad hasta U$S 50</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Altura de bodega para vehículos</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">1,96 m</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">3,00 m (Atlantic Express) / 2,10 m (SuperFerry Express)</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Bicicletas</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Gratis, en bodega</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Gratis; puede pedirse quitar la rueda delantera; firmar descargo</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Mascotas</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Cabina / auto / canil de bodega / Pet Pod; caja ≤45×35×25 cm; CVI de SENASA</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Gratis en caniles de bodega o propios; libreta de vacunas + SENASA</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Cambios</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Al menos 24 h antes para conservar o reprogramar</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Por tarifa: 72 h (40%), 48 h (20%), Flex ilimitado</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Devoluciones</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">En plazo de validez, retención 30%; menos de 24 h pierde el derecho; paquetes sin reintegro</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Por tarifa; varias sin devolución; 100% si cancelás dentro de las 24 h de la compra</td>
+          </tr>
+          <tr>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top font-semibold">Mal tiempo</td>
+            <td class="border-t border-[var(--line)] py-3 pr-4 align-top">Decide la autoridad portuaria; se ofrece reprogramación</td>
+            <td class="border-t border-[var(--line)] py-3 align-top">Se puede reprogramar; no hay devoluciones por clima</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)]">
+      Datos de las webs oficiales consultadas el 3 de noviembre de 2026. Pueden cambiar sin aviso. Este sitio no recomienda una naviera sobre otra ni vende pasajes.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo leer la comparación</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">La terminal de salida no es la misma</h3>
+        <p class="mt-3 leading-7 opacity-75">En Buenos Aires, Colonia Express sale de Puerto Madero Sur (Av. Elvira Rawson de Dellepiane 155) y Buquebus, de la Terminal Fluvial de Puerto Madero, en Dársena Norte. Según dónde te alojes, una u otra puede quedar más cerca.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">El horario de atención no es la salida</h3>
+        <p class="mt-3 leading-7 opacity-75">La terminal de Colonia atiende en franjas distintas según la naviera, pero eso no indica a qué hora sale cada buque. La salida está en tu pasaje.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">El equipaje tiene letra chica</h3>
+        <p class="mt-3 leading-7 opacity-75">Las dos publican 30 kg, pero Buquebus menciona 20 kg en sus contratos. Antes de llenar la valija, confirmá la franquicia aplicable a tu billete.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">La altura del vehículo decide</h3>
+        <p class="mt-3 leading-7 opacity-75">Con una camioneta alta o un vehículo con portaequipaje, el límite de 1,96 m de Buquebus puede dejarte afuera. Colonia Express admite más altura según el buque.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí por acá</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Perfiles y guías relacionadas</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/navieras/buquebus/">Perfil de Buquebus</a>
+      <a class="pill" href="/navieras/colonia-express/">Perfil de Colonia Express</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios Colonia–Buenos Aires</a>
+      <a class="pill" href="/ferries/cambios-cancelaciones/">Cambios y cancelaciones</a>
+    </div>
+  </section>
+</GuideLayout>

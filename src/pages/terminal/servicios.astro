@@ -1,0 +1,106 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/servicios/';
+
+const faq = [
+  {
+    q: '¿Qué servicios tiene la terminal de Colonia?',
+    a: 'Los documentos oficiales de ANP y del Ministerio de Turismo enumeran tipos de instalaciones: áreas de espera, cafetería, Wi-Fi, accesibilidad, servicios higiénicos, check-in y atención al pasajero. Son listas de referencia, no una garantía de apertura: la operación concreta de cada local se confirma in situ.'
+  },
+  {
+    q: '¿Hay cafetería y Wi-Fi en la terminal?',
+    a: 'Sí figuran en los listados oficiales de instalaciones, tanto en el manual institucional de ANP como en el dossier de cruceros. No publicamos horarios ni condiciones porque dependen del día. Si necesitás el Wi-Fi o la cafetería, verificá al llegar.'
+  },
+  {
+    q: '¿Puedo cambiar moneda o sacar dinero en el puerto?',
+    a: 'El dossier de cruceros de ANP y el Ministerio de Turismo menciona cambio de moneda y cajero automático entre las instalaciones posibles. No están garantizados todos los días. Si dependés de efectivo, tené un plan alternativo antes de viajar.'
+  },
+  {
+    q: '¿La terminal es el mismo lugar que el puerto deportivo?',
+    a: 'No. La Terminal Fluvio Marítima Colonia es el puerto comercial de pasajeros, en Avda. Roosevelt y Rivera, fuera del casco histórico. El Puerto Deportivo de Colonia es otra instalación, para yates y embarcaciones menores, dentro del Barrio Histórico.'
+  },
+  {
+    q: '¿Hay control de Migración, Aduana y MGAP en la terminal?',
+    a: 'Sí. La documentación de ANP indica dependencias de la Dirección Nacional de Migración, la Dirección Nacional de Aduanas y el MGAP dentro del complejo, además de nuevos mostradores para la DNA (6 dobles) para albergar 24 funcionarios.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Puerto de Colonia (terminal de pasajeros)', url: 'https://www.anp.com.uy/es/inicio/puertos/comerciales/colonia' },
+  { label: 'ANP · Infraestructura de la Terminal de Colonia', url: 'https://www.anp.com.uy/index.php/es/inicio/puertos/comerciales/colonia/infraestructura' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Servicios de la Terminal de Colonia"
+  description="Servicios de la Terminal Fluviomarítima Colonia (ANP): áreas de espera, cafetería, Wi-Fi, check-in y accesibilidad según los documentos oficiales."
+  h1="Servicios de la Terminal de Colonia (ANP)"
+  kicker="Terminal · Servicios"
+  lead="Los servicios de la Terminal Fluviomarítima Colonia (ANP) se reparten en un complejo de 7.000 m² cubiertos y 20.000 m² exteriores, con áreas de espera, check-in, control de Migración, Aduana y MGAP. Los documentos oficiales enumeran qué tipo de instalaciones puede haber; la operación concreta de cada local se confirma in situ el día de tu viaje."
+  crumbs={[{ name: 'Servicios', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia (ANP) con áreas de espera para pasajeros"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La terminal en números</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Superficie cubierta</p><p class="mt-2 leading-6">7.000 m² cubiertos en el complejo de la Terminal Fluvio Marítima, inaugurada el 15 de diciembre de 2009.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Espacio exterior</p><p class="mt-2 leading-6">20.000 m² exteriores y un estacionamiento de 2.500 m² libres.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Andenes de ómnibus</p><p class="mt-2 leading-6">10 andenes para ómnibus dentro del complejo.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Equipaje</p><p class="mt-2 leading-6">Cintas transportadoras de equipaje en el flujo de la terminal de pasajeros.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Control fronterizo</p><p class="mt-2 leading-6">Dependencias de la Dirección Nacional de Migración, la Dirección Nacional de Aduanas y el MGAP.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Mostradores de Migración</p><p class="mt-2 leading-6">Nuevos mostradores para la DNA (6 dobles) para albergar 24 funcionarios.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué servicios listan los documentos oficiales</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      ANP y el Ministerio de Turismo enumeran qué tipo de instalaciones puede tener la terminal. Son listas de referencia: no son un horario ni una promesa de apertura. La operación concreta de cada servicio el día de tu viaje se confirma in situ.
+    </p>
+    <div class="mt-8 overflow-x-auto border border-[var(--line)] bg-white/40">
+      <table class="w-full border-collapse text-sm text-left">
+        <thead class="bg-[var(--sky)]">
+          <tr>
+            <th class="p-3 font-semibold align-top">Fuente oficial</th>
+            <th class="p-3 font-semibold align-top">Instalaciones que enumera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-[var(--line)]">
+            <td class="p-3 align-top font-semibold leading-6">Manual institucional de ANP</td>
+            <td class="p-3 align-top leading-6">Áreas de espera, cafetería, Wi-Fi, accesibilidad, servicios higiénicos, check-in, atención e información al pasajero y otros servicios complementarios.</td>
+          </tr>
+          <tr class="border-t border-[var(--line)]">
+            <td class="p-3 align-top font-semibold leading-6">Dossier de cruceros (ANP / Ministerio de Turismo)</td>
+            <td class="p-3 align-top leading-6">Cambio de moneda, cafetería, tienda de souvenirs, alquiler de autos, Wi-Fi, cajero automático, servicio de taxis e información turística.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo aprovecharlos sin sorpresas</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Tratá la lista como referencia</h3><p class="mt-2 leading-7 opacity-75">Que un servicio figure en un documento oficial no garantiza que esté abierto cuando llegás. Verificalo en el momento.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Resolvé cambio de moneda y cajero antes</h3><p class="mt-2 leading-7 opacity-75">Están listados como posibles, pero no siempre operativos. Si dependés de efectivo, tené un plan alternativo.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Aprovechá las áreas de espera</h3><p class="mt-2 leading-7 opacity-75">Con la sala de preembarque en ampliación, los espacios cubiertos cambian según la obra. Seguí la señalización del día.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la terminal</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con los servicios</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/terminal/accesibilidad/">Accesibilidad</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/cerca/cafe-desayuno-puerto/">Cafés cerca del puerto</a>
+    </div>
+  </section>
+</GuideLayout>

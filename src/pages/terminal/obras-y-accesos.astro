@@ -1,0 +1,83 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/terminal/obras-y-accesos/';
+
+const faq = [
+  {
+    q: '¿Hay obras en la terminal de Colonia ahora?',
+    a: 'Sí. El anuncio de ANP del 07/10/2026 informa 1.000 m² adicionales en la sala de preembarque, nuevas pasarelas, mangas y escaleras mecánicas, nuevos mostradores de Migraciones y obras en los muelles. Las tareas se ejecutan con un régimen de trabajo nocturno continuo.'
+  },
+  {
+    q: '¿Las obras cambian el acceso al puerto?',
+    a: 'Pueden cambiar accesos y circulación. Por eso conviene confirmar el ingreso del día antes de presentarte. La terminal está en ampliación y el flujo de pasajeros puede reorganizarse según la etapa de la obra.'
+  },
+  {
+    q: '¿Cuánto se invirtió en la ampliación de la terminal?',
+    a: 'ANP informa 31 millones de dólares invertidos desde 2023, correspondientes a la Licitación Pública N.º 25.801. Aparte, el comunicado de Presidencia sobre las obras inauguradas el 16/10/2024 menciona una inversión de 27.000.000 de dólares. Son dos cifras de dos momentos distintos.'
+  },
+  {
+    q: '¿Qué se inauguró en octubre de 2024?',
+    a: 'Según ANP, el 16/10/2024 se inauguraron la ampliación del muelle de Ultramar, una tercera manga móvil de embarque con su pasarela, la pavimentación del área de preembarque de automóviles y el suministro de un tacón flotante.'
+  },
+  {
+    q: '¿Puedo embarcar con normalidad durante las obras?',
+    a: 'La operación sigue, pero con cambios posibles en accesos y circulación. Presentate con la antelación de tu naviera, seguí la señalización del día y confirmá el ingreso con ANP o con la empresa antes de salir.'
+  }
+];
+
+const sources = [
+  { label: 'ANP · Ampliación de la terminal y obras en muelles (07/10/2026)', url: 'https://www.anp.com.uy/index.php/es/inicio/comunicacion/noticias/ampliacion-de-la-terminal-y-mejoras-para-el-atraque-de-buques' },
+  { label: 'ANP · Inauguración de las obras de ampliación de la Terminal de Pasajeros (16/10/2024)', url: 'https://www.anp.com.uy/es/inicio/comunicacion/noticias/inauguracion-de-las-obras-de-ampliacion-de-la-terminal-de-pasajeros-de-colonia' },
+  { label: 'Presidencia · Gobierno inauguró la ampliación de la terminal de pasajeros (2024)', url: 'https://www.gub.uy/presidencia/comunicacion/noticias/gobierno-inauguro-ampliacion-terminal-pasajeros-del-puerto-colonia' },
+  { label: 'Ministerio de Turismo · El puerto de Colonia avanza en obras (2026)', url: 'https://www.gub.uy/ministerio-turismo/comunicacion/noticias/puerto-colonia-avanza-obras-para-mejorar-experiencia-visitantes' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Obras y accesos de la Terminal de Colonia"
+  description="Obras en la Terminal de Colonia: ampliación de la sala de preembarque, nuevas pasarelas y mangas, y cómo pueden cambiar accesos y circulación."
+  h1="Obras y accesos de la Terminal de Colonia (ANP)"
+  kicker="Terminal · Obras"
+  lead="La Terminal de Colonia está en ampliación: el anuncio de ANP del 07/10/2026 suma 1.000 m² a la sala de preembarque e incorpora nuevas pasarelas, mangas y escaleras mecánicas, con nuevas obras en los muelles. Como las obras pueden alterar accesos y circulación, confirmá el ingreso del día antes de presentarte."
+  crumbs={[{ name: 'Obras y accesos', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia (ANP) con obras de ampliación"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La terminal está en obra: qué significa para tu viaje</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Anuncio del 07/10/2026</p><p class="mt-2 leading-6">1.000 m² adicionales en la sala de preembarque, nuevas pasarelas, mangas y escaleras mecánicas, y nuevos mostradores de Migraciones.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Inversión 2023–2026</p><p class="mt-2 leading-6">31 millones de dólares desde 2023, correspondientes a la Licitación Pública N.º 25.801.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Inaugurado el 16/10/2024</p><p class="mt-2 leading-6">Ampliación del muelle de Ultramar, tercera manga móvil de embarque y pasarela, pavimentación del preembarque y un tacón flotante.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Inversión 2024</p><p class="mt-2 leading-6">27.000.000 de dólares según el comunicado de Presidencia sobre la inauguración de 2024.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Traducción práctica: <strong>los accesos y la circulación pueden cambiar</strong>. Las mejoras están repartidas entre sala de preembarque, muelles, pasarelas, mangas y control migratorio, y las obras se ejecutan con trabajo nocturno continuo. Antes de presentarte, confirmá el ingreso del día.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las dos etapas de la obra, en orden</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Hasta 2024: ampliación del muelle y el preembarque</h3><p class="mt-2 leading-7 opacity-75">Se amplió el muelle de Ultramar, se construyó una tercera manga móvil de embarque con pasarela, se pavimentó el área de preembarque de automóviles y se sumó un tacón flotante. Inaugurado el 16/10/2024.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Desde 2023: 31 millones de dólares de inversión</h3><p class="mt-2 leading-7 opacity-75">ANP acumula esa inversión en el proyecto de la terminal, bajo la Licitación Pública N.º 25.801.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">2026: más sala de preembarque y más accesibilidad</h3><p class="mt-2 leading-7 opacity-75">1.000 m² adicionales en la sala de preembarque, más pasarelas, mangas y escaleras mecánicas, nuevos mostradores de Migraciones, un ascensor de accesibilidad en arribos y una manga móvil de doble ancho.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Detalle de ingeniería</h3><p class="mt-2 leading-7 opacity-75">Entre las tareas figura una extensión de pasarela de 23,58 metros lineales, con obras de infraestructura en los muelles.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la terminal</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con las obras</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Ubicación y cómo llegar</a>
+      <a class="pill" href="/terminal/estacionamiento/">Estacionamiento y preembarque</a>
+      <a class="pill" href="/terminal/accesibilidad/">Accesibilidad</a>
+      <a class="pill" href="/historia/puerto-de-colonia/">Historia del Puerto de Colonia</a>
+    </div>
+  </section>
+</GuideLayout>

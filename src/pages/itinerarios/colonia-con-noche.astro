@@ -1,0 +1,118 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/itinerarios/colonia-con-noche/';
+
+const faq = [
+  {
+    q: '¿Dónde dormir cerca del puerto de Colonia?',
+    a: 'Sobre la calle Rivera y Av. Roosevelt, pegados al puerto y a la terminal de ómnibus, figuran Hotel Rivera (Rivera 131), Hotel Leoncia (Rivera 214) y Hotel Romi (Rivera 236). Son nombres registrados por el MINTUR; precios y disponibilidad hay que verificarlos aparte.'
+  },
+  {
+    q: '¿A qué hora se cena en Colonia?',
+    a: 'La cena arranca en el orden de las 19:30 a 20:00. Por ejemplo, el Del Carmen Resto & Lounge Bar del Radisson sirve cena de 20:00 a 24:00. Son horarios publicados que pueden cambiar: confirmá con el local.'
+  },
+  {
+    q: '¿Es seguro caminar de noche en Colonia?',
+    a: 'No existe una guía oficial específica para la ciudad de noche. Lo razonable es moverte por zonas céntricas e iluminadas y usar taxis o remises para tramos largos. Ante una emergencia, la Jefatura de Policía de Colonia está en Av. General Flores 364, teléfono 20307100.'
+  },
+  {
+    q: '¿Conviene alojarse en el Sheraton de Real de San Carlos?',
+    a: 'Es un 5 estrellas de categoría, pero está en Real de San Carlos, a unos 3–4 km del puerto. No es para caminar con valijas: si te alojás ahí, resolvé cada traslado en auto o taxi. Para una sola noche de paso, suele rendir más quedarse cerca del puerto.'
+  },
+  {
+    q: '¿Puedo recorrer la ciudad a la mañana antes de embarcar?',
+    a: 'Sí, si coordinás el check-out. Muchos hoteles tienen salida a media mañana (por ejemplo, El Mirador, a las 11:00). Dejá el equipaje resuelto y calculá el regreso al puerto con margen para el check-in.'
+  }
+];
+
+const sources = [
+  { label: 'MINTUR · Registro de operadores turísticos de Colonia (alojamiento)', url: 'https://www.mintur.gub.uy/consulta-operadores/2019/operadores.php?depto=COLONIA&id=4&loc=COLONIA' },
+  { label: 'Uruguay Natural · Colonia del Sacramento', url: 'https://uruguaynatural.com/es/places/colonia-encanto-historico-y-paisajes-del-plata/' },
+  { label: 'Intendencia de Colonia · Gastronomía', url: 'https://www.colonia.gub.uy/turismo/uploads/servicios/gastronomia.pdf' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Una noche en Colonia desde el puerto"
+  description="Una noche en Colonia: atardecer en la rambla, cena, dónde dormir cerca del puerto y paseo de la mañana antes de embarcar."
+  h1="Una noche en Colonia: tarde, cena y mañana siguiente"
+  kicker="Itinerarios · Con noche"
+  lead="Quedarte una noche en Colonia del Sacramento cambia la experiencia: aterrizás por la tarde, ves el atardecer en la rambla, cenás sin apuro y a la mañana siguiente recorrés el Barrio Histórico antes de embarcar. Acá va el plan completo, con dónde dormir cerca del puerto."
+  crumbs={[{ name: 'Una noche en Colonia', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry y río de la Plata al atardecer, con la ciudad de Colonia del Sacramento de fondo"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La estructura de la estadía</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Cena</p><p class="mt-2 leading-6">Desde 19:30/20:00. El Del Carmen Resto & Lounge Bar del Radisson (Washington Barbot 283) publica cena de 20:00 a 24:00.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Dónde dormir</p><p class="mt-2 leading-6">Cadena de hoteles sobre Rivera y Av. Roosevelt, a una cuadra del puerto y la terminal de ómnibus (registro MINTUR).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">A la mañana</p><p class="mt-2 leading-6">Check-out a media mañana en varios hoteles (El Mirador, 11:00). Después, paseo corto y traslado al puerto.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Ojo con las distancias</p><p class="mt-2 leading-6">El Sheraton, en Real de San Carlos, queda a 3–4 km: no es para caminar con valijas.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      La ciudad no tiene una <strong>guía oficial de recorridos nocturnos</strong>, así que la recomendación práctica es moverse por zonas céntricas e iluminadas y usar taxi o remise para trayectos largos. La buena noticia es que, si te alojás cerca del puerto, casi todo lo que necesitás queda a pocas cuadras.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cena: dónde y a qué hora</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      En Colonia la cena arranca en el orden de las <strong>19:30 a 20:00</strong>. Hay opciones de distinto tipo: el <strong>Viejo Barrio</strong> (Vasconcellos 169), en el Barrio Histórico, publica cena solo viernes a domingo, de 19:30 a 23:00; el <strong>Del Carmen Resto & Lounge Bar</strong> del Radisson (Washington Barbot 283) sirve de 20:00 a 24:00. Son horarios publicados que pueden variar: confirmá el mismo día.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Ojo con el mediodía y la tarde: la franja de almuerzo va de 11:00 a 16:30, y entre 16:30 y 19:30 muchos locales cierran. Si llegás a Colonia a media tarde, apuntá a un café antes que a una mesa de restaurante. Tenés más detalle en <a class="underline decoration-black/20 underline-offset-4" href="/cerca/restaurantes-almuerzo-puerto/">almuerzos cerca del puerto</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde alojarte según lo que buscás</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Pegado al puerto</h3>
+        <p class="mt-3 leading-7 opacity-75">Hotel Rivera (Rivera 131, 2★, a una cuadra del puerto y la terminal de ómnibus), Hotel Leoncia (Rivera 214, 3★) y Hotel Romi (Rivera 236, esq. General Flores, 2★). El Mirador Hotel & Spa (Franklin Delano Roosevelt 381, 4★) tiene check-in 14:00 y check-out 11:00.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Centro y borde del casco</h3>
+        <p class="mt-3 leading-7 opacity-75">Hotel Royal (General Flores 340), Hotel Beltrán (Gral. Flores 311) y Hotel Italiano (Intendente Suárez 105), además de Real Colonia Hotel & Suites (González Moreno 001). Dentro del Barrio Histórico están Posada Plaza Mayor (Calle del Comercio 111) y Charco Hotel (San Pedro 116).</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Rambla y más lejos</h3>
+        <p class="mt-3 leading-7 opacity-75">Dazzler Colonia (Rambla de las Américas 1530) y Costa Colonia Riverside Boutique (Joaquín Torres García 1102) quedan sobre la rambla. El Sheraton Colonia Golf & Spa Resort está en Real de San Carlos, a unos 3–4 km: cómodo solo si tenés movilidad propia o tomás taxi.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Cómo usar esta lista</h3>
+        <p class="mt-3 leading-7 opacity-75">Son nombres y direcciones del registro oficial de operadores (MINTUR). No publicamos tarifas ni disponibilidad: verificá precios, servicios y reserva con cada hotel o con tu agencia.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">De la tarde a la mañana, paso a paso</h2>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)] max-w-3xl">
+      Bloques orientativos de esta guía, repartidos entre la tarde, la noche y la mañana siguiente.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Tarde · Llegada y check-in</h3><p class="mt-2 leading-7 opacity-75">Apenas bajás del ferry, dejá el equipaje en el hotel. Si el check-in es más tarde (El Mirador abre a las 14:00), dejá las valijas en la recepción y salí liviano.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Tarde · Atardecer en la rambla</h3><p class="mt-2 leading-7 opacity-75">Caminá hacia la rambla y el borde del Barrio Histórico para la luz de la tarde sobre el río. Es el paseo más simple y el que mejor rinde a esa hora.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Noche · Cena</h3><p class="mt-2 leading-7 opacity-75">Cená desde las 19:30/20:00. Volvé al hotel por calles céntricas e iluminadas y, si el trayecto es largo, tomá un taxi o remise.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Mañana · Paseo por el casco</h3><p class="mt-2 leading-7 opacity-75">Antes de embarcar, recorré a pie el Barrio Histórico: Portón de Campo, Plaza Mayor y Calle de los Suspiros. Aprovechá el café de la mañana en la zona céntrica.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Mañana · Check-out y embarque</h3><p class="mt-2 leading-7 opacity-75">Ordená el check-out y volvé al puerto dejando aire sobre la hora de presentación de tu pasaje, por Migración, Aduana y equipaje.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Terminá de organizar la estadía</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse para pasar la noche</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/cerca/restaurantes-almuerzo-puerto/">Almuerzos y cena</a>
+      <a class="pill" href="/terminal/llegadas-tardias/">Llegadas tardías y noche</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+    </div>
+  </section>
+</GuideLayout>

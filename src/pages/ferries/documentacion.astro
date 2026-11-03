@@ -1,0 +1,99 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/documentacion/';
+
+const faq = [
+  {
+    q: '¿Sirve el DNI para cruzar a Colonia?',
+    a: 'Para los argentinos, Migraciones acepta el Documento Nacional de Identidad (DNI) o el pasaporte. Pero ojo: Buquebus aclara que no es válido el documento digital de la app «Mi Argentina», así que llevá el DNI físico vigente (el último emitido) o el pasaporte. Confirmá siempre el requisito con la naviera antes de viajar.'
+  },
+  {
+    q: '¿Necesito pasaporte para el ferry a Colonia?',
+    a: 'En general no: los argentinos y uruguayos pueden usar su documento de identidad vigente, y los ciudadanos de los países de la nómina de Uruguay no necesitan visa. Igual, conviene llevar el documento en regla y vigente. Verificá tu caso puntual con la naviera y con Migraciones, porque los requisitos dependen de la nacionalidad.'
+  },
+  {
+    q: '¿Qué pasa con la tarjeta migratoria?',
+    a: 'Buquebus indica que hay que conservar la tarjeta migratoria que te dan al embarcar en el puerto de Colonia o de Montevideo, y presentarla cuando regresás a Uruguay. Guardala con el pasaporte o el documento durante todo el viaje.'
+  },
+  {
+    q: '¿Los residentes extranjeros qué presentan?',
+    a: 'Según Migraciones de Argentina, los residentes permanentes o temporales extranjeros deben presentar su pasaporte o cédula vigente del país de origen y una constancia de residencia actual. Si tu situación es distinta, consultá directamente con la naviera y con la autoridad migratoria.'
+  }
+];
+
+const sources = [
+  { label: 'Argentina · Migraciones, requisitos de salida', url: LINKS.argentinaMigraciones },
+  { label: 'Uruguay · Ministerio del Interior, régimen de visas', url: LINKS.uruguayVisas },
+  { label: 'Buquebus · Documentación', url: LINKS.buquebusDocumentacion }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Documentación para cruzar a Colonia"
+  description="Qué documentos necesitás para el ferry entre Colonia y Buenos Aires: DNI o pasaporte, residentes extranjeros, visas y la tarjeta migratoria."
+  h1="Documentación para viajar a Colonia en ferry"
+  kicker="Ferries · Documentación"
+  lead="Para cruzar a Colonia en ferry necesitás documentación vigente: los argentinos pueden presentar DNI o pasaporte, los residentes extranjeros su pasaporte o cédula más constancia de residencia, y hay que revisar el tema de visas y la tarjeta migratoria."
+  crumbs={[{ name: 'Documentación para viajar', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/puerto-terminal-exterior.jpg"
+  heroAlt="Exterior de la Terminal Fluviomarítima Colonia junto al Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Documentación según quién viaja</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El cruce entre Colonia y Buenos Aires es internacional: se controla en migraciones dentro de la terminal. Los requisitos dependen de tu <strong>nacionalidad, residencia y edad</strong>. Estas son las referencias oficiales, pero la última palabra la tienen tu naviera y Migraciones.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Argentinos</p><p class="mt-2 leading-6">DNI o pasaporte. Para viajar a países del Mercosur y asociados, como Uruguay, Migraciones acepta el Documento Nacional de Identidad.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Uruguayos</p><p class="mt-2 leading-6">Cédula de identidad o pasaporte, según publica Buquebus para sus pasajeros.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Residentes extranjeros</p><p class="mt-2 leading-6">Pasaporte o cédula vigente del país de origen y una constancia de residencia actual (Migraciones de Argentina).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Menores de 18 años</p><p class="mt-2 leading-6">Necesitan autorización para egresar del país según la situación del viaje. Revisá la guía de menores y autorizaciones.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Visas: quién necesita trámite previo</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Uruguay publica una <strong>nómina de países</strong> cuyos ciudadanos no necesitan visa. Los ciudadanos de los países que <strong>no figuran</strong> en esa nómina quedan sujetos al requisito de visa consular previa. La Argentina figura en la nómina sin necesidad de visa (para pasaporte común, diplomático y de servicio).
+    </p>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Si tu motivo de viaje no es turístico, o si pensás quedarte por más de 90 días, el trámite cambia: hay que hacer la consulta previa correspondiente antes de viajar.
+    </div>
+    <div class="mt-6">
+      <div class="info-card"><p class="kicker opacity-55">Caso particular · nacionalidad china</p><p class="mt-2 leading-7">Buquebus indica que las personas de nacionalidad china que ingresen a Uruguay por vía fluvial deben contar con la visa uruguaya. Aplicá el mismo criterio de consulta previa si no estás seguro de tu caso.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La tarjeta migratoria y el DNI digital</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Tarjeta migratoria</h3>
+        <p class="mt-3 leading-7 opacity-75">Conservá la tarjeta migratoria que recibís al embarcar en el puerto de Colonia o de Montevideo. Buquebus pide presentarla cuando regresás a Uruguay. Llevá también tu documento durante todo el viaje.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">«Mi Argentina» no sirve</h3>
+        <p class="mt-3 leading-7 opacity-75">Buquebus aclara que no es válido el documento digital de la app «Mi Argentina». Llevá el DNI físico (el último adquirido) o el pasaporte vigente.</p>
+      </article>
+    </div>
+    <p class="mt-8 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Con menores de edad los requisitos de autorización son específicos. Para trámites de equipaje y compras en free shop o aduana, mirá la guía de aduana y equipaje.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con los trámites</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto con la documentación</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/menores/">Menores y autorizaciones</a>
+      <a class="pill" href="/ferries/pasajes/">Pasajes de ferry</a>
+      <a class="pill" href="/ferries/aduanas/">Aduana y equipaje</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+    </div>
+  </section>
+</GuideLayout>

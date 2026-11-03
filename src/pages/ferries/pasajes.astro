@@ -1,0 +1,102 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/pasajes/';
+
+const faq = [
+  {
+    q: '¿Dónde compro los pasajes de ferry?',
+    a: 'Cada naviera vende su propio pasaje: Colonia Express y Buquebus lo hacen en su web oficial y en sus puntos de venta. Colonia Express atiende en su terminal de Colonia (Muelle de Ultramar) y Buquebus vende en el Puerto Franco de Colonia, en los muelles Unión y Ultramar, dentro del salón de embarque. Comprá siempre por el canal de la empresa del pasaje.'
+  },
+  {
+    q: '¿Puedo comprar en el puerto?',
+    a: 'Sí, las navieras tienen venta en la terminal de Colonia. Buquebus publica venta de pasajes en el salón de embarque de los muelles Unión y Ultramar, de lunes a domingo de 08:00 a 20:30, y Colonia Express atiende su terminal de Colonia todos los días de 06:30 a 21:30. La disponibilidad depende del cupo del día, así que si podés, comprá o reservá antes por la web.'
+  },
+  {
+    q: '¿Necesito imprimir el pasaje?',
+    a: 'No encontramos una exigencia oficial de imprimir el pasaje. Buquebus pide presentar el pasaje o el número de documento junto con tu identificación válida al hacer el check-in. Podés mostrar el pasaje en el celular, pero confirmá con tu naviera si acepta el formato digital o si conviene llevar una copia impresa.'
+  },
+  {
+    q: '¿El pasaje del vehículo es aparte?',
+    a: 'Sí. El traslado del vehículo se contrata aparte del pasaje de pasajero y usa un documento propio, el pasaje de bodega, que se pide junto con los papeles del vehículo al hacer el check-in. Además hay un límite de altura de bodega que cambia según la naviera, así que confirmá el precio, el cupo y las condiciones con la empresa antes de viajar.'
+  }
+];
+
+const sources = [
+  { label: 'Buquebus · Terminales y puntos de venta', url: LINKS.buquebusTerminales },
+  { label: 'Colonia Express · Terminales', url: LINKS.coloniaExpress },
+  { label: 'Buquebus · Sitio oficial', url: LINKS.buquebus }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Pasajes de ferry Colonia–Buenos Aires"
+  description="Cómo comprar el pasaje de ferry entre Colonia y Buenos Aires: web de cada naviera, terminales y agencias, y el pasaje de bodega para vehículos."
+  h1="Pasajes de ferry entre Colonia y Buenos Aires"
+  kicker="Ferries · Pasajes"
+  lead="El pasaje de ferry entre Colonia y Buenos Aires se compra en la web oficial de cada naviera, en las terminales o en agencias. Este sitio no vende pasajes: te contamos por dónde se compran y qué datos necesitás."
+  crumbs={[{ name: 'Pasajes de ferry', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la terminal de pasajeros del Puerto de Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Dónde se compra el pasaje</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Los <strong>pasajes de ferry</strong> los vende cada naviera, no este sitio. Hay tres canales habituales: la <strong>web oficial</strong> de la empresa, las <strong>terminales</strong> en Colonia y Buenos Aires, y las <strong>agencias</strong> o puntos de venta. Cada pasaje pertenece a la empresa que lo emite, así que comprá y consultá siempre por el canal de esa naviera.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Colonia</p><p class="mt-2 leading-6">Terminal en el Puerto de Colonia, Muelle de Ultramar. Atención todos los días de 06:30 a 21:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Buenos Aires</p><p class="mt-2 leading-6">Terminal en Puerto Madero Sur (Av. Elvira Rawson de Dellepiane 155). Atención todos los días de 06:00 a 22:00.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · Colonia</p><p class="mt-2 leading-6">Venta de pasajes en el salón de embarque del Puerto Franco de Colonia, en los muelles Unión y Ultramar. De lunes a domingo de 08:00 a 20:30.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · Reintegros</p><p class="mt-2 leading-6">Los trámites se hacen en los puntos que publica la empresa: en Buenos Aires, Terminal Dársena Norte (Av. Antártida Argentina 821); en Uruguay, Local Río Negro (Río Negro 1400 esq. Colonia, Montevideo).</p></div>
+    </div>
+    <p class="mt-8 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Este sitio es una guía independiente y no vende pasajes ni representa a las navieras. Los precios, las promociones y las condiciones de cada pasaje los define la empresa que lo emite.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Qué datos y documentos necesitás</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Al comprar y al hacer el check-in te van a pedir datos del pasajero y su documento. La documentación válida depende de tu nacionalidad y residencia; la lista completa la cubrimos en la guía de documentación.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Elegí empresa, fecha y sentido</h3><p class="mt-2 leading-7 opacity-75">Colonia Express y Buquebus son navieras distintas: compará horario y servicio en cada web antes de decidir.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Cargá los datos de cada pasajero</h3><p class="mt-2 leading-7 opacity-75">Nombre y documento tal como figura en tu DNI, cédula o pasaporte. Si viajás con menores, revisá los requisitos de autorización.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Sumá el vehículo si corresponde</h3><p class="mt-2 leading-7 opacity-75">Si embarcás auto o moto, agregá el pasaje de bodega y tené a mano los papeles del vehículo (libreta o título, licencia, seguro, placas y grabados).</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Confirmá el canal y el pago</h3><p class="mt-2 leading-7 opacity-75">Terminá la compra en la web oficial o en un punto de venta de la naviera. Guardá el pasaje y revisá las condiciones de cambio y cancelación.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Pasajero y bodega: dos pasajes distintos</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Pasaje de pasajero</h3>
+        <p class="mt-3 leading-7 opacity-75">Es el que compra cada persona para viajar. Incluye el derecho a llevar equipaje hasta la franquicia de la naviera. Al hacer el check-in se pide presentar el pasaje o el número de documento junto con la identificación válida.</p>
+      </article>
+      <article class="info-card">
+        <h3 class="font-semibold text-lg">Pasaje de bodega (vehículo)</h3>
+        <p class="mt-3 leading-7 opacity-75">Es el documento aparte que contrata el traslado del vehículo. Se exige junto con la documentación del vehículo en el check-in, y la bodega tiene un límite de altura según la naviera: en Buquebus es de 1,96 m y en Colonia Express cambia según el buque (3,00 m en Atlantic Express y 2,10 m en SuperFerry Express).</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes de pagar</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Revisá las condiciones de tu pasaje</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.8)]">
+      Precio, promociones, franquicia de equipaje y políticas de cambio o cancelación dependen de la naviera y del tipo de pasaje. Confirmá todo en el sitio de la empresa que emite el ticket antes de cerrar la compra.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Ver horarios</a>
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/navieras/colonia-express/">Colonia Express</a>
+      <a class="pill" href="/navieras/buquebus/">Buquebus</a>
+    </div>
+  </section>
+</GuideLayout>

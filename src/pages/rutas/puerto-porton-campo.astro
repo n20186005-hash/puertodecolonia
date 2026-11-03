@@ -1,0 +1,91 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/rutas/puerto-porton-campo/';
+
+const faq = [
+  {
+    q: '¿Qué es el Portón de Campo?',
+    a: 'Es la antigua Puerta de la Ciudadela, hoy uno de los accesos al Barrio Histórico de Colonia del Sacramento. Antiguamente marcaba el punto de ingreso a toda la extensión de la ciudad.'
+  },
+  {
+    q: '¿De qué año es el Portón de Campo?',
+    a: 'Su construcción data del año 1745. La información de Portal de Colonia lo ubica frente a la Plaza 1811, con un puente levadizo de madera y gruesas cadenas a sus pies.'
+  },
+  {
+    q: '¿Dónde está el escudo de piedra del Portón de Campo?',
+    a: 'El escudo fue labrado en Río de Janeiro e inaugurado por el gobernador Antonio Pedro de Vasconcellos en 1745, durante el reinado del rey D. Joao V de Portugal. Después fue retirado por orden de Pedro de Cevallos y hoy se conserva en el museo.'
+  },
+  {
+    q: '¿Qué hay frente al Portón de Campo?',
+    a: 'El Portón de Campo mira de frente a la Plaza 1811, dentro del Barrio Histórico. Es uno de los puntos de referencia para orientarte al entrar al casco antiguo.'
+  },
+  {
+    q: '¿El puente levadizo está en funcionamiento?',
+    a: 'Portal de Colonia describe que el portón tiene a sus pies un puente levadizo: una conexión de madera y gruesas cadenas. Es un elemento histórico del conjunto; no lo presentamos como un mecanismo operativo, así que no esperes verlo funcionar.'
+  }
+];
+
+const sources = [
+  { label: 'Uruguay Natural · Colonia del Sacramento (Portón de Campo)', url: LINKS.turismoColonia },
+  { label: 'Museo de Colonia · Escudo de piedra del Portón de Campo', url: LINKS.museos }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Cómo ir del puerto al Portón de Campo"
+  description="Ruta a pie del puerto al Portón de Campo o Puerta de la Ciudadela: su construcción de 1745, el puente levadizo y el escudo de piedra hoy en museo."
+  h1="Del puerto al Portón de Campo, a pie"
+  kicker="Rutas · Portón de Campo"
+  lead="El Portón de Campo (Puerta de la Ciudadela) es una de las puertas de entrada al Barrio Histórico, a unos 600–900 m del puerto (unos 10 minutos a pie, estimación de terceros). Su construcción data de 1745 y mira de frente a la Plaza 1811."
+  crumbs={[{ name: 'Del puerto al Portón de Campo', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferries atracados en el Puerto de Colonia, terminal fluviomarítima de Colonia del Sacramento"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El Portón de Campo en datos</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Construcción</p><p class="mt-2 leading-6">Data del año 1745. Era antiguamente el punto de ingreso a toda la extensión de Colonia del Sacramento.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Frente a</p><p class="mt-2 leading-6">La Plaza 1811, dentro del Barrio Histórico.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Detalle</p><p class="mt-2 leading-6">Tiene a sus pies un puente levadizo: una conexión de madera y gruesas cadenas.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Escudo de piedra</p><p class="mt-2 leading-6">Labrado en Río de Janeiro e inaugurado por el gobernador Antonio Pedro de Vasconcellos en 1745. Luego retirado por orden de Pedro de Cevallos y hoy en el museo.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El Portón de Campo es la forma más directa de entrar al Barrio Histórico viniendo desde el <strong>puerto</strong>. Al cruzar, el paisaje cambia de golpe: pasás de la ciudad «nueva» a las calles de piedra y a la Plaza 1811. Es también un buen punto de partida para ordenar el resto del paseo.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El escudo que ya no está</h2>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El portón tuvo un escudo de piedra labrado en Río de Janeiro e inaugurado en 1745 por el gobernador portugués Antonio Pedro de Vasconcellos, durante el reinado del rey D. Joao V de Portugal. Después de la toma de la plaza, <strong>Pedro de Cevallos</strong> ordenó retirarlo. Hoy ese escudo no está en el portón: se conserva en el museo.
+    </p>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 serif text-2xl leading-8 text-[var(--ink)]">Cuando lo veas, el portón que atravesás es el acceso, pero el escudo original es una pieza de museo.</div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El recorrido a pie desde el puerto</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Salí de la terminal hacia la ciudad</h3><p class="mt-2 leading-7 opacity-75">Desde la Terminal Fluviomarítima (ANP), Avda. Roosevelt y Rivera, caminá hacia el centro. Son unos 600–900 m, unos 10 minutos a pie (estimación de terceros).</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Apuntá hacia el casco antiguo</h3><p class="mt-2 leading-7 opacity-75">Seguí las calles de acceso al Barrio Histórico (Odriozola, Manuel Lobo, Rivadavia, 18 de Julio, Av. General Flores) hasta el borde del conjunto.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Ubicá la Plaza 1811</h3><p class="mt-2 leading-7 opacity-75">El Portón de Campo mira de frente a la Plaza 1811. Si llegás a la plaza, ya estás en el acceso.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Cruzá el portón</h3><p class="mt-2 leading-7 opacity-75">Junto al portón vas a ver el puente levadizo de madera y cadenas. Al cruzarlo ya estás dentro del Barrio Histórico.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Seguí el paseo y volvé con margen</h3><p class="mt-2 leading-7 opacity-75">Desde acá podés continuar a la Calle de los Suspiros, el Faro o los museos. Si tenés ferry de regreso, calculá el tiempo desde la hora de presentación de tu pasaje.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí recorriendo el casco antiguo</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Otras rutas a pie desde el puerto</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/rutas/puerto-faro-colonia/">Del puerto al Faro</a>
+      <a class="pill" href="/rutas/puerto-calle-suspiros/">Del puerto a Calle de los Suspiros</a>
+      <a class="pill" href="/rutas/puerto-museos-historicos/">Museos desde el puerto</a>
+    </div>
+  </section>
+</GuideLayout>

@@ -1,0 +1,90 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/check-in-embarque/';
+
+const faq = [
+  {
+    q: '¿Cuánto antes llego al check-in del ferry?',
+    a: 'Buquebus pide presentarse 2 horas antes de la partida del buque. Colonia Express no publica un cierre general de check-in, pero avisa que si llegás con menos de 50 minutos de anticipación perdés el embarque prioritario. La regla práctica: llegá con margen, porque migraciones, aduana, equipaje y embarque consumen tiempo.'
+  },
+  {
+    q: '¿Puedo hacer web check-in?',
+    a: 'Buquebus ofrece web check-in solo para pasajeros mayores de 18 años de nacionalidad argentina o uruguaya, y solo si la reserva no incluye menores. Se habilita desde las 24 horas previas y hasta 3 horas antes de viajar. Si tu caso no entra en esas condiciones, hacés el check-in presencial en la terminal.'
+  },
+  {
+    q: '¿Qué necesito para el check-in?',
+    a: 'Tené a mano el pasaje o el número de documento y tu identificación válida (DNI, cédula o pasaporte, según tu caso). Si embarcás un vehículo, sumá el pasaje de bodega y la documentación del vehículo. El nombre y el documento deben coincidir con los datos de la reserva.'
+  },
+  {
+    q: '¿Qué pasa si llego tarde?',
+    a: 'Buquebus publica que el check-in cierra 25 minutos antes de la partida (su FAQ menciona 20 minutos; la propia naviera no unifica la cifra). Pasado ese cierre, se puede perder el embarque. En Colonia Express, llegar con menos de 50 minutos de anticipación te deja sin embarque prioritario. Llegar tarde puede significar reprogramar o perder el viaje: la política la define tu naviera.'
+  }
+];
+
+const sources = [
+  { label: 'Buquebus · Embarque y tiempos de check-in', url: LINKS.buquebusEmbarque },
+  { label: 'Buquebus · Web Check-In', url: LINKS.buquebusCheckin },
+  { label: 'Colonia Express · Preguntas frecuentes', url: LINKS.coloniaExpressFaq }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Check-in y embarque del ferry en Colonia"
+  description="Cuándo llegar al check-in del ferry en Colonia: apertura 2 h antes y cierre 25 min antes en Buquebus, web check-in y qué pasa si llegás tarde."
+  h1="Check-in y embarque del ferry en el Puerto de Colonia"
+  kicker="Ferries · Check-in"
+  lead="El check-in del ferry en Colonia depende de tu naviera: Buquebus abre el check-in 2 horas antes de la partida y lo cierra 25 minutos antes. Llegar con margen y con los documentos a mano es lo que evita perder el embarque."
+  crumbs={[{ name: 'Check-in y embarque', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry llegando al Puerto de Colonia al atardecer sobre el Río de la Plata"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los tiempos del check-in, según la naviera</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · Apertura</p><p class="mt-2 leading-6">Presentarse 2 horas antes de la partida del buque.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus · Cierre</p><p class="mt-2 leading-6">25 minutos antes de la partida, según la página de embarque (su FAQ dice 20 minutos).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Prioridad</p><p class="mt-2 leading-6">Si llegás con menos de 50 minutos de anticipación, no accedés al embarque prioritario.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express · Cierre general</p><p class="mt-2 leading-6">La naviera no publica un cierre general de check-in: confirmá tu caso con la empresa.</p></div>
+    </div>
+    <div class="mt-8 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Atención: la propia página de Buquebus no coincide consigo misma. La sección de embarque indica un <strong>cierre 25 minutos antes</strong>, mientras que su preguntas frecuentes habla de <strong>20 minutos</strong>. Tomá la referencia más conservadora y confirmá la hora con tu naviera.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El orden del día de embarque</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Llegá con la anticipación de tu naviera</h3><p class="mt-2 leading-7 opacity-75">Buquebus pide 2 horas antes de la partida. En Colonia Express, apuntá a más de 50 minutos para no perder la prioridad.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Hacé el check-in</h3><p class="mt-2 leading-7 opacity-75">Presentá el pasaje o el número de documento y tu identificación válida. Si llevás vehículo, sumá el pasaje de bodega y los papeles del vehículo.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Pasá por migraciones y aduana</h3><p class="mt-2 leading-7 opacity-75">Es un cruce internacional: los controles se hacen dentro de la terminal. Respetá la señalización y las zonas restringidas.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Despachá el equipaje y embarcá</h3><p class="mt-2 leading-7 opacity-75">Seguí las indicaciones del personal hacia la manga de embarque. Con vehículo, el circuito es el de preembarque vehicular.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Respetá el cierre de check-in</h3><p class="mt-2 leading-7 opacity-75">Buquebus cierra 25 minutos antes de la partida. Después de ese horario, el embarque queda sujeto a la decisión de la naviera.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Web check-in: quién puede usarlo</h2>
+    <div class="mt-6">
+      <div class="info-card"><p class="kicker opacity-55">Buquebus</p><p class="mt-2 leading-7">El web check-in está disponible solo para pasajeros mayores de 18 años de nacionalidad argentina o uruguaya, y no se puede usar si la reserva incluye menores. Se habilita desde las 24 horas previas al viaje hasta 3 horas antes de la partida.</p></div>
+    </div>
+    <p class="mt-6 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Si no cumplís esas condiciones, hacés el check-in presencial en la terminal. Y recordá que el web check-in no reemplaza los controles de migraciones y aduana, que se hacen en el puerto.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con la logística</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que conviene revisar antes de viajar</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios del ferry</a>
+      <a class="pill" href="/ferries/equipaje/">Equipaje en el ferry</a>
+      <a class="pill" href="/terminal/llegadas-tardias/">Llegadas tardías</a>
+    </div>
+  </section>
+</GuideLayout>

@@ -1,0 +1,110 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/itinerarios/colonia-4-horas/';
+
+const faq = [
+  {
+    q: '¿Cuánto cuesta entrar a los museos de Colonia?',
+    a: 'El sitio oficial de los museos de Colonia publica una entrada de $150 que incluye todos los Espacios Expositivos. Hay entrada libre para menores de 12 años y residentes del departamento de Colonia, entre otros casos. El precio puede cambiar: confirmalo antes de ir.'
+  },
+  {
+    q: '¿Dónde compro la entrada de los museos?',
+    a: 'La venta se hace en el Espacio Dr. Bautista Rebuffo, en Calle Del Comercio 77, dentro del Barrio Histórico. Ahí te dan el acceso al conjunto completo de Espacios Expositivos.'
+  },
+  {
+    q: '¿Se puede subir al Faro con niños?',
+    a: 'No. La Comisión UNESCO de Uruguay indica que no se permite el ingreso a menores de 12 años. La subida es por una escalera caracol angosta, así que para chicos chicos no es una parada posible.'
+  },
+  {
+    q: '¿Los museos abren todos los días?',
+    a: 'Hay datos en conflicto entre fuentes. El sitio oficial de los museos menciona atención de lunes a viernes, de 11:30 a 16:30, mientras que otras fuentes oficiales dan franjas distintas y días de cierre. Confirmá horarios antes de ir.'
+  },
+  {
+    q: '¿Cuánto mide el Faro de Colonia?',
+    a: 'No hay un dato único: una fuente menciona 34 m y otra 26 m. Como no hay coincidencia, no tomamos una cifra como definitiva; lo que sí es claro es que se visita por una escalera caracol angosta y sin menores de 12 años.'
+  },
+  {
+    q: '¿A qué hora puedo almorzar cerca del puerto?',
+    a: 'La franja de almuerzo suele ir de 11:00 a 16:30, y después varios locales cierran hasta la cena. Con un ferry por la tarde, apuntá a almorzar dentro de ese horario y dejar los 16:30–19:30 como intervalo cubierto por un café.'
+  }
+];
+
+const sources = [
+  { label: 'Museo de Colonia · Espacios Expositivos', url: 'https://www.museoscolonia.com.uy/' },
+  { label: 'UNESCO · Barrio Histórico de la Ciudad de Colonia del Sacramento', url: 'https://whc.unesco.org/en/list/747' },
+  { label: 'Uruguay Natural · Colonia del Sacramento', url: 'https://uruguaynatural.com/es/places/colonia-encanto-historico-y-paisajes-del-plata/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Colonia en 4 horas: museos y faro"
+  description="Itinerario de 4 horas desde el puerto: Espacios Expositivos, Faro, y almuerzo o café en Colonia del Sacramento, con horarios a confirmar."
+  h1="Colonia en 4 horas: museos, Faro y almuerzo"
+  kicker="Itinerarios · 4 horas"
+  lead="Con 4 horas desde el puerto de Colonia del Sacramento te alcanza para sumar los Espacios Expositivos (los museos) y el Faro al paseo por el Barrio Histórico, más un almuerzo o café. Es el itinerario intermedio: más que el recorrido corto, menos que una estadía completa."
+  crumbs={[{ name: 'Colonia en 4 horas', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/terminal-interior.jpg"
+  heroAlt="Interior de la Terminal Fluviomarítima Colonia, punto de partida del itinerario de cuatro horas"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Los datos que definen el plan</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Museos (Espacios Expositivos)</p><p class="mt-2 leading-6">Entrada publicada de $150, incluye todos los Espacios. Venta en el Espacio Dr. Bautista Rebuffo, Calle Del Comercio 77. Gratis para menores de 12 y residentes de Colonia.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Faro de Colonia</p><p class="mt-2 leading-6">Entrada de 35 pesos. No se permite el ingreso a menores de 12 años. Altura y horarios: datos en conflicto entre fuentes, hay que confirmar.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Franja de almuerzo</p><p class="mt-2 leading-6">En el orden de 11:00 a 16:30. Después, varios locales cierran hasta la cena (19:30/20:00).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Del puerto al casco</p><p class="mt-2 leading-6">Aprox. 600–900 m, unos 10 minutos a pie (estimación de terceros, sin confirmación oficial).</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Cuatro horas dan para moverse sin correr, pero exigen orden. Los <strong>museos de Colonia</strong> funcionan hoy como un conjunto de nueve Espacios Expositivos, y el <strong>Faro</strong> está dentro del Barrio Histórico, sobre las ruinas del antiguo convento de San Francisco. Todos los horarios y precios son dinámicos: tratalos como referencia y confirmalos el mismo día.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Museos: qué son y cómo se recorren</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El sistema museístico se organiza en nueve <strong>Espacios Expositivos</strong>: Dr. Bautista Rebuffo, Vivienda Portuguesa, Portugués, Archivo Histórico, Del Telégrafo, Indígena, Español, Del Azulejo y Paleontológico. Con la entrada única accedés a todos. La venta se hace en el Espacio Dr. Bautista Rebuffo, en Calle Del Comercio 77; el sitio oficial también menciona la dirección Calle del Comercio 183 con atención de lunes a viernes, de 11:30 a 16:30.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Ojo: hay fuentes oficiales que dan franjas horarias distintas y días de cierre. No hay un horario uniforme para todos los Espacios. Antes de armar el día, consultá el sitio de los museos y confirmá qué abre cuando llegues.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Faro: lo que sí y lo que no</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El Faro se visita por una escalera caracol angosta. La <strong>Comisión UNESCO de Uruguay</strong> indica acceso de jueves a domingos, en dos franjas por día, y entrada de 35 pesos; otra fuente oficial propone franjas algo distintas y advierte que los horarios pueden variar según la disponibilidad de funcionarios de la Armada Nacional. No damos un horario fijo: confirmalo antes de subir.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      La altura también aparece con dos valores distintos según la fuente (34 m y 26 m), así que no la tomamos como dato único. Lo que sí es firme: <strong>no ingresan menores de 12 años</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El recorrido, por bloques horarios</h2>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)] max-w-3xl">
+      Bloques orientativos de esta guía según la franja del día. Ajustalos a tu paso y a la hora de presentación de tu pasaje.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Mañana · Del puerto al casco</h3><p class="mt-2 leading-7 opacity-75">Salí temprano de la terminal y caminá al Barrio Histórico (aprox. 600–900 m, unos 10 minutos). Entrá por el Portón de Campo, frente a la Plaza 1811.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Mañana · Espacios Expositivos</h3><p class="mt-2 leading-7 opacity-75">Con la entrada de $150 recorrés los museos, eligiendo dos o tres según tus intereses. Comprá el acceso en Calle Del Comercio 77 y confirmá ese día qué Espacios están abiertos.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Mediodía · Almuerzo o café</h3><p class="mt-2 leading-7 opacity-75">Aprovechá la franja de 11:00 a 16:30. Si tu hora de embarque cae después, tené presente el corte de 16:30–19:30, cuando muchos locales cierran.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Tarde · Faro y Plaza Mayor</h3><p class="mt-2 leading-7 opacity-75">Sumá el Faro si está abierto y no vas con menores de 12 años. Cerrá con la Plaza Mayor del 25 de Mayo y la Calle de los Suspiros antes de volver.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Cierre · Regreso con margen</h3><p class="mt-2 leading-7 opacity-75">Volvé al puerto dejando aire para Migración, Aduana y embarque. No ajustes el regreso a la hora de salida del buque.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Completá el itinerario</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto a museos y Faro</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/rutas/puerto-museos-historicos/">Museos desde el puerto</a>
+      <a class="pill" href="/rutas/puerto-faro-colonia/">Del puerto al Faro</a>
+      <a class="pill" href="/cerca/restaurantes-almuerzo-puerto/">Almuerzos cerca del puerto</a>
+      <a class="pill" href="/cerca/cafe-desayuno-puerto/">Cafés y desayunos</a>
+    </div>
+  </section>
+</GuideLayout>

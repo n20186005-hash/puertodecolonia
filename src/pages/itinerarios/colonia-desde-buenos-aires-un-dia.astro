@@ -1,0 +1,103 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/itinerarios/colonia-desde-buenos-aires-un-dia/';
+
+const faq = [
+  {
+    q: '¿Se puede ir y volver de Colonia en el mismo día desde Buenos Aires?',
+    a: 'Sí, el cruce está pensado para eso. Salís por la mañana desde Buenos Aires, recorrés el Barrio Histórico, almorzás y volvés por la tarde. La clave es elegir una ida temprana y un regreso que deje margen para el check-in.'
+  },
+  {
+    q: '¿Qué documento necesito para cruzar a Colonia?',
+    a: 'Los ciudadanos argentinos que viajan a Uruguay deben presentar DNI o pasaporte. Los residentes extranjeros deben presentar pasaporte o cédula vigente del país de origen más una constancia de residencia. Los menores de 18 años necesitan autorización para salir del país.'
+  },
+  {
+    q: '¿Cuánto puedo traer de vuelta sin pagar impuestos?',
+    a: 'Las franquicias dependen del medio y del país. Al volver a la Argentina, por vía fluvial el equipaje tiene un valor libre de 300 USD, sin la franquicia extra de free shop que sí aplica en aeropuertos. Los montos cambian: confirmalos con la Aduana antes de comprar.'
+  },
+  {
+    q: '¿Con cuánta anticipación tengo que volver al puerto?',
+    a: 'Con Buquebus, el check-in abre 2 horas antes y cierra 25 minutos antes de la partida, aunque su propia FAQ menciona 20 minutos: hay una inconsistencia en la web oficial. Sumá margen y seguí la hora de presentación impresa en tu pasaje.'
+  },
+  {
+    q: '¿Qué hago con la tarjeta migratoria que me dan al embarcar?',
+    a: 'Guardala. Al volver a Uruguay hay que presentarla. Es un papel fácil de perder, así que ponelo junto al pasaporte o al DNI para no buscarlo en el control.'
+  },
+  {
+    q: '¿Dónde conviene almorzar antes de volver?',
+    a: 'La franja de almuerzo va de 11:00 a 16:30 y después muchos locales cierran hasta la noche. Para un regreso por la tarde, apuntá a almorzar dentro de ese horario y dejá el intervalo de 16:30–19:30 para un café antes de ir al puerto.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Horarios y rutas', url: 'https://www.coloniaexpress.com/es/ar/mas-informacion/horarios-y-rutas' },
+  { label: 'Buquebus · Embarque y check-in', url: 'https://www.buquebus.com/info/embarque' },
+  { label: 'Argentina.gob.ar · Requisitos de viaje a países del Mercosur', url: 'https://www.argentina.gob.ar/node/488501' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Un día en Colonia desde Buenos Aires"
+  description="Escapada de un día a Colonia desde Buenos Aires: cruce de ida a la mañana, Barrio Histórico, almuerzo y regreso por la tarde, con documentación y aduana."
+  h1="Un día en Colonia desde Buenos Aires"
+  kicker="Itinerarios · Un día"
+  lead="Cruzar el Río de la Plata y volver el mismo día es posible: ida por la mañana, recorrido por el Barrio Histórico de Colonia del Sacramento, almuerzo y regreso por la tarde. Lo que define el éxito es la combinación de horarios y el margen para el check-in de vuelta."
+  crumbs={[{ name: 'Un día desde Buenos Aires', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Ferry atracado en la terminal fluviomarítima, listo para el cruce entre Buenos Aires y Colonia"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Las salidas desde Buenos Aires</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Terminal de salida</p><p class="mt-2 leading-6">Buquebus opera desde la Terminal Fluvial de Puerto Madero (Dársena Norte). Colonia Express, desde Puerto Madero Sur, Av. Rawson de Dellepiane 155.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Duración del cruce</p><p class="mt-2 leading-6">Del orden de 1 hora 15 minutos en los servicios rápidos de Colonia Express, según su tabla de horarios publicada.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Check-in (Buquebus)</p><p class="mt-2 leading-6">Abre 2 horas antes de la partida y cierra 25 minutos antes. Su FAQ también menciona 20 minutos: la web oficial es internamente inconsistente.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario del puerto</p><p class="mt-2 leading-6">Buquebus publica Puerto de Colonia de 08:15 a 18:45 y Puerto de Buenos Aires de 05:30 a 20:30, todos los días.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El punto más frágil de una escapada de un día son los <strong>horarios</strong>. Colonia Express los publica por períodos de validez, y cambian al renovarse la tabla. Como ejemplo, para la franja del 1/9 al 31/10/2026 las salidas Buenos Aires–Colonia eran 8:30, 10:30, 12:50, 18:30 y 20:00; del 1/11 al 30/11/2026 pasaron a 8:00, 10:30, 12:30, 18:15 y 20:00. No tomes esas cifras como fijas: antes de reservar, mirá la tabla vigente en la web de la naviera.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Documentación y aduana</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Para salir de la Argentina hacia Uruguay tenés que llevar <strong>DNI o pasaporte</strong> vigente (para ciudadanos argentinos). Los residentes extranjeros presentan pasaporte o cédula de su país más constancia de residencia. Los menores de 18 años necesitan autorización para egresar del país, incluso si viajan con un solo progenitor.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      A la vuelta, atención a las <strong>franquicias de aduana</strong>: son las que más sorpresas generan. Por vía fluvial, la franquicia de equipaje en la Argentina es de 300 USD, sin el extra de free shop que sí existe en aeropuertos y puertos marítimos. Del lado uruguayo, el tope habitual es de hasta 500 USD por vía aérea o marítima, una vez por mes. Los valores y las reglas cambian: verificá con la Aduana y guardá las facturas de lo que compres.
+    </p>
+    <p class="mt-4 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      Y no te olvides de la <strong>tarjeta migratoria</strong>: el papel que te dan al embarcar hay que conservarlo y presentarlo al volver a Uruguay. La <a class="underline decoration-black/20 underline-offset-4" href="/ferries/documentacion/">documentación para viajar</a> y la <a class="underline decoration-black/20 underline-offset-4" href="/ferries/aduanas/">información de aduana</a> están detalladas en sus páginas.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">El día completo, paso a paso</h2>
+    <p class="mt-4 leading-7 text-sm text-[color:rgba(16,45,54,.65)] max-w-3xl">
+      Bloques orientativos de esta guía. Ajustalos a los horarios vigentes de la naviera que elijas.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Mañana · Embarque en Buenos Aires</h3><p class="mt-2 leading-7 opacity-75">Llegá a Puerto Madero con la anticipación que pida tu naviera (Buquebus abre check-in 2 horas antes). Pasás Migración y abordás el ferry.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Media mañana · Llegada a Colonia</h3><p class="mt-2 leading-7 opacity-75">Desembarcás dentro del complejo. Guardá la tarjeta migratoria y caminá al Barrio Histórico, a unos 10 minutos (estimación de terceros).</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Mediodía · Barrio Histórico y almuerzo</h3><p class="mt-2 leading-7 opacity-75">Portón de Campo, Plaza 1811, Plaza Mayor del 25 de Mayo y Calle de los Suspiros. Almorzá dentro de la franja de 11:00 a 16:30.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Tarde · Regreso al puerto</h3><p class="mt-2 leading-7 opacity-75">Volvé con margen sobre la hora de presentación de tu pasaje. No dejes el retorno para el último minuto por Migración y Aduana.</p></div></div>
+      <div class="route-step"><div class="route-number">05</div><div><h3 class="text-xl font-semibold">Tarde · Cruce de vuelta y aduana</h3><p class="mt-2 leading-7 opacity-75">En el control de regreso presentás la tarjeta migratoria y declarás lo que corresponda según las franquicias. Revisá tus compras antes de pasar.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Antes de reservar</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse antes de la escapada</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios Colonia–Buenos Aires</a>
+      <a class="pill" href="/ferries/documentacion/">Documentación para viajar</a>
+      <a class="pill" href="/ferries/aduanas/">Aduana y equipaje</a>
+      <a class="pill" href="/cerca/restaurantes-almuerzo-puerto/">Almuerzos cerca del puerto</a>
+    </div>
+  </section>
+</GuideLayout>

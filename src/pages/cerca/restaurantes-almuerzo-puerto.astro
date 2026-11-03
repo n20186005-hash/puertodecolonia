@@ -1,0 +1,128 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/cerca/restaurantes-almuerzo-puerto/';
+
+const faq = [
+  {
+    q: '¿A qué hora se almuerza cerca del puerto de Colonia?',
+    a: 'El grueso del servicio de almuerzo va de 11:00 a 16:30. Es la franja que conviene tener en cuenta si llegás al mediodía a la Terminal Fluviomarítima Colonia (ANP).'
+  },
+  {
+    q: '¿Puedo almorzar después de las 16:30 junto al puerto?',
+    a: 'Entre 16:30 y 19:30 muchos locales cierran y hacen un intervalo antes de la cena, que arranca cerca de las 19:30 o 20:00. Si llegás en ese hueco, tu opción más realista es un café y hacer tiempo; después se abre la franja de cena.'
+  },
+  {
+    q: '¿Por qué El Torreón no tiene un horario en esta página?',
+    a: 'Porque sus horarios aparecen con fuentes en conflicto y no hay una versión definitiva. Antes de armar la página en función de ese local, confirmá en el propio establecimiento.'
+  },
+  {
+    q: '¿Hay opciones de almuerzo dentro de la terminal?',
+    a: 'Las fuentes oficiales enumeran una cafetería y otros servicios entre las instalaciones tipo de la terminal, pero no publican horarios. Este sitio no los verificó: lo que esté abierto depende del día, así que confirmá en el lugar.'
+  },
+  {
+    q: '¿El sitio cobra por mencionar restaurantes?',
+    a: 'No. Somos una guía independiente, no oficial y sin fines de lucro. No hay publicidad ni ranking: mencionamos locales concretos por su utilidad para el viaje y no auditamos sus horarios ni su servicio.'
+  }
+];
+
+const sources = [
+  { label: 'Intendencia de Colonia · Directorio gastronómico del departamento (oficial, sin horarios)', url: 'https://www.colonia.gub.uy/turismo/uploads/servicios/gastronomia.pdf' },
+  { label: 'Intendencia de Colonia · Sitio oficial del departamento', url: 'https://www.colonia.gub.uy/' },
+  { label: 'Uruguay Natural · Colonia del Sacramento (Ministerio de Turismo)', url: 'https://uruguaynatural.com/es/places/colonia-encanto-historico-y-paisajes-del-plata/' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Almuerzos cerca del Puerto de Colonia"
+  description="Opciones para almorzar cerca de la Terminal Fluviomarítima Colonia: horarios confirmados, la franja de 11:00 a 16:30 y locales sin verificar."
+  h1="Dónde almorzar cerca del Puerto de Colonia"
+  kicker="Cerca del puerto · Almuerzos"
+  lead="Si llegás al mediodía a la Terminal Fluviomarítima Colonia (ANP), el almuerzo cerca del puerto se resuelve entre las 11:00 y las 16:30. Entre 16:30 y 19:30 muchos locales cierran, así que si tu llegada es a la tarde vas a necesitar un café para hacer tiempo."
+  crumbs={[{ name: 'Almuerzos cerca del puerto', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferries-terminal.jpg"
+  heroAlt="Zona de terminal de ferries en el Puerto de Colonia, punto de partida para almorzar cerca"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">La franja del almuerzo, en claro</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Antes de ver locales, fijate la estructura del día: el <strong>Puerto de Colonia</strong> está a minutos del centro y del Barrio Histórico, y los horarios de cocina son bastante acotados. Entender la franja evita que llegues justo cuando cierran.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">11:00 a 16:30</p><p class="mt-2 leading-6">El grueso del servicio de almuerzo en la zona. Si llegás al mediodía desde el ferry o en bus, estás en el mejor momento.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">16:30 a 19:30</p><p class="mt-2 leading-6">Intervalo: muchos locales cierran entre el almuerzo y la cena. En ese hueco, la salida práctica es un café.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Desde 19:30 / 20:00</p><p class="mt-2 leading-6">Arranca la franja de cena en los locales que atienden de noche.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Locales con horario confirmado</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-sm text-[color:rgba(16,45,54,.65)]">Horarios tomados de fuentes de terceros (guiacomercial.uy) y del sitio oficial de un hotel. Cambian: confirmá antes de ir. Este sitio no audita a los comercios.</p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Barrio Histórico</p>
+        <h3 class="mt-2 font-semibold text-lg">Viejo Barrio</h3>
+        <p class="mt-2 leading-6">Vasconcellos 169. Lunes a jueves de <strong>11:00 a 16:30</strong>; viernes a domingo de 11:00 a 16:30 y de 19:30 a 23:00.</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: guiacomercial.uy (terceros).</p>
+      </div>
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Zona puerto</p>
+        <h3 class="mt-2 font-semibold text-lg">Radisson · Del Carmen Resto &amp; Lounge Bar</h3>
+        <p class="mt-2 leading-6">Washington Barbot 283. Almuerzo de <strong>12:30 a 16:00</strong> (desayuno de 7:00 a 10:30 y cena de 20:00 a 24:00).</p>
+        <p class="mt-2 leading-6 text-sm opacity-70">Fuente: sitio oficial del hotel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Un caso aparte: El Torreón</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6">
+        <p class="kicker opacity-55">Horarios en conflicto</p>
+        <h3 class="mt-2 font-semibold text-lg">El Torreón</h3>
+        <p class="mt-2 leading-6">Gral. Flores 19. Sus horarios aparecen con <strong>fuentes en conflicto</strong> y no hay una versión definitiva, así que no publicamos una franja. Confirmá en el local antes de ir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Locales sin horario confirmado</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Figuran en el directorio gastronómico de la Intendencia de Colonia, pero <strong>no tienen horario verificado</strong>. Van solo con el nombre: hay que confirmar en el local.
+    </p>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Candela Express</h3><p class="mt-2 leading-6">Nombre del directorio oficial; confirmá horario y dirección en el local.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Irene's</h3><p class="mt-2 leading-6">Nombre del directorio oficial; confirmá horario y dirección en el local.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Punta Piedra</h3><p class="mt-2 leading-6">Nombre del directorio oficial; confirmá horario y dirección en el local.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">El Mercosur</h3><p class="mt-2 leading-6">Nombre del directorio oficial; confirmá horario y dirección en el local.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Horario a confirmar</p><h3 class="mt-2 font-semibold text-lg">Mojito Parrillada &amp; Pub</h3><p class="mt-2 leading-6">Nombre del directorio oficial; confirmá horario y dirección en el local.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo volver al puerto a tiempo</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      El almuerzo cerca del <strong>Puerto de Colonia</strong> no termina cuando pagás la cuenta. Si después tenés ferry, el tramo de vuelta y los controles consumen tiempo propio.
+    </p>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Fijá primero tu hora de presentación</h3><p class="mt-2 leading-7 opacity-75">Es la que figura en tu pasaje y suele ser bastante anterior a la salida del buque. Ordená el almuerzo hacia atrás desde ese horario, no desde la salida.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Elegí un local a distancia caminable del puerto</h3><p class="mt-2 leading-7 opacity-75">La zona del puerto y Av. Gral. Flores es la más práctica si vas justo de tiempo. El Barrio Histórico suma ambiente, pero agrega minutos de vuelta.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Reservá margen para migraciones y aduana</h3><p class="mt-2 leading-7 opacity-75">En un cruce internacional, el control de documentos y equipaje tiene su propio tiempo. No lo dejes para el final del almuerzo.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Si vas corto, resolvé el regreso en taxi</h3><p class="mt-2 leading-7 opacity-75">Con poco margen, un taxi o remise habilitado es la opción más previsible. Confirmá el punto de ascenso antes de sentarte a comer.</p></div></div>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí con el día</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Si el almuerzo no encaja, esto resuelve</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/cerca/cafe-desayuno-puerto/">Cafés y desayunos</a>
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/rutas/puerto-barrio-historico/">Del puerto al Barrio Histórico</a>
+      <a class="pill" href="/itinerarios/colonia-4-horas/">Colonia en 4 horas</a>
+    </div>
+  </section>
+</GuideLayout>

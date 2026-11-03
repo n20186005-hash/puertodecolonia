@@ -1,4 +1,4 @@
-/** Existing opt-in analytics: refusal takes effect before persistence. */
+/** Analítica opt-in existente: el rechazo surte efecto antes de guardar. */
 export function initAnalytics(id: string) {
   const w = window as unknown as Window & { __puertoGA?: boolean; dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void; [key: string]: unknown };
   const key = 'puerto-colonia-analytics-consent', vetoKey = key + '-off';

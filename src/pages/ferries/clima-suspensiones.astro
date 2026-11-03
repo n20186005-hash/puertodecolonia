@@ -1,0 +1,96 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import { LINKS } from '../../lib/site';
+
+const slug = '/ferries/clima-suspensiones/';
+
+const faq = [
+  {
+    q: '¿Me devuelven el dinero si se suspende por mal tiempo?',
+    a: 'Colonia Express aclara que no realiza devoluciones por problemas climáticos: permite reprogramar el viaje. Buquebus indica que se ajusta a las decisiones de las autoridades portuarias y ofrece opciones de reprogramación; esa frase no promete reembolso. Confirmá tu caso con la naviera del pasaje.'
+  },
+  {
+    q: '¿Qué hace Colonia Express cuando hay temporal?',
+    a: 'Colonia Express permite reprogramar el viaje y aclara que no se realizan devoluciones por problemas climáticos. Es decir, la salida se mueve, pero el dinero no se devuelve por ese motivo.'
+  },
+  {
+    q: '¿Quién decide si el ferry no sale?',
+    a: 'Las autoridades portuarias. Buquebus explica que, ante condiciones climáticas extremas o cierre del puerto, se ajusta a las decisiones de esas autoridades, que pueden restringir o cancelar el tránsito. Los datos de la travesía dependen de la autoridad portuaria.'
+  },
+  {
+    q: '¿Cómo me avisan si se cancela el viaje?',
+    a: 'Buquebus indica que se notificará a los pasajeros lo antes posible y se ofrecerán opciones alternativas para la reprogramación del viaje. Igual conviene consultar la web de tu naviera antes de salir de casa, sobre todo si hay alerta por viento en el Río de la Plata.'
+  },
+  {
+    q: '¿Hay compensación por la suspensión?',
+    a: 'Las páginas oficiales consultadas no publican un protocolo de compensaciones por mal tiempo. Por eso, cualquier gasto extra (alojamiento, traslados) conviene consultarlo directamente con la naviera y no darlo por hecho.'
+  }
+];
+
+const sources = [
+  { label: 'Colonia Express · Preguntas frecuentes', url: LINKS.coloniaExpressFaq },
+  { label: 'Buquebus · Preguntas frecuentes', url: LINKS.buquebusFaq },
+  { label: 'Colonia Express · Términos y condiciones', url: LINKS.coloniaExpressTyC }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Mal tiempo y suspensiones del ferry"
+  description="Qué pasa si hay mal tiempo en el Río de la Plata: reprogramación en Colonia Express y Buquebus y cómo prepararte antes de viajar."
+  h1="Mal tiempo, suspensiones y reprogramación del ferry"
+  kicker="Ferries · Mal tiempo"
+  lead="Cuando el Río de la Plata se pone bravo o la autoridad portuaria cierra el puerto, el ferry entre Colonia y Buenos Aires puede reprogramarse o suspenderse. Colonia Express no hace devoluciones por clima y Buquebus se ajusta a lo que decidan las autoridades portuarias. Así te preparás antes de viajar."
+  crumbs={[{ name: 'Mal tiempo y suspensiones', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Ferry navegando el Río de la Plata al atardecer"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Lo que publica cada naviera</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Colonia Express</p><p class="mt-2 leading-6">Permite reprogramar el viaje y aclara que no se realizan devoluciones por problemas climáticos.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Buquebus</p><p class="mt-2 leading-6">Se ajusta a las decisiones de las autoridades portuarias, que pueden restringir o cancelar el tránsito.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Aviso a pasajeros</p><p class="mt-2 leading-6">Buquebus avisa lo antes posible y ofrece opciones de reprogramación del viaje.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Ojo con la letra chica</p><p class="mt-2 leading-6">La reprogramación de Buquebus no está acompañada de una promesa de reembolso en esa misma frase.</p></div>
+    </div>
+    <p class="mt-8 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      Ninguna de las dos navieras promete, ante el mal tiempo, devolver el dinero: la salida se mueve y se reprograma. Antes de comprar, fijate la flexibilidad de tu tarifa en la guía de <a class="underline decoration-black/20 underline-offset-4" href="/ferries/cambios-cancelaciones/">cambios y cancelaciones</a>, porque eso define qué margen tenés si el río no colabora.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo prepararte ante un posible temporal</h2>
+    <p class="mt-4 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      No existe un protocolo público de compensaciones, así que la mejor defensa es organizarte antes. Estos pasos te ahorran dolores de cabeza si el viaje se mueve.
+    </p>
+    <div class="mt-8">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Comprá con flexibilidad</h3><p class="mt-2 leading-7 opacity-75">Una tarifa que permita reprogramar te deja margen si el tiempo cambia. Revisá las condiciones antes de pagar, sobre todo en temporada de vientos.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Consultá la web de la naviera antes de viajar</h3><p class="mt-2 leading-7 opacity-75">Chequeá el estado de la salida el mismo día y prestá atención a los avisos. Buquebus notifica a los pasajeros lo antes posible.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Tené un plan B de alojamiento</h3><p class="mt-2 leading-7 opacity-75">Si viajás con horario ajustado o de noche, pensá qué harías si la salida se pasa para el día siguiente. Mirá dónde dormir cerca del puerto.</p></div></div>
+      <div class="route-step"><div class="route-number">04</div><div><h3 class="text-xl font-semibold">Confirmá con la naviera tu caso</h3><p class="mt-2 leading-7 opacity-75">La reprogramación depende de tu tarifa y de lo que disponga la autoridad portuaria. Preguntá por tu pasaje puntual antes de dar por hecho un cambio.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Quién manda cuando el puerto cierra</h2>
+    <div class="mt-6 border-l-2 border-[var(--terracotta)] pl-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+      Los datos de la travesía dependen de la <strong>autoridad portuaria</strong>. Ante condiciones climáticas extremas o cierre del puerto, las autoridades pueden restringir o cancelar el tránsito, y las navieras se ajustan a esa decisión. No es algo que fije cada empresa por su cuenta.
+    </div>
+    <p class="mt-6 leading-7 max-w-3xl text-[color:rgba(16,45,54,.72)]">
+      Si tu plan depende de una salida puntual, mirá también los <a class="underline decoration-black/20 underline-offset-4" href="/ferries/horarios-colonia-buenos-aires/">horarios Colonia–Buenos Aires</a>, que se publican por períodos de validez y pueden cambiar.
+    </p>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Preparate mejor</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse cuando amenaza temporal</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/ferries/cambios-cancelaciones/">Cambios y cancelaciones</a>
+      <a class="pill" href="/ferries/check-in-embarque/">Check-in y embarque</a>
+      <a class="pill" href="/cerca/hoteles-puerto-colonia/">Dónde dormir cerca del puerto</a>
+      <a class="pill" href="/ferries/horarios-colonia-buenos-aires/">Horarios Colonia–Buenos Aires</a>
+    </div>
+  </section>
+</GuideLayout>

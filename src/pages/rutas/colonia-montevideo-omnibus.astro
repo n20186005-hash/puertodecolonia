@@ -1,0 +1,124 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+const slug = '/rutas/colonia-montevideo-omnibus/';
+
+const salidas = [
+  { sale: '05:30', llega: '08:15' },
+  { sale: '06:45', llega: '09:30' },
+  { sale: '08:00', llega: '10:50' },
+  { sale: '09:15', llega: '12:05' },
+  { sale: '11:00', llega: '13:50' },
+  { sale: '13:00', llega: '15:50' },
+  { sale: '15:00', llega: '17:50' },
+  { sale: '16:00', llega: '18:50' },
+  { sale: '17:30', llega: '20:20' },
+  { sale: '19:00', llega: '21:50' },
+  { sale: '20:30', llega: '23:15' },
+  { sale: '22:00', llega: '00:45' }
+];
+
+const faq = [
+  {
+    q: '¿Qué empresa hace el ómnibus de Colonia a Montevideo?',
+    a: 'El servicio lo cubre COT, Compañía Oriental de Transporte S.A. Publica sus horarios y tarifas en su web oficial, y vende pasajes online y en la terminal de ómnibus de Colonia.'
+  },
+  {
+    q: '¿Cuánto demora el viaje de Colonia a Montevideo?',
+    a: 'A partir de los horarios de salida y llegada, el viaje ronda las 2 h 45. Es una duración deducida de esa tabla, no un dato oficial de duración, así que tomala como referencia y no como compromiso.'
+  },
+  {
+    q: '¿Cuánto cuesta el pasaje?',
+    a: 'La tarifa de referencia que publica el sitio de COT para Montevideo/Colonia es de $579. Es un valor que puede cambiar: confirmá el precio vigente al comprar, porque la tarifa se ajusta.'
+  },
+  {
+    q: '¿Dónde compro el boleto?',
+    a: 'Podés comprar online en cot.com.uy o en la terminal de ómnibus de Colonia y en las agencias. Si comprás presencialmente, revisá los horarios de atención antes de ir.'
+  },
+  {
+    q: '¿Puedo combinar el ferry de Buenos Aires con el bus a Montevideo?',
+    a: 'Sí, es una combinación posible: al desembarcar en el Puerto de Colonia podés acercarte a la terminal de ómnibus, que está cerca, y seguir a Montevideo. Reservá con margen entre la llegada del ferry y la salida del bus.'
+  }
+];
+
+const sources = [
+  { label: 'COT · Horarios y tarifas Colonia–Montevideo', url: 'https://www.cot.com.uy/horarios-tarifas.php' },
+  { label: 'COT · Agencias y puntos de venta', url: 'https://www.cot.com.uy/agencias.php' },
+  { label: 'Intendencia de Colonia · Transporte y terminal de ómnibus (PDF)', url: 'https://colonia.gub.uy/turismo/uploads/servicios/transporte.pdf' }
+];
+---
+
+<GuideLayout
+  slug={slug}
+  title="Ómnibus de Colonia a Montevideo"
+  description="Horarios de COT entre Colonia y Montevideo, duración aproximada, tarifa de referencia y cómo comprar el pasaje de ómnibus."
+  h1="Ómnibus de Colonia a Montevideo con COT"
+  kicker="Rutas · Colonia → Montevideo"
+  lead="El ómnibus de Colonia a Montevideo lo cubre COT (Compañía Oriental de Transporte S.A.) con varias salidas diarias y un viaje de unas 2 h 45. Te dejamos la tabla de horarios y la tarifa de referencia, siempre sujetas a la web oficial vigente."
+  crumbs={[{ name: 'Colonia a Montevideo', href: slug }]}
+  faq={faq}
+  sources={sources}
+  heroImage="/photos/ferry-atardecer.jpg"
+  heroAlt="Atardecer sobre el Río de la Plata en Colonia del Sacramento, punto de partida del viaje a Montevideo"
+>
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Salidas desde Colonia y llegadas a Montevideo</h2>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.78)]">
+      COT, <strong>Compañía Oriental de Transporte S.A.</strong>, conecta Colonia y Montevideo con varias frecuencias diarias. Esta es la tabla oficial de salidas y llegadas que publica la empresa:
+    </p>
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)]">
+            <th class="py-3 pr-4 kicker opacity-55">Sale de Colonia</th>
+            <th class="py-3 kicker opacity-55">Llega a Montevideo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {salidas.map((s) => (
+            <tr class="border-b border-[var(--line)]"><td class="py-3 pr-4 font-semibold">{s.sale}</td><td class="py-3">{s.llega}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-6 leading-8 max-w-3xl text-[color:rgba(16,45,54,.65)]">
+      La duración aproximada de <strong>2 h 45</strong> se deduce de comparar cada salida con su llegada: no es un dato oficial de duración ni un compromiso horario.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Tarifa, duración y compra</h2>
+    <div class="info-grid mt-8">
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Empresa</p><p class="mt-2 leading-6">COT · Compañía Oriental de Transporte S.A.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Duración aproximada</p><p class="mt-2 leading-6">Unas 2 h 45 (deducida de los horarios, no es dato oficial de duración).</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Tarifa de referencia</p><p class="mt-2 leading-6">Montevideo / Colonia <strong>$579</strong> según la web de COT. Puede cambiar.</p></div>
+      <div class="info-card col-span-6"><p class="kicker opacity-55">Compra</p><p class="mt-2 leading-6">Online en cot.com.uy, en la terminal de ómnibus de Colonia o en las agencias.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="serif text-3xl md:text-4xl tracking-[-.03em]">Cómo organizar el viaje</h2>
+    <div class="mt-6">
+      <div class="route-step"><div class="route-number">01</div><div><h3 class="text-xl font-semibold">Elegí la salida según tu día</h3><p class="mt-2 leading-7 opacity-75">La primera sale temprano y la última pasa la medianoche. Elegí con el margen que necesites para llegar a la terminal antes de la partida.</p></div></div>
+      <div class="route-step"><div class="route-number">02</div><div><h3 class="text-xl font-semibold">Comprá con anticipación si viajás en temporada</h3><p class="mt-2 leading-7 opacity-75">Podés comprar online o en la terminal. En fechas de mucha demanda, asegurar el boleto temprano evita quedarte sin lugar.</p></div></div>
+      <div class="route-step"><div class="route-number">03</div><div><h3 class="text-xl font-semibold">Calculá el tramo hasta la terminal de ómnibus</h3><p class="mt-2 leading-7 opacity-75">Si venís del puerto después del ferry, la terminal de ómnibus está cerca. Dejá margen entre el desembarque y la salida del bus.</p></div></div>
+    </div>
+    <div class="mt-8 bg-[var(--sky)] border border-[var(--line)] p-6 md:p-8">
+      <p class="kicker text-[var(--terracotta)]">Advertencia</p>
+      <p class="mt-3 leading-7 max-w-3xl text-[color:rgba(16,45,54,.85)]">
+        Los horarios y las tarifas de esta página son los que publica COT y <strong>pueden cambiar</strong>. Antes de viajar, confirmá la salida y el precio según la web oficial vigente de COT o en la terminal de ómnibus de Colonia.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-[var(--sky)] border border-[var(--line)] p-8 md:p-10">
+    <p class="kicker text-[var(--terracotta)]">Seguí el viaje</p>
+    <h2 class="serif text-2xl md:text-3xl tracking-[-.03em] mt-3">Lo que suele consultarse junto a este tramo</h2>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a class="pill" href="/transporte/terminal-omnibus/">Terminal de ómnibus</a>
+      <a class="pill" href="/rutas/buenos-aires-colonia/">Buenos Aires a Colonia</a>
+      <a class="pill" href="/itinerarios/colonia-4-horas/">Colonia en 4 horas</a>
+      <a class="pill" href="/terminal/ubicacion-como-llegar/">Cómo llegar al puerto</a>
+    </div>
+  </section>
+</GuideLayout>
